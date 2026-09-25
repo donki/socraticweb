@@ -1,34 +1,35 @@
-:root{
-  --bg:#ffffff; --fg:#16161a; --muted:#5b5b66; --card:#f4f4f8;
-  --line:#e2e2ea; --accent:#4338ca; --accent-fg:#ffffff;
-}
-@media (prefers-color-scheme: dark){
-  :root{ --bg:#101014; --fg:#ecedf1; --muted:#a0a0ad; --card:#1a1a21;
-         --line:#2a2a34; --accent:#818cf8; --accent-fg:#16161a; }
-}
+/* Copia local de la web. Los colores, bordes y espaciados van en línea en el HTML (son los atributos de
+   los bloques de WordPress); aquí solo va lo que en WordPress pone el tema: tipografía, anchos y rejillas. */
 *{box-sizing:border-box}
-body{margin:0;background:var(--bg);color:var(--fg);
-     font:16px/1.65 system-ui,-apple-system,"Segoe UI",Roboto,sans-serif}
-.wrap{max-width:900px;margin:0 auto;padding:0 16px}
-nav{display:flex;flex-wrap:wrap;gap:6px 20px;padding:20px 0;border-bottom:1px solid var(--line)}
-nav a{color:var(--fg);text-decoration:none}
-nav a:hover{color:var(--accent)}
-h1{margin:40px 0 16px;font-size:2.2rem;letter-spacing:-.02em;line-height:1.2}
-h2{margin:40px 0 8px;font-size:1.5rem;letter-spacing:-.01em}
-h3{margin:28px 0 6px;font-size:1.15rem}
-h4{margin:20px 0 4px;font-size:1rem}
-a{color:var(--accent)}
-hr{border:0;border-top:1px solid var(--line);margin:40px 0}
-.wp-block-columns{display:grid;gap:16px;grid-template-columns:repeat(auto-fill,minmax(250px,1fr));margin:16px 0}
-.wp-block-column{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:4px 20px}
-.wp-block-column:empty{display:none}
-.wp-block-column h3{margin-top:16px}
-.wp-block-column p{color:var(--muted);font-size:.95rem}
-.wp-block-buttons{display:flex;flex-wrap:wrap;gap:10px;margin:16px 0}
-.wp-block-button__link{display:inline-block;background:var(--accent);color:var(--accent-fg);text-decoration:none;
-  padding:9px 16px;border-radius:9px;font-size:.9rem;font-weight:600;border:2px solid var(--accent)}
-.is-style-outline .wp-block-button__link{background:transparent;color:var(--accent)}
-table{border-collapse:collapse;width:100%;font-size:.95rem}
-th,td{border:1px solid var(--line);padding:6px 10px;text-align:left;vertical-align:top}
-.wp-block-table{margin:16px 0;overflow-x:auto}
-footer{margin:64px 0 40px;padding-top:24px;border-top:1px solid var(--line);color:var(--muted);font-size:.9rem}
+body{margin:0;background:#fff;color:#334155;font:16px/1.65 Inter,system-ui,-apple-system,"Segoe UI",Roboto,sans-serif}
+a{color:#4338ca}
+h1,h2,h3,h4{color:inherit;margin:0 0 .5em}
+.has-x-large-font-size{font-size:clamp(2.4rem,6vw,3.75rem)}
+.has-large-font-size{font-size:clamp(1.8rem,4vw,2.4rem)}
+.has-medium-font-size{font-size:1.35rem}
+.has-small-font-size{font-size:1rem}
+/* Secciones a todo el ancho con el contenido centrado */
+.soc-sec,header.wp-block-group{padding-left:16px!important;padding-right:16px!important}
+.soc-sec>*{max-width:1120px;margin-left:auto;margin-right:auto}
+.soc-sec p,.soc-sec li{max-width:none}
+header.wp-block-group>.wp-block-group{display:flex;justify-content:space-between;align-items:center;
+  flex-wrap:wrap;gap:12px;max-width:1440px;margin:0 auto}
+header .soc-marca{margin:0;font-weight:800;font-size:1.35rem}
+header .soc-marca a{color:#0f172a;text-decoration:none}
+header a{margin-left:24px;color:#0f172a;text-decoration:none;font-weight:500}
+.soc-hero a{color:inherit}
+.soc-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(min(18rem,100%),1fr));gap:24px}
+.soc-card>*{margin:0 0 12px}
+.soc-card h3 a{text-decoration:none}
+.wp-block-buttons{display:flex;flex-wrap:wrap;gap:12px;margin:24px 0}
+.wp-block-button__link{display:inline-block;text-decoration:none;font-weight:600}
+.is-style-outline .wp-block-button__link{border-color:currentColor}
+.wp-block-columns{display:flex;flex-wrap:wrap;gap:32px 48px}
+.wp-block-column{flex:1 1 18rem;min-width:0}
+.wp-block-separator{border:0;height:1px}
+details summary{cursor:pointer}
+table{border-collapse:collapse;width:100%}
+th,td{border:1px solid #e2e8f0;padding:6px 10px;text-align:left;vertical-align:top}
+.wp-block-table{overflow-x:auto;margin:16px 0}
+/* El aviso de cookies es de WordPress.com; en la copia local no hay cookies. */
+.wp-block-jetpack-cookie-consent{display:none}

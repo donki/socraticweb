@@ -7,36 +7,62 @@
 <link rel="stylesheet" href="../estilo.css">
 </head>
 <body>
-<div class="wrap">
-<nav><a href="../index.html"><strong>sOCratic</strong></a>
+<header class="wp-block-group alignfull has-background" style="border-bottom-color:#e2e8f0;border-bottom-width:1px;border-bottom-style:solid;background-color:#ffffff;margin-top:0;margin-bottom:0">
+<div class="wp-block-group alignwide" style="padding-top:18px;padding-bottom:18px">
+<p class="soc-marca"><a href="../index.html">sOCratic</a></p>
+
 <a href="../apps/index.html">Aplicaciones</a>
 <a href="../soporte/index.html">Soporte</a>
-<a href="../privacidad.html">Privacidad</a></nav>
-<h1>Task Manager: guía de uso</h1>
-<p>Cómo funciona <a href="../apps/taskmanager.html">Task Manager</a> y qué hace cada opción.</p>
+<a href="../privacidad.html">Privacidad</a>
+<a href="https://github.com/donki">GitHub</a>
+</div>
+</header>
 
-<h3 class="wp-block-heading">Primera puesta en marcha</h3>
+<div class="wp-block-group alignfull soc-hero soc-sec has-text-color has-background has-link-color" style="color:#ffffff;background:linear-gradient(135deg,#1e1b4b 0%,#312e81 55%,#4338ca 100%);padding-top:var(--wp--preset--spacing--70);padding-bottom:var(--wp--preset--spacing--70);margin-top:0;margin-bottom:0">
+<p class="has-text-color" style="color:#c7d2fe;font-size:0.8rem;font-weight:700;letter-spacing:0.12em;text-transform:uppercase">Soporte · Task Manager</p>
+
+<h1 class="wp-block-heading has-large-font-size has-text-color" style="color:#ffffff;font-weight:700;line-height:1.08;letter-spacing:-0.02em">Guía de uso</h1>
+
+<p class="has-text-color" style="color:#e0e7ff;font-size:1.2rem;line-height:1.6">Cómo funciona Task Manager, pantalla a pantalla, y qué hace cada opción.</p>
+
+<div class="wp-block-buttons"><div class="wp-block-button"><a class="wp-block-button__link has-text-color has-background wp-element-button" href="../apps/taskmanager.html" style="border-radius:10px;color:#4338ca;background-color:#ffffff;padding-top:12px;padding-bottom:12px;padding-left:22px;padding-right:22px">Ver la aplicación</a></div>
+<div class="wp-block-button is-style-outline"><a class="wp-block-button__link has-text-color wp-element-button" href="../soporte/index.html" style="border-width:1.5px;border-style:solid;border-radius:10px;color:#ffffff;padding-top:12px;padding-bottom:12px;padding-left:22px;padding-right:22px">Todas las guías</a></div>
+</div>
+</div>
+
+<div class="wp-block-group alignfull soc-sec" style="padding-top:var(--wp--preset--spacing--70);padding-bottom:var(--wp--preset--spacing--70);margin-top:0;margin-bottom:0">
+<div class="wp-block-group soc-card has-border-color has-background" style="border-color:#e2e8f0;border-width:1px;border-radius:16px;background-color:#f8fafc;padding-top:28px;padding-bottom:28px;padding-left:28px;padding-right:28px">
+<p class="has-text-color" style="color:#0f172a"><strong>En esta guía</strong></p>
+
+<ul class="wp-block-list"><li><a href="#primera-puesta-en-marcha">Primera puesta en marcha</a></li><li><a href="#flujo-normal">Flujo normal</a></li><li><a href="#menu-lateral-android">Menú lateral (Android)</a></li><li><a href="#mis-tareas">Mis tareas</a></li><li><a href="#etiquetas">Etiquetas</a></li><li><a href="#ficha-de-la-tarea">Ficha de la tarea</a></li><li><a href="#calendario">Calendario</a></li><li><a href="#mis-listas">Mis listas</a></li><li><a href="#tablero">Tablero</a></li><li><a href="#mis-grupos">Mis grupos</a></li><li><a href="#ajustes-android">Ajustes (Android)</a></li><li><a href="#acerca-de-android-y-windows">Acerca de (Android y Windows)</a></li><li><a href="#windows-bandeja-y-panel-rapido">Windows: bandeja y panel rápido</a></li><li><a href="#ajustes-windows">Ajustes (Windows)</a></li><li><a href="#preguntas-frecuentes">Preguntas frecuentes</a></li></ul>
+</div>
+
+<h3 id="primera-puesta-en-marcha" class="wp-block-heading has-medium-font-size has-text-color" style="color:#0f172a;margin-top:var(--wp--preset--spacing--40);font-weight:700;line-height:1.25">Primera puesta en marcha</h3>
 
 <ol class="wp-block-list">
 <li>Instala la aplicación (Android desde Google Play o el APK de GitHub; Windows con el EXE o el MSIX de GitHub).</li>
-<li>Se abre la pantalla <strong>Tu cuenta</strong> con tres opciones:
-   - <strong>Continuar con Google</strong> / <strong>Continuar con Microsoft</strong> (en Windows: <strong>Entrar con Google</strong> / <strong>Entrar con Microsoft</strong>): se abre la página de tu proveedor, inicias sesión allí y vuelves a la aplicación. El nombre de tu cuenta será tu nombre en la aplicación. La cuenta es lo que permite que el móvil y el PC compartan las mismas listas y lo que hace posibles los grupos.
-   - <strong>Seguir sin cuenta</strong>: las tareas se quedan solo en ese dispositivo, sin sincronizar y sin grupos. Si desinstalas la aplicación, se pierden. Puedes entrar con una cuenta más adelante.</li>
-<li>Permisos que pide Android, y solo cuando hacen falta:
-   - <strong>Notificaciones</strong>: para el aviso diario de lo que queda pendiente y el de las tareas que vencen. Se pide al activar «Avisarme de las tareas pendientes». Sin él, la aplicación avisa de que Android no permite mostrar avisos.
-   - <strong>Cámara</strong>: solo para leer el código QR de una invitación a un grupo; se pide al pulsar el botón de escanear. Sin ella, el código y la clave se pueden escribir a mano.</li>
+<li>Se abre la pantalla <strong>Tu cuenta</strong> con tres opciones:<ul>
+<li><strong>Continuar con Google</strong> / <strong>Continuar con Microsoft</strong> (en Windows: <strong>Entrar con Google</strong> / <strong>Entrar con Microsoft</strong>): se abre la página de tu proveedor, inicias sesión allí y vuelves a la aplicación. El nombre de tu cuenta será tu nombre en la aplicación. La cuenta es lo que permite que el móvil y el PC compartan las mismas listas y lo que hace posibles los grupos.</li>
+<li><strong>Seguir sin cuenta</strong>: las tareas se quedan solo en ese dispositivo, sin sincronizar y sin grupos. Si desinstalas la aplicación, se pierden. Puedes entrar con una cuenta más adelante.</li>
+</ul>
+</li>
+<li>Permisos que pide Android, y solo cuando hacen falta:<ul>
+<li><strong>Notificaciones</strong>: para el aviso diario de lo que queda pendiente y el de las tareas que vencen. Se pide al activar «Avisarme de las tareas pendientes». Sin él, la aplicación avisa de que Android no permite mostrar avisos.</li>
+<li><strong>Cámara</strong>: solo para leer el código QR de una invitación a un grupo; se pide al pulsar el botón de escanear. Sin ella, el código y la clave se pueden escribir a mano.</li>
+</ul>
+</li>
 <li>Cada cuenta tiene sus propias listas en el mismo dispositivo: cambiar de Google a Microsoft cambia lo que ves, pero no borra nada de la otra.</li>
 </ol>
 
-<h3 class="wp-block-heading">Flujo normal</h3>
+<h3 id="flujo-normal" class="wp-block-heading has-medium-font-size has-text-color" style="color:#0f172a;margin-top:var(--wp--preset--spacing--40);font-weight:700;line-height:1.25">Flujo normal</h3>
 
 <p>Escribe la tarea en la caja de arriba y pulsa el botón de añadir (o Intro). Tócala para abrir su ficha y completar lo que necesite (fechas, etiquetas, pasos...). Márcala como hecha con la casilla de la fila. Usa los filtros y las etiquetas para ver lo que te interesa en cada momento.</p>
 
-<h3 class="wp-block-heading">Menú lateral (Android)</h3>
+<h3 id="menu-lateral-android" class="wp-block-heading has-medium-font-size has-text-color" style="color:#0f172a;margin-top:var(--wp--preset--spacing--40);font-weight:700;line-height:1.25">Menú lateral (Android)</h3>
 
 <p>Entradas: <strong>Mis tareas</strong>, <strong>Calendario</strong>, <strong>Mis listas</strong>, <strong>Tablero</strong>, <strong>Mis grupos</strong>, <strong>Ajustes</strong> y <strong>Acerca de</strong>.</p>
 
-<h3 class="wp-block-heading">Mis tareas</h3>
+<h3 id="mis-tareas" class="wp-block-heading has-medium-font-size has-text-color" style="color:#0f172a;margin-top:var(--wp--preset--spacing--40);font-weight:700;line-height:1.25">Mis tareas</h3>
 
 <ul class="wp-block-list">
 <li><strong>Añadir una tarea a hoy</strong>: caja para escribir una tarea nueva y botón de añadir. La tarea entra en la primera lista y se abre para completarla.</li>
@@ -49,11 +75,11 @@
 <li>Pie: «Se muestran X de Y pendientes · Z % hechas».</li>
 </ul>
 
-<h3 class="wp-block-heading">Etiquetas</h3>
+<h3 id="etiquetas" class="wp-block-heading has-medium-font-size has-text-color" style="color:#0f172a;margin-top:var(--wp--preset--spacing--40);font-weight:700;line-height:1.25">Etiquetas</h3>
 
 <p>Todas las etiquetas en uso, también las que solo llevan tareas hechas, con «N sin acabar · N en total». La papelera de cada una la quita de todas sus tareas; si la llevan tareas sin acabar, pregunta antes.</p>
 
-<h3 class="wp-block-heading">Ficha de la tarea</h3>
+<h3 id="ficha-de-la-tarea" class="wp-block-heading has-medium-font-size has-text-color" style="color:#0f172a;margin-top:var(--wp--preset--spacing--40);font-weight:700;line-height:1.25">Ficha de la tarea</h3>
 
 <ul class="wp-block-list">
 <li><strong>Anclada</strong>: la deja arriba del todo. <strong>En curso</strong>: la pasa a la columna del medio del tablero. En Windows además <strong>Hecha</strong>.</li>
@@ -68,19 +94,19 @@
 <li>Arriba: <strong>Guardar</strong> (marca) y <strong>Borrar tarea</strong> (papelera). Si la tarea se repite, pregunta <strong>Solo esta vuelta</strong> o <strong>Toda la serie</strong>.</li>
 </ul>
 
-<h3 class="wp-block-heading">Calendario</h3>
+<h3 id="calendario" class="wp-block-heading has-medium-font-size has-text-color" style="color:#0f172a;margin-top:var(--wp--preset--spacing--40);font-weight:700;line-height:1.25">Calendario</h3>
 
 <p>El mes con las tareas en el día para el que están planificadas. Flechas <strong>Mes anterior</strong> / <strong>Mes siguiente</strong>; en Windows, <strong>Volver a hoy</strong>. Al elegir un día, la caja <strong>Nueva tarea para este día</strong> crea una tarea planificada para ese día. Tocar una tarea la abre (doble clic en Windows).</p>
 
-<h3 class="wp-block-heading">Mis listas</h3>
+<h3 id="mis-listas" class="wp-block-heading has-medium-font-size has-text-color" style="color:#0f172a;margin-top:var(--wp--preset--spacing--40);font-weight:700;line-height:1.25">Mis listas</h3>
 
 <p>Lista de tus listas con cuántas tareas quedan. El botón <strong>+</strong> crea una <strong>Nueva lista</strong>; la papelera la borra (si tiene tareas pregunta <strong>¿Y sus tareas?</strong>: <strong>Moverlas</strong> a otra lista o <strong>Borrarlas también</strong>). Al entrar en una lista: <strong>Añadir una tarea</strong>, buscador, casilla de hecha en cada tarea, botón para incluirla o quitarla de «Mi Día», y el lápiz de arriba para <strong>Cambiar el nombre</strong>.</p>
 
-<h3 class="wp-block-heading">Tablero</h3>
+<h3 id="tablero" class="wp-block-heading has-medium-font-size has-text-color" style="color:#0f172a;margin-top:var(--wp--preset--spacing--40);font-weight:700;line-height:1.25">Tablero</h3>
 
 <p>Tres columnas: <strong>Pendientes</strong>, <strong>En curso</strong> y <strong>Hechas</strong>, con los mismos filtros y etiquetas que «Mis tareas». <strong>Nueva tarea en el tablero</strong> crea una tarea en pendientes (en Windows, el botón <strong>Añadir en curso</strong> la crea directamente en curso). En Windows se arrastra una tarjeta a otra columna para cambiarle el estado; en Android, se toca la tarjeta para cambiar el estado desde su ficha y la pulsación larga sirve para reordenar.</p>
 
-<h3 class="wp-block-heading">Mis grupos</h3>
+<h3 id="mis-grupos" class="wp-block-heading has-medium-font-size has-text-color" style="color:#0f172a;margin-top:var(--wp--preset--spacing--40);font-weight:700;line-height:1.25">Mis grupos</h3>
 
 <ul class="wp-block-list">
 <li>Botones de arriba: <strong>Nuevo grupo</strong> (+), <strong>Unirse a un grupo</strong> (llave), <strong>Escanear el QR</strong> y <strong>Actualizar</strong>.</li>
@@ -89,23 +115,25 @@
 <li>En cada grupo: <strong>Invitar a alguien</strong> (pone una clave nueva: la invitación anterior deja de valer, a quien ya está no le afecta) y enseña el QR con <strong>Compartir</strong> y <strong>Copiar código y clave</strong> (en Windows también <strong>Enviar por correo</strong> y <strong>Enviar por WhatsApp</strong>); <strong>Nueva lista del grupo</strong>; y papelera, que pregunta <strong>Salir: los demás miembros lo conservan</strong> o <strong>Borrarlo para todos, con sus listas y tareas</strong> (solo quien lo creó puede borrarlo).</li>
 </ul>
 
-<h3 class="wp-block-heading">Ajustes (Android)</h3>
+<h3 id="ajustes-android" class="wp-block-heading has-medium-font-size has-text-color" style="color:#0f172a;margin-top:var(--wp--preset--spacing--40);font-weight:700;line-height:1.25">Ajustes (Android)</h3>
 
 <ul class="wp-block-list">
 <li><strong>Tu cuenta</strong>: foto, nombre y correo de la cuenta y <strong>Cerrar sesión</strong> (sin cuenta vuelve a la pantalla de entrada; para usar otra cuenta, cierra sesión y elígela después). Sin cuenta se ve «Sin cuenta · Solo en este dispositivo».</li>
-<li><strong>Recordatorios</strong>:</li>
+<li><strong>Recordatorios</strong>:<ul>
 <li><strong>Avisarme de lo que queda pendiente</strong> (interruptor).</li>
 <li><strong>Repetir el aviso cada</strong>: <strong>No repetir</strong>, <strong>15 minutos</strong>, <strong>30 minutos</strong>, <strong>1 hora</strong>, <strong>2 horas</strong>, <strong>4 horas</strong>.</li>
 <li><strong>Hora del aviso diario</strong>: hora del resumen diario. Hay un aviso al día con lo que queda en Mi Día y otro por cada tarea con fecha de finalización (a las 9:00 de ese día).</li>
+</ul>
+</li>
 <li><strong>Celebración</strong>: <strong>Vibración al completar</strong> y <strong>Sonido al completar</strong> (el sonido llegará con los temas desbloqueables).</li>
 <li><strong>Identidad</strong>: nombre visible, «Cómo te ven en los grupos».</li>
 </ul>
 
-<h3 class="wp-block-heading">Acerca de (Android y Windows)</h3>
+<h3 id="acerca-de-android-y-windows" class="wp-block-heading has-medium-font-size has-text-color" style="color:#0f172a;margin-top:var(--wp--preset--spacing--40);font-weight:700;line-height:1.25">Acerca de (Android y Windows)</h3>
 
 <p>Versión, <strong>Contacto</strong> (<strong>Escribir al autor</strong>), <strong>También disponible en</strong> (enlace a la versión de Windows desde Android y a Google Play y a GitHub desde Windows), <strong>Idioma</strong> (<strong>Español</strong> / <strong>English</strong>; se aplica al momento), <strong>Privacidad</strong>, <strong>Licencia</strong> y <strong>Aviso legal</strong>.</p>
 
-<h3 class="wp-block-heading">Windows: bandeja y panel rápido</h3>
+<h3 id="windows-bandeja-y-panel-rapido" class="wp-block-heading has-medium-font-size has-text-color" style="color:#0f172a;margin-top:var(--wp--preset--spacing--40);font-weight:700;line-height:1.25">Windows: bandeja y panel rápido</h3>
 
 <ul class="wp-block-list">
 <li>La aplicación vive junto al reloj; el icono lleva un globo rojo con las tareas pendientes de Mi Día. Clic izquierdo o el atajo (por defecto <strong>Ctrl+Alt+T</strong>) abre el <strong>panel rápido</strong> sobre cualquier ventana, incluso un juego a pantalla completa. Menú del icono: <strong>Abrir panel rápido</strong>, <strong>Salir</strong>.</li>
@@ -113,7 +141,7 @@
 <li>Ventana principal con pestañas <strong>Mis tareas</strong>, <strong>Mis listas</strong>, <strong>Tablero</strong>, <strong>Calendario</strong> y <strong>Grupos</strong>.</li>
 </ul>
 
-<h3 class="wp-block-heading">Ajustes (Windows)</h3>
+<h3 id="ajustes-windows" class="wp-block-heading has-medium-font-size has-text-color" style="color:#0f172a;margin-top:var(--wp--preset--spacing--40);font-weight:700;line-height:1.25">Ajustes (Windows)</h3>
 
 <ul class="wp-block-list">
 <li><strong>Tu cuenta</strong>: cuenta actual y <strong>Cerrar sesión</strong>. Cada cuenta tiene sus propias listas.</li>
@@ -126,29 +154,81 @@
 <li>Botones <strong>Guardar</strong> y <strong>Cancelar</strong>.</li>
 </ul>
 
-<h2 class="wp-block-heading">Preguntas frecuentes</h2>
+<h2 id="preguntas-frecuentes" class="wp-block-heading has-large-font-size has-text-color" style="color:#0f172a;margin-top:var(--wp--preset--spacing--70);font-weight:700">Preguntas frecuentes</h2>
 
-<p><strong>No veo en el móvil las tareas que he creado en el PC.</strong> Comprueba que en los dos has entrado con la misma cuenta (Google o Microsoft): cada cuenta tiene sus propias listas y «Seguir sin cuenta» no sincroniza. Pulsa <strong>Actualizar</strong>.</p>
+<div class="wp-block-group">
+<details class="wp-block-details" style="border-bottom-color:#e2e8f0;border-bottom-width:1px;border-bottom-style:solid;padding-top:18px;padding-bottom:18px"><summary><strong>No veo en el móvil las tareas que he creado en el PC.</strong></summary>
+<p>Comprueba que en los dos has entrado con la misma cuenta (Google o Microsoft): cada cuenta tiene sus propias listas y «Seguir sin cuenta» no sincroniza. Pulsa <strong>Actualizar</strong>.</p>
+</details>
 
-<p><strong>Una tarea que se repite no me deja guardar.</strong> Las tareas repetitivas necesitan <strong>Planificada para</strong> y <strong>Fecha de finalización</strong>: son el intervalo en el que se crean las repeticiones. Una serie se corta en 500 tareas; cuando llegues al final, pon una fecha de finalización nueva.</p>
+<details class="wp-block-details" style="border-bottom-color:#e2e8f0;border-bottom-width:1px;border-bottom-style:solid;padding-top:18px;padding-bottom:18px"><summary><strong>Una tarea que se repite no me deja guardar.</strong></summary>
+<p>Las tareas repetitivas necesitan <strong>Planificada para</strong> y <strong>Fecha de finalización</strong>: son el intervalo en el que se crean las repeticiones. Una serie se corta en 500 tareas; cuando llegues al final, pon una fecha de finalización nueva.</p>
+</details>
 
-<p><strong>He borrado una tarea repetitiva y siguen saliendo las demás.</strong> Al borrar, elige <strong>Toda la serie</strong> en lugar de <strong>Solo esta vuelta</strong>.</p>
+<details class="wp-block-details" style="border-bottom-color:#e2e8f0;border-bottom-width:1px;border-bottom-style:solid;padding-top:18px;padding-bottom:18px"><summary><strong>He borrado una tarea repetitiva y siguen saliendo las demás.</strong></summary>
+<p>Al borrar, elige <strong>Toda la serie</strong> en lugar de <strong>Solo esta vuelta</strong>.</p>
+</details>
 
-<p><strong>No me llegan los avisos.</strong> Activa <strong>Avisarme de lo que queda pendiente</strong> en Ajustes y concede el permiso de notificaciones cuando Android lo pida (o en los ajustes de Android de la aplicación).</p>
+<details class="wp-block-details" style="border-bottom-color:#e2e8f0;border-bottom-width:1px;border-bottom-style:solid;padding-top:18px;padding-bottom:18px"><summary><strong>No me llegan los avisos.</strong></summary>
+<p>Activa <strong>Avisarme de lo que queda pendiente</strong> en Ajustes y concede el permiso de notificaciones cuando Android lo pida (o en los ajustes de Android de la aplicación).</p>
+</details>
 
-<p><strong>El atajo de teclado no abre el panel en Windows.</strong> Si otra aplicación ya usa esa combinación, Task Manager lo avisa. Cambia el atajo en Ajustes.</p>
+<details class="wp-block-details" style="border-bottom-color:#e2e8f0;border-bottom-width:1px;border-bottom-style:solid;padding-top:18px;padding-bottom:18px"><summary><strong>El atajo de teclado no abre el panel en Windows.</strong></summary>
+<p>Si otra aplicación ya usa esa combinación, Task Manager lo avisa. Cambia el atajo en Ajustes.</p>
+</details>
 
-<p><strong>No puedo borrar un grupo.</strong> Solo quien lo creó puede borrarlo para todos; el resto puede <strong>Salir</strong> del grupo.</p>
+<details class="wp-block-details" style="border-bottom-color:#e2e8f0;border-bottom-width:1px;border-bottom-style:solid;padding-top:18px;padding-bottom:18px"><summary><strong>No puedo borrar un grupo.</strong></summary>
+<p>Solo quien lo creó puede borrarlo para todos; el resto puede <strong>Salir</strong> del grupo.</p>
+</details>
 
-<p><strong>He invitado a alguien y dice que la invitación no vale.</strong> Cada <strong>Invitación nueva</strong> cambia la clave y anula la anterior. Envía la última.</p>
+<details class="wp-block-details" style="border-bottom-color:#e2e8f0;border-bottom-width:1px;border-bottom-style:solid;padding-top:18px;padding-bottom:18px"><summary><strong>He invitado a alguien y dice que la invitación no vale.</strong></summary>
+<p>Cada <strong>Invitación nueva</strong> cambia la clave y anula la anterior. Envía la última.</p>
+</details>
 
-<p><strong>Quiero cambiar de cuenta.</strong> Ajustes › <strong>Cerrar sesión</strong> y entra con la otra. No se pierde nada: al volver a la anterior, sus listas siguen ahí.</p>
-
-<hr class="wp-block-separator has-alpha-channel-opacity"/>
-
-<p>¿No encuentras lo que buscas? Escribe a <a href="mailto:jsoladelarosa@gmail.com">jsoladelarosa@gmail.com</a> o abre una incidencia en <a href="https://github.com/donki/TaskManager/issues">GitHub</a>.</p>
-
-<footer>sOCratic · <a href="mailto:jsoladelarosa@gmail.com">jsoladelarosa@gmail.com</a></footer>
+<details class="wp-block-details" style="border-bottom-color:#e2e8f0;border-bottom-width:1px;border-bottom-style:solid;padding-top:18px;padding-bottom:18px"><summary><strong>Quiero cambiar de cuenta.</strong></summary>
+<p>Ajustes › <strong>Cerrar sesión</strong> y entra con la otra. No se pierde nada: al volver a la anterior, sus listas siguen ahí.</p>
+</details>
 </div>
+</div>
+
+<div class="wp-block-group alignfull soc-sec" style="padding-top:0;padding-bottom:var(--wp--preset--spacing--70);margin-top:0;margin-bottom:0">
+<div class="wp-block-group soc-card has-background" style="border-radius:20px;background-color:#eef2ff;padding-top:40px;padding-bottom:40px;padding-left:40px;padding-right:40px">
+<h2 class="wp-block-heading has-medium-font-size has-text-color" style="color:#0f172a;font-weight:700">¿No encuentras lo que buscas?</h2>
+
+<p class="has-text-color" style="color:#334155">Cuéntanos qué te pasa y con qué versión y dispositivo; respondemos en cuanto podemos.</p>
+
+<div class="wp-block-buttons"><div class="wp-block-button"><a class="wp-block-button__link has-text-color has-background wp-element-button" href="mailto:jsoladelarosa@gmail.com" style="border-radius:10px;color:#ffffff;background-color:#4338ca;padding-top:12px;padding-bottom:12px;padding-left:22px;padding-right:22px">Escribir un correo</a></div>
+<div class="wp-block-button is-style-outline"><a class="wp-block-button__link has-text-color wp-element-button" href="https://github.com/donki/TaskManager/issues" style="border-width:1.5px;border-style:solid;border-radius:10px;color:#4338ca;padding-top:12px;padding-bottom:12px;padding-left:22px;padding-right:22px" target="_blank" rel="noreferrer noopener">Abrir una incidencia en GitHub</a></div>
+</div>
+</div>
+</div>
+
+<footer class="wp-block-group alignfull soc-sec has-text-color has-background has-link-color" style="color:#cbd5e1;background-color:#0f172a;padding-top:var(--wp--preset--spacing--70);padding-bottom:var(--wp--preset--spacing--50);margin-top:0;margin-bottom:0">
+<div class="wp-block-columns"><div class="wp-block-column" style="flex-basis:40%"><p class="has-text-color" style="color:#ffffff;font-size:1.4rem"><strong>sOCratic</strong></p>
+<p>Aplicaciones libres para Android y Windows: sin anuncios, sin rastreadores y con tus datos bajo tu control.</p>
+</div>
+<div class="wp-block-column" style="flex-basis:20%"><p class="has-text-color" style="color:#94a3b8;font-size:0.8rem;font-weight:700;letter-spacing:0.1em;text-transform:uppercase">Sitio</p>
+<p style="margin-top:6px"><a href="../apps/index.html">Aplicaciones</a></p>
+<p style="margin-top:6px"><a href="../soporte/index.html">Soporte</a></p>
+</div>
+<div class="wp-block-column" style="flex-basis:20%"><p class="has-text-color" style="color:#94a3b8;font-size:0.8rem;font-weight:700;letter-spacing:0.1em;text-transform:uppercase">Legal</p>
+<p style="margin-top:6px"><a href="../aviso-legal.html">Aviso legal</a></p>
+<p style="margin-top:6px"><a href="../privacidad.html">Privacidad</a></p>
+<p style="margin-top:6px"><a href="../cookies.html">Cookies</a></p>
+</div>
+<div class="wp-block-column" style="flex-basis:20%"><p class="has-text-color" style="color:#94a3b8;font-size:0.8rem;font-weight:700;letter-spacing:0.1em;text-transform:uppercase">Contacto</p>
+<p style="margin-top:6px"><a href="mailto:jsoladelarosa@gmail.com">Correo</a></p>
+<p style="margin-top:6px"><a href="https://github.com/donki">GitHub</a></p>
+</div>
+</div>
+
+<hr class="wp-block-separator has-text-color has-alpha-channel-opacity has-background" style="background-color:#1e293b;color:#1e293b"/>
+
+<p class="has-text-color" style="color:#94a3b8;font-size:0.875rem">© 2026 sOCratic · Software libre con licencia MIT</p>
+
+<div class="wp-block-jetpack-cookie-consent alignwide has-text-color has-background has-link-color" style="border-radius:14px;color:#ffffff;background-color:#0f172a;padding-top:1.25em;padding-right:1.5em;padding-bottom:1.25em;padding-left:1.5em" role="dialog" aria-modal="true"><p>Esta web está alojada en WordPress.com, que usa cookies para sus estadísticas de visitas. Puedes aceptarlas o ver cómo rechazarlas en la <a href="../cookies.html">política de cookies</a>.</p><div class="wp-block-button"><a class="wp-block-button__link has-text-color has-background wp-element-button" href="#" style="border-radius:10px;color:#4338ca;background-color:#ffffff;padding-top:12px;padding-bottom:12px;padding-left:22px;padding-right:22px">Aceptar</a></div>
+<span>365</span></div>
+</footer>
+
 </body>
 </html>

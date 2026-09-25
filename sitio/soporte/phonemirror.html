@@ -7,26 +7,50 @@
 <link rel="stylesheet" href="../estilo.css">
 </head>
 <body>
-<div class="wrap">
-<nav><a href="../index.html"><strong>sOCratic</strong></a>
+<header class="wp-block-group alignfull has-background" style="border-bottom-color:#e2e8f0;border-bottom-width:1px;border-bottom-style:solid;background-color:#ffffff;margin-top:0;margin-bottom:0">
+<div class="wp-block-group alignwide" style="padding-top:18px;padding-bottom:18px">
+<p class="soc-marca"><a href="../index.html">sOCratic</a></p>
+
 <a href="../apps/index.html">Aplicaciones</a>
 <a href="../soporte/index.html">Soporte</a>
-<a href="../privacidad.html">Privacidad</a></nav>
-<h1>sOC Phone Mirror: guía de uso</h1>
-<p>Cómo funciona <a href="../apps/phonemirror.html">sOC Phone Mirror</a> y qué hace cada opción.</p>
+<a href="../privacidad.html">Privacidad</a>
+<a href="https://github.com/donki">GitHub</a>
+</div>
+</header>
 
-<h3 class="wp-block-heading">Instalación</h3>
+<div class="wp-block-group alignfull soc-hero soc-sec has-text-color has-background has-link-color" style="color:#ffffff;background:linear-gradient(135deg,#1e1b4b 0%,#312e81 55%,#4338ca 100%);padding-top:var(--wp--preset--spacing--70);padding-bottom:var(--wp--preset--spacing--70);margin-top:0;margin-bottom:0">
+<p class="has-text-color" style="color:#c7d2fe;font-size:0.8rem;font-weight:700;letter-spacing:0.12em;text-transform:uppercase">Soporte · sOC Phone Mirror</p>
+
+<h1 class="wp-block-heading has-large-font-size has-text-color" style="color:#ffffff;font-weight:700;line-height:1.08;letter-spacing:-0.02em">Guía de uso</h1>
+
+<p class="has-text-color" style="color:#e0e7ff;font-size:1.2rem;line-height:1.6">Cómo funciona sOC Phone Mirror, pantalla a pantalla, y qué hace cada opción.</p>
+
+<div class="wp-block-buttons"><div class="wp-block-button"><a class="wp-block-button__link has-text-color has-background wp-element-button" href="../apps/phonemirror.html" style="border-radius:10px;color:#4338ca;background-color:#ffffff;padding-top:12px;padding-bottom:12px;padding-left:22px;padding-right:22px">Ver la aplicación</a></div>
+<div class="wp-block-button is-style-outline"><a class="wp-block-button__link has-text-color wp-element-button" href="../soporte/index.html" style="border-width:1.5px;border-style:solid;border-radius:10px;color:#ffffff;padding-top:12px;padding-bottom:12px;padding-left:22px;padding-right:22px">Todas las guías</a></div>
+</div>
+</div>
+
+<div class="wp-block-group alignfull soc-sec" style="padding-top:var(--wp--preset--spacing--70);padding-bottom:var(--wp--preset--spacing--70);margin-top:0;margin-bottom:0">
+<div class="wp-block-group soc-card has-border-color has-background" style="border-color:#e2e8f0;border-width:1px;border-radius:16px;background-color:#f8fafc;padding-top:28px;padding-bottom:28px;padding-left:28px;padding-right:28px">
+<p class="has-text-color" style="color:#0f172a"><strong>En esta guía</strong></p>
+
+<ul class="wp-block-list"><li><a href="#instalacion">Instalación</a></li><li><a href="#preparar-el-movil-una-sola-vez">Preparar el móvil (una sola vez)</a></li><li><a href="#primera-puesta-en-marcha-y-flujo-normal">Primera puesta en marcha y flujo normal</a></li><li><a href="#ventana-principal-barra-superior">Ventana principal: barra superior</a></li><li><a href="#zona-central">Zona central</a></li><li><a href="#barra-inferior">Barra inferior</a></li><li><a href="#manejo-con-raton-y-teclado">Manejo con ratón y teclado</a></li><li><a href="#ventana-conectar-por-wi-fi">Ventana Conectar por Wi-Fi</a></li><li><a href="#bandeja-del-sistema">Bandeja del sistema</a></li><li><a href="#varias-ventanas-y-varios-moviles">Varias ventanas y varios móviles</a></li><li><a href="#acerca-de">Acerca de</a></li><li><a href="#preguntas-frecuentes">Preguntas frecuentes</a></li></ul>
+</div>
+
+<h3 id="instalacion" class="wp-block-heading has-medium-font-size has-text-color" style="color:#0f172a;margin-top:var(--wp--preset--spacing--40);font-weight:700;line-height:1.25">Instalación</h3>
 
 <ol class="wp-block-list">
-<li>Descarga la última versión desde https://github.com/donki/PhoneMirror/releases. Puedes elegir:
-   - El ejecutable <code>sOCPhoneMirror.exe</code>: basta con él solo, no necesita instalación.
-   - El paquete <code>.msix</code>, que se instala como cualquier aplicación de Windows.</li>
+<li>Descarga la última versión desde <a href="https://github.com/donki/PhoneMirror/releases">https://github.com/donki/PhoneMirror/releases</a>. Puedes elegir:<ul>
+<li>El ejecutable <code>sOCPhoneMirror.exe</code>: basta con él solo, no necesita instalación.</li>
+<li>El paquete <code>.msix</code>, que se instala como cualquier aplicación de Windows.</li>
+</ul>
+</li>
 <li>Cuando esté publicada, también podrás instalarla desde la Microsoft Store.</li>
 </ol>
 
 <p>La herramienta que usa para comunicarse con Android (adb) ya va incluida: la primera vez que se abre la prepara sola. Con el ejecutable suelto, además, queda disponible para las consolas nuevas de Windows («adb añadido a tu PATH…»).</p>
 
-<h3 class="wp-block-heading">Preparar el móvil (una sola vez)</h3>
+<h3 id="preparar-el-movil-una-sola-vez" class="wp-block-heading has-medium-font-size has-text-color" style="color:#0f172a;margin-top:var(--wp--preset--spacing--40);font-weight:700;line-height:1.25">Preparar el móvil (una sola vez)</h3>
 
 <ol class="wp-block-list">
 <li>En el móvil, activa las Opciones de desarrollador (normalmente, tocando siete veces «Número de compilación» en Ajustes › Información del teléfono).</li>
@@ -35,7 +59,7 @@
 <li>Conecta el móvil por USB. El móvil pregunta si confías en este PC: acepta en su pantalla.</li>
 </ol>
 
-<h3 class="wp-block-heading">Primera puesta en marcha y flujo normal</h3>
+<h3 id="primera-puesta-en-marcha-y-flujo-normal" class="wp-block-heading has-medium-font-size has-text-color" style="color:#0f172a;margin-top:var(--wp--preset--spacing--40);font-weight:700;line-height:1.25">Primera puesta en marcha y flujo normal</h3>
 
 <ol class="wp-block-list">
 <li>Abre sOC Phone Mirror con el móvil enchufado: se conecta solo y aparece la pantalla del móvil.</li>
@@ -46,7 +70,7 @@
 
 <p>No hay que crear cuenta ni iniciar sesión.</p>
 
-<h3 class="wp-block-heading">Ventana principal: barra superior</h3>
+<h3 id="ventana-principal-barra-superior" class="wp-block-heading has-medium-font-size has-text-color" style="color:#0f172a;margin-top:var(--wp--preset--spacing--40);font-weight:700;line-height:1.25">Ventana principal: barra superior</h3>
 
 <p>De izquierda a derecha:</p>
 
@@ -76,7 +100,7 @@
 - Español / English: cambia el idioma al momento.
 - Acerca de.</p>
 
-<h3 class="wp-block-heading">Zona central</h3>
+<h3 id="zona-central" class="wp-block-heading has-medium-font-size has-text-color" style="color:#0f172a;margin-top:var(--wp--preset--spacing--40);font-weight:700;line-height:1.25">Zona central</h3>
 
 <ul class="wp-block-list">
 <li>Con sesión: la pantalla del móvil, que se adapta a la ventana.</li>
@@ -84,14 +108,14 @@
 <li>Si por algún motivo no se encontrara adb, aparecen dos botones: «Descargar las platform-tools de Android de Google (unos 7 MB)» y «Buscar adb.exe en este PC…» (la ruta elegida se recuerda).</li>
 </ul>
 
-<h3 class="wp-block-heading">Barra inferior</h3>
+<h3 id="barra-inferior" class="wp-block-heading has-medium-font-size has-text-color" style="color:#0f172a;margin-top:var(--wp--preset--spacing--40);font-weight:700;line-height:1.25">Barra inferior</h3>
 
 <ul class="wp-block-list">
 <li>Estado de la conexión: «Conectando con…», el móvil conectado y su resolución, «Desconectado» o «Se ha cortado la conexión: …».</li>
 <li>Cuadros por segundo.</li>
 </ul>
 
-<h3 class="wp-block-heading">Manejo con ratón y teclado</h3>
+<h3 id="manejo-con-raton-y-teclado" class="wp-block-heading has-medium-font-size has-text-color" style="color:#0f172a;margin-top:var(--wp--preset--spacing--40);font-weight:700;line-height:1.25">Manejo con ratón y teclado</h3>
 
 <figure class="wp-block-table"><table>
 <thead>
@@ -140,20 +164,22 @@
 </tbody>
 </table></figure>
 
-<h3 class="wp-block-heading">Ventana Conectar por Wi-Fi</h3>
+<h3 id="ventana-conectar-por-wi-fi" class="wp-block-heading has-medium-font-size has-text-color" style="color:#0f172a;margin-top:var(--wp--preset--spacing--40);font-weight:700;line-height:1.25">Ventana Conectar por Wi-Fi</h3>
 
 <p>«El móvil tiene que tener activada la depuración por red y estar en la misma red que este PC.»</p>
 
 <ul class="wp-block-list">
 <li>Dirección del móvil (IP o IP:puerto), con botón Conectar. Las direcciones que han funcionado se recuerdan (cada una con «Olvidar esta dirección») y se vuelven a conectar solas al arrancar si el móvil está encendido y en la misma red.</li>
-<li><strong>La primera vez en Android 11 o posterior</strong>: en el móvil ve a Opciones de desarrollador › Depuración inalámbrica › Vincular dispositivo con un código. El móvil enseña una dirección con su puerto y un código de seis cifras:</li>
+<li><strong>La primera vez en Android 11 o posterior</strong>: en el móvil ve a Opciones de desarrollador › Depuración inalámbrica › Vincular dispositivo con un código. El móvil enseña una dirección con su puerto y un código de seis cifras:<ul>
 <li>Dirección de vinculación (IP:puerto).</li>
 <li>Código de vinculación.</li>
 <li>Vincular. Después conecta arriba con la dirección que sale en «Depuración inalámbrica» (es otro puerto).</li>
+</ul>
+</li>
 <li>Otra forma: con el móvil enchufado una vez por cable, ejecuta «adb tcpip 5555» y aceptará conexiones a su IP hasta que se reinicie.</li>
 </ul>
 
-<h3 class="wp-block-heading">Bandeja del sistema</h3>
+<h3 id="bandeja-del-sistema" class="wp-block-heading has-medium-font-size has-text-color" style="color:#0f172a;margin-top:var(--wp--preset--spacing--40);font-weight:700;line-height:1.25">Bandeja del sistema</h3>
 
 <ul class="wp-block-list">
 <li>La aplicación vive en la bandeja: cerrar o minimizar la ventana la esconde en vez de salir. La primera vez aparece un aviso: «Sigue aquí, en el área de iconos: clic para abrir, o Salir desde el menú.»</li>
@@ -161,48 +187,92 @@
 <li>Sin móvil, el icono indica «sOC Phone Mirror · esperando un móvil».</li>
 </ul>
 
-<h3 class="wp-block-heading">Varias ventanas y varios móviles</h3>
+<h3 id="varias-ventanas-y-varios-moviles" class="wp-block-heading has-medium-font-size has-text-color" style="color:#0f172a;margin-top:var(--wp--preset--spacing--40);font-weight:700;line-height:1.25">Varias ventanas y varios móviles</h3>
 
 <ul class="wp-block-list">
 <li>Si abres la aplicación cuando ya hay una abierta, pregunta: «Enseñar la ventana elegida» (de una lista con el móvil de cada una) o «Ventana nueva». Así puedes tener una ventana para el teléfono y otra para la tablet.</li>
 <li>El título de cada ventana lleva el móvil conectado.</li>
 </ul>
 
-<h3 class="wp-block-heading">Acerca de</h3>
+<h3 id="acerca-de" class="wp-block-heading has-medium-font-size has-text-color" style="color:#0f172a;margin-top:var(--wp--preset--spacing--40);font-weight:700;line-height:1.25">Acerca de</h3>
 
 <p>Contacto («Escribir al autor»), idioma, privacidad, licencia MIT y aviso legal.</p>
 
-<h2 class="wp-block-heading">Preguntas frecuentes</h2>
+<h2 id="preguntas-frecuentes" class="wp-block-heading has-large-font-size has-text-color" style="color:#0f172a;margin-top:var(--wp--preset--spacing--70);font-weight:700">Preguntas frecuentes</h2>
 
-<p><strong>Veo la pantalla del móvil pero el ratón y el teclado no hacen nada (Xiaomi, Redmi, POCO).</strong>
-En esas marcas hay que activar, además de la Depuración USB, la opción «Depuración USB (ajustes de seguridad)» en las Opciones de desarrollador. Sin ella la pantalla se ve pero no se puede controlar.</p>
+<div class="wp-block-group">
+<details class="wp-block-details" style="border-bottom-color:#e2e8f0;border-bottom-width:1px;border-bottom-style:solid;padding-top:18px;padding-bottom:18px"><summary><strong>Veo la pantalla del móvil pero el ratón y el teclado no hacen nada (Xiaomi, Redmi, POCO).</strong></summary>
+<p>En esas marcas hay que activar, además de la Depuración USB, la opción «Depuración USB (ajustes de seguridad)» en las Opciones de desarrollador. Sin ella la pantalla se ve pero no se puede controlar.</p>
+</details>
 
-<p><strong>Dice «No hay ningún móvil conectado».</strong>
-Comprueba que el cable transmite datos (no solo carga), que la Depuración USB está activada y pulsa «Volver a buscar móviles». Prueba otro puerto USB si sigue sin aparecer.</p>
+<details class="wp-block-details" style="border-bottom-color:#e2e8f0;border-bottom-width:1px;border-bottom-style:solid;padding-top:18px;padding-bottom:18px"><summary><strong>Dice «No hay ningún móvil conectado».</strong></summary>
+<p>Comprueba que el cable transmite datos (no solo carga), que la Depuración USB está activada y pulsa «Volver a buscar móviles». Prueba otro puerto USB si sigue sin aparecer.</p>
+</details>
 
-<p><strong>Dice «El móvil pregunta si confía en este PC».</strong>
-Desbloquea el móvil y acepta el aviso de depuración USB en su pantalla (puedes marcar que recuerde este equipo).</p>
+<details class="wp-block-details" style="border-bottom-color:#e2e8f0;border-bottom-width:1px;border-bottom-style:solid;padding-top:18px;padding-bottom:18px"><summary><strong>Dice «El móvil pregunta si confía en este PC».</strong></summary>
+<p>Desbloquea el móvil y acepta el aviso de depuración USB en su pantalla (puedes marcar que recuerde este equipo).</p>
+</details>
 
-<p><strong>He cerrado la ventana y la aplicación sigue en marcha.</strong>
-Es a propósito: vive en la bandeja del sistema para conectarse al enchufar el móvil. Para salir del todo, botón derecho en su icono (en Windows 11 puede estar en la flecha ^ de iconos ocultos) y «Salir».</p>
+<details class="wp-block-details" style="border-bottom-color:#e2e8f0;border-bottom-width:1px;border-bottom-style:solid;padding-top:18px;padding-bottom:18px"><summary><strong>He cerrado la ventana y la aplicación sigue en marcha.</strong></summary>
+<p>Es a propósito: vive en la bandeja del sistema para conectarse al enchufar el móvil. Para salir del todo, botón derecho en su icono (en Windows 11 puede estar en la flecha ^ de iconos ocultos) y «Salir».</p>
+</details>
 
-<p><strong>No se conecta sola al enchufar el móvil.</strong>
-Si pulsaste Desconectar, no vuelve a conectarse con ese móvil hasta que lo desenchufes y lo enchufes otra vez. Para que además se abra sola al arrancar Windows, activa el botón «Abrir al conectar un móvil».</p>
+<details class="wp-block-details" style="border-bottom-color:#e2e8f0;border-bottom-width:1px;border-bottom-style:solid;padding-top:18px;padding-bottom:18px"><summary><strong>No se conecta sola al enchufar el móvil.</strong></summary>
+<p>Si pulsaste Desconectar, no vuelve a conectarse con ese móvil hasta que lo desenchufes y lo enchufes otra vez. Para que además se abra sola al arrancar Windows, activa el botón «Abrir al conectar un móvil».</p>
+</details>
 
-<p><strong>No consigo conectar por Wi-Fi.</strong>
-El móvil y el PC tienen que estar en la misma red. En Android 11 o posterior, primero vincula con el código de seis cifras y después conecta con la dirección que aparece en «Depuración inalámbrica», que usa un puerto distinto al de la vinculación.</p>
+<details class="wp-block-details" style="border-bottom-color:#e2e8f0;border-bottom-width:1px;border-bottom-style:solid;padding-top:18px;padding-bottom:18px"><summary><strong>No consigo conectar por Wi-Fi.</strong></summary>
+<p>El móvil y el PC tienen que estar en la misma red. En Android 11 o posterior, primero vincula con el código de seis cifras y después conecta con la dirección que aparece en «Depuración inalámbrica», que usa un puerto distinto al de la vinculación.</p>
+</details>
 
-<p><strong>Se oye el sonido en el móvil y no en el PC.</strong>
-Es normal: la aplicación no transmite el audio. Los botones de volumen y silencio controlan el sonido del propio móvil.</p>
+<details class="wp-block-details" style="border-bottom-color:#e2e8f0;border-bottom-width:1px;border-bottom-style:solid;padding-top:18px;padding-bottom:18px"><summary><strong>Se oye el sonido en el móvil y no en el PC.</strong></summary>
+<p>Es normal: la aplicación no transmite el audio. Los botones de volumen y silencio controlan el sonido del propio móvil.</p>
+</details>
 
-<p><strong>Arrastro un fichero y no sé dónde ha ido.</strong>
-Los APK se instalan; cualquier otro fichero se copia a la carpeta Download del móvil. La barra inferior confirma «… copiado a Download».</p>
-
-<hr class="wp-block-separator has-alpha-channel-opacity"/>
-
-<p>¿No encuentras lo que buscas? Escribe a <a href="mailto:jsoladelarosa@gmail.com">jsoladelarosa@gmail.com</a> o abre una incidencia en <a href="https://github.com/donki/PhoneMirror/issues">GitHub</a>.</p>
-
-<footer>sOCratic · <a href="mailto:jsoladelarosa@gmail.com">jsoladelarosa@gmail.com</a></footer>
+<details class="wp-block-details" style="border-bottom-color:#e2e8f0;border-bottom-width:1px;border-bottom-style:solid;padding-top:18px;padding-bottom:18px"><summary><strong>Arrastro un fichero y no sé dónde ha ido.</strong></summary>
+<p>Los APK se instalan; cualquier otro fichero se copia a la carpeta Download del móvil. La barra inferior confirma «… copiado a Download».</p>
+</details>
 </div>
+</div>
+
+<div class="wp-block-group alignfull soc-sec" style="padding-top:0;padding-bottom:var(--wp--preset--spacing--70);margin-top:0;margin-bottom:0">
+<div class="wp-block-group soc-card has-background" style="border-radius:20px;background-color:#eef2ff;padding-top:40px;padding-bottom:40px;padding-left:40px;padding-right:40px">
+<h2 class="wp-block-heading has-medium-font-size has-text-color" style="color:#0f172a;font-weight:700">¿No encuentras lo que buscas?</h2>
+
+<p class="has-text-color" style="color:#334155">Cuéntanos qué te pasa y con qué versión y dispositivo; respondemos en cuanto podemos.</p>
+
+<div class="wp-block-buttons"><div class="wp-block-button"><a class="wp-block-button__link has-text-color has-background wp-element-button" href="mailto:jsoladelarosa@gmail.com" style="border-radius:10px;color:#ffffff;background-color:#4338ca;padding-top:12px;padding-bottom:12px;padding-left:22px;padding-right:22px">Escribir un correo</a></div>
+<div class="wp-block-button is-style-outline"><a class="wp-block-button__link has-text-color wp-element-button" href="https://github.com/donki/PhoneMirror/issues" style="border-width:1.5px;border-style:solid;border-radius:10px;color:#4338ca;padding-top:12px;padding-bottom:12px;padding-left:22px;padding-right:22px" target="_blank" rel="noreferrer noopener">Abrir una incidencia en GitHub</a></div>
+</div>
+</div>
+</div>
+
+<footer class="wp-block-group alignfull soc-sec has-text-color has-background has-link-color" style="color:#cbd5e1;background-color:#0f172a;padding-top:var(--wp--preset--spacing--70);padding-bottom:var(--wp--preset--spacing--50);margin-top:0;margin-bottom:0">
+<div class="wp-block-columns"><div class="wp-block-column" style="flex-basis:40%"><p class="has-text-color" style="color:#ffffff;font-size:1.4rem"><strong>sOCratic</strong></p>
+<p>Aplicaciones libres para Android y Windows: sin anuncios, sin rastreadores y con tus datos bajo tu control.</p>
+</div>
+<div class="wp-block-column" style="flex-basis:20%"><p class="has-text-color" style="color:#94a3b8;font-size:0.8rem;font-weight:700;letter-spacing:0.1em;text-transform:uppercase">Sitio</p>
+<p style="margin-top:6px"><a href="../apps/index.html">Aplicaciones</a></p>
+<p style="margin-top:6px"><a href="../soporte/index.html">Soporte</a></p>
+</div>
+<div class="wp-block-column" style="flex-basis:20%"><p class="has-text-color" style="color:#94a3b8;font-size:0.8rem;font-weight:700;letter-spacing:0.1em;text-transform:uppercase">Legal</p>
+<p style="margin-top:6px"><a href="../aviso-legal.html">Aviso legal</a></p>
+<p style="margin-top:6px"><a href="../privacidad.html">Privacidad</a></p>
+<p style="margin-top:6px"><a href="../cookies.html">Cookies</a></p>
+</div>
+<div class="wp-block-column" style="flex-basis:20%"><p class="has-text-color" style="color:#94a3b8;font-size:0.8rem;font-weight:700;letter-spacing:0.1em;text-transform:uppercase">Contacto</p>
+<p style="margin-top:6px"><a href="mailto:jsoladelarosa@gmail.com">Correo</a></p>
+<p style="margin-top:6px"><a href="https://github.com/donki">GitHub</a></p>
+</div>
+</div>
+
+<hr class="wp-block-separator has-text-color has-alpha-channel-opacity has-background" style="background-color:#1e293b;color:#1e293b"/>
+
+<p class="has-text-color" style="color:#94a3b8;font-size:0.875rem">© 2026 sOCratic · Software libre con licencia MIT</p>
+
+<div class="wp-block-jetpack-cookie-consent alignwide has-text-color has-background has-link-color" style="border-radius:14px;color:#ffffff;background-color:#0f172a;padding-top:1.25em;padding-right:1.5em;padding-bottom:1.25em;padding-left:1.5em" role="dialog" aria-modal="true"><p>Esta web está alojada en WordPress.com, que usa cookies para sus estadísticas de visitas. Puedes aceptarlas o ver cómo rechazarlas en la <a href="../cookies.html">política de cookies</a>.</p><div class="wp-block-button"><a class="wp-block-button__link has-text-color has-background wp-element-button" href="#" style="border-radius:10px;color:#4338ca;background-color:#ffffff;padding-top:12px;padding-bottom:12px;padding-left:22px;padding-right:22px">Aceptar</a></div>
+<span>365</span></div>
+</footer>
+
 </body>
 </html>

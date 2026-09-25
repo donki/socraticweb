@@ -9,16 +9,28 @@
 <body>
 <header class="wp-block-group alignfull has-background" style="border-bottom-color:#e2e8f0;border-bottom-width:1px;border-bottom-style:solid;background-color:#ffffff;margin-top:0;margin-bottom:0">
 <div class="wp-block-group alignwide" style="padding-top:18px;padding-bottom:18px">
-<p class="soc-marca"><a href="../index.html">sOCratic</a></p>
+<p class="has-medium-font-size soc-marca has-link-color" style="font-weight:800;letter-spacing:-0.02em"><a href="../index.html"><strong>sOCratic</strong></a></p>
 
+<div class="wp-block-group">
 <a href="../apps/index.html">Aplicaciones</a>
 <a href="../soporte/index.html">Soporte</a>
 <a href="../privacidad.html">Privacidad</a>
 <a href="https://github.com/donki">GitHub</a>
+
+<div class="wp-block-group">
+<figure class="wp-block-image size-full has-custom-border is-resized"><a href="../index.html"><img src="../img/banderas/es.png" alt="Español" class="has-border-color" style="border-color:#e2e8f0;border-width:1px;border-radius:3px;width:24px"/></a></figure>
+
+<figure class="wp-block-image size-full has-custom-border is-resized"><a href="../en/index.html"><img src="../img/banderas/en.png" alt="English" class="has-border-color" style="border-color:#e2e8f0;border-width:1px;border-radius:3px;width:24px"/></a></figure>
+</div>
+</div>
 </div>
 </header>
 
 <div class="wp-block-group alignfull soc-hero soc-sec has-text-color has-background has-link-color" style="color:#ffffff;background:linear-gradient(135deg,#1e1b4b 0%,#312e81 55%,#4338ca 100%);padding-top:var(--wp--preset--spacing--70);padding-bottom:var(--wp--preset--spacing--70);margin-top:0;margin-bottom:0">
+<p class="has-link-color" style="font-size:0.875rem;font-weight:600"><a href="../en/soporte/rcmanager.html" lang="en">Read in English →</a></p>
+
+<figure class="wp-block-image size-full has-custom-border is-resized"><img src="../img/rcmanager/icono.png" alt="Icono de sOC Remote Connections Manager" class="" style="border-radius:16px;width:64px"/></figure>
+
 <p class="has-text-color" style="color:#c7d2fe;font-size:0.8rem;font-weight:700;letter-spacing:0.12em;text-transform:uppercase">Soporte · sOC Remote Connections Manager</p>
 
 <h1 class="wp-block-heading has-large-font-size has-text-color" style="color:#ffffff;font-weight:700;line-height:1.08;letter-spacing:-0.02em">Guía de uso</h1>
@@ -37,6 +49,14 @@
 <ul class="wp-block-list"><li><a href="#instalacion">Instalación</a></li><li><a href="#primera-puesta-en-marcha">Primera puesta en marcha</a></li><li><a href="#flujo-normal">Flujo normal</a></li><li><a href="#ventana-principal">Ventana principal</a></li><li><a href="#editor-de-conexion">Editor de conexión</a></li><li><a href="#sesion-de-escritorio-remoto-rdp">Sesión de escritorio remoto (RDP)</a></li><li><a href="#sesion-ssh">Sesión SSH</a></li><li><a href="#sesion-de-ficheros-sftp-scp-y-ftp-ftps">Sesión de ficheros (SFTP / SCP y FTP / FTPS)</a></li><li><a href="#ajustes">Ajustes</a></li><li><a href="#acerca-de">Acerca de</a></li><li><a href="#opciones-para-accesos-directos">Opciones para accesos directos</a></li><li><a href="#preguntas-frecuentes">Preguntas frecuentes</a></li></ul>
 </div>
 
+<div class="wp-block-group soc-grid">
+<figure class="wp-block-image size-full has-custom-border"><img src="../img/rcmanager/escritorio-1.webp" alt="Captura de sOC Remote Connections Manager" class="has-border-color" style="border-color:#e2e8f0;border-width:1px;border-radius:12px"/></figure>
+
+<figure class="wp-block-image size-full has-custom-border"><img src="../img/rcmanager/escritorio-2.webp" alt="Captura de sOC Remote Connections Manager" class="has-border-color" style="border-color:#e2e8f0;border-width:1px;border-radius:12px"/></figure>
+
+<figure class="wp-block-image size-full has-custom-border"><img src="../img/rcmanager/escritorio-3.webp" alt="Captura de sOC Remote Connections Manager" class="has-border-color" style="border-color:#e2e8f0;border-width:1px;border-radius:12px"/></figure>
+</div>
+
 <h3 id="instalacion" class="wp-block-heading has-medium-font-size has-text-color" style="color:#0f172a;margin-top:var(--wp--preset--spacing--40);font-weight:700;line-height:1.25">Instalación</h3>
 
 <ol class="wp-block-list">
@@ -45,7 +65,7 @@
 <li>El paquete <code>.msix</code>: se instala como cualquier aplicación de Windows.</li>
 </ul>
 </li>
-<li>Cuando esté publicada en la Microsoft Store, también podrás instalarla desde allí.</li>
+<li>También puedes instalarla desde la <a href="https://apps.microsoft.com/detail/9MXKDZMLCS99">Microsoft Store</a>, que la mantiene al día sola.</li>
 </ol>
 
 <p>Requisitos: Windows 10 (versión 2004) o posterior, o Windows 11. Para el escritorio remoto se usa el cliente que ya trae Windows; no hay que instalar nada más.</p>
@@ -73,45 +93,68 @@
 
 <h3 id="ventana-principal" class="wp-block-heading has-medium-font-size has-text-color" style="color:#0f172a;margin-top:var(--wp--preset--spacing--40);font-weight:700;line-height:1.25">Ventana principal</h3>
 
-<p><strong>Barra superior del árbol (de izquierda a derecha)</strong>
-- Conectar: abre la conexión seleccionada.
-- Conexión nueva (+): abre el editor de conexión vacío.
-- Carpeta nueva: pide el «Nombre de la carpeta» y la crea.
-- Editar: abre el editor de la conexión seleccionada (o renombra la carpeta seleccionada).
-- Duplicar: crea una copia de la conexión seleccionada.
-- Borrar: pide confirmación («¿Borrar …?»). Si es una carpeta, borra también las conexiones que contiene («¿Borrar la carpeta … y las N conexiones que tiene dentro?»).
-- Buscar…: filtra el árbol por nombre, servidor, usuario, carpeta o notas; solo se ven las carpetas que tienen alguna conexión que encaja.</p>
+<p><strong>Barra superior del árbol (de izquierda a derecha)</strong></p>
 
-<p><strong>Árbol de conexiones</strong>
-- Doble clic: conectar. Ctrl + doble clic: editar. Intro: conectar. Supr: borrar.
-- Arrastrar una conexión o una carpeta sobre otra carpeta la mueve allí (sobre una conexión, a la carpeta de esa conexión). La carpeta de destino se resalta al pasar por encima.
-- Arrastrar una conexión al área de pestañas la abre.
-- Al cerrar, se recuerdan las carpetas abiertas, la conexión seleccionada y el ancho del panel.</p>
+<ul class="wp-block-list">
+<li>Conectar: abre la conexión seleccionada.</li>
+<li>Conexión nueva (+): abre el editor de conexión vacío.</li>
+<li>Carpeta nueva: pide el «Nombre de la carpeta» y la crea.</li>
+<li>Editar: abre el editor de la conexión seleccionada (o renombra la carpeta seleccionada).</li>
+<li>Duplicar: crea una copia de la conexión seleccionada.</li>
+<li>Borrar: pide confirmación («¿Borrar …?»). Si es una carpeta, borra también las conexiones que contiene («¿Borrar la carpeta … y las N conexiones que tiene dentro?»).</li>
+<li>Buscar…: filtra el árbol por nombre, servidor, usuario, carpeta o notas; solo se ven las carpetas que tienen alguna conexión que encaja.</li>
+</ul>
 
-<p><strong>Botones inferiores del árbol</strong>
-- Ajustes (engranaje): «Ajustes: dónde se guardan las conexiones», importación y comportamiento de la ventana.
-- Abrir la carpeta del fichero de conexiones: abre en el Explorador la carpeta donde se guardan las conexiones.
-- Español / English: cambia el idioma al momento.
-- Acerca de: contacto con el autor, idioma, privacidad, licencia y aviso legal.</p>
+<p><strong>Árbol de conexiones</strong></p>
 
-<p><strong>Área de pestañas</strong>
-- Sin sesiones abiertas muestra: «Haz doble clic en una conexión, o selecciónala y pulsa Conectar. Cada sesión se abre en su pestaña.»
-- Cada pestaña lleva sus botones:
-    - Más pequeño / Más grande (− y +): zoom de la pestaña. En SSH cambia la letra del terminal; en ficheros, la de los paneles; en RDP, la escala del escritorio remoto (del 100 al 200 %). Se recuerda para la próxima vez que abras esa conexión.
-    - Pantalla completa (F11; Ctrl+Esc para volver).
-    - Desconectar esta pestaña.</p>
+<ul class="wp-block-list">
+<li>Doble clic: conectar. Ctrl + doble clic: editar. Intro: conectar. Supr: borrar.</li>
+<li>Arrastrar una conexión o una carpeta sobre otra carpeta la mueve allí (sobre una conexión, a la carpeta de esa conexión). La carpeta de destino se resalta al pasar por encima.</li>
+<li>Arrastrar una conexión al área de pestañas la abre.</li>
+<li>Al cerrar, se recuerdan las carpetas abiertas, la conexión seleccionada y el ancho del panel.</li>
+</ul>
 
-<p><strong>Barra de estado</strong>
-- Sesiones abiertas: menú con todas las pestañas para cambiar a cualquiera, útil cuando el escritorio remoto se queda con el teclado (atajos Ctrl+Tab / Ctrl+Mayús+Tab).
-- Mensajes de estado: «Conectando con…», «Conectado con…», resultado de la sincronización con la nube, etc.</p>
+<p><strong>Botones inferiores del árbol</strong></p>
 
-<p><strong>Pantalla completa</strong>
-- RDP: usa la pantalla completa del propio cliente de Windows, con su barra de conexión arriba (se esconde sola; sus botones de minimizar y cerrar funcionan: cerrar desconecta y cierra la pestaña).
-- SSH y ficheros: la ventana ocupa toda la pantalla y arriba aparece una barra que se esconde sola y vuelve al llevar el ratón al borde superior, con el nombre de la sesión, «Salir de pantalla completa (Ctrl+Esc)», sesiones abiertas y «Desconectar esta pestaña».
-- La pantalla donde se abre se elige en el editor de conexión, opción «Pantalla completa en».</p>
+<ul class="wp-block-list">
+<li>Ajustes (engranaje): «Ajustes: dónde se guardan las conexiones», importación y comportamiento de la ventana.</li>
+<li>Abrir la carpeta del fichero de conexiones: abre en el Explorador la carpeta donde se guardan las conexiones.</li>
+<li>Español / English: cambia el idioma al momento.</li>
+<li>Acerca de: contacto con el autor, idioma, privacidad, licencia y aviso legal.</li>
+</ul>
 
-<p><strong>Área de notificación</strong>
-- Al minimizar, la ventana se esconde y deja su icono junto al reloj (si no lo ves, está en los iconos ocultos de Windows 11). Un clic la trae de vuelta; con el botón derecho, «Abrir» y «Salir». Las sesiones abiertas siguen vivas. Se puede desactivar en Ajustes › Ventana.</p>
+<p><strong>Área de pestañas</strong></p>
+
+<ul class="wp-block-list">
+<li>Sin sesiones abiertas muestra: «Haz doble clic en una conexión, o selecciónala y pulsa Conectar. Cada sesión se abre en su pestaña.»</li>
+<li>Cada pestaña lleva sus botones:<ul>
+<li>Más pequeño / Más grande (− y +): zoom de la pestaña. En SSH cambia la letra del terminal; en ficheros, la de los paneles; en RDP, la escala del escritorio remoto (del 100 al 200 %). Se recuerda para la próxima vez que abras esa conexión.</li>
+<li>Pantalla completa (F11; Ctrl+Esc para volver).</li>
+<li>Desconectar esta pestaña.</li>
+</ul>
+</li>
+</ul>
+
+<p><strong>Barra de estado</strong></p>
+
+<ul class="wp-block-list">
+<li>Sesiones abiertas: menú con todas las pestañas para cambiar a cualquiera, útil cuando el escritorio remoto se queda con el teclado (atajos Ctrl+Tab / Ctrl+Mayús+Tab).</li>
+<li>Mensajes de estado: «Conectando con…», «Conectado con…», resultado de la sincronización con la nube, etc.</li>
+</ul>
+
+<p><strong>Pantalla completa</strong></p>
+
+<ul class="wp-block-list">
+<li>RDP: usa la pantalla completa del propio cliente de Windows, con su barra de conexión arriba (se esconde sola; sus botones de minimizar y cerrar funcionan: cerrar desconecta y cierra la pestaña).</li>
+<li>SSH y ficheros: la ventana ocupa toda la pantalla y arriba aparece una barra que se esconde sola y vuelve al llevar el ratón al borde superior, con el nombre de la sesión, «Salir de pantalla completa (Ctrl+Esc)», sesiones abiertas y «Desconectar esta pestaña».</li>
+<li>La pantalla donde se abre se elige en el editor de conexión, opción «Pantalla completa en».</li>
+</ul>
+
+<p><strong>Área de notificación</strong></p>
+
+<ul class="wp-block-list">
+<li>Al minimizar, la ventana se esconde y deja su icono junto al reloj (si no lo ves, está en los iconos ocultos de Windows 11). Un clic la trae de vuelta; con el botón derecho, «Abrir» y «Salir». Las sesiones abiertas siguen vivas. Se puede desactivar en Ajustes › Ventana.</li>
+</ul>
 
 <h3 id="editor-de-conexion" class="wp-block-heading has-medium-font-size has-text-color" style="color:#0f172a;margin-top:var(--wp--preset--spacing--40);font-weight:700;line-height:1.25">Editor de conexión</h3>
 
@@ -233,60 +276,81 @@
 
 <p>Mientras conecta, la pestaña muestra «Conectando con…»; al entrar aparece el explorador de dos paneles: este equipo a la izquierda y el servidor a la derecha. Cada panel tiene su barra de ruta (puedes escribir una ruta directamente) y columnas Nombre, Tamaño y Modificado (y, en servidores Linux/Unix, Permisos y Propietario).</p>
 
-<p>Botones de los paneles:
-- Este equipo (panel local): para cambiar de unidad.
-- Subir un nivel (Retroceso).
-- Actualizar.
-- Nueva carpeta (F7).
-- Renombrar (F2).
-- Borrar (Supr): «Las carpetas se van con todo lo de dentro; no hay papelera.»
-- Subir la selección al servidor / Bajar la selección a este PC (F5, o arrástrala al otro lado).
-- Abrir: en local, con el programa por defecto de Windows; en remoto, una copia con el programa por defecto.
-- Editar aquí (ficheros de texto).
-- Copiar la ruta.
-- Ver ficheros ocultos.
-- Permisos y propietario (servidores Unix).
-- Cancelar la transferencia (mientras hay una en curso).</p>
+<p>Botones de los paneles:</p>
+
+<ul class="wp-block-list">
+<li>Este equipo (panel local): para cambiar de unidad.</li>
+<li>Subir un nivel (Retroceso).</li>
+<li>Actualizar.</li>
+<li>Nueva carpeta (F7).</li>
+<li>Renombrar (F2).</li>
+<li>Borrar (Supr): «Las carpetas se van con todo lo de dentro; no hay papelera.»</li>
+<li>Subir la selección al servidor / Bajar la selección a este PC (F5, o arrástrala al otro lado).</li>
+<li>Abrir: en local, con el programa por defecto de Windows; en remoto, una copia con el programa por defecto.</li>
+<li>Editar aquí (ficheros de texto).</li>
+<li>Copiar la ruta.</li>
+<li>Ver ficheros ocultos.</li>
+<li>Permisos y propietario (servidores Unix).</li>
+<li>Cancelar la transferencia (mientras hay una en curso).</li>
+</ul>
 
 <p>Doble clic en un fichero de texto del servidor lo abre en el editor integrado; en un fichero local, lo abre con su programa de Windows. Las transferencias van en cola, con progreso («Subiendo… · N de M»).</p>
 
 <p>Si un fichero ya existe y la conexión está en «Avisar y confirmar», sale «El fichero ya existe» con Sobrescribir, Saltar y la casilla «Hacer lo mismo con los demás».</p>
 
-<p><strong>Ventana Permisos y propietario</strong> (solo servidores Linux/Unix)
-- Permisos: casillas Leer, Escribir y Ejecutar para Propietario, Grupo y Otros, con el valor Octal a la vista.
-- Propietario y grupo: nombres o números; vacío = no cambiar. En SFTP, cambiar por nombre usa una orden por SSH con las mismas credenciales; la mayoría de servidores FTP no dejan cambiar el propietario.
-- «Aplicar a todo lo de dentro de las carpetas».
-- Aplicar.</p>
+<p><strong>Ventana Permisos y propietario</strong> (solo servidores Linux/Unix)</p>
 
-<p><strong>Editor de texto integrado</strong>
-- Guardar en el servidor (Ctrl+S), con la misma codificación y finales de línea.
-- Buscar (Ctrl+F): Siguiente (Intro) y Anterior (Mayús+Intro).
-- Ctrl + y Ctrl − cambian el tamaño de letra (se recuerda).
-- La barra inferior indica línea y columna, y la hora del último guardado.
-- Al cerrar con cambios pregunta si guardarlos en el servidor (Guardar, Descartar o Cancelar).</p>
+<ul class="wp-block-list">
+<li>Permisos: casillas Leer, Escribir y Ejecutar para Propietario, Grupo y Otros, con el valor Octal a la vista.</li>
+<li>Propietario y grupo: nombres o números; vacío = no cambiar. En SFTP, cambiar por nombre usa una orden por SSH con las mismas credenciales; la mayoría de servidores FTP no dejan cambiar el propietario.</li>
+<li>«Aplicar a todo lo de dentro de las carpetas».</li>
+<li>Aplicar.</li>
+</ul>
+
+<p><strong>Editor de texto integrado</strong></p>
+
+<ul class="wp-block-list">
+<li>Guardar en el servidor (Ctrl+S), con la misma codificación y finales de línea.</li>
+<li>Buscar (Ctrl+F): Siguiente (Intro) y Anterior (Mayús+Intro).</li>
+<li>Ctrl + y Ctrl − cambian el tamaño de letra (se recuerda).</li>
+<li>La barra inferior indica línea y columna, y la hora del último guardado.</li>
+<li>Al cerrar con cambios pregunta si guardarlos en el servidor (Guardar, Descartar o Cancelar).</li>
+</ul>
 
 <h3 id="ajustes" class="wp-block-heading has-medium-font-size has-text-color" style="color:#0f172a;margin-top:var(--wp--preset--spacing--40);font-weight:700;line-height:1.25">Ajustes</h3>
 
-<p><strong>Dónde se guardan las conexiones</strong>
-- Este PC: las conexiones se quedan en tu perfil de usuario; nada sale del equipo.
-- Google Drive: entras con Google en el navegador; el fichero va a la carpeta privada de la aplicación en tu Drive, sin acceso al resto de tus ficheros. En la pantalla de permisos de Google hay que marcar la casilla de Google Drive.
-- OneDrive: entras con Microsoft; el fichero va a la carpeta de la aplicación en tu OneDrive, sin acceso al resto de tus ficheros.
-- Debajo se indica con qué cuenta has entrado y la última sincronización.</p>
+<p><strong>Dónde se guardan las conexiones</strong></p>
 
-<p><strong>Frase de cifrado</strong> (solo con Google Drive u OneDrive)
-- Casilla de la frase, con botón de ojo para verla. Mínimo 8 caracteres.
-- Guardar la frase y sincronizar.
-- Sincronizar ahora.
-- La frase no sale de tu PC ni se guarda en tu cuenta: usa la misma en cada equipo. Si la olvidas, la copia de la nube no se puede leer. Sin frase no se sube nada.
-- Al arrancar se baja la copia de la nube si es más reciente y cada cambio se sube; si guardas desde dos equipos, gana el último.</p>
+<ul class="wp-block-list">
+<li>Este PC: las conexiones se quedan en tu perfil de usuario; nada sale del equipo.</li>
+<li>Google Drive: entras con Google en el navegador; el fichero va a la carpeta privada de la aplicación en tu Drive, sin acceso al resto de tus ficheros. En la pantalla de permisos de Google hay que marcar la casilla de Google Drive.</li>
+<li>OneDrive: entras con Microsoft; el fichero va a la carpeta de la aplicación en tu OneDrive, sin acceso al resto de tus ficheros.</li>
+<li>Debajo se indica con qué cuenta has entrado y la última sincronización.</li>
+</ul>
 
-<p><strong>Importar conexiones</strong>
-- Botón «Importar de Remote Desktop Manager (.rdm) o ficheros de Escritorio remoto (.rdp)».
-- De un .rdm se importan las conexiones RDP, SSH, FTP/FTPS y SFTP/SCP con sus carpetas. De los .rdp (puedes elegir varios a la vez) sale una conexión por fichero, con su nombre y sus opciones.
-- Las contraseñas no se importan: se piden al conectar. Al terminar se indica cuántas se han importado, cuántas ya existían y cuántas se han dejado fuera por ser de tipos no admitidos.</p>
+<p><strong>Frase de cifrado</strong> (solo con Google Drive u OneDrive)</p>
 
-<p><strong>Ventana</strong>
-- «Al minimizar, al área de notificación» (activada por defecto). Desactivada, se minimiza a la barra de tareas como cualquier ventana.</p>
+<ul class="wp-block-list">
+<li>Casilla de la frase, con botón de ojo para verla. Mínimo 8 caracteres.</li>
+<li>Guardar la frase y sincronizar.</li>
+<li>Sincronizar ahora.</li>
+<li>La frase no sale de tu PC ni se guarda en tu cuenta: usa la misma en cada equipo. Si la olvidas, la copia de la nube no se puede leer. Sin frase no se sube nada.</li>
+<li>Al arrancar se baja la copia de la nube si es más reciente y cada cambio se sube; si guardas desde dos equipos, gana el último.</li>
+</ul>
+
+<p><strong>Importar conexiones</strong></p>
+
+<ul class="wp-block-list">
+<li>Botón «Importar de Remote Desktop Manager (.rdm) o ficheros de Escritorio remoto (.rdp)».</li>
+<li>De un .rdm se importan las conexiones RDP, SSH, FTP/FTPS y SFTP/SCP con sus carpetas. De los .rdp (puedes elegir varios a la vez) sale una conexión por fichero, con su nombre y sus opciones.</li>
+<li>Las contraseñas no se importan: se piden al conectar. Al terminar se indica cuántas se han importado, cuántas ya existían y cuántas se han dejado fuera por ser de tipos no admitidos.</li>
+</ul>
+
+<p><strong>Ventana</strong></p>
+
+<ul class="wp-block-list">
+<li>«Al minimizar, al área de notificación» (activada por defecto). Desactivada, se minimiza a la barra de tareas como cualquier ventana.</li>
+</ul>
 
 <p>Cerrar: cierra los ajustes.</p>
 
@@ -339,21 +403,21 @@
 <div class="wp-block-group soc-card has-background" style="border-radius:20px;background-color:#eef2ff;padding-top:40px;padding-bottom:40px;padding-left:40px;padding-right:40px">
 <h2 class="wp-block-heading has-medium-font-size has-text-color" style="color:#0f172a;font-weight:700">¿No encuentras lo que buscas?</h2>
 
-<p class="has-text-color" style="color:#334155">Cuéntanos qué te pasa y con qué versión y dispositivo; respondemos en cuanto podemos.</p>
+<p class="has-text-color" style="color:#334155">Abre una incidencia en GitHub contando qué te pasa y con qué versión y dispositivo.</p>
 
-<div class="wp-block-buttons"><div class="wp-block-button"><a class="wp-block-button__link has-text-color has-background wp-element-button" href="mailto:jsoladelarosa@gmail.com" style="border-radius:10px;color:#ffffff;background-color:#4338ca;padding-top:12px;padding-bottom:12px;padding-left:22px;padding-right:22px">Escribir un correo</a></div>
-<div class="wp-block-button is-style-outline"><a class="wp-block-button__link has-text-color wp-element-button" href="https://github.com/donki/RCManager/issues" style="border-width:1.5px;border-style:solid;border-radius:10px;color:#4338ca;padding-top:12px;padding-bottom:12px;padding-left:22px;padding-right:22px" target="_blank" rel="noreferrer noopener">Abrir una incidencia en GitHub</a></div>
+<div class="wp-block-buttons"><div class="wp-block-button"><a class="wp-block-button__link has-text-color has-background wp-element-button" href="https://github.com/donki/RCManager/issues" style="border-radius:10px;color:#ffffff;background-color:#4338ca;padding-top:12px;padding-bottom:12px;padding-left:22px;padding-right:22px" target="_blank" rel="noreferrer noopener">Abrir una incidencia en GitHub</a></div>
 </div>
 </div>
 </div>
 
 <footer class="wp-block-group alignfull soc-sec has-text-color has-background has-link-color" style="color:#cbd5e1;background-color:#0f172a;padding-top:var(--wp--preset--spacing--70);padding-bottom:var(--wp--preset--spacing--50);margin-top:0;margin-bottom:0">
 <div class="wp-block-columns"><div class="wp-block-column" style="flex-basis:40%"><p class="has-text-color" style="color:#ffffff;font-size:1.4rem"><strong>sOCratic</strong></p>
-<p>Aplicaciones libres para Android y Windows: sin anuncios, sin rastreadores y con tus datos bajo tu control.</p>
+<p>Aplicaciones libres para Android y Windows, con tus datos bajo tu control.</p>
 </div>
 <div class="wp-block-column" style="flex-basis:20%"><p class="has-text-color" style="color:#94a3b8;font-size:0.8rem;font-weight:700;letter-spacing:0.1em;text-transform:uppercase">Sitio</p>
 <p style="margin-top:6px"><a href="../apps/index.html">Aplicaciones</a></p>
 <p style="margin-top:6px"><a href="../soporte/index.html">Soporte</a></p>
+<p style="margin-top:6px"><a href="../en/index.html">English</a></p>
 </div>
 <div class="wp-block-column" style="flex-basis:20%"><p class="has-text-color" style="color:#94a3b8;font-size:0.8rem;font-weight:700;letter-spacing:0.1em;text-transform:uppercase">Legal</p>
 <p style="margin-top:6px"><a href="../aviso-legal.html">Aviso legal</a></p>
@@ -361,7 +425,6 @@
 <p style="margin-top:6px"><a href="../cookies.html">Cookies</a></p>
 </div>
 <div class="wp-block-column" style="flex-basis:20%"><p class="has-text-color" style="color:#94a3b8;font-size:0.8rem;font-weight:700;letter-spacing:0.1em;text-transform:uppercase">Contacto</p>
-<p style="margin-top:6px"><a href="mailto:jsoladelarosa@gmail.com">Correo</a></p>
 <p style="margin-top:6px"><a href="https://github.com/donki">GitHub</a></p>
 </div>
 </div>

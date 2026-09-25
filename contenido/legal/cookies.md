@@ -48,5 +48,4 @@ El detalle de las cookies de la plataforma y del tratamiento que hace Automattic
 y puede tratar los datos allí con las garantías que exige el RGPD para las transferencias
 internacionales.
 
-Si cambian las cookies que se usan, se actualizará esta página y su fecha. Para cualquier duda,
-escribe a [jsoladelarosa@gmail.com](mailto:jsoladelarosa@gmail.com).
+Si cambian las cookies que se usan, se actualizará esta página y su fecha.

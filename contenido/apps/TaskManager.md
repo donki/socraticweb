@@ -5,7 +5,7 @@
 - github: https://github.com/donki/TaskManager
 - tiendas:
   - Google Play (prueba cerrada): https://play.google.com/store/apps/details?id=com.socratic.taskmanager — solo en la pista de prueba cerrada (alpha); la página pública da 404 hasta que pase a producción, lo que exige antes 12 probadores durante 14 días (fuentes: D:\sOCProjects\06-PENDIENTE-TaskManager.md, store/google-play/ficha.md, README.md; comprobado el 2026-09-25 que la URL pública devuelve 404).
-  - Microsoft Store (no verificada): nombre reservado «sOC Task Manager» y ficha preparada, pero sin identificador de producto; el README solo enlaza una búsqueda: https://apps.microsoft.com/search?query=%22sOC+Task+Manager%22 (fuentes: README.md, store/microsoft/ficha-es-ES.md, memoria releases-github.md). No se ha encontrado el ID de Partner Center ni constancia de que esté publicada.
+  - Microsoft Store (publicada): https://apps.microsoft.com/detail/9PHJK2391727 (enlace de Josep, 2026-09-25; ficha pública comprobada)
 - descarga_alternativa: https://github.com/donki/TaskManager/releases (APK, EXE y MSIX de cada versión; última: v2026.09.23.00)
 
 ## Descripción

@@ -4,7 +4,7 @@
 - lema: Tus escritorios remotos, terminales SSH y servidores de ficheros, en pestañas y en una sola ventana.
 - github: https://github.com/donki/RCManager
 - tiendas:
-  - Microsoft Store (en revisión, sin publicar): enviada el 2026-09-19 con el nombre reservado «sOC Remote Connections Manager»; aún no hay identificador de producto ni enlace (fuentes: README.md del repositorio, «enviada el 2026-09-19 (enlace en cuanto Partner Center la publique)»; nota del proyecto del 2026-09-19, «falta el enlace»). No se ha encontrado el ID: no se puede dar la URL https://apps.microsoft.com/detail/…
+  - Microsoft Store (publicada): https://apps.microsoft.com/detail/9MXKDZMLCS99 (enlace de Josep, 2026-09-25; ficha pública comprobada)
   - Google Play: no aplica (solo Windows).
 - descarga_alternativa: https://github.com/donki/RCManager/releases (última: v2026.9.23.1; ejecutable autocontenido y paquete MSIX)
 
@@ -36,7 +36,7 @@ Tus conexiones se guardan en tu PC con las contraseñas cifradas para tu usuario
 1. Descarga la última versión desde la página de versiones de GitHub (https://github.com/donki/RCManager/releases). Hay dos formas:
    - El ejecutable `sOCRCManager.exe`: no necesita instalación, se abre con doble clic.
    - El paquete `.msix`: se instala como cualquier aplicación de Windows.
-2. Cuando esté publicada en la Microsoft Store, también podrás instalarla desde allí.
+2. También puedes instalarla desde la [Microsoft Store](https://apps.microsoft.com/detail/9MXKDZMLCS99), que la mantiene al día sola.
 
 Requisitos: Windows 10 (versión 2004) o posterior, o Windows 11. Para el escritorio remoto se usa el cliente que ya trae Windows; no hay que instalar nada más.
 

@@ -1,23 +1,31 @@
-"""Genera la web de sOCratic a partir de contenido/apps/*.md y, con --publicar, la sube a WordPress.com.
+"""Genera la web de sOCratic en castellano e inglés y, con --publicar, la sube a WordPress.com.
 
-Salidas (copia local, fuente de verdad):
-  sitio/          HTML autónomo: index.html, apps/<slug>.html, soporte/index.html, soporte/<slug>.html
-  wordpress/      cuerpo de cada página en bloques de WordPress, tal cual se publica, más la cabecera
-                  y el pie del tema (_cabecera.html, _pie.html)
+Fuentes:
+  contenido/apps/*.md         fichas de cada aplicación en castellano (y contenido/en/apps/ en inglés)
+  contenido/legal/*.md        aviso legal, cookies y privacidad de la web (y contenido/en/legal/)
+  contenido/imagenes.json     de dónde salen el icono y las capturas de cada aplicación
+  CONTENIDO-PARA-GOOGLE-SITES.md  la política de privacidad de las aplicaciones (castellano)
+
+Salidas (copia local, se commitean):
+  contenido/img/  imágenes reducidas
+  sitio/          HTML autónomo, con sitio/en/ para el inglés
+  wordpress/      cuerpo de cada página en bloques tal cual se publica, cabeceras, pies y plantillas,
+                  y medios.json (qué imagen es cuál en la biblioteca de WordPress)
 
 Uso:
-  python build.py              genera sitio/ y wordpress/
-  python build.py --publicar   además crea o actualiza las páginas, la cabecera y el pie en
-                               socraticweb0.wordpress.com
+  python build.py              genera todo en local
+  python build.py --publicar   además sube imágenes, páginas, cabeceras, pies y plantillas
 
 El diseño va entero en los atributos de los bloques (colores, bordes, espaciado, rejillas): el plan
 gratuito de WordPress.com no admite plugins, CSS propio ni estilos globales, pero sí eso.
 
 El token OAuth se lee de D:\\dev\\secrets\\wordpress-socraticweb0.token (fuera del repo).
 """
+import hashlib
 import html
 import json
 import re
+import shutil
 import sys
 import time
 from pathlib import Path
@@ -25,10 +33,13 @@ from pathlib import Path
 import markdown
 
 RAIZ = Path(__file__).parent
-APPS = RAIZ / "contenido" / "apps"
-LEGAL = RAIZ / "contenido" / "legal"
+CONTENIDO = RAIZ / "contenido"
 SITIO = RAIZ / "sitio"
 WP = RAIZ / "wordpress"
+IMAGENES = CONTENIDO / "imagenes.json"
+IMG = CONTENIDO / "img"
+MEDIOS = WP / "medios.json"
+PROYECTOS = RAIZ.parent.parent  # D:\sOCProjects
 TOKEN = Path(r"D:\dev\secrets\wordpress-socraticweb0.token")
 SITE_ID = 257589098
 WP_URL = "https://socraticweb0.wordpress.com"
@@ -36,7 +47,7 @@ CONTACTO = "jsoladelarosa@gmail.com"
 GITHUB_PERFIL = "https://github.com/donki"
 TEMA = "pub/assembler"
 
-# Paleta: la misma que la web local y el catálogo (índigo sobre pizarra).
+# Paleta: índigo sobre pizarra.
 TINTA = "#0f172a"
 TEXTO = "#334155"
 APAGADO = "#64748b"
@@ -54,9 +65,166 @@ LECTURA = "780px"
 PUBLICADA = re.compile(r"producci[oó]n|publicada", re.I)
 
 
+# ---------------------------------------------------------------- idiomas
+
+IDIOMAS = {
+    "es": {
+        "codigo": "es", "raiz": "", "apps": "aplicaciones", "soporte": "soporte", "privacidad": "privacidad",
+        "aviso": "aviso-legal", "cookies": "cookies", "otro": "en", "nombre_otro": "English",
+        "nombre_propio": "Español",
+        "ir_otro": "Read in English", "parte_cab": "header", "parte_pie": "footer", "plantilla": "",
+        "descargar_en": "Descargar en {}", "descargar_github": "Descargar desde GitHub",
+        "estado_en": "En {}", "y": " y ", "estado_github": "Descarga en GitHub", "navegador": "Navegador",
+        "portada_ante": "Software libre para Android y Windows",
+        "portada_h1": "Aplicaciones que respetan tu privacidad",
+        "portada_entrada": "Herramientas pequeñas y honestas: cada una hace una cosa y la hace bien, funciona "
+                           "sin conexión siempre que puede y no pide más permisos de los que necesita.",
+        "ver_apps": "Ver las aplicaciones", "soporte_nav": "Soporte",
+        "cifras": ["aplicaciones", "rastreadores", "licencia libre"],
+        "catalogo_ante": "Catálogo", "catalogo_h2": "Aplicaciones",
+        "catalogo_entrada": "Si una aplicación está en una tienda, el enlace te lleva allí; si no, a su página "
+                            "de descargas en GitHub.",
+        "trabajo_ante": "Cómo trabajamos", "trabajo_h2": "Hechas para durar y para confiar en ellas",
+        "trabajo_entrada": "Dos compromisos que valen para todas las aplicaciones, hoy y en cada versión.",
+        "principios": [
+            ("Privacidad primero", "Sin analítica, sin perfiles y sin rastreadores. Lo que escribes se queda en "
+                                   "tu dispositivo, y si una aplicación sincroniza, viaja cifrado."),
+            ("Código abierto", "Todo el código está en GitHub con licencia MIT: puedes leerlo, compilarlo y "
+                               "comprobar lo que hace."),
+        ],
+        "apps_entrada": "Todas con el código en GitHub. Si una está en una tienda, el enlace te lleva allí; si "
+                        "no, a su página de descargas.",
+        "soporte_h1": "Guías de uso",
+        "soporte_entrada": "Cómo se pone en marcha cada aplicación, qué hace cada pantalla y cada opción, y las "
+                           "dudas más habituales.",
+        "ver_app": "Ver aplicación", "ver_guia": "Ver guía", "guia": "Guía de uso",
+        "aplicacion": "Aplicación", "ficha": "Ficha", "plataformas": "Plataformas", "descarga": "Descarga",
+        "licencia": "Licencia", "licencia_valor": "MIT, gratuita", "codigo_fuente": "Código fuente",
+        "soporte_dato": "Soporte", "correo": "Correo", "privacidad_h": "Privacidad",
+        "politica_privacidad": "Política de privacidad", "que_es": "Qué es",
+        "funciones": "Funciones principales", "capturas_ante": "Capturas", "capturas_h2": "Así es {}",
+        "en_movil": "En el móvil", "en_windows": "En Windows", "captura_de": "Captura de {}",
+        "icono_de": "Icono de {}",
+        "dudas_h": "¿Dudas con {}?",
+        "dudas_texto": "La guía explica cómo ponerla en marcha, cada pantalla y cada opción, y las preguntas "
+                       "más habituales.",
+        "abrir_guia": "Abrir la guía",
+        "guia_ante": "Soporte · {}", "guia_entrada": "Cómo funciona {}, pantalla a pantalla, y qué hace cada opción.",
+        "ver_la_app": "Ver la aplicación", "todas_guias": "Todas las guías", "en_esta_guia": "En esta guía",
+        "faq": "Preguntas frecuentes", "faq_ancla": "preguntas-frecuentes",
+        "no_encuentras": "¿No encuentras lo que buscas?",
+        "no_encuentras_texto": "Abre una incidencia en GitHub contando qué te pasa y con qué versión y "
+                               "dispositivo.",
+        "incidencia": "Abrir una incidencia en GitHub",
+        "legal": "Legal",
+        "privacidad_entrada": "Una sola política para todas las aplicaciones de sOCratic y para esta web: qué "
+                              "datos se tocan, para qué y dónde se quedan.",
+        "aviso_h1": "Aviso legal", "aviso_entrada": "Quién está detrás de esta web y en qué condiciones se usa.",
+        "cookies_h1": "Política de cookies",
+        "cookies_entrada": "Qué cookies hay en esta web, quién las pone y cómo rechazarlas.",
+        "nav": [("apps", "Aplicaciones"), ("soporte", "Soporte"), ("privacidad", "Privacidad")],
+        "pie_lema": "Aplicaciones libres para Android y Windows, con tus datos bajo tu control.",
+        "sitio": "Sitio", "contacto": "Contacto", "cookies_nav": "Cookies", "aviso_nav": "Aviso legal",
+        "copyright": "© 2026 sOCratic · Software libre con licencia MIT",
+        "cookies_aviso": "Esta web está alojada en WordPress.com, que usa cookies para sus estadísticas de "
+                         "visitas. Puedes aceptarlas o ver cómo rechazarlas en la <a href=\"{}\">política de "
+                         "cookies</a>.",
+        "aceptar": "Aceptar",
+        "t_portada": "sOCratic", "t_apps": "Aplicaciones", "t_soporte": "Soporte",
+        "t_privacidad": "Política de privacidad", "t_aviso": "Aviso legal", "t_cookies": "Política de cookies",
+        "t_guia": "{}: guía de uso",
+        "secciones": {},
+    },
+    "en": {
+        "codigo": "en", "raiz": "en", "apps": "apps", "soporte": "support", "privacidad": "privacy",
+        "aviso": "legal-notice", "cookies": "cookies", "otro": "es", "nombre_otro": "Español",
+        "nombre_propio": "English",
+        "ir_otro": "Leer en español", "parte_cab": "header-en", "parte_pie": "footer-en", "plantilla": "page-en",
+        "descargar_en": "Get it on {}", "descargar_github": "Download from GitHub",
+        "estado_en": "On {}", "y": " and ", "estado_github": "Download on GitHub", "navegador": "Browser",
+        "portada_ante": "Open-source software for Android and Windows",
+        "portada_h1": "Apps that respect your privacy",
+        "portada_entrada": "Small, honest tools: each one does one thing and does it well, works offline "
+                           "whenever it can and never asks for more permissions than it needs.",
+        "ver_apps": "See the apps", "soporte_nav": "Support",
+        "cifras": ["apps", "trackers", "open-source license"],
+        "catalogo_ante": "Catalog", "catalogo_h2": "Apps",
+        "catalogo_entrada": "If an app is in a store, the link takes you there; if not, to its download page "
+                            "on GitHub.",
+        "trabajo_ante": "How we work", "trabajo_h2": "Built to last and to be trusted",
+        "trabajo_entrada": "Two commitments that apply to every app, today and in every release.",
+        "principios": [
+            ("Privacy first", "No analytics, no profiling and no trackers. What you write stays on your "
+                              "device, and if an app syncs, it travels encrypted."),
+            ("Open source", "All the code is on GitHub under the MIT license: you can read it, build it and "
+                            "check what it does."),
+        ],
+        "apps_entrada": "All with their code on GitHub. If an app is in a store, the link takes you there; if "
+                        "not, to its download page.",
+        "soporte_h1": "User guides",
+        "soporte_entrada": "How to get each app up and running, what every screen and option does, and the most "
+                           "common questions.",
+        "ver_app": "View app", "ver_guia": "View guide", "guia": "User guide",
+        "aplicacion": "App", "ficha": "Details", "plataformas": "Platforms", "descarga": "Download",
+        "licencia": "License", "licencia_valor": "MIT, free", "codigo_fuente": "Source code",
+        "soporte_dato": "Support", "correo": "Email", "privacidad_h": "Privacy",
+        "politica_privacidad": "Privacy policy", "que_es": "What it is",
+        "funciones": "Main features", "capturas_ante": "Screenshots", "capturas_h2": "A look at {}",
+        "en_movil": "On mobile", "en_windows": "On Windows", "captura_de": "Screenshot of {}",
+        "icono_de": "{} icon",
+        "dudas_h": "Questions about {}?",
+        "dudas_texto": "The guide explains how to set it up, every screen and option, and the most common "
+                       "questions.",
+        "abrir_guia": "Open the guide",
+        "guia_ante": "Support · {}", "guia_entrada": "How {} works, screen by screen, and what every option does.",
+        "ver_la_app": "View the app", "todas_guias": "All guides", "en_esta_guia": "In this guide",
+        "faq": "FAQ", "faq_ancla": "faq",
+        "no_encuentras": "Can't find what you need?",
+        "no_encuentras_texto": "Open an issue on GitHub telling us what's happening, with which version and "
+                               "device.",
+        "incidencia": "Open an issue on GitHub",
+        "legal": "Legal",
+        "privacidad_entrada": "One policy for every sOCratic app and for this website: what data is touched, "
+                              "what for and where it stays.",
+        "aviso_h1": "Legal notice", "aviso_entrada": "Who is behind this website and the terms for using it.",
+        "cookies_h1": "Cookie policy",
+        "cookies_entrada": "Which cookies this website uses, who sets them and how to reject them.",
+        "nav": [("apps", "Apps"), ("soporte", "Support"), ("privacidad", "Privacy")],
+        "pie_lema": "Open-source apps for Android and Windows, with your data under your control.",
+        "sitio": "Site", "contacto": "Contact", "cookies_nav": "Cookies", "aviso_nav": "Legal notice",
+        "copyright": "© 2026 sOCratic · Open-source software, MIT license",
+        "cookies_aviso": "This website is hosted on WordPress.com, which uses cookies for its visitor "
+                         "statistics. You can accept them or see how to reject them in the <a href=\"{}\">cookie "
+                         "policy</a>.",
+        "aceptar": "Accept",
+        "t_portada": "sOCratic (English)", "t_apps": "Apps", "t_soporte": "Support",
+        "t_privacidad": "Privacy policy", "t_aviso": "Legal notice", "t_cookies": "Cookie policy",
+        "t_guia": "{}: user guide",
+        # Títulos de sección de las fichas en inglés → la clave castellana que usa el programa.
+        "secciones": {"description": "descripción", "main features": "funciones principales",
+                      "user guide (support)": "guía de uso (soporte)", "faq": "preguntas frecuentes",
+                      "privacy": "privacidad"},
+    },
+}
+L = IDIOMAS["es"]
+
+
+def usar(idioma: str):
+    global L
+    L = IDIOMAS[idioma]
+
+
+def url(clave: str | None = None, slug: str | None = None, idioma: str | None = None) -> str:
+    """URL pública de una página en el idioma actual (o en el indicado)."""
+    d = IDIOMAS[idioma or L["codigo"]]
+    partes = [d["raiz"], d[clave] if clave else "", slug or ""]
+    ruta = "/".join(p for p in partes if p)
+    return f"{WP_URL}/{ruta}/" if ruta else f"{WP_URL}/"
+
+
 # ---------------------------------------------------------------- lectura
 
-def leer_app(ruta: Path) -> dict:
+def leer_app(ruta: Path, secciones_alias: dict | None = None) -> dict:
     texto = ruta.read_text(encoding="utf-8")
     nombre = re.search(r"^# (.+)$", texto, re.M).group(1).strip()
     cabecera, _, cuerpo = texto.partition("\n## ")
@@ -71,8 +239,9 @@ def leer_app(ruta: Path) -> dict:
             campos[clave].append(re.sub(r"^\s+[-*] ", "", linea).strip())
     secciones = {}
     for bloque in re.split(r"^## ", cuerpo, flags=re.M)[1:]:
-        titulo, _, contenido = bloque.partition("\n")
-        secciones[titulo.strip().lower()] = contenido.strip()
+        titulo_s, _, contenido = bloque.partition("\n")
+        t = titulo_s.strip().lower()
+        secciones[(secciones_alias or {}).get(t, t)] = contenido.strip()
 
     def uno(k):
         return (campos.get(k) or [""])[0]
@@ -82,10 +251,10 @@ def leer_app(ruta: Path) -> dict:
         m = re.match(r"^\s*([^(:]+?)\s*\(([^)]*)\)\s*:\s*(\S+)", t)
         if not m:
             continue
-        url = m.group(3).strip("<>().,;")
-        if url.startswith("http"):
+        u = m.group(3).strip("<>().,;")
+        if u.startswith("http"):
             tiendas.append({"tienda": m.group(1).strip(), "estado": m.group(2).strip(),
-                            "url": url, "publicada": bool(PUBLICADA.search(m.group(2)))})
+                            "url": u, "publicada": bool(PUBLICADA.search(m.group(2)))})
     github = (uno("github").split() or [""])[0].rstrip("/").removesuffix(".git")
     github = github if github.startswith("http") else ""
     releases = (uno("descarga_alternativa").split() or [""])[0]
@@ -93,13 +262,35 @@ def leer_app(ruta: Path) -> dict:
     return {
         "nombre": nombre, "slug": uno("slug"), "plataformas": uno("plataformas"),
         "lema": uno("lema"), "github": github, "releases": releases, "tiendas": tiendas,
-        "secciones": secciones,
+        "secciones": secciones, "carpeta": ruta.stem,
+        # «- publicar: no» deja la ficha en el repo sin sacarla en la web (decisión de Josep).
+        "publicar": not re.match(r"no\b", uno("publicar"), re.I),
     }
+
+
+def leer_apps(idioma: str) -> list[dict]:
+    """Fichas del idioma. Si falta la traducción de una, se usa la castellana."""
+    es = {p.stem: p for p in sorted((CONTENIDO / "apps").glob("*.md"))}
+    apps = []
+    for carpeta, ruta in es.items():
+        if not leer_app(ruta)["publicar"]:
+            continue
+        if idioma != "es":
+            traducida = CONTENIDO / idioma / "apps" / f"{carpeta}.md"
+            if traducida.exists():
+                ruta = traducida
+            else:
+                print(f"aviso: falta {traducida.relative_to(RAIZ)}; va en castellano")
+        apps.append(leer_app(ruta, IDIOMAS[idioma]["secciones"]))
+    apps.sort(key=lambda a: (not en_tienda(a), a["nombre"].lower()))
+    return apps
 
 
 def md(texto: str) -> str:
     # Las fichas sangran las sublistas con 2 o 3 espacios; markdown necesita 4.
     texto = re.sub(r"^ {2,3}(?=(?:[-*]|\d+\.) )", "    ", texto, flags=re.M)
+    # Una lista pegada al párrafo de arriba (sin línea en blanco) markdown la lee como texto seguido.
+    texto = re.sub(r"^((?! *(?:[-*]|\d+\.) )\S.*)\n(?=(?:[-*]|\d+\.) )", r"\1\n\n", texto, flags=re.M)
     # «<navegador>» y similares son marcadores del texto, no etiquetas: se escapan para que se vean.
     texto = re.sub(r"<(?!(?:br|strong|em|kbd|code|a|sub|sup)\b|/|https?:)([^<>\n]+)>", r"&lt;\1&gt;", texto)
     # URL sueltas → enlaces.
@@ -120,8 +311,8 @@ def etiquetas(app: dict) -> list[str]:
         tags.append("Android Auto")
     if re.search(r"windows", base, re.I):
         tags.append("Windows")
-    if re.search(r"extensi[oó]n de navegador", pl, re.I):
-        tags.append("Navegador")
+    if re.search(r"extensi[oó]n de navegador|browser extension", pl, re.I):
+        tags.append(L["navegador"])
     return tags
 
 
@@ -129,21 +320,94 @@ def etiquetas(app: dict) -> list[str]:
 
 def enlaces(app: dict) -> list[tuple[str, str]]:
     """Botones de descarga: las tiendas donde está publicada; si no hay ninguna, GitHub."""
-    botones = [(f"Descargar en {t['tienda']}", t["url"]) for t in app["tiendas"] if t["publicada"]]
+    botones = [(L["descargar_en"].format(t["tienda"]), t["url"]) for t in app["tiendas"] if t["publicada"]]
     # Una tienda de extensiones solo da la extensión: la aplicación se sigue bajando de GitHub.
     solo_extension = all(re.search(r"add-ons|chrome|firefox", t, re.I) for t, _ in botones)
     if (not botones or solo_extension) and app["releases"]:
-        botones.append(("Descargar desde GitHub", app["releases"]))
+        botones.append((L["descargar_github"], app["releases"]))
     return botones
 
 
 def estado(app: dict) -> str:
     pub = [t["tienda"] for t in app["tiendas"] if t["publicada"]]
-    return "En " + " y ".join(pub) if pub else "Descarga en GitHub"
+    return L["estado_en"].format(L["y"].join(pub)) if pub else L["estado_github"]
 
 
 def en_tienda(app: dict) -> bool:
     return any(t["publicada"] for t in app["tiendas"])
+
+
+# ---------------------------------------------------------------- imágenes
+
+def preparar_imagenes(apps: list[dict]):
+    """Reduce los iconos y capturas de las fichas de tienda a contenido/img/<slug>/ y los apunta en cada app.
+
+    Iconos a 192 px en PNG; capturas de móvil a 540 px y de escritorio a 1280 px de ancho, en WebP.
+    """
+    from PIL import Image
+    mapa = json.loads(IMAGENES.read_text(encoding="utf-8"))
+
+    def reducir(origen: str, destino: Path, ancho: int, formato: str) -> str:
+        src = PROYECTOS / origen
+        if not destino.exists() or destino.stat().st_mtime < src.stat().st_mtime:
+            destino.parent.mkdir(parents=True, exist_ok=True)
+            im = Image.open(src)
+            im = im.convert("RGBA" if formato == "PNG" else "RGB")
+            if im.width > ancho:
+                im = im.resize((ancho, round(im.height * ancho / im.width)), Image.LANCZOS)
+            im.save(destino, formato, **({"optimize": True} if formato == "PNG" else {"quality": 80, "method": 6}))
+        return destino.relative_to(CONTENIDO).as_posix()
+
+    for app in apps:
+        m = mapa.get(app["slug"], {})
+        base = IMG / app["slug"]
+        app["icono"] = reducir(m["icono"], base / "icono.png", 192, "PNG") if m.get("icono") else ""
+        app["capturas"] = [reducir(c, base / f"movil-{i + 1}.webp", 540, "WEBP")
+                           for i, c in enumerate(m.get("capturas", []))]
+        app["capturas_anchas"] = [reducir(c, base / f"escritorio-{i + 1}.webp", 1280, "WEBP")
+                                  for i, c in enumerate(m.get("capturas_anchas", []))]
+
+
+def preparar_banderas():
+    """Banderas de España y de EE. UU. para cambiar de idioma: PNG dibujados aquí (nada de emoji, General §6.2;
+    WordPress.com gratuito no admite SVG). 72×48 para verse nítidas a 24×16."""
+    from PIL import Image, ImageDraw
+    destino = IMG / "banderas"
+    destino.mkdir(parents=True, exist_ok=True)
+    es, us = destino / "es.png", destino / "en.png"
+    if not es.exists():
+        im = Image.new("RGB", (72, 48), "#AA151B")
+        ImageDraw.Draw(im).rectangle((0, 12, 71, 35), fill="#F1BF00")
+        im.save(es, "PNG", optimize=True)
+    if not us.exists():
+        escala = 4  # se dibuja grande y se reduce para suavizar las estrellas
+        w, h = 72 * escala, 48 * escala
+        im = Image.new("RGB", (w, h), "#FFFFFF")
+        d = ImageDraw.Draw(im)
+        franja = h / 13
+        for i in range(0, 13, 2):
+            d.rectangle((0, round(i * franja), w, round((i + 1) * franja) - 1), fill="#B22234")
+        cw, ch = round(w * 0.4), round(franja * 7)
+        d.rectangle((0, 0, cw, ch), fill="#3C3B6E")
+        r = escala * 1.1
+        for fila in range(9):
+            for col in range(6 if fila % 2 == 0 else 5):
+                x = cw / 12 * (2 * col + (1 if fila % 2 == 0 else 2))
+                y = ch / 10 * (fila + 1)
+                d.ellipse((x - r, y - r, x + r, y + r), fill="#FFFFFF")
+        im.resize((72, 48), Image.LANCZOS).save(us, "PNG", optimize=True)
+
+
+def medios() -> dict:
+    return json.loads(MEDIOS.read_text(encoding="utf-8")) if MEDIOS.exists() else {}
+
+
+def resolver_imagenes(h: str, base: str | None = None) -> str:
+    """Las imágenes van como «@@img/…@@»: en WordPress, la URL de la biblioteca; en local, la ruta relativa."""
+    if base is not None:
+        return re.sub(r"@@(img/[^@]+)@@", lambda x: base + x.group(1), h)
+    m = medios()
+    return re.sub(r"@@(img/[^@]+)@@", lambda x: m.get(x.group(1), {}).get("url", x.group(1)), h)
 
 
 # ---------------------------------------------------------------- bloques de WordPress
@@ -211,15 +475,14 @@ def _css(style: dict | None) -> tuple[str, list[str]]:
     return ";".join(css), cls
 
 
-def _abre(nombre: str, attrs: dict, tag: str, base: list[str], extra_cls: list[str] | None = None,
-          otros: str = "") -> tuple[str, str]:
+def _abre(nombre: str, attrs: dict, tag: str, base: list[str], extra_cls: list[str] | None = None) -> tuple[str, str]:
     css, cls = _css(attrs.get("style"))
     clases = base + (extra_cls or [])
     if attrs.get("className"):
         clases.append(attrs["className"])
     clases += cls
     st = f' style="{css}"' if css else ""
-    return (f"<!-- wp:{nombre}{_attrs(attrs)} -->\n<{tag} class=\"{' '.join(clases)}\"{st}{otros}>",
+    return (f"<!-- wp:{nombre}{_attrs(attrs)} -->\n<{tag} class=\"{' '.join(clases)}\"{st}>",
             f"</{tag}>\n<!-- /wp:{nombre} -->")
 
 
@@ -272,7 +535,7 @@ def titulo(h: str, nivel=2, style=None, size=None, ancla=None) -> str:
     return f"<!-- wp:heading{_attrs(a)} -->\n<h{nivel}{idh} class=\"{' '.join(clases)}\"{st}>{h}</h{nivel}>\n<!-- /wp:heading -->"
 
 
-def boton(texto: str, url: str, fondo=None, color=None, contorno=False) -> str:
+def boton(texto: str, destino: str, fondo=None, color=None, contorno=False) -> str:
     a = {}
     st = {"border": {"radius": "10px"}, "spacing": {"padding": {"top": "12px", "bottom": "12px",
                                                                "left": "22px", "right": "22px"}}}
@@ -288,9 +551,9 @@ def boton(texto: str, url: str, fondo=None, color=None, contorno=False) -> str:
     a["style"] = st
     css, cls = _css(st)
     externo = (' target="_blank" rel="noreferrer noopener"'
-               if url.startswith("http") and not url.startswith(WP_URL) else "")
+               if destino.startswith("http") and not destino.startswith(WP_URL) else "")
     return (f"<!-- wp:button{_attrs(a)} -->\n<div class=\"wp-block-button{' is-style-outline' if contorno else ''}\">"
-            f"<a class=\"wp-block-button__link {' '.join(cls)} wp-element-button\" href=\"{html.escape(url)}\""
+            f"<a class=\"wp-block-button__link {' '.join(cls)} wp-element-button\" href=\"{html.escape(destino)}\""
             f" style=\"{css}\"{externo}>{html.escape(texto)}</a></div>\n<!-- /wp:button -->")
 
 
@@ -301,13 +564,33 @@ def botones(*bs: str) -> str:
             "<div class=\"wp-block-buttons\">" + "\n".join(bs) + "</div>\n<!-- /wp:buttons -->")
 
 
-def columnas(*cols: tuple[str, str], hueco="48px") -> str:
+def columnas(*cols: tuple[str, str], hueco="48px", centradas=False) -> str:
     partes = []
     for ancho, contenido in cols:
         partes.append(f"<!-- wp:column {{\"width\":\"{ancho}\"}} -->\n<div class=\"wp-block-column\" "
                       f"style=\"flex-basis:{ancho}\">{contenido}</div>\n<!-- /wp:column -->")
-    return (f"<!-- wp:columns {{\"style\":{{\"spacing\":{{\"blockGap\":{{\"left\":\"{hueco}\",\"top\":\"32px\"}}}}}}}} -->\n"
-            f"<div class=\"wp-block-columns\">" + "\n".join(partes) + "</div>\n<!-- /wp:columns -->")
+    alinear = ',"verticalAlignment":"center"' if centradas else ""
+    clase = " are-vertically-aligned-center" if centradas else ""
+    return (f"<!-- wp:columns {{\"style\":{{\"spacing\":{{\"blockGap\":{{\"left\":\"{hueco}\",\"top\":\"32px\"}}}}}}{alinear}}} -->\n"
+            f"<div class=\"wp-block-columns{clase}\">" + "\n".join(partes) + "</div>\n<!-- /wp:columns -->")
+
+
+def imagen(ruta: str, alt: str, ancho: str | None = None, radio="12px", borde=True, enlace: str | None = None) -> str:
+    """Bloque de imagen. «ruta» es relativa a contenido/ (img/<slug>/…) y se resuelve al publicar."""
+    st = {"border": {"radius": radio}}
+    if borde:
+        st["border"].update({"width": "1px", "color": LINEA})
+    a = {"sizeSlug": "full", "linkDestination": "custom" if enlace else "none", "style": st}
+    if ancho:
+        a["width"] = ancho
+    css, cls = _css(st)
+    estilo_img = css + (f";width:{ancho}" if ancho else "")
+    clase_img = " ".join(c for c in cls if c == "has-border-color")
+    img = f'<img src="@@{ruta}@@" alt="{html.escape(alt)}" class="{clase_img}" style="{estilo_img}"/>'
+    if enlace:
+        img = f'<a href="{enlace}">{img}</a>'
+    clases = "wp-block-image size-full has-custom-border" + (" is-resized" if ancho else "")
+    return f"<!-- wp:image{_attrs(a)} -->\n<figure class=\"{clases}\">{img}</figure>\n<!-- /wp:image -->"
 
 
 def separador(color=LINEA) -> str:
@@ -399,9 +682,15 @@ def antetitulo(texto: str, color=ACENTO) -> str:
                        "textTransform": "uppercase"}})
 
 
-def cabecera_pagina(ante: str, h1: str, entrada: str, bs: list[str], extra: str = "", grande=True) -> str:
-    """La franja oscura con degradado con la que empieza cada página."""
+def cabecera_pagina(ante: str, h1: str, entrada: str, bs: list[str], otro: str, extra: str = "",
+                    grande=True, icono: str = "") -> str:
+    """La franja oscura con degradado con la que empieza cada página. «otro»: la misma página en el otro idioma."""
+    idioma = parrafo(f'<a href="{otro}" lang="{L["otro"]}">{L["ir_otro"]} →</a>', style={
+        "typography": {"fontSize": "0.875rem", "fontWeight": "600"},
+        "elements": {"link": {"color": {"text": ACENTO_CLARO}}}})
     hijos = [
+        idioma,
+        icono,
         antetitulo(ante, ACENTO_CLARO),
         titulo(html.escape(h1), 1, size="x-large" if grande else "large",
                style={"typography": {"lineHeight": "1.08", "fontWeight": "700", "letterSpacing": "-0.02em"},
@@ -411,20 +700,21 @@ def cabecera_pagina(ante: str, h1: str, entrada: str, bs: list[str], extra: str 
         botones(*bs),
         extra,
     ]
+    relleno = "var:preset|spacing|80" if grande else "var:preset|spacing|70"
     return grupo(*hijos, align="full", clase="soc-hero soc-sec",
                  style={"color": {"gradient": DEGRADADO, "text": "#ffffff"},
                         "elements": {"link": {"color": {"text": "#ffffff"}}},
-                        "spacing": {"padding": {"top": "var:preset|spacing|70" if not grande else "var:preset|spacing|80", "bottom": "var:preset|spacing|70" if not grande else "var:preset|spacing|80"},
+                        "spacing": {"padding": {"top": relleno, "bottom": relleno},
                                     "margin": {"top": "0", "bottom": "0"}}},
                  layout={"type": "constrained", "contentSize": ANCHO})
 
 
-def boton_claro(texto, url):
-    return boton(texto, url, fondo="#ffffff", color=ACENTO)
+def boton_claro(texto, destino):
+    return boton(texto, destino, fondo="#ffffff", color=ACENTO)
 
 
-def boton_contorno_claro(texto, url):
-    return boton(texto, url, color="#ffffff", contorno=True)
+def boton_contorno_claro(texto, destino):
+    return boton(texto, destino, color="#ffffff", contorno=True)
 
 
 def tarjeta(*hijos, fondo="#ffffff") -> str:
@@ -435,18 +725,30 @@ def tarjeta(*hijos, fondo="#ffffff") -> str:
                     "blockGap": "12px"}})
 
 
+def icono_app(app: dict, ancho="56px", radio="14px", enlace: str | None = None) -> str:
+    if not app.get("icono"):
+        return ""
+    return imagen(app["icono"], L["icono_de"].format(app["nombre"]), ancho=ancho, radio=radio, borde=False,
+                  enlace=enlace)
+
+
+def galeria(rutas: list[str], nombre: str, minimo: str) -> str:
+    return rejilla(*[imagen(r, L["captura_de"].format(nombre)) for r in rutas], minimo=minimo, hueco="20px")
+
+
 def tarjeta_app(app: dict, destino: str, llamada: str) -> str:
-    url = f"{WP_URL}/{destino}/{app['slug']}/"
+    u = url(destino, app["slug"])
     return tarjeta(
+        icono_app(app, enlace=u),
         antetitulo(" · ".join(etiquetas(app))),
-        titulo(f'<a href="{url}">{html.escape(app["nombre"])}</a>', 3, size="medium",
+        titulo(f'<a href="{u}">{html.escape(app["nombre"])}</a>', 3, size="medium",
                style={"typography": {"fontWeight": "700", "lineHeight": "1.25"},
                       "elements": {"link": {"color": {"text": TINTA}, "typography": {"textDecoration": "none"}}}}),
         parrafo(html.escape(app["lema"]), style={"color": {"text": APAGADO}}),
         parrafo(html.escape(estado(app)), style={
             "color": {"text": VERDE if en_tienda(app) else APAGADO},
             "typography": {"fontSize": "0.85rem", "fontWeight": "600"}}),
-        parrafo(f'<a href="{url}">{llamada} →</a>', style={
+        parrafo(f'<a href="{u}">{llamada} →</a>', style={
             "typography": {"fontWeight": "600"}, "elements": {"link": {"color": {"text": ACENTO}}}}),
     )
 
@@ -461,8 +763,8 @@ def encabezado_seccion(ante: str, h2: str, entrada: str = "") -> str:
     ] if x)
 
 
-def llamada_soporte(texto_h: str, texto: str, bs: list[str], arriba=False) -> str:
-    """Recuadro de ayuda al final de la página. Sin margen arriba si sigue a una sección con el suyo."""
+def llamada(texto_h: str, texto: str, bs: list[str], arriba=False) -> str:
+    """Recuadro de ayuda al final de una página. Con margen arriba si va tras una sección con fondo."""
     return seccion(
         grupo(
             titulo(texto_h, 2, size="medium", style={"typography": {"fontWeight": "700"},
@@ -475,6 +777,18 @@ def llamada_soporte(texto_h: str, texto: str, bs: list[str], arriba=False) -> st
         arriba="var:preset|spacing|70" if arriba else "0")
 
 
+def principio(numero: int, h3: str, texto: str) -> str:
+    """Un compromiso de «Cómo trabajamos»: número grande en índigo y texto con filete a la izquierda."""
+    return grupo(
+        parrafo(f"{numero:02d}", style={"color": {"text": ACENTO},
+                                         "typography": {"fontSize": "2.4rem", "fontWeight": "800", "lineHeight": "1"}}),
+        titulo(html.escape(h3), 3, size="medium", style={"typography": {"fontWeight": "700"},
+                                                         "color": {"text": TINTA}}),
+        parrafo(html.escape(texto), style={"color": {"text": TEXTO}, "typography": {"fontSize": "1.05rem"}}),
+        style={"border": {"left": {"color": ACENTO, "width": "3px"}},
+               "spacing": {"padding": {"left": "28px"}, "blockGap": "10px"}})
+
+
 # ---------------------------------------------------------------- páginas
 
 def portada_wp(apps: list[dict]) -> str:
@@ -483,66 +797,43 @@ def portada_wp(apps: list[dict]) -> str:
                                                      "color": {"text": "#ffffff"}}),
               parrafo(t, style={"color": {"text": ACENTO_CLARO}, "typography": {"fontSize": "0.95rem"}}),
               style={"spacing": {"blockGap": "6px"}})
-        for n, t in [(str(len(apps)), "aplicaciones"), ("0", "anuncios"), ("0", "rastreadores"),
-                     ("MIT", "licencia libre")]], minimo="9rem")
+        for n, t in zip([str(len(apps)), "0", "MIT"], L["cifras"])], minimo="9rem")
     cifras = grupo(cifras, style={"spacing": {"margin": {"top": "var:preset|spacing|60"}, "padding": {"top": "28px"}},
                                   "border": {"top": {"color": "rgba(255,255,255,0.2)", "width": "1px"}}})
-    principios = [
-        ("Privacidad primero", "Sin analítica, sin perfiles y sin rastreadores. Lo que escribes se queda en tu "
-                               "dispositivo, y si una aplicación sincroniza, viaja cifrado."),
-        ("Sin anuncios ni compras", "Las aplicaciones son gratuitas y completas. No hay versión «pro» ni "
-                                    "funciones bloqueadas."),
-        ("Código abierto", "Todo el código está en GitHub con licencia MIT: puedes leerlo, compilarlo y "
-                           "comprobar lo que hace."),
-        ("Soporte de verdad", "Cada aplicación tiene su guía, con todas sus pantallas y opciones explicadas, "
-                              "y un correo al que escribir."),
-    ]
+    # Tira de iconos de todo el catálogo en la franja de entrada.
+    iconos = grupo(*[icono_app(a, ancho="52px", radio="13px", enlace=url("apps", a["slug"]))
+                     for a in apps if a.get("icono")],
+                   style={"spacing": {"blockGap": "14px", "margin": {"top": "var:preset|spacing|50"}}},
+                   layout={"type": "flex", "flexWrap": "wrap"})
+    trabajo = columnas(
+        ("38%", encabezado_seccion(L["trabajo_ante"], L["trabajo_h2"], L["trabajo_entrada"])),
+        ("62%", grupo(*[principio(i + 1, t, d) for i, (t, d) in enumerate(L["principios"])],
+                      style={"spacing": {"blockGap": "var:preset|spacing|50"}})),
+        hueco="var:preset|spacing|70")
     return "\n\n".join([
-        cabecera_pagina(
-            "Software libre para Android y Windows",
-            "Aplicaciones que respetan tu privacidad",
-            "Herramientas pequeñas y honestas: cada una hace una cosa y la hace bien, funciona sin conexión "
-            "siempre que puede y no pide más permisos de los que necesita.",
-            [boton_claro("Ver las aplicaciones", f"{WP_URL}/aplicaciones/"),
-             boton_contorno_claro("Soporte", f"{WP_URL}/soporte/")],
-            extra=cifras),
-        seccion(
-            encabezado_seccion("Catálogo", "Aplicaciones",
-                               "Si una aplicación está en una tienda, el enlace te lleva allí; si no, a su "
-                               "página de descargas en GitHub."),
-            rejilla(*[tarjeta_app(a, "aplicaciones", "Ver aplicación") for a in apps])),
-        seccion(
-            encabezado_seccion("Cómo trabajamos", "Hechas para durar y para confiar en ellas"),
-            rejilla(*[tarjeta(titulo(t, 3, size="medium", style={"typography": {"fontWeight": "700"},
-                                                                   "color": {"text": TINTA}}),
-                              parrafo(d, style={"color": {"text": APAGADO}}))
-                      for t, d in principios], minimo="15rem"),
-            fondo=SUAVE),
-        llamada_soporte(
-            "¿Necesitas ayuda con alguna aplicación?",
-            f'Las guías explican cada pantalla y cada opción. Si tu duda no está, escribe a '
-            f'<a href="mailto:{CONTACTO}">{CONTACTO}</a>.',
-            [boton("Ir a soporte", f"{WP_URL}/soporte/", fondo=ACENTO, color="#ffffff")], arriba=True),
+        cabecera_pagina(L["portada_ante"], L["portada_h1"], L["portada_entrada"],
+                        [boton_claro(L["ver_apps"], url("apps")), boton_contorno_claro(L["soporte_nav"], url("soporte"))],
+                        otro=url(idioma=L["otro"]), extra=iconos + "\n\n" + cifras),
+        seccion(encabezado_seccion(L["catalogo_ante"], L["catalogo_h2"], L["catalogo_entrada"]),
+                rejilla(*[tarjeta_app(a, "apps", L["ver_app"]) for a in apps])),
+        seccion(trabajo, fondo=SUAVE),
     ])
 
 
 def indice_apps_wp(apps: list[dict]) -> str:
     return "\n\n".join([
-        cabecera_pagina("Catálogo", "Aplicaciones",
-                        "Todas gratuitas, sin anuncios y con el código en GitHub. Si una está en una tienda, "
-                        "el enlace te lleva allí; si no, a su página de descargas.",
-                        [boton_contorno_claro("Soporte", f"{WP_URL}/soporte/")], grande=False),
-        seccion(rejilla(*[tarjeta_app(a, "aplicaciones", "Ver aplicación") for a in apps])),
+        cabecera_pagina(L["catalogo_ante"], L["catalogo_h2"], L["apps_entrada"],
+                        [boton_contorno_claro(L["soporte_nav"], url("soporte"))],
+                        otro=url("apps", idioma=L["otro"]), grande=False),
+        seccion(rejilla(*[tarjeta_app(a, "apps", L["ver_app"]) for a in apps])),
     ])
 
 
 def indice_soporte_wp(apps: list[dict]) -> str:
     return "\n\n".join([
-        cabecera_pagina("Soporte", "Guías de uso",
-                        "Cómo se pone en marcha cada aplicación, qué hace cada pantalla y cada opción, y las "
-                        "dudas más habituales.",
-                        [boton_contorno_claro(f"Escribir a {CONTACTO}", f"mailto:{CONTACTO}")], grande=False),
-        seccion(rejilla(*[tarjeta_app(a, "soporte", "Ver guía") for a in apps])),
+        cabecera_pagina(L["soporte_nav"], L["soporte_h1"], L["soporte_entrada"], [],
+                        otro=url("soporte", idioma=L["otro"]), grande=False),
+        seccion(rejilla(*[tarjeta_app(a, "soporte", L["ver_guia"]) for a in apps])),
     ])
 
 
@@ -558,42 +849,57 @@ def pagina_app_wp(app: dict) -> str:
     s = app["secciones"]
     descarga = [boton_claro(t, u) if i == 0 else boton_contorno_claro(t, u)
                 for i, (t, u) in enumerate(enlaces(app))]
-    descarga.append(boton_contorno_claro("Guía de uso", f"{WP_URL}/soporte/{app['slug']}/"))
-    tiendas = [f'<a href="{u}">{html.escape(t.removeprefix("Descargar en ").removeprefix("Descargar desde "))}</a>'
-               for t, u in enlaces(app)]
+    descarga.append(boton_contorno_claro(L["guia"], url("soporte", app["slug"])))
+    tiendas = []
+    for t, u in enlaces(app):
+        nombre = re.sub(r"^(Descargar en |Descargar desde |Get it on |Download from )", "", t)
+        tiendas.append(f'<a href="{u}">{html.escape(nombre)}</a>')
     ficha = tarjeta(
-        titulo("Ficha", 3, size="medium", style={"typography": {"fontWeight": "700"}, "color": {"text": TINTA}}),
-        dato("Plataformas", html.escape(app["plataformas"])),
-        dato("Descarga", " · ".join(tiendas)),
-        dato("Licencia", "MIT, gratuita y sin anuncios"),
-        dato("Código fuente", f'<a href="{app["github"]}">{app["github"].removeprefix("https://")}</a>')
+        titulo(L["ficha"], 3, size="medium", style={"typography": {"fontWeight": "700"}, "color": {"text": TINTA}}),
+        dato(L["plataformas"], html.escape(app["plataformas"])),
+        dato(L["descarga"], " · ".join(tiendas)),
+        dato(L["licencia"], L["licencia_valor"]),
+        dato(L["codigo_fuente"], f'<a href="{app["github"]}">{app["github"].removeprefix("https://")}</a>')
         if app["github"] else "",
-        dato("Soporte", f'<a href="{WP_URL}/soporte/{app["slug"]}/">Guía de uso</a> · '
-                        f'<a href="mailto:{CONTACTO}">Correo</a>'),
+        dato(L["soporte_dato"], f'<a href="{url("soporte", app["slug"])}">{L["guia"]}</a>'),
         fondo=SUAVE)
     privacidad = tarjeta(
-        titulo("Privacidad", 3, size="medium", style={"typography": {"fontWeight": "700"}, "color": {"text": TINTA}}),
+        titulo(L["privacidad_h"], 3, size="medium", style={"typography": {"fontWeight": "700"}, "color": {"text": TINTA}}),
         wp_html(md(s.get("privacidad", ""))),
-        parrafo(f'<a href="{WP_URL}/privacidad/">Política de privacidad</a>',
+        parrafo(f'<a href="{url("privacidad")}">{L["politica_privacidad"]}</a>',
                 style={"typography": {"fontWeight": "600"}}))
     izquierda = "\n\n".join([
-        titulo("Qué es", 2, size="large", style={"typography": {"fontWeight": "700"}, "color": {"text": TINTA}}),
+        titulo(L["que_es"], 2, size="large", style={"typography": {"fontWeight": "700"}, "color": {"text": TINTA}}),
         wp_html(md(s.get("descripción", ""))),
-        titulo("Funciones principales", 2, size="large",
+        titulo(L["funciones"], 2, size="large",
                style={"typography": {"fontWeight": "700"}, "color": {"text": TINTA},
                       "spacing": {"margin": {"top": "var:preset|spacing|50"}}}),
         wp_html(md(s.get("funciones principales", ""))),
     ])
     derecha = grupo(ficha, privacidad, style={"spacing": {"blockGap": "24px"}})
-    return "\n\n".join([
-        cabecera_pagina(" · ".join(etiquetas(app)) or "Aplicación", app["nombre"], html.escape(app["lema"]),
-                        descarga, grande=False),
+    capturas = []
+    if app.get("capturas") or app.get("capturas_anchas"):
+        capturas.append(encabezado_seccion(L["capturas_ante"], L["capturas_h2"].format(app["nombre"])))
+        dos = app.get("capturas") and app.get("capturas_anchas")
+        if app.get("capturas"):
+            if dos:
+                capturas.append(titulo(L["en_movil"], 3, size="medium", style={"color": {"text": TINTA}}))
+            capturas.append(galeria(app["capturas"], app["nombre"], "11rem"))
+        if app.get("capturas_anchas"):
+            if dos:
+                capturas.append(titulo(L["en_windows"], 3, size="medium", style={
+                    "color": {"text": TINTA}, "spacing": {"margin": {"top": "var:preset|spacing|50"}}}))
+            capturas.append(galeria(app["capturas_anchas"], app["nombre"], "22rem"))
+    return "\n\n".join(x for x in [
+        cabecera_pagina(" · ".join(etiquetas(app)) or L["aplicacion"], app["nombre"], html.escape(app["lema"]),
+                        descarga, otro=url("apps", app["slug"], idioma=L["otro"]), grande=False,
+                        icono=icono_app(app, ancho="88px", radio="20px")),
         seccion(columnas(("64%", izquierda), ("36%", derecha))),
-        llamada_soporte(f"¿Dudas con {html.escape(app['nombre'])}?",
-                        "La guía explica cómo ponerla en marcha, cada pantalla y cada opción, y las preguntas "
-                        "más habituales.",
-                        [boton("Abrir la guía", f"{WP_URL}/soporte/{app['slug']}/", fondo=ACENTO, color="#ffffff")]),
-    ])
+        seccion(*capturas, fondo=SUAVE) if capturas else "",
+        llamada(L["dudas_h"].format(html.escape(app["nombre"])), L["dudas_texto"],
+                [boton(L["abrir_guia"], url("soporte", app["slug"]), fondo=ACENTO, color="#ffffff")],
+                arriba=bool(capturas)),
+    ] if x)
 
 
 def preguntas(texto: str) -> list[tuple[str, str]]:
@@ -608,70 +914,89 @@ def pagina_soporte_wp(app: dict) -> str:
     indice = [(i, re.sub(r"<[^>]+>", "", t)) for i, t in re.findall(r'<h3 id="([^"]+)">(.*?)</h3>', guia)]
     faq = preguntas(s.get("preguntas frecuentes", ""))
     if faq:
-        indice.append(("preguntas-frecuentes", "Preguntas frecuentes"))
+        indice.append((L["faq_ancla"], L["faq"]))
     lista = "".join(f'<li><a href="#{i}">{t}</a></li>' for i, t in indice)
     contenido = [
         tarjeta(
-            parrafo("<strong>En esta guía</strong>", style={"color": {"text": TINTA}}),
+            parrafo(f"<strong>{L['en_esta_guia']}</strong>", style={"color": {"text": TINTA}}),
             f"<!-- wp:list -->\n<ul class=\"wp-block-list\">{lista}</ul>\n<!-- /wp:list -->",
             fondo=SUAVE) if indice else "",
         wp_html(guia),
     ]
     if faq:
-        contenido.append(titulo("Preguntas frecuentes", 2, size="large", ancla="preguntas-frecuentes",
+        contenido.append(titulo(L["faq"], 2, size="large", ancla=L["faq_ancla"],
                                 style={"typography": {"fontWeight": "700"}, "color": {"text": TINTA},
                                        "spacing": {"margin": {"top": "var:preset|spacing|70"}}}))
         contenido.append(grupo(*[desplegable(html.escape(p.rstrip()), md(r)) for p, r in faq],
                                style={"spacing": {"blockGap": "0"}}))
-    ayuda = [boton("Escribir un correo", f"mailto:{CONTACTO}", fondo=ACENTO, color="#ffffff")]
-    if app["github"]:
-        ayuda.append(boton("Abrir una incidencia en GitHub", f"{app['github']}/issues", color=ACENTO, contorno=True))
-    return "\n\n".join([
-        cabecera_pagina(f"Soporte · {app['nombre']}", "Guía de uso",
-                        f"Cómo funciona {html.escape(app['nombre'])}, pantalla a pantalla, y qué hace cada opción.",
-                        [boton_claro("Ver la aplicación", f"{WP_URL}/aplicaciones/{app['slug']}/"),
-                         boton_contorno_claro("Todas las guías", f"{WP_URL}/soporte/")], grande=False),
+    ayuda = llamada(L["no_encuentras"], L["no_encuentras_texto"],
+                    [boton(L["incidencia"], f"{app['github']}/issues", fondo=ACENTO, color="#ffffff")]
+                    ) if app["github"] else ""
+    # Las capturas también en la guía, justo antes del texto, para ver de qué pantallas se habla.
+    capturas = app.get("capturas") or app.get("capturas_anchas")
+    if capturas:
+        contenido.insert(1, galeria(capturas, app["nombre"], "9rem" if app.get("capturas") else "18rem"))
+    return "\n\n".join(x for x in [
+        cabecera_pagina(L["guia_ante"].format(app["nombre"]), L["guia"],
+                        L["guia_entrada"].format(html.escape(app["nombre"])),
+                        [boton_claro(L["ver_la_app"], url("apps", app["slug"])),
+                         boton_contorno_claro(L["todas_guias"], url("soporte"))],
+                        otro=url("soporte", app["slug"], idioma=L["otro"]), grande=False,
+                        icono=icono_app(app, ancho="64px", radio="16px")),
         seccion(*contenido, ancho=LECTURA),
-        llamada_soporte("¿No encuentras lo que buscas?",
-                        "Cuéntanos qué te pasa y con qué versión y dispositivo; respondemos en cuanto podemos.", ayuda),
-    ])
+        ayuda,
+    ] if x)
+
+
+def texto_legal(fichero: str) -> str:
+    carpeta = CONTENIDO / "legal" if L["codigo"] == "es" else CONTENIDO / L["codigo"] / "legal"
+    return (carpeta / fichero).read_text(encoding="utf-8")
 
 
 def privacidad_wp() -> str:
-    fuente = (RAIZ / "CONTENIDO-PARA-GOOGLE-SITES.md").read_text(encoding="utf-8")
-    texto = fuente.split("# PÁGINA 2 — Política de privacidad", 1)[1]
-    texto = texto.split("**Texto:**", 1)[1].strip()
-    texto += "\n\n" + (LEGAL / "privacidad-web.md").read_text(encoding="utf-8")
+    if L["codigo"] == "es":
+        fuente = (RAIZ / "CONTENIDO-PARA-GOOGLE-SITES.md").read_text(encoding="utf-8")
+        texto = fuente.split("# PÁGINA 2 — Política de privacidad", 1)[1].split("**Texto:**", 1)[1].strip()
+    else:
+        texto = texto_legal("privacidad-apps.md")
+    texto += "\n\n" + texto_legal("privacidad-web.md")
     return "\n\n".join([
-        cabecera_pagina("Legal", "Política de privacidad",
-                        "Una sola política para todas las aplicaciones de sOCratic y para esta web: qué datos "
-                        "se tocan, para qué y dónde se quedan.", [], grande=False),
+        cabecera_pagina(L["legal"], L["t_privacidad"], L["privacidad_entrada"], [],
+                        otro=url("privacidad", idioma=L["otro"]), grande=False),
         seccion(wp_html(md(texto)), ancho=LECTURA),
     ])
 
 
-def pagina_legal(fichero: str, h1: str, entrada: str) -> str:
-    texto = (LEGAL / fichero).read_text(encoding="utf-8")
+def pagina_legal(clave: str, fichero: str, h1: str, entrada: str) -> str:
     return "\n\n".join([
-        cabecera_pagina("Legal", h1, entrada, [], grande=False),
-        seccion(wp_html(md(texto)), ancho=LECTURA),
+        cabecera_pagina(L["legal"], h1, entrada, [], otro=url(clave, idioma=L["otro"]), grande=False),
+        seccion(wp_html(md(texto_legal(fichero))), ancho=LECTURA),
     ])
 
 
-# ---------------------------------------------------------------- cabecera y pie del tema
+# ---------------------------------------------------------------- cabecera, pie y plantillas del tema
 
 def cabecera_tema() -> str:
+    pares = [(t, url(c)) for c, t in L["nav"]] + [("GitHub", GITHUB_PERFIL)]
     enlaces_nav = "\n".join(
         f"<!-- wp:navigation-link {{\"label\":\"{t}\",\"url\":\"{u}\",\"kind\":\"custom\",\"isTopLevelLink\":true}} /-->"
-        for t, u in [("Aplicaciones", f"{WP_URL}/aplicaciones/"), ("Soporte", f"{WP_URL}/soporte/"),
-                     ("Privacidad", f"{WP_URL}/privacidad/"), ("GitHub", GITHUB_PERFIL)])
+        for t, u in pares)
     nav = ("<!-- wp:navigation {\"overlayMenu\":\"mobile\",\"style\":{\"typography\":{\"fontWeight\":\"500\"},"
            "\"spacing\":{\"blockGap\":\"28px\"}},\"layout\":{\"type\":\"flex\",\"justifyContent\":\"right\"}} -->\n"
            + enlaces_nav + "\n<!-- /wp:navigation -->")
-    marca = ("<!-- wp:site-title {\"style\":{\"typography\":{\"fontWeight\":\"800\",\"letterSpacing\":\"-0.02em\"},"
-             "\"elements\":{\"link\":{\"color\":{\"text\":\"" + TINTA + "\"},\"typography\":{\"textDecoration\":\"none\"}}}},"
-             "\"fontSize\":\"medium\"} /-->")
-    fila = grupo(marca, nav, align="wide",
+    # El nombre del sitio lleva a la portada del idioma (el bloque site-title siempre iría a la castellana).
+    marca = parrafo(f'<a href="{url()}"><strong>sOCratic</strong></a>', size="medium", clase="soc-marca", style={
+        "typography": {"fontWeight": "800", "letterSpacing": "-0.02em"},
+        "elements": {"link": {"color": {"text": TINTA}, "typography": {"textDecoration": "none"}}}})
+    # Banderas para cambiar de idioma, tras GitHub; se ven también en el móvil, junto al botón del menú.
+    banderas = grupo(*[
+        imagen(f"img/banderas/{i}.png", IDIOMAS[i]["nombre_propio"], ancho="24px", radio="3px",
+               enlace=url(idioma=i))
+        for i in ("es", "en")],
+        style={"spacing": {"blockGap": "10px"}}, layout={"type": "flex", "flexWrap": "nowrap"})
+    derecha = grupo(nav, banderas, style={"spacing": {"blockGap": "24px"}},
+                    layout={"type": "flex", "flexWrap": "nowrap", "verticalAlignment": "center"})
+    fila = grupo(marca, derecha, align="wide",
                  style={"spacing": {"padding": {"top": "18px", "bottom": "18px"}}},
                  layout={"type": "flex", "flexWrap": "nowrap", "justifyContent": "space-between"})
     return grupo(fila, align="full", tag="header",
@@ -691,40 +1016,39 @@ def aviso_cookies() -> str:
           "border": {"radius": "14px"},
           "spacing": {"padding": {"top": "1.25em", "right": "1.5em", "bottom": "1.25em", "left": "1.5em"}}}
     css, cls = _css(st)
-    texto = (f'Esta web está alojada en WordPress.com, que usa cookies para sus estadísticas de visitas. '
-             f'Puedes aceptarlas o ver cómo rechazarlas en la <a href="{WP_URL}/cookies/">política de cookies</a>.')
     attrs = {"render_from_template": True, "align": "wide", "consentExpiryDays": 365, "style": st}
     return (f"<!-- wp:jetpack/cookie-consent{_attrs(attrs)} -->\n"
             f"<div class=\"wp-block-jetpack-cookie-consent alignwide {' '.join(cls)}\" style=\"{css}\" "
-            f"role=\"dialog\" aria-modal=\"true\"><p>{texto}</p>"
-            + boton("Aceptar", "#", fondo="#ffffff", color=ACENTO)
+            f"role=\"dialog\" aria-modal=\"true\"><p>{L['cookies_aviso'].format(url('cookies'))}</p>"
+            + boton(L["aceptar"], "#", fondo="#ffffff", color=ACENTO)
             + "<span>365</span></div>\n<!-- /wp:jetpack/cookie-consent -->")
 
 
 def pie_tema() -> str:
     claro = {"color": {"text": "#94a3b8"}, "typography": {"fontSize": "0.8rem", "fontWeight": "700",
                                                           "letterSpacing": "0.1em", "textTransform": "uppercase"}}
-    lista = lambda pares: "\n".join(parrafo(f'<a href="{u}">{t}</a>', style={"spacing": {"margin": {"top": "6px"}}})
-                                    for t, u in pares)
+
+    def lista(pares):
+        return "\n".join(parrafo(f'<a href="{u}">{t}</a>', style={"spacing": {"margin": {"top": "6px"}}})
+                         for t, u in pares)
+
     cols = columnas(
         ("40%", "\n".join([
             parrafo("<strong>sOCratic</strong>", style={"color": {"text": "#ffffff"}, "typography": {"fontSize": "1.4rem"}}),
-            parrafo("Aplicaciones libres para Android y Windows: sin anuncios, sin rastreadores y con tus datos "
-                    "bajo tu control."),
+            parrafo(L["pie_lema"]),
         ])),
-        ("20%", parrafo("Sitio", style=claro) + "\n" + lista([
-            ("Aplicaciones", f"{WP_URL}/aplicaciones/"), ("Soporte", f"{WP_URL}/soporte/")])),
-        ("20%", parrafo("Legal", style=claro) + "\n" + lista([
-            ("Aviso legal", f"{WP_URL}/aviso-legal/"), ("Privacidad", f"{WP_URL}/privacidad/"),
-            ("Cookies", f"{WP_URL}/cookies/")])),
-        ("20%", parrafo("Contacto", style=claro) + "\n" + lista([
-            ("Correo", f"mailto:{CONTACTO}"), ("GitHub", GITHUB_PERFIL)])),
+        ("20%", parrafo(L["sitio"], style=claro) + "\n" + lista([
+            (L["catalogo_h2"], url("apps")), (L["soporte_nav"], url("soporte")),
+            (L["nombre_otro"], url(idioma=L["otro"]))])),
+        ("20%", parrafo(L["legal"], style=claro) + "\n" + lista([
+            (L["aviso_nav"], url("aviso")), (L["privacidad_h"], url("privacidad")),
+            (L["cookies_nav"], url("cookies"))])),
+        ("20%", parrafo(L["contacto"], style=claro) + "\n" + lista([("GitHub", GITHUB_PERFIL)])),
     )
     return grupo(
         cols,
         separador("#1e293b"),
-        parrafo("© 2026 sOCratic · Software libre con licencia MIT",
-                style={"color": {"text": "#94a3b8"}, "typography": {"fontSize": "0.875rem"}}),
+        parrafo(L["copyright"], style={"color": {"text": "#94a3b8"}, "typography": {"fontSize": "0.875rem"}}),
         aviso_cookies(),
         align="full", tag="footer", clase="soc-sec",
         style={"color": {"background": TINTA, "text": "#cbd5e1"},
@@ -734,12 +1058,25 @@ def pie_tema() -> str:
         layout={"type": "constrained", "contentSize": ANCHO})
 
 
+def plantilla_pagina() -> str:
+    """Plantilla de página: la del tema, con la cabecera fija arriba al hacer scroll y las partes del idioma."""
+    return (
+        '<!-- wp:group {"style":{"position":{"type":"sticky","top":"0px"},"spacing":{"margin":{"top":"0","bottom":"0"}}},'
+        '"layout":{"type":"default"}} -->\n<div class="wp-block-group" style="margin-top:0;margin-bottom:0">'
+        f'<!-- wp:template-part {{"slug":"{L["parte_cab"]}","theme":"{TEMA}","tagName":"div"}} /--></div>\n'
+        '<!-- /wp:group -->\n\n'
+        '<!-- wp:group {"tagName":"main","metadata":{"name":"Main"},"style":{"spacing":{"blockGap":"0","margin":{"top":"0"}}},'
+        '"layout":{"type":"default"}} -->\n<main class="wp-block-group" style="margin-top:0">'
+        '<!-- wp:post-content {"layout":{"type":"constrained"}} /--></main>\n<!-- /wp:group -->\n\n'
+        f'<!-- wp:template-part {{"slug":"{L["parte_pie"]}","theme":"{TEMA}","tagName":"div"}} /-->')
+
+
 # ---------------------------------------------------------------- HTML autónomo
 
-def plantilla(titulo_pag: str, cuerpo: str, prof: int) -> str:
+def plantilla_html(titulo_pag: str, cuerpo: str, prof: int, idioma: str) -> str:
     base = "../" * prof
     return f"""<!doctype html>
-<html lang="es">
+<html lang="{idioma}">
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -753,52 +1090,93 @@ def plantilla(titulo_pag: str, cuerpo: str, prof: int) -> str:
 """
 
 
-def local(bloques: str, prof: int) -> str:
-    """El HTML local es el mismo contenido de WordPress sin comentarios de bloque y con enlaces relativos."""
-    h = re.sub(r"<!-- wp:site-title[^>]*/-->", f'<p class="soc-marca"><a href="{WP_URL}/">sOCratic</a></p>', bloques)
+def local(bloques: str, prof: int, mapa: dict[str, str]) -> str:
+    """El HTML local es el de WordPress sin comentarios de bloque y con enlaces relativos entre páginas."""
     h = re.sub(r"<!-- wp:navigation-link \{\"label\":\"([^\"]+)\",\"url\":\"([^\"]+)\"[^>]*/-->",
-               r'<a href="\2">\1</a>', h)
+               r'<a href="\2">\1</a>', bloques)
     h = re.sub(r"<!-- /?wp:[^>]*-->\n?", "", h)
     base = "../" * prof
 
     def rel(m):
-        partes = [p for p in (m.group(1) or "").split("/") if p]
-        if not partes:
-            return f'href="{base}index.html"'
-        if partes[0] == "aplicaciones":
-            partes[0] = "apps"
-        if len(partes) == 1 and partes[0] in ("privacidad", "aviso-legal", "cookies"):
-            return f'href="{base}{partes[0]}.html"'
-        return f'href="{base}{"/".join(partes)}' + ('/index.html"' if len(partes) == 1 else '.html"')
-    return re.sub(r'href="' + re.escape(WP_URL) + r'(/[^"]*)?"', rel, h)
+        destino = mapa.get(m.group(1))
+        return f'href="{base}{destino}{m.group(2) or ""}"' if destino else m.group(0)
+    return re.sub(r'href="(' + re.escape(WP_URL) + r'/[^"#]*)(#[^"]*)?"', rel, h)
 
 
 # ---------------------------------------------------------------- publicar
 
-def publicar(paginas: list[dict], partes: dict[str, str]):
+def sesion():
     import requests
     tok = json.loads(TOKEN.read_text(encoding="utf-8-sig"))["access_token"]
     s = requests.Session()
     s.headers["Authorization"] = f"Bearer {tok}"
-    api = f"https://public-api.wordpress.com/wp/v2/sites/{SITE_ID}"
-    v11 = f"https://public-api.wordpress.com/rest/v1.1/sites/{SITE_ID}"
+    return s
 
-    def post(url, datos):
-        for intento in range(5):
-            r = s.post(url, json=datos)
-            if r.status_code < 500:
-                return r
-            time.sleep(3 * (intento + 1))
-        return r
 
+API = f"https://public-api.wordpress.com/wp/v2/sites/{SITE_ID}"
+
+
+def post(s, destino, datos=None, **kw):
+    """POST con reintentos: WordPress.com da 502 sueltos."""
+    for intento in range(5):
+        r = s.post(destino, json=datos, **kw)
+        if r.status_code < 500:
+            return r
+        time.sleep(3 * (intento + 1))
+    return r
+
+
+def subir_medios():
+    """Sube a la biblioteca de WordPress las imágenes de contenido/img que no estén o hayan cambiado.
+
+    wordpress/medios.json guarda, por ruta, el id, la URL y la huella del fichero subido.
+    """
+    s = sesion()
+    m = medios()
+    tipos = {".png": "image/png", ".webp": "image/webp", ".jpg": "image/jpeg"}
+    for f in sorted(IMG.rglob("*.*")):
+        ruta = f.relative_to(CONTENIDO).as_posix()
+        datos = f.read_bytes()
+        huella = hashlib.sha256(datos).hexdigest()
+        if m.get(ruta, {}).get("sha") == huella:
+            continue
+        nombre = ruta.removeprefix("img/").replace("/", "-")
+        r = post(s, f"{API}/media", data=datos, headers={
+            "Content-Type": tipos[f.suffix.lower()], "Content-Disposition": f'attachment; filename="{nombre}"'})
+        if not r.ok:
+            raise SystemExit(f"{ruta}: {r.status_code} {r.text[:300]}")
+        viejo = m.get(ruta, {}).get("id")
+        m[ruta] = {"id": r.json()["id"], "url": r.json()["source_url"], "sha": huella}
+        if viejo:  # la versión anterior ya no la usa nadie
+            s.delete(f"{API}/media/{viejo}", params={"force": True})
+        print("imagen subida", ruta)
+        WP.mkdir(exist_ok=True)
+        MEDIOS.write_text(json.dumps(m, indent=1, ensure_ascii=False), encoding="utf-8")
+
+
+def subir_tema(partes: dict[str, str], plantillas: dict[str, str]):
+    """Partes (cabecera y pie de cada idioma) y plantillas (página castellana y page-en)."""
+    s = sesion()
     for slug, contenido in partes.items():
-        r = post(f"{api}/template-parts/{TEMA}//{slug}", {"content": contenido})
+        r = post(s, f"{API}/template-parts/{TEMA}//{slug}", {"content": contenido})
+        if r.status_code == 404:  # la del inglés no existe hasta la primera vez
+            area = "header" if slug.startswith("header") else "footer"
+            r = post(s, f"{API}/template-parts", {"slug": slug, "title": slug, "area": area, "content": contenido})
         print(f"parte {slug}:", r.status_code, "" if r.ok else r.text[:300])
+    for slug, contenido in plantillas.items():
+        r = post(s, f"{API}/templates/{TEMA}//{slug}", {"content": contenido})
+        if r.status_code == 404:
+            r = post(s, f"{API}/templates", {"slug": slug, "title": "Page (English)", "content": contenido})
+        print(f"plantilla {slug}:", r.status_code, "" if r.ok else r.text[:300])
 
+
+def publicar(paginas: list[dict]):
+    s = sesion()
+    v11 = f"https://public-api.wordpress.com/rest/v1.1/sites/{SITE_ID}"
     existentes = {}
     pag = 1
     while True:
-        r = s.get(f"{api}/pages", params={"per_page": 100, "page": pag, "status": "publish,draft",
+        r = s.get(f"{API}/pages", params={"per_page": 100, "page": pag, "status": "publish,draft",
                                           "context": "edit"})
         r.raise_for_status()
         for p in r.json():
@@ -810,17 +1188,18 @@ def publicar(paginas: list[dict], partes: dict[str, str]):
     for p in paginas:
         padre = ids.get(p["padre"], 0) if p["padre"] else 0
         datos = {"title": p["titulo"], "slug": p["slug"], "content": p["wp"], "status": "publish",
-                 "parent": padre, "menu_order": p["orden"], "comment_status": "closed", "ping_status": "closed"}
+                 "parent": padre, "menu_order": p["orden"], "comment_status": "closed", "ping_status": "closed",
+                 "template": p["plantilla"]}
         pid = existentes.get((p["slug"], padre))
         for intento in range(5):
-            r = s.post(f"{api}/pages/{pid}" if pid else f"{api}/pages", json=datos)
+            r = s.post(f"{API}/pages/{pid}" if pid else f"{API}/pages", json=datos)
             if r.status_code < 500:
                 break
             # WordPress.com da 502 de vez en cuando aunque la página se haya guardado:
             # antes de reintentar se mira si ya existe para no duplicarla.
             time.sleep(3 * (intento + 1))
             if not pid:
-                q = s.get(f"{api}/pages", params={"slug": p["slug"], "parent": padre,
+                q = s.get(f"{API}/pages", params={"slug": p["slug"], "parent": padre,
                                                   "status": "publish,draft", "context": "edit"})
                 if q.ok and q.json():
                     pid = q.json()[0]["id"]
@@ -828,72 +1207,117 @@ def publicar(paginas: list[dict], partes: dict[str, str]):
             raise SystemExit(f"{p['slug']}: {r.status_code} {r.text[:300]}")
         ids[p["clave"]] = r.json()["id"]
         # Sin «Me gusta» ni botones de compartir bajo el contenido.
-        post(f"{v11}/posts/{ids[p['clave']]}", {"likes_enabled": False, "sharing_enabled": False})
+        post(s, f"{v11}/posts/{ids[p['clave']]}", {"likes_enabled": False, "sharing_enabled": False})
         print(("actualizada " if pid else "creada     ") + r.json()["link"])
-    # La página de ejemplo que trae WordPress sobra.
+    # Lo que ya no se genera sobra: la página de ejemplo de WordPress y las de apps que salen de la web.
     if ("about", 0) in existentes:
-        s.delete(f"{api}/pages/{existentes[('about', 0)]}", params={"force": True})
+        s.delete(f"{API}/pages/{existentes[('about', 0)]}", params={"force": True})
+    vivas = {(p["slug"], ids.get(p["padre"], 0) if p["padre"] else 0) for p in paginas}
+    contenedores = {ids[k] for k in ("es-apps", "es-soporte", "en-apps", "en-soporte", "en-portada") if k in ids}
+    for (slug, padre), pid in existentes.items():
+        if padre in contenedores and (slug, padre) not in vivas:
+            s.delete(f"{API}/pages/{pid}", params={"force": True})
+            print("borrada    ", slug)
     # Portada fija y comentarios cerrados: esto solo lo aplica la API v2 (la v1.2 contesta 200 y no hace nada).
-    r = post(f"{api}/settings", {
-        "title": "sOCratic", "description": "Aplicaciones libres, sin anuncios y sin rastreadores",
-        "show_on_front": "page", "page_on_front": ids["portada"],
+    r = post(s, f"{API}/settings", {
+        "title": "sOCratic", "description": "Aplicaciones libres para Android y Windows",
+        "show_on_front": "page", "page_on_front": ids["es-portada"],
         "default_comment_status": "closed", "default_ping_status": "closed"})
     print("ajustes:", r.status_code, "" if r.ok else r.text[:300])
-    r = post(f"https://public-api.wordpress.com/rest/v1.2/sites/{SITE_ID}/settings", {
+    r = post(s, f"https://public-api.wordpress.com/rest/v1.2/sites/{SITE_ID}/settings", {
         "lang_id": 19, "default_likes_enabled": False, "sharing_show": []})
     print("ajustes wpcom:", r.status_code, "" if r.ok else r.text[:300])
 
 
 # ---------------------------------------------------------------- principal
 
-def main():
-    apps = [leer_app(p) for p in sorted(APPS.glob("*.md"))]
-    apps.sort(key=lambda a: (not en_tienda(a), a["nombre"].lower()))
-    paginas = [
-        {"clave": "portada", "slug": "inicio", "titulo": "sOCratic", "padre": None, "orden": 0,
-         "wp": portada_wp(apps), "local": "index.html"},
-        {"clave": "apps", "slug": "aplicaciones", "titulo": "Aplicaciones", "padre": None, "orden": 1,
-         "wp": indice_apps_wp(apps), "local": "apps/index.html"},
-        {"clave": "soporte", "slug": "soporte", "titulo": "Soporte", "padre": None, "orden": 2,
-         "wp": indice_soporte_wp(apps), "local": "soporte/index.html"},
-        {"clave": "privacidad", "slug": "privacidad", "titulo": "Política de privacidad", "padre": None,
-         "orden": 3, "wp": privacidad_wp(), "local": "privacidad.html"},
-        {"clave": "aviso-legal", "slug": "aviso-legal", "titulo": "Aviso legal", "padre": None, "orden": 4,
-         "wp": pagina_legal("aviso-legal.md", "Aviso legal",
-                            "Quién está detrás de esta web y en qué condiciones se usa."),
-         "local": "aviso-legal.html"},
-        {"clave": "cookies", "slug": "cookies", "titulo": "Política de cookies", "padre": None, "orden": 5,
-         "wp": pagina_legal("cookies.md", "Política de cookies",
-                            "Qué cookies hay en esta web, quién las pone y cómo rechazarlas."),
-         "local": "cookies.html"},
-    ]
-    for i, app in enumerate(apps):
-        paginas.append({"clave": f"app-{app['slug']}", "slug": app["slug"], "titulo": app["nombre"],
-                        "padre": "apps", "orden": i, "wp": pagina_app_wp(app),
-                        "local": f"apps/{app['slug']}.html"})
-        paginas.append({"clave": f"sop-{app['slug']}", "slug": app["slug"], "titulo": f"{app['nombre']}: guía de uso",
-                        "padre": "soporte", "orden": i, "wp": pagina_soporte_wp(app),
-                        "local": f"soporte/{app['slug']}.html"})
-    partes = {"header": cabecera_tema(), "footer": pie_tema()}
+def paginas_idioma(idioma: str, apps: list[dict]) -> list[dict]:
+    usar(idioma)
+    i = idioma
+    raiz = f"{i}-portada" if i != "es" else None  # en inglés todo cuelga de /en/
+    carpeta = "" if i == "es" else f"{i}/"
 
+    def pagina(clave, slug, titulo_p, padre, orden, wp, local_p, destino):
+        return {"clave": f"{i}-{clave}", "slug": slug, "titulo": titulo_p, "padre": padre, "orden": orden,
+                "wp": wp, "local": carpeta + local_p, "url": destino, "plantilla": L["plantilla"], "idioma": i}
+
+    paginas = [
+        pagina("portada", "inicio" if i == "es" else L["raiz"], L["t_portada"], None, 0, portada_wp(apps),
+               "index.html", url()),
+        pagina("apps", L["apps"], L["t_apps"], raiz, 1, indice_apps_wp(apps), "apps/index.html", url("apps")),
+        pagina("soporte", L["soporte"], L["t_soporte"], raiz, 2, indice_soporte_wp(apps), "soporte/index.html",
+               url("soporte")),
+        pagina("privacidad", L["privacidad"], L["t_privacidad"], raiz, 3, privacidad_wp(), "privacidad.html",
+               url("privacidad")),
+        pagina("aviso", L["aviso"], L["t_aviso"], raiz, 4,
+               pagina_legal("aviso", "aviso-legal.md", L["aviso_h1"], L["aviso_entrada"]), "aviso-legal.html",
+               url("aviso")),
+        pagina("cookies", L["cookies"], L["t_cookies"], raiz, 5,
+               pagina_legal("cookies", "cookies.md", L["cookies_h1"], L["cookies_entrada"]), "cookies.html",
+               url("cookies")),
+    ]
+    for n, app in enumerate(apps):
+        paginas.append(pagina(f"app-{app['slug']}", app["slug"], app["nombre"], f"{i}-apps", n,
+                              pagina_app_wp(app), f"apps/{app['slug']}.html", url("apps", app["slug"])))
+        paginas.append(pagina(f"sop-{app['slug']}", app["slug"], L["t_guia"].format(app["nombre"]), f"{i}-soporte",
+                              n, pagina_soporte_wp(app), f"soporte/{app['slug']}.html", url("soporte", app["slug"])))
+    partes = {L["parte_cab"]: cabecera_tema(), L["parte_pie"]: pie_tema()}
+    return paginas, partes
+
+
+def main():
+    publicar_ya = "--publicar" in sys.argv
+    apps_es = leer_apps("es")
+    apps_en = leer_apps("en")
+    preparar_imagenes(apps_es)
+    preparar_banderas()
+    for a in apps_en:  # mismas imágenes en los dos idiomas
+        b = next(x for x in apps_es if x["slug"] == a["slug"])
+        a.update({k: b[k] for k in ("icono", "capturas", "capturas_anchas")})
+    if publicar_ya:
+        subir_medios()
+
+    paginas, partes, plantillas = [], {}, {}
+    for idioma, apps in (("es", apps_es), ("en", apps_en)):
+        p, t = paginas_idioma(idioma, apps)
+        paginas += p
+        partes.update(t)
+        plantillas[L["plantilla"] or "page"] = plantilla_pagina()
+    usar("es")
+
+    # Copia local: wordpress/ tal cual se publica y sitio/ navegable sin servidor.
+    mapa = {p["url"]: p["local"] for p in paginas}
+    # Se regenera todo: fuera las salidas anteriores (así no quedan páginas de apps que salen de la web).
+    for viejo in [*WP.rglob("*.html"), *SITIO.rglob("*.html")]:
+        viejo.unlink()
     WP.mkdir(exist_ok=True)
-    (WP / "_cabecera.html").write_text(partes["header"], encoding="utf-8")
-    (WP / "_pie.html").write_text(partes["footer"], encoding="utf-8")
+    partes_wp = {k: resolver_imagenes(v) for k, v in partes.items()}
+    for nombre, contenido in {**{f"_parte-{k}": v for k, v in partes_wp.items()},
+                              **{f"_plantilla-{k}": v for k, v in plantillas.items()}}.items():
+        (WP / f"{nombre}.html").write_text(contenido, encoding="utf-8")
     for p in paginas:
-        destino = WP / (("" if not p["padre"] else ("aplicaciones" if p["padre"] == "apps" else "soporte") + "/")
-                        + p["slug"] + ".html")
+        p["local_wp"] = p["wp"]
+        p["wp"] = resolver_imagenes(p["wp"])
+        destino = WP / (p["url"].removeprefix(WP_URL).strip("/") or "inicio")
+        destino = destino.with_name(destino.name + ".html")
         destino.parent.mkdir(parents=True, exist_ok=True)
         destino.write_text(p["wp"], encoding="utf-8")
-        if p["local"]:
-            prof = p["local"].count("/")
-            f = SITIO / p["local"]
-            f.parent.mkdir(parents=True, exist_ok=True)
-            cuerpo = "\n".join(local(x, prof) for x in (partes["header"], p["wp"], partes["footer"]))
-            f.write_text(plantilla(p["titulo"], cuerpo, prof), encoding="utf-8")
+        prof = p["local"].count("/")
+        f = SITIO / p["local"]
+        f.parent.mkdir(parents=True, exist_ok=True)
+        idioma_p = p["idioma"]
+        cab = partes["header" if idioma_p == "es" else f"header-{idioma_p}"]
+        pie = partes["footer" if idioma_p == "es" else f"footer-{idioma_p}"]
+        cuerpo = "\n".join(local(x, prof, mapa) for x in (cab, p["local_wp"], pie))
+        f.write_text(plantilla_html(p["titulo"], resolver_imagenes(cuerpo, "../" * prof), prof, idioma_p),
+                     encoding="utf-8")
     (SITIO / "estilo.css").write_text((RAIZ / "estilo.css").read_text(encoding="utf-8"), encoding="utf-8")
-    print(f"{len(apps)} aplicaciones, {len(paginas)} páginas generadas en sitio/ y wordpress/")
-    if "--publicar" in sys.argv:
-        publicar(paginas, partes)
+    shutil.copytree(IMG, SITIO / "img", dirs_exist_ok=True)
+    print(f"{len(apps_es)} aplicaciones, {len(paginas)} páginas en dos idiomas generadas en sitio/ y wordpress/")
+
+    if publicar_ya:
+        subir_tema(partes_wp, plantillas)
+        publicar(paginas)
 
 
 if __name__ == "__main__":

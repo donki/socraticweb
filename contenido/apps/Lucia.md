@@ -1,5 +1,6 @@
 # sOC Lucia
 - slug: lucia
+- publicar: no (Josep, 2026-09-25: de momento fuera de la web)
 - plataformas: Windows 10 (versión 2004) o posterior y Windows 11, 64 bits; extensión opcional para Visual Studio Code
 - lema: Una inteligencia artificial privada que vive en tu PC: nada de lo que escribes sale de él.
 - github: https://github.com/donki/Lucia

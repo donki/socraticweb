@@ -71,7 +71,7 @@ Se abre con el botón de menú de la barra superior. Tiene:
 ### Acerca de
 
 - **Cabecera**: nombre de la app, «Versión X», «Lector de archivos de texto» y Socratic.
-- **Contacto**: botón con el correo jsoladelarosa@gmail.com. «Toca para enviar un correo electrónico» abre tu aplicación de correo.
+- **Contacto**: botón con el correo del autor. «Toca para enviar un correo electrónico» abre tu aplicación de correo.
 - **Idioma**: botones **Español** y **English**. «Selecciona tu idioma preferido». El cambio se aplica al momento y se recuerda.
 - **Privacidad**: resumen de qué hace la aplicación con tus datos.
 - **Licencia**: «Esta aplicación es software libre distribuido bajo licencia MIT.»

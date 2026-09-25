@@ -1,0 +1,441 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>sOC Remote Connections Manager: user guide</title>
+<link rel="stylesheet" href="../../estilo.css">
+</head>
+<body>
+<header class="wp-block-group alignfull has-background" style="border-bottom-color:#e2e8f0;border-bottom-width:1px;border-bottom-style:solid;background-color:#ffffff;margin-top:0;margin-bottom:0">
+<div class="wp-block-group alignwide" style="padding-top:18px;padding-bottom:18px">
+<p class="has-medium-font-size soc-marca has-link-color" style="font-weight:800;letter-spacing:-0.02em"><a href="../../en/index.html"><strong>sOCratic</strong></a></p>
+
+<div class="wp-block-group">
+<a href="../../en/apps/index.html">Apps</a>
+<a href="../../en/soporte/index.html">Support</a>
+<a href="../../en/privacidad.html">Privacy</a>
+<a href="https://github.com/donki">GitHub</a>
+
+<div class="wp-block-group">
+<figure class="wp-block-image size-full has-custom-border is-resized"><a href="../../index.html"><img src="../../img/banderas/es.png" alt="Español" class="has-border-color" style="border-color:#e2e8f0;border-width:1px;border-radius:3px;width:24px"/></a></figure>
+
+<figure class="wp-block-image size-full has-custom-border is-resized"><a href="../../en/index.html"><img src="../../img/banderas/en.png" alt="English" class="has-border-color" style="border-color:#e2e8f0;border-width:1px;border-radius:3px;width:24px"/></a></figure>
+</div>
+</div>
+</div>
+</header>
+
+<div class="wp-block-group alignfull soc-hero soc-sec has-text-color has-background has-link-color" style="color:#ffffff;background:linear-gradient(135deg,#1e1b4b 0%,#312e81 55%,#4338ca 100%);padding-top:var(--wp--preset--spacing--70);padding-bottom:var(--wp--preset--spacing--70);margin-top:0;margin-bottom:0">
+<p class="has-link-color" style="font-size:0.875rem;font-weight:600"><a href="../../soporte/rcmanager.html" lang="es">Leer en español →</a></p>
+
+<figure class="wp-block-image size-full has-custom-border is-resized"><img src="../../img/rcmanager/icono.png" alt="sOC Remote Connections Manager icon" class="" style="border-radius:16px;width:64px"/></figure>
+
+<p class="has-text-color" style="color:#c7d2fe;font-size:0.8rem;font-weight:700;letter-spacing:0.12em;text-transform:uppercase">Support · sOC Remote Connections Manager</p>
+
+<h1 class="wp-block-heading has-large-font-size has-text-color" style="color:#ffffff;font-weight:700;line-height:1.08;letter-spacing:-0.02em">User guide</h1>
+
+<p class="has-text-color" style="color:#e0e7ff;font-size:1.2rem;line-height:1.6">How sOC Remote Connections Manager works, screen by screen, and what every option does.</p>
+
+<div class="wp-block-buttons"><div class="wp-block-button"><a class="wp-block-button__link has-text-color has-background wp-element-button" href="../../en/apps/rcmanager.html" style="border-radius:10px;color:#4338ca;background-color:#ffffff;padding-top:12px;padding-bottom:12px;padding-left:22px;padding-right:22px">View the app</a></div>
+<div class="wp-block-button is-style-outline"><a class="wp-block-button__link has-text-color wp-element-button" href="../../en/soporte/index.html" style="border-width:1.5px;border-style:solid;border-radius:10px;color:#ffffff;padding-top:12px;padding-bottom:12px;padding-left:22px;padding-right:22px">All guides</a></div>
+</div>
+</div>
+
+<div class="wp-block-group alignfull soc-sec" style="padding-top:var(--wp--preset--spacing--70);padding-bottom:var(--wp--preset--spacing--70);margin-top:0;margin-bottom:0">
+<div class="wp-block-group soc-card has-border-color has-background" style="border-color:#e2e8f0;border-width:1px;border-radius:16px;background-color:#f8fafc;padding-top:28px;padding-bottom:28px;padding-left:28px;padding-right:28px">
+<p class="has-text-color" style="color:#0f172a"><strong>In this guide</strong></p>
+
+<ul class="wp-block-list"><li><a href="#installation">Installation</a></li><li><a href="#getting-started">Getting started</a></li><li><a href="#everyday-use">Everyday use</a></li><li><a href="#main-window">Main window</a></li><li><a href="#connection-editor">Connection editor</a></li><li><a href="#remote-desktop-session-rdp">Remote Desktop session (RDP)</a></li><li><a href="#ssh-session">SSH session</a></li><li><a href="#file-session-sftp-scp-and-ftp-ftps">File session (SFTP / SCP and FTP / FTPS)</a></li><li><a href="#settings">Settings</a></li><li><a href="#about">About</a></li><li><a href="#shortcut-options">Shortcut options</a></li><li><a href="#faq">FAQ</a></li></ul>
+</div>
+
+<div class="wp-block-group soc-grid">
+<figure class="wp-block-image size-full has-custom-border"><img src="../../img/rcmanager/escritorio-1.webp" alt="Screenshot of sOC Remote Connections Manager" class="has-border-color" style="border-color:#e2e8f0;border-width:1px;border-radius:12px"/></figure>
+
+<figure class="wp-block-image size-full has-custom-border"><img src="../../img/rcmanager/escritorio-2.webp" alt="Screenshot of sOC Remote Connections Manager" class="has-border-color" style="border-color:#e2e8f0;border-width:1px;border-radius:12px"/></figure>
+
+<figure class="wp-block-image size-full has-custom-border"><img src="../../img/rcmanager/escritorio-3.webp" alt="Screenshot of sOC Remote Connections Manager" class="has-border-color" style="border-color:#e2e8f0;border-width:1px;border-radius:12px"/></figure>
+</div>
+
+<h3 id="installation" class="wp-block-heading has-medium-font-size has-text-color" style="color:#0f172a;margin-top:var(--wp--preset--spacing--40);font-weight:700;line-height:1.25">Installation</h3>
+
+<ol class="wp-block-list">
+<li>Download the latest version from the GitHub releases page (https://github.com/donki/RCManager/releases). There are two options:<ul>
+<li>The <code>sOCRCManager.exe</code> executable: no installation needed, just double-click it.</li>
+<li>The <code>.msix</code> package: installs like any other Windows app.</li>
+</ul>
+</li>
+<li>You can also install it from the <a href="https://apps.microsoft.com/detail/9MXKDZMLCS99">Microsoft Store</a>, which keeps it up to date for you.</li>
+</ol>
+
+<p>Requirements: Windows 10 (version 2004) or later, or Windows 11. Remote Desktop uses the client already built into Windows; there is nothing else to install.</p>
+
+<h3 id="getting-started" class="wp-block-heading has-medium-font-size has-text-color" style="color:#0f172a;margin-top:var(--wp--preset--spacing--40);font-weight:700;line-height:1.25">Getting started</h3>
+
+<ol class="wp-block-list">
+<li>Open the app. The tree is empty and tells you: "No connections yet. Add one with + and it will show up here."</li>
+<li>If you already have connections in Remote Desktop Manager or in .rdp files, go to Settings (gear icon) › Import connections. Otherwise, click "New connection" (+).</li>
+<li>Fill in at least the Name and the Host, choose the Type and click Save.</li>
+<li>Optional: in Settings, choose whether to store your connections only on this PC or in Google Drive / OneDrive.</li>
+</ol>
+
+<p>You don't need to create any account. Only if you choose to store your connections in the cloud will you sign in with your Google or Microsoft account.</p>
+
+<h3 id="everyday-use" class="wp-block-heading has-medium-font-size has-text-color" style="color:#0f172a;margin-top:var(--wp--preset--spacing--40);font-weight:700;line-height:1.25">Everyday use</h3>
+
+<ul class="wp-block-list">
+<li>To connect: double-click the connection, or select it and click Connect (or press Enter), or drag it to the tab area.</li>
+<li>If the connection has no saved password, you are asked for it when connecting, with the "Remember it on this PC (encrypted)" checkbox.</li>
+<li>Each session opens in a tab. Switch between them with a click, with Ctrl+Tab / Ctrl+Shift+Tab, or with the open sessions button on the bottom bar.</li>
+<li>To edit a connection: select it and click Edit, or Ctrl + double-click.</li>
+<li>To close a session: "Disconnect this tab" button on the tab itself.</li>
+</ul>
+
+<h3 id="main-window" class="wp-block-heading has-medium-font-size has-text-color" style="color:#0f172a;margin-top:var(--wp--preset--spacing--40);font-weight:700;line-height:1.25">Main window</h3>
+
+<p><strong>Tree toolbar (from left to right)</strong></p>
+
+<ul class="wp-block-list">
+<li>Connect: opens the selected connection.</li>
+<li>New connection (+): opens an empty connection editor.</li>
+<li>New folder: asks for the "Folder name" and creates it.</li>
+<li>Edit: opens the editor for the selected connection (or renames the selected folder).</li>
+<li>Duplicate: creates a copy of the selected connection.</li>
+<li>Delete: asks for confirmation ("Delete "…"?"). If it is a folder, it also deletes the connections inside it ("Delete folder "…" and the N connections inside?").</li>
+<li>Search…: filters the tree by name, host, user, folder or notes; only folders that contain a matching connection are shown.</li>
+</ul>
+
+<p><strong>Connection tree</strong></p>
+
+<ul class="wp-block-list">
+<li>Double-click: connect. Ctrl + double-click: edit. Enter: connect. Del: delete.</li>
+<li>Dragging a connection or a folder onto another folder moves it there (onto a connection, into that connection's folder). The target folder is highlighted as you drag over it.</li>
+<li>Dragging a connection to the tab area opens it.</li>
+<li>When you close the app, it remembers the expanded folders, the selected connection and the width of the pane.</li>
+</ul>
+
+<p><strong>Buttons at the bottom of the tree</strong></p>
+
+<ul class="wp-block-list">
+<li>Settings (gear): "Settings: where connections are stored", import and window behavior.</li>
+<li>Open the connections file folder: opens the folder where your connections are stored in File Explorer.</li>
+<li>Español / English: switches the language instantly.</li>
+<li>About: contact the author, language, privacy, license and legal notice.</li>
+</ul>
+
+<p><strong>Tab area</strong></p>
+
+<ul class="wp-block-list">
+<li>With no open sessions it shows: "Double-click a connection, or select it and press Connect. Each session opens in its own tab."</li>
+<li>Each tab has its own buttons:<ul>
+<li>Smaller / Bigger (− and +): zoom for the tab. In SSH it changes the terminal font size; in file sessions, the font size of the panes; in RDP, the scale of the remote desktop (from 100 to 200%). It is remembered the next time you open that connection.</li>
+<li>Full screen (F11; Ctrl+Esc to come back).</li>
+<li>Disconnect this tab.</li>
+</ul>
+</li>
+</ul>
+
+<p><strong>Status bar</strong></p>
+
+<ul class="wp-block-list">
+<li>Open sessions: a menu with all the tabs to switch to any of them, handy when the remote desktop grabs the keyboard (shortcuts Ctrl+Tab / Ctrl+Shift+Tab).</li>
+<li>Status messages: "Connecting to…", "Connected to…", the result of the cloud sync, and so on.</li>
+</ul>
+
+<p><strong>Full screen</strong></p>
+
+<ul class="wp-block-list">
+<li>RDP: uses the full screen mode of the Windows client itself, with its connection bar at the top (it hides automatically; its minimize and close buttons work: close disconnects and closes the tab).</li>
+<li>SSH and files: the window fills the whole screen and a bar appears at the top that hides automatically and comes back when you move the mouse to the top edge, with the session name, "Leave full screen (Ctrl+Esc)", open sessions and "Disconnect this tab".</li>
+<li>The screen it opens on is chosen in the connection editor, with the "Full screen on" option.</li>
+</ul>
+
+<p><strong>Notification area</strong></p>
+
+<ul class="wp-block-list">
+<li>When you minimize, the window hides and leaves its icon next to the clock (if you don't see it, it is among the hidden icons in Windows 11). One click brings it back; right-click for "Open" and "Exit". Open sessions stay alive. You can turn this off in Settings › Window.</li>
+</ul>
+
+<h3 id="connection-editor" class="wp-block-heading has-medium-font-size has-text-color" style="color:#0f172a;margin-top:var(--wp--preset--spacing--40);font-weight:700;line-height:1.25">Connection editor</h3>
+
+<p>It opens with "New connection" or "Edit". The tabs shown depend on the type: RDP shows General, Display, Local resources, Experience and Advanced; SFTP / SCP and FTP / FTPS show General and Transfers; SSH only General. At the bottom, Cancel and Save ("The name and the host are required.").</p>
+
+<h4 id="general-tab-all-types" class="wp-block-heading has-text-color" style="color:#0f172a;margin-top:var(--wp--preset--spacing--40);font-size:1.1rem;font-weight:700;line-height:1.25">General tab (all types)</h4>
+
+<ul class="wp-block-list">
+<li>Name: how it appears in the tree.</li>
+<li>Type: RDP, SSH, SFTP / SCP or FTP / FTPS. When you change it, the usual port is suggested (3389 for RDP, 22 for SSH and SFTP, 21 for FTP and 990 for implicit FTPS).</li>
+<li>Folder: the tree folder the connection goes in (you can pick one or type a new one).</li>
+<li>Host: name or IP address.</li>
+<li>Port.</li>
+<li>User.</li>
+<li>Domain (RDP only).</li>
+<li>Password, with an eye button to show or hide it. "Leave empty to be asked when connecting."</li>
+<li>Private key (file) (SSH and SFTP), with a "Choose file" button: "OpenSSH or PEM file. If set, the password is the key passphrase."</li>
+<li>Encryption (FTP / FTPS only): "None (plain FTP)", "FTPS explicit (AUTH TLS, port 21)" or "FTPS implicit (port 990)".</li>
+<li>"Transfer with SCP instead of SFTP (browsing always uses SFTP)" (SFTP / SCP only).</li>
+<li>Remote folder to open and Local folder to open (SFTP and FTP): "Leave empty for the server's default folder and your user profile." If you don't set a remote folder, it starts at the root of the server (/).</li>
+<li>Full screen on: "The screen the window is on" or a specific screen ("Screen N (width×height)", marking the primary one).</li>
+<li>Notes: free text (the search box finds it too).</li>
+</ul>
+
+<h4 id="display-tab-rdp" class="wp-block-heading has-text-color" style="color:#0f172a;margin-top:var(--wp--preset--spacing--40);font-size:1.1rem;font-weight:700;line-height:1.25">Display tab (RDP)</h4>
+
+<ul class="wp-block-list">
+<li>Remote desktop size:<ul>
+<li>"Fit the tab (follows the window)" (default): asks the server for the resolution that fits the tab, crisp and with no bars, and changes it when you resize the window.</li>
+<li>Fixed sizes: 1024 × 768, 1280 × 800, 1366 × 768, 1600 × 900, 1920 × 1080, 1920 × 1200, 2560 × 1440.</li>
+<li>"Custom…": enables Width and Height (at least 200 pixels each). A fixed size is scaled to the tab.</li>
+</ul>
+</li>
+<li>"Use all my monitors in full screen": in full screen the remote desktop gets one monitor for each screen on your PC (the session reconnects in full screen to get them); in the tab it is always a single screen. Off by default.</li>
+<li>Colours: "High colour (15 bit)", "High colour (16 bit)", "True colour (24 bit)" or "Highest quality (32 bit)" (default).</li>
+<li>"Show the connection bar in full screen" (on by default).</li>
+</ul>
+
+<h4 id="local-resources-tab-rdp" class="wp-block-heading has-text-color" style="color:#0f172a;margin-top:var(--wp--preset--spacing--40);font-size:1.1rem;font-weight:700;line-height:1.25">Local resources tab (RDP)</h4>
+
+<ul class="wp-block-list">
+<li>Remote audio playback: "Play on this PC" (default), "Play on the remote computer" or "Do not play".</li>
+<li>"Record from this PC (microphone)": uses your microphone in the remote session (off by default).</li>
+<li>Windows key combinations (Alt+Tab, Win…): "On this PC", "On the remote computer" or "On the remote computer only in full screen" (default).</li>
+<li>Local devices and resources to use in the remote session:<ul>
+<li>Printers (on by default).</li>
+<li>Clipboard (text, images and files) (on by default).</li>
+<li>Drives of this PC (copy and move files with Explorer) (on by default): your drives appear on the remote computer as "C on your PC" under This PC, including USB drives you plug in during the session.</li>
+<li>Smart cards and Windows Hello (on by default).</li>
+<li>Serial ports (off by default).</li>
+<li>Other Plug and Play devices (cameras, players…) (off by default).</li>
+</ul>
+</li>
+</ul>
+
+<h4 id="experience-tab-rdp" class="wp-block-heading has-text-color" style="color:#0f172a;margin-top:var(--wp--preset--spacing--40);font-size:1.1rem;font-weight:700;line-height:1.25">Experience tab (RDP)</h4>
+
+<ul class="wp-block-list">
+<li>Visual effects (turn off on slow links), all on by default:<ul>
+<li>Desktop background.</li>
+<li>Font smoothing.</li>
+<li>Desktop composition.</li>
+<li>Show window contents while dragging.</li>
+<li>Menu and window animation.</li>
+<li>Visual styles.</li>
+<li>Persistent bitmap caching.</li>
+</ul>
+</li>
+<li>Connection: "Reconnect if the connection is dropped" (on by default).</li>
+</ul>
+
+<h4 id="advanced-tab-rdp" class="wp-block-heading has-text-color" style="color:#0f172a;margin-top:var(--wp--preset--spacing--40);font-size:1.1rem;font-weight:700;line-height:1.25">Advanced tab (RDP)</h4>
+
+<ul class="wp-block-list">
+<li>If server authentication fails (certificate): "Connect and don't warn me", "Warn me" (default; it warns you and lets you continue, like the Windows client) or "Do not connect".</li>
+<li>"Administration session (console, /admin)".</li>
+<li>Remote Desktop Gateway: "Do not use a gateway" (default), "Always use the gateway" or "Use the gateway except for local addresses".<ul>
+<li>Gateway server.</li>
+<li>"Use the same user and password as the remote desktop" (on by default). If you untick it, separate User, Domain and Password fields for the gateway appear.</li>
+</ul>
+</li>
+</ul>
+
+<h4 id="transfers-tab-sftp-scp-and-ftp-ftps" class="wp-block-heading has-text-color" style="color:#0f172a;margin-top:var(--wp--preset--spacing--40);font-size:1.1rem;font-weight:700;line-height:1.25">Transfers tab (SFTP / SCP and FTP / FTPS)</h4>
+
+<ul class="wp-block-list">
+<li>Files at a time: from 1 to 8 (default 2). "Each simultaneous transfer opens its own connection to the server. 1 is the safest; 2–4 speeds up many small files."</li>
+<li>Retries on failure: from 0 to 5 (default 1).</li>
+<li>If the file already exists at the destination: "Ask before overwriting" (default), "Overwrite" or "Skip".</li>
+<li>"Keep the original modification date" (on by default).</li>
+<li>"Show hidden files (dotfiles) when opening".</li>
+<li>Keep-alive (seconds, 0 = off): default 30.</li>
+<li>Timeout (seconds): default 20.</li>
+<li>FTP only:<ul>
+<li>Data connections: "Passive (the usual choice behind a router)" (default) or "Active".</li>
+<li>File name encoding: UTF-8 (default) or Latin-1 (ISO-8859-1).</li>
+</ul>
+</li>
+</ul>
+
+<h3 id="remote-desktop-session-rdp" class="wp-block-heading has-medium-font-size has-text-color" style="color:#0f172a;margin-top:var(--wp--preset--spacing--40);font-weight:700;line-height:1.25">Remote Desktop session (RDP)</h3>
+
+<ul class="wp-block-list">
+<li>The desktop appears inside the tab and fits its size if you chose "Fit the tab".</li>
+<li>Zoom (− and +) changes the scale of the remote desktop between 100 and 200%, and is restored when you open the connection again.</li>
+<li>To copy files between your PC and the server: Ctrl+C in one File Explorer and Ctrl+V in the other, or use your PC's drives that appear on the remote computer.</li>
+</ul>
+
+<h3 id="ssh-session" class="wp-block-heading has-medium-font-size has-text-color" style="color:#0f172a;margin-top:var(--wp--preset--spacing--40);font-weight:700;line-height:1.25">SSH session</h3>
+
+<ul class="wp-block-list">
+<li>Terminal with colors, cursor, and full-screen programs such as vim, htop or less.</li>
+<li>Scrollback: mouse wheel or Shift+Page Up / Shift+Page Down.</li>
+<li>Copy: Ctrl+Shift+C. Paste: Ctrl+Shift+V. Right-click: copies if there is selected text, and pastes if there isn't.</li>
+<li>The terminal adapts to the size of the window.</li>
+</ul>
+
+<h3 id="file-session-sftp-scp-and-ftp-ftps" class="wp-block-heading has-medium-font-size has-text-color" style="color:#0f172a;margin-top:var(--wp--preset--spacing--40);font-weight:700;line-height:1.25">File session (SFTP / SCP and FTP / FTPS)</h3>
+
+<p>While connecting, the tab shows "Connecting to…"; once connected, the two-pane explorer appears: this PC on the left and the server on the right. Each pane has its own path bar (you can type a path directly) and Name, Size and Modified columns (and, on Linux/Unix servers, Permissions and Owner).</p>
+
+<p>Pane buttons:</p>
+
+<ul class="wp-block-list">
+<li>This PC (local pane): to change drives.</li>
+<li>Up one level (Backspace).</li>
+<li>Refresh.</li>
+<li>New folder (F7).</li>
+<li>Rename (F2).</li>
+<li>Delete (Del): "Folders go with everything inside; there is no recycle bin."</li>
+<li>Upload the selection to the server / Download the selection to this PC (F5, or drag it to the other side).</li>
+<li>Open: locally, with the Windows default program; remotely, a copy with the default program.</li>
+<li>Edit here (text files).</li>
+<li>Copy the path.</li>
+<li>Show hidden files.</li>
+<li>Permissions and owner (Unix servers).</li>
+<li>Cancel the transfer (while one is in progress).</li>
+</ul>
+
+<p>Double-clicking a text file on the server opens it in the built-in editor; on a local file, it opens it with its Windows program. Transfers are queued, with progress ("Uploading… · N of M").</p>
+
+<p>If a file already exists and the connection is set to "Ask before overwriting", a "File already exists" dialog appears with Overwrite, Skip and the "Do the same for the rest" checkbox.</p>
+
+<p><strong>Permissions and owner window</strong> (Linux/Unix servers only)</p>
+
+<ul class="wp-block-list">
+<li>Permissions: Read, Write and Execute checkboxes for Owner, Group and Others, with the Octal value shown.</li>
+<li>Owner and group: names or numbers; empty = no change. With SFTP, changing by name runs a command over SSH with the same credentials; most FTP servers do not allow changing the owner.</li>
+<li>"Apply to everything inside the folders".</li>
+<li>Apply.</li>
+</ul>
+
+<p><strong>Built-in text editor</strong></p>
+
+<ul class="wp-block-list">
+<li>Save to the server (Ctrl+S), keeping the same encoding and line endings.</li>
+<li>Find (Ctrl+F): Next (Enter) and Previous (Shift+Enter).</li>
+<li>Ctrl + and Ctrl − change the font size (it is remembered).</li>
+<li>The bottom bar shows the line and column, and the time of the last save.</li>
+<li>If you close it with unsaved changes, it asks whether to save them to the server (Save, Discard or Cancel).</li>
+</ul>
+
+<h3 id="settings" class="wp-block-heading has-medium-font-size has-text-color" style="color:#0f172a;margin-top:var(--wp--preset--spacing--40);font-weight:700;line-height:1.25">Settings</h3>
+
+<p><strong>Where connections are stored</strong></p>
+
+<ul class="wp-block-list">
+<li>This PC: connections stay in your user profile; nothing leaves the computer.</li>
+<li>Google Drive: you sign in with Google in the browser; the file goes to the app's private folder in your Drive, with no access to your other files. On Google's permissions screen you must tick the Google Drive checkbox.</li>
+<li>OneDrive: you sign in with Microsoft; the file goes to the app folder in your OneDrive, with no access to your other files.</li>
+<li>Below, it shows which account you are signed in with and the last sync.</li>
+</ul>
+
+<p><strong>Encryption passphrase</strong> (only with Google Drive or OneDrive)</p>
+
+<ul class="wp-block-list">
+<li>Passphrase box, with an eye button to show it. At least 8 characters.</li>
+<li>Save the passphrase and sync.</li>
+<li>Sync now.</li>
+<li>The passphrase never leaves your PC and is not stored in your account: use the same one on every computer. If you forget it, the cloud copy cannot be read. Without a passphrase nothing is uploaded.</li>
+<li>At startup the cloud copy is downloaded if it is newer, and every change is uploaded; if you save from two computers, the last one wins.</li>
+</ul>
+
+<p><strong>Import connections</strong></p>
+
+<ul class="wp-block-list">
+<li>"Import from Remote Desktop Manager (.rdm) or Remote Desktop files (.rdp)" button.</li>
+<li>From an .rdm file, RDP, SSH, FTP/FTPS and SFTP/SCP connections are imported with their folders. From .rdp files (you can select several at once) you get one connection per file, with its name and options.</li>
+<li>Passwords are not imported: they are asked for when connecting. When it finishes, it tells you how many were imported, how many already existed and how many were skipped because they are of unsupported types.</li>
+</ul>
+
+<p><strong>Window</strong></p>
+
+<ul class="wp-block-list">
+<li>"Minimize to the notification area" (on by default). When off, the window minimizes to the taskbar like any other window.</li>
+</ul>
+
+<p>Close: closes Settings.</p>
+
+<h3 id="about" class="wp-block-heading has-medium-font-size has-text-color" style="color:#0f172a;margin-top:var(--wp--preset--spacing--40);font-weight:700;line-height:1.25">About</h3>
+
+<p>Contact ("Write to the author"), language switch, privacy, MIT license and legal notice.</p>
+
+<h3 id="shortcut-options" class="wp-block-heading has-medium-font-size has-text-color" style="color:#0f172a;margin-top:var(--wp--preset--spacing--40);font-weight:700;line-height:1.25">Shortcut options</h3>
+
+<p>You can create a shortcut that opens a connection at startup: <code>sOCRCManager.exe --open "Connection name"</code>. Also, <code>--edit "Name"</code> opens its editor, and <code>--edit-file "Name" "/path"</code> opens a file on the server in the built-in editor.</p>
+
+<h2 id="faq" class="wp-block-heading has-large-font-size has-text-color" style="color:#0f172a;margin-top:var(--wp--preset--spacing--70);font-weight:700">FAQ</h2>
+
+<div class="wp-block-group">
+<details class="wp-block-details" style="border-bottom-color:#e2e8f0;border-bottom-width:1px;border-bottom-style:solid;padding-top:18px;padding-bottom:18px"><summary><strong>It won&#x27;t connect to an SSH, SFTP or FTP server. What&#x27;s wrong?</strong></summary>
+<p>A "Could not connect" window appears with the reason: the name does not resolve (check the host name or the DNS), the port is closed (wrong port or the service is stopped), it does not answer in time (the machine is off or a firewall is blocking it), there is no route (check the network or the VPN), wrong user name or password, or the server does not offer TLS. In that last case, try plain FTP or "FTPS implicit" on port 990.</p>
+</details>
+
+<details class="wp-block-details" style="border-bottom-color:#e2e8f0;border-bottom-width:1px;border-bottom-style:solid;padding-top:18px;padding-bottom:18px"><summary><strong>Remote Desktop says it cannot continue because of the certificate.</strong></summary>
+<p>In the connection editor, Advanced tab, "If server authentication fails" must be set to "Warn me" (it lets you continue after warning you) or "Connect and don't warn me". "Do not connect" blocks servers with a self-signed certificate.</p>
+</details>
+
+<details class="wp-block-details" style="border-bottom-color:#e2e8f0;border-bottom-width:1px;border-bottom-style:solid;padding-top:18px;padding-bottom:18px"><summary><strong>When I open an RDP connection the zoom goes back to 100%.</strong></summary>
+<p>Since version 2026.9.23.1 the zoom is applied after signing in and is retried for a few seconds until the server accepts it. Update to the latest version.</p>
+</details>
+
+<details class="wp-block-details" style="border-bottom-color:#e2e8f0;border-bottom-width:1px;border-bottom-style:solid;padding-top:18px;padding-bottom:18px"><summary><strong>I minimized the window and it disappeared.</strong></summary>
+<p>It is in the notification area, next to the clock (in Windows 11, it may be among the hidden icons, under the ^ arrow). One click brings it back. If you would rather have it minimize to the taskbar, turn off Settings › Window › "Minimize to the notification area".</p>
+</details>
+
+<details class="wp-block-details" style="border-bottom-color:#e2e8f0;border-bottom-width:1px;border-bottom-style:solid;padding-top:18px;padding-bottom:18px"><summary><strong>With &quot;Use all my monitors&quot;, why does the tab only have one screen?</strong></summary>
+<p>Inside the tab the remote desktop always uses a single screen. When you go full screen the session reconnects (a couple of seconds) with one remote monitor for each screen on your PC, and when you go back to the tab it returns to one.</p>
+</details>
+
+<details class="wp-block-details" style="border-bottom-color:#e2e8f0;border-bottom-width:1px;border-bottom-style:solid;padding-top:18px;padding-bottom:18px"><summary><strong>I signed in with Google and sync fails.</strong></summary>
+<p>Google shows each permission as a checkbox; if the Google Drive one is left unticked, the app warns you: "sign in again and tick the Google Drive box on Google's permissions page". Sign in again from Settings and tick it.</p>
+</details>
+
+<details class="wp-block-details" style="border-bottom-color:#e2e8f0;border-bottom-width:1px;border-bottom-style:solid;padding-top:18px;padding-bottom:18px"><summary><strong>On another PC it says &quot;The cloud file was encrypted with a different passphrase.&quot;</strong></summary>
+<p>In Settings › Encryption passphrase you have to type exactly the same passphrase you used on the first computer. If you have forgotten it, the cloud copy cannot be recovered.</p>
+</details>
+
+<details class="wp-block-details" style="border-bottom-color:#e2e8f0;border-bottom-width:1px;border-bottom-style:solid;padding-top:18px;padding-bottom:18px"><summary><strong>I imported from Remote Desktop Manager and it asks me for the passwords.</strong></summary>
+<p>That is expected: passwords in RDM and in .rdp files are encrypted for the user who saved them and cannot be imported. You are asked for them when connecting, and you can tick "Remember it on this PC (encrypted)".</p>
+</details>
+</div>
+</div>
+
+<div class="wp-block-group alignfull soc-sec" style="padding-top:0;padding-bottom:var(--wp--preset--spacing--70);margin-top:0;margin-bottom:0">
+<div class="wp-block-group soc-card has-background" style="border-radius:20px;background-color:#eef2ff;padding-top:40px;padding-bottom:40px;padding-left:40px;padding-right:40px">
+<h2 class="wp-block-heading has-medium-font-size has-text-color" style="color:#0f172a;font-weight:700">Can't find what you need?</h2>
+
+<p class="has-text-color" style="color:#334155">Open an issue on GitHub telling us what's happening, with which version and device.</p>
+
+<div class="wp-block-buttons"><div class="wp-block-button"><a class="wp-block-button__link has-text-color has-background wp-element-button" href="https://github.com/donki/RCManager/issues" style="border-radius:10px;color:#ffffff;background-color:#4338ca;padding-top:12px;padding-bottom:12px;padding-left:22px;padding-right:22px" target="_blank" rel="noreferrer noopener">Open an issue on GitHub</a></div>
+</div>
+</div>
+</div>
+
+<footer class="wp-block-group alignfull soc-sec has-text-color has-background has-link-color" style="color:#cbd5e1;background-color:#0f172a;padding-top:var(--wp--preset--spacing--70);padding-bottom:var(--wp--preset--spacing--50);margin-top:0;margin-bottom:0">
+<div class="wp-block-columns"><div class="wp-block-column" style="flex-basis:40%"><p class="has-text-color" style="color:#ffffff;font-size:1.4rem"><strong>sOCratic</strong></p>
+<p>Open-source apps for Android and Windows, with your data under your control.</p>
+</div>
+<div class="wp-block-column" style="flex-basis:20%"><p class="has-text-color" style="color:#94a3b8;font-size:0.8rem;font-weight:700;letter-spacing:0.1em;text-transform:uppercase">Site</p>
+<p style="margin-top:6px"><a href="../../en/apps/index.html">Apps</a></p>
+<p style="margin-top:6px"><a href="../../en/soporte/index.html">Support</a></p>
+<p style="margin-top:6px"><a href="../../index.html">Español</a></p>
+</div>
+<div class="wp-block-column" style="flex-basis:20%"><p class="has-text-color" style="color:#94a3b8;font-size:0.8rem;font-weight:700;letter-spacing:0.1em;text-transform:uppercase">Legal</p>
+<p style="margin-top:6px"><a href="../../en/aviso-legal.html">Legal notice</a></p>
+<p style="margin-top:6px"><a href="../../en/privacidad.html">Privacy</a></p>
+<p style="margin-top:6px"><a href="../../en/cookies.html">Cookies</a></p>
+</div>
+<div class="wp-block-column" style="flex-basis:20%"><p class="has-text-color" style="color:#94a3b8;font-size:0.8rem;font-weight:700;letter-spacing:0.1em;text-transform:uppercase">Contact</p>
+<p style="margin-top:6px"><a href="https://github.com/donki">GitHub</a></p>
+</div>
+</div>
+
+<hr class="wp-block-separator has-text-color has-alpha-channel-opacity has-background" style="background-color:#1e293b;color:#1e293b"/>
+
+<p class="has-text-color" style="color:#94a3b8;font-size:0.875rem">© 2026 sOCratic · Open-source software, MIT license</p>
+
+<div class="wp-block-jetpack-cookie-consent alignwide has-text-color has-background has-link-color" style="border-radius:14px;color:#ffffff;background-color:#0f172a;padding-top:1.25em;padding-right:1.5em;padding-bottom:1.25em;padding-left:1.5em" role="dialog" aria-modal="true"><p>This website is hosted on WordPress.com, which uses cookies for its visitor statistics. You can accept them or see how to reject them in the <a href="../../en/cookies.html">cookie policy</a>.</p><div class="wp-block-button"><a class="wp-block-button__link has-text-color has-background wp-element-button" href="#" style="border-radius:10px;color:#4338ca;background-color:#ffffff;padding-top:12px;padding-bottom:12px;padding-left:22px;padding-right:22px">Accept</a></div>
+<span>365</span></div>
+</footer>
+
+</body>
+</html>

@@ -1,0 +1,91 @@
+{
+  "_leeme": "Origen de las imágenes de cada aplicación, relativo a D:\\sOCProjects. build.py las reduce a contenido/img/<slug>/ y las sube a WordPress. Las capturas son las de las fichas de las tiendas: si cambian allí, se cambian aquí.",
+  "credentials": {
+    "icono": "Mobile/GooglePlayConsole/Credentials/icon_512.png",
+    "capturas": ["Mobile/GooglePlayConsole/Credentials/capturas/es-ES/1-boveda.png",
+                 "Mobile/GooglePlayConsole/Credentials/capturas/es-ES/2-detalle.png",
+                 "Mobile/GooglePlayConsole/Credentials/capturas/es-ES/3-ajustes.png",
+                 "Mobile/GooglePlayConsole/Credentials/capturas/es-ES/4-desbloqueo.png"]
+  },
+  "filemanager": {
+    "icono": "Mobile/GooglePlayConsole/FileManager/icon_512.png",
+    "capturas": ["Mobile/GooglePlayConsole/FileManager/capturas/es-ES/phone/01.png",
+                 "Mobile/GooglePlayConsole/FileManager/capturas/es-ES/phone/02.png",
+                 "Mobile/GooglePlayConsole/FileManager/capturas/es-ES/phone/03.png",
+                 "Mobile/GooglePlayConsole/FileManager/capturas/es-ES/phone/04.png"]
+  },
+  "hiker": {
+    "icono": "Mobile/GooglePlayConsole/Hiker/icon_512.png",
+    "capturas": ["Mobile/GooglePlayConsole/Hiker/capturas/phone/01_principal.png",
+                 "Mobile/GooglePlayConsole/Hiker/capturas/phone/02_menu.png",
+                 "Mobile/GooglePlayConsole/Hiker/capturas/phone/03_gps.png"]
+  },
+  "musicplayer": {
+    "icono": "Mobile/GooglePlayConsole/MusicPlayer/play_store_icon.png",
+    "capturas": ["Mobile/GooglePlayConsole/MusicPlayer/phone/01-biblioteca-grupos.png",
+                 "Mobile/GooglePlayConsole/MusicPlayer/phone/02-ficha-del-grupo.png",
+                 "Mobile/GooglePlayConsole/MusicPlayer/phone/04-reproduciendo-favorita.png",
+                 "Mobile/GooglePlayConsole/MusicPlayer/phone/06-listas-favoritas.png"]
+  },
+  "pdfreader": {
+    "icono": "Mobile/GooglePlayConsole/PDFReader/icon_512.png",
+    "capturas": ["Mobile/GooglePlayConsole/PDFReader/capturas/phone/01_biblioteca.png",
+                 "Mobile/GooglePlayConsole/PDFReader/capturas/phone/02_lector.png"]
+  },
+  "quitsmoke": {
+    "icono": "Mobile/GooglePlayConsole/QuitSmoke/icon_512.png",
+    "capturas": ["Mobile/GooglePlayConsole/QuitSmoke/capturas/01_principal.png",
+                 "Mobile/GooglePlayConsole/QuitSmoke/capturas/02_menu.png",
+                 "Mobile/GooglePlayConsole/QuitSmoke/capturas/03_acciones.png"]
+  },
+  "smsforwarder": {
+    "icono": "Mobile/GooglePlayConsole/SMSForwarder/icon_512.png",
+    "capturas": ["Mobile/GooglePlayConsole/SMSForwarder/capturas/telefono/01_mensajes_recibidos.png",
+                 "Mobile/GooglePlayConsole/SMSForwarder/capturas/telefono/03_redactar_sms.png",
+                 "Mobile/GooglePlayConsole/SMSForwarder/capturas/telefono/04_reenvio_numeros.png",
+                 "Mobile/GooglePlayConsole/SMSForwarder/capturas/telefono/05_menu.png"]
+  },
+  "taskmanager": {
+    "icono": "Mobile/GooglePlayConsole/TaskManager/icon_512.png",
+    "capturas": ["Mobile/GooglePlayConsole/TaskManager/capturas/es-ES/1-tareas.png",
+                 "Mobile/GooglePlayConsole/TaskManager/capturas/es-ES/2-detalle.png",
+                 "Mobile/GooglePlayConsole/TaskManager/capturas/es-ES/4-calendario.png",
+                 "Mobile/GooglePlayConsole/TaskManager/capturas/es-ES/5-listas.png"]
+  },
+  "tdtonline": {
+    "icono": "Mobile/GooglePlayConsole/TdtOnline/play_store_icon.png",
+    "capturas": ["Mobile/GooglePlayConsole/TdtOnline/capturas/phone/01-principal.png",
+                 "Mobile/GooglePlayConsole/TdtOnline/capturas/phone/03-favoritos.png",
+                 "Mobile/GooglePlayConsole/TdtOnline/capturas/phone/04-reproductor-epg.png"]
+  },
+  "txtreader": {
+    "icono": "Mobile/GooglePlayConsole/TXTReader/icon_512.png",
+    "capturas": ["Mobile/GooglePlayConsole/TXTReader/capturas/01_principal.png",
+                 "Mobile/GooglePlayConsole/TXTReader/capturas/02_lectura.png",
+                 "Mobile/GooglePlayConsole/TXTReader/capturas/03_menu.png"]
+  },
+  "uninstaller": {
+    "icono": "Mobile/GooglePlayConsole/Uninstaller/icon_512.png",
+    "capturas": ["Mobile/GooglePlayConsole/Uninstaller/capturas/01_principal.png",
+                 "Mobile/GooglePlayConsole/Uninstaller/capturas/02_menu.png",
+                 "Mobile/GooglePlayConsole/Uninstaller/capturas/03_seleccion.png"],
+    "capturas_anchas": ["Mobile/MicrosoftStore/Uninstaller/capturas/01-lista.png",
+                        "Mobile/MicrosoftStore/Uninstaller/capturas/02-espacio-en-disco.png"]
+  },
+  "lucia": {
+    "icono": "Tools/Lucia/Assets/logo.png",
+    "capturas": []
+  },
+  "phonemirror": {
+    "icono": "Tools/PhoneMirror/Package/Images/StoreDisplay300.png",
+    "capturas_anchas": ["Tools/PhoneMirror/store/microsoft/capturas/01-espejo.png",
+                        "Tools/PhoneMirror/store/microsoft/capturas/02-apaisado.png",
+                        "Tools/PhoneMirror/store/microsoft/capturas/03-acerca-de.png"]
+  },
+  "rcmanager": {
+    "icono": "Tools/RCManager/Package/Images/StoreDisplay300.png",
+    "capturas_anchas": ["Tools/RCManager/store/microsoft/capturas/01-ficheros.png",
+                        "Tools/RCManager/store/microsoft/capturas/02-opciones-rdp.png",
+                        "Tools/RCManager/store/microsoft/capturas/03-recursos-locales.png"]
+  }
+}

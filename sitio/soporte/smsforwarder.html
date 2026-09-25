@@ -1,0 +1,166 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>SMS Forwarder: guía de uso</title>
+<link rel="stylesheet" href="../estilo.css">
+</head>
+<body>
+<div class="wrap">
+<nav><a href="../index.html"><strong>sOCratic</strong></a>
+<a href="../apps/index.html">Aplicaciones</a>
+<a href="../soporte/index.html">Soporte</a>
+<a href="../privacidad.html">Privacidad</a></nav>
+<h1>SMS Forwarder: guía de uso</h1>
+<p>Cómo funciona <a href="../apps/smsforwarder.html">SMS Forwarder</a> y qué hace cada opción.</p>
+
+<h3 class="wp-block-heading">Primera puesta en marcha</h3>
+
+<ol class="wp-block-list">
+<li>Abre la aplicación. Lo primero que verás es la pregunta de Android para <strong>usar SMS Forwarder como aplicación de SMS predeterminada</strong>. Acéptala: solo la aplicación predeterminada puede recibir los SMS, mostrarlos, borrarlos, marcarlos como leídos y reenviarlos. Siendo la predeterminada, Android le concede ya los permisos de SMS sin volver a preguntar.</li>
+<li>Después te pedirá permiso para <strong>mostrar notificaciones</strong>, que sirve para avisarte de cada SMS que llega.</li>
+<li>Si no eres la aplicación predeterminada, se te pedirán por separado los permisos de <strong>recibir SMS</strong> y <strong>enviar SMS</strong>.</li>
+<li>Si quieres usar el reenvío automático, abre el menú lateral, entra en <strong>Configuración</strong> y añade al menos un número de destino.</li>
+<li>Si tu móvil cierra las aplicaciones en segundo plano (Xiaomi, Huawei, Oppo, algunos Samsung...), entra en <strong>Diagnósticos</strong> y pulsa <strong>Configurar todos los permisos</strong>, o bien <strong>Batería</strong> y <strong>Autostart</strong>, para que el reenvío siga funcionando con la pantalla apagada y tras reiniciar.</li>
+</ol>
+
+<p>La aplicación no pide acceso a tu agenda: cuando eliges un contacto se abre el selector del sistema, que solo le pasa el número que escoges.</p>
+
+<h3 class="wp-block-heading">Flujo normal</h3>
+
+<ul class="wp-block-list">
+<li>Los SMS llegan al buzón de <strong>Mensajes</strong> y ves una notificación con el remitente y el texto; tócala para abrir la aplicación.</li>
+<li>Si hay números de destino configurados, cada SMS recibido se reenvía solo a los destinos cuyas condiciones cumpla, con el formato «[SMSForwarder] De: remitente» seguido del texto.</li>
+<li>Para escribir un SMS, pulsa <strong>Nuevo mensaje</strong>; para contestar o reenviar uno concreto, tócalo en el buzón y usa los botones del detalle.</li>
+</ul>
+
+<h3 class="wp-block-heading">Menú lateral</h3>
+
+<ul class="wp-block-list">
+<li><strong>Mensajes</strong>: el buzón (pantalla de inicio).</li>
+<li><strong>Configuración</strong>: idioma y números de destino del reenvío.</li>
+<li><strong>Diagnósticos</strong>: permisos, batería, inicio automático y registro de actividad.</li>
+<li><strong>Acerca de</strong>: versión, contacto, idioma, privacidad, licencia y aviso legal.</li>
+<li>Al pie aparece la versión instalada.</li>
+</ul>
+
+<h3 class="wp-block-heading">Pantalla Mensajes</h3>
+
+<ul class="wp-block-list">
+<li><strong>Aviso «Hazla tu app de mensajes»</strong>: aparece solo si SMS Forwarder no es tu aplicación de SMS predeterminada. Explica que sin serlo no puede escribir, borrar ni marcar mensajes como leídos. El botón <strong>Usar como predeterminada</strong> abre la pregunta de Android.</li>
+<li><strong>Entrada</strong> / <strong>Enviados</strong>: pestañas para ver los SMS recibidos o los que has enviado.</li>
+<li><strong>Seleccionar</strong> (icono de casilla): entra en el modo de selección múltiple.</li>
+<li><strong>Actualizar</strong> (icono de flechas): vuelve a cargar la lista.</li>
+<li><strong>Lista de mensajes</strong>: cada fila muestra el remitente o destinatario, la fecha corta (la hora si es de hoy, el día si no) y el principio del texto. Tócala para abrir el <strong>detalle</strong>; si el mensaje estaba sin leer, queda marcado como leído.</li>
+<li><strong>Papelera</strong> en cada fila: borra ese mensaje del teléfono tras preguntar «¿Eliminar este mensaje del teléfono?» (<strong>Sí</strong> / <strong>Cancelar</strong>).</li>
+<li><strong>Nuevo mensaje</strong>: abre la pantalla de redacción.</li>
+<li>Si no hay nada: «No hay mensajes» con la indicación «Los SMS que recibas aparecerán aquí.» (o «Los SMS que envíes aparecerán aquí.» en Enviados).</li>
+</ul>
+
+<p><strong>Modo de selección múltiple</strong>
+- Cada fila enseña una casilla; tocar la fila la marca o desmarca.
+- En el pie: botón para <strong>marcar o desmarcar todos</strong>, <strong>Eliminar (n)</strong> para borrar los marcados (pregunta «¿Eliminar n mensajes del teléfono?») y <strong>Cancelar</strong> (icono de aspa) para salir del modo.
+- El botón de atrás del móvil sale del modo de selección en vez de cerrar la aplicación.
+- Si alguno no se puede borrar, se borran los demás y te avisa: «Se han borrado X de Y.»</p>
+
+<h3 class="wp-block-heading">Pantalla de detalle del mensaje (Mensaje)</h3>
+
+<ul class="wp-block-list">
+<li><strong>Remitente</strong> con un botón para <strong>copiar el número</strong> («El número está en el portapapeles.»).</li>
+<li><strong>Texto completo</strong> del SMS. Los enlaces web se pueden pulsar y se abren en el navegador.</li>
+<li><strong>Copiar el texto</strong>: copia el mensaje entero al portapapeles.</li>
+<li><strong>Reenviar</strong>: pregunta «¿A quién le reenvías este mensaje?», ofreciendo tus números de destino configurados u <strong>Otro destinatario…</strong>, y abre la redacción con el texto ya puesto precedido de «De: remitente», para que lo retoques antes de enviarlo.</li>
+<li><strong>Responder</strong>: abre la redacción con el remitente ya puesto como destinatario.</li>
+<li><strong>Reenvío automático</strong>: deja configurado a quién se le reenvían a partir de ahora los SMS de este remitente:
+  1. «¿A qué número reenviar los SMS de X?»: elige uno de tus destinos o <strong>Otro número…</strong> (hay que escribirlo; debe tener entre 7 y 15 dígitos).
+  2. «¿Qué se le manda a Y?»: <strong>Todos los SMS de X</strong> o <strong>Solo los que contengan una palabra…</strong> (escribes la palabra o frase; no distingue mayúsculas ni acentos).
+  3. Si ese destino recibía todos tus SMS, te avisa de que a partir de ahora solo recibirá los que cumplan la condición.
+  4. Termina con una confirmación del tipo «Y recibirá los SMS de X» o «... que contengan “palabra”».</li>
+</ul>
+
+<h3 class="wp-block-heading">Pantalla Nuevo mensaje</h3>
+
+<ul class="wp-block-list">
+<li><strong>Para</strong>: número de teléfono (por ejemplo +34 600 123 456) y botón de <strong>contactos</strong> para elegirlo con el selector del sistema.</li>
+<li><strong>Mensaje</strong>: el texto, con un contador de caracteres sobre 160 (lo que cabe en un SMS).</li>
+<li><strong>Enviar</strong>: envía el SMS («Mensaje enviado»). Avisa si el número no es válido («Introduce un número de teléfono válido (7-15 dígitos).»), si el texto está vacío o si falta el permiso de SMS.</li>
+</ul>
+
+<h3 class="wp-block-heading">Pantalla Configuración</h3>
+
+<p>Cabecera «Configuración — Configura los números donde reenviar SMS».
+- <strong>Idioma</strong>: botones <strong>Español</strong> y <strong>English</strong>; el activo aparece resaltado y la interfaz cambia al momento. Al instalarla usa el castellano si tu móvil está en castellano y el inglés en otro caso.
+- <strong>Campo de número</strong> («Ej: +34 600 123 456») y botón <strong>Agregar número</strong>: añade un destino escrito a mano. Si no tiene entre 7 y 15 dígitos avisa «Número no válido»; si ya está, «Número duplicado».
+- <strong>Contactos</strong>: abre el selector de contactos del sistema y añade el número elegido («Número agregado»).
+- <strong>Números configurados</strong>: la lista de destinos. Debajo de cada número se resume qué recibe («Le llegan todos los SMS», o «Solo de N remitente(s) · con N palabra(s) o frase(s)»). Si está vacía: «No hay números configurados» y el reenvío queda desactivado.
+  - Toca un número para abrir <strong>Qué SMS recibe</strong>.
+  - <strong>Papelera</strong> junto a cada número: lo borra tras preguntar «¿Eliminar este número?» (<strong>Sí, eliminar</strong> / <strong>Cancelar</strong>).
+- <strong>Información</strong>: recordatorio de que los SMS recibidos se reenvían a estos números, de que puedes añadirlos a mano o desde contactos, de que los permisos avanzados están en Diagnósticos y de que se borran con la papelera.</p>
+
+<h3 class="wp-block-heading">Pantalla Qué SMS recibe (de cada número de destino)</h3>
+
+<p>Arriba aparece el número. Todo se guarda al momento, sin botón de guardar.
+- <strong>Todos los SMS</strong> (interruptor): encendido, a este número le llega todo. Apagado, solo le llegan los SMS que cumplan las condiciones de abajo. Volver a encenderlo borra los remitentes y las palabras.
+- <strong>Solo de estos remitentes</strong>: añade teléfonos escribiéndolos y pulsando <strong>Añadir</strong>, o con el botón de <strong>contactos</strong>. Vacío significa «de cualquiera»; con varios, basta con que el SMS venga de uno. El número se compara por sus últimos 9 dígitos, así que da igual que llegue con prefijo de país o sin él. Cada remitente tiene su botón para quitarlo.
+- <strong>Que contenga estas palabras o frases</strong> («Ej: código, factura, pedido enviado»): añade palabras o frases con <strong>Añadir</strong>. Vacío significa «diga lo que diga»; con varias, basta con que aparezca una; no distingue mayúsculas ni acentos. Cada una tiene su botón para quitarla.
+- Si rellenas las dos listas, el SMS tiene que cumplir las dos: venir de uno de esos remitentes <strong>y</strong> contener una de esas palabras.
+- Si intentas añadir algo repetido: «Eso ya está en la lista.»</p>
+
+<h3 class="wp-block-heading">Pantalla Diagnósticos</h3>
+
+<p>Cabecera «Diagnósticos — Monitoreo y estado del sistema».
+- <strong>Permisos</strong>: estado de «Recibir SMS» y «Enviar SMS» (aparece «Granted» si está concedido y «Denied» si no).
+- <strong>Números</strong>: cuántos destinos tienes configurados («N números configurados»).
+- <strong>Configuración de Permisos</strong>:
+  - <strong>Verificar estado de permisos</strong>: vuelve a comprobar los permisos.
+  - <strong>Configurar todos los permisos</strong>: pide los permisos que falten y los ajustes de segundo plano; al terminar dice si todo quedó bien o si hay que revisar algo a mano.
+  - <strong>Batería</strong>: comprueba si la aplicación está excluida del ahorro de batería. Si no lo está, te lo explica y ofrece abrir el ajuste del sistema.
+  - <strong>Autostart</strong>: abre los ajustes de inicio automático del fabricante; busca «SMS Forwarder» y actívalo para que funcione tras reiniciar.
+  - Aviso: configurar todos los permisos asegura que pueda recibir y reenviar SMS incluso en segundo plano.
+- <strong>Herramientas de Diagnóstico</strong> › <strong>Actualizar estado</strong>: refresca los permisos, el número de destinos y el registro.
+- <strong>Registro de actividad</strong>: lo último que ha hecho la aplicación (reenvíos, errores, números añadidos...). <strong>Limpiar registro</strong> lo vacía.</p>
+
+<h3 class="wp-block-heading">Pantalla Acerca de</h3>
+
+<ul class="wp-block-list">
+<li>Nombre, <strong>Versión</strong> y autor (Socratic).</li>
+<li><strong>Contacto</strong>: botón con la dirección de correo; al tocarlo abre tu aplicación de correo.</li>
+<li><strong>Idioma</strong>: <strong>Español</strong> / <strong>English</strong>, igual que en Configuración.</li>
+<li><strong>Privacidad</strong>, <strong>Licencia</strong> (MIT) y <strong>Aviso Legal</strong> («Uso bajo su propio riesgo»).</li>
+</ul>
+
+<h2 class="wp-block-heading">Preguntas frecuentes</h2>
+
+<p><strong>Los SMS no se reenvían.</strong>
+Comprueba en este orden: que SMS Forwarder sea tu aplicación de SMS predeterminada (si no, en Mensajes verás el aviso con el botón <strong>Usar como predeterminada</strong>); que haya algún número en <strong>Configuración › Números configurados</strong>; que el SMS cumpla las condiciones de ese destino (toca el número para verlas); y que en <strong>Diagnósticos</strong> los permisos salgan concedidos y la aplicación esté excluida del ahorro de batería y con inicio automático. El <strong>Registro de actividad</strong> te dice si el mensaje se reenvió o por qué no.</p>
+
+<p><strong>Deja de reenviar con la pantalla apagada o después de reiniciar.</strong>
+Es el ahorro de batería del fabricante. En <strong>Diagnósticos</strong> pulsa <strong>Batería</strong> y <strong>Autostart</strong> (o <strong>Configurar todos los permisos</strong>) y activa lo que te indique.</p>
+
+<p><strong>No puedo borrar mensajes ni se marcan como leídos.</strong>
+Android solo deja hacerlo a la aplicación de SMS predeterminada. Pulsa <strong>Usar como predeterminada</strong> en la pantalla Mensajes.</p>
+
+<p><strong>El SMS reenviado llega recortado.</strong>
+El reenvío automático va en un único SMS de 160 caracteres, con la cabecera «[SMSForwarder] De: remitente»; si el texto original no cabe, se corta y termina en «...». Para mandar un mensaje largo entero, ábrelo y usa <strong>Reenviar</strong>, que te deja enviarlo completo.</p>
+
+<p><strong>Un mensaje no se reenvía a un número que también me escribe.</strong>
+Es la protección contra bucles: no se reenvían los SMS que llegan desde uno de tus números de destino ni los que ya parecen un reenvío (empiezan por «[SMSForwarder]», «De:», «Reenviado:» y similares). Así se evita que dos teléfonos se reenvíen mensajes sin fin.</p>
+
+<p><strong>¿Cuesta dinero el reenvío?</strong>
+Cada reenvío es un SMS normal que sale de tu línea, así que tiene el coste que tu operador aplique a los SMS.</p>
+
+<p><strong>Al escribir un número me dice que no es válido.</strong>
+Tiene que tener entre 7 y 15 dígitos. Puedes ponerlo con o sin prefijo de país y con espacios.</p>
+
+<p><strong>He deslizado un mensaje o un número para borrarlo y no pasa nada.</strong>
+Ya no se borra deslizando: usa el botón de papelera de cada fila, o el modo de selección múltiple para borrar varios mensajes a la vez.</p>
+
+<hr class="wp-block-separator has-alpha-channel-opacity"/>
+
+<p>¿No encuentras lo que buscas? Escribe a <a href="mailto:jsoladelarosa@gmail.com">jsoladelarosa@gmail.com</a> o abre una incidencia en <a href="https://github.com/donki/SMSForwarder/issues">GitHub</a>.</p>
+
+<footer>sOCratic · <a href="mailto:jsoladelarosa@gmail.com">jsoladelarosa@gmail.com</a></footer>
+</div>
+</body>
+</html>

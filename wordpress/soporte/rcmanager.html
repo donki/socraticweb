@@ -1,0 +1,406 @@
+<!-- wp:paragraph -->
+<p>Cómo funciona <a href="https://socraticweb0.wordpress.com/aplicaciones/rcmanager/">sOC Remote Connections Manager</a> y qué hace cada opción.</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:heading {"level":3} -->
+<h3 class="wp-block-heading">Instalación</h3>
+<!-- /wp:heading -->
+
+<!-- wp:list {"ordered":true} -->
+<ol class="wp-block-list">
+<li>Descarga la última versión desde la página de versiones de GitHub (https://github.com/donki/RCManager/releases). Hay dos formas:
+   - El ejecutable <code>sOCRCManager.exe</code>: no necesita instalación, se abre con doble clic.
+   - El paquete <code>.msix</code>: se instala como cualquier aplicación de Windows.</li>
+<li>Cuando esté publicada en la Microsoft Store, también podrás instalarla desde allí.</li>
+</ol>
+<!-- /wp:list -->
+
+<!-- wp:paragraph -->
+<p>Requisitos: Windows 10 (versión 2004) o posterior, o Windows 11. Para el escritorio remoto se usa el cliente que ya trae Windows; no hay que instalar nada más.</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:heading {"level":3} -->
+<h3 class="wp-block-heading">Primera puesta en marcha</h3>
+<!-- /wp:heading -->
+
+<!-- wp:list {"ordered":true} -->
+<ol class="wp-block-list">
+<li>Abre la aplicación. El árbol está vacío y te indica: «Todavía no hay conexiones. Añade una con + y aparecerá aquí.»</li>
+<li>Si ya tienes conexiones en Remote Desktop Manager o en ficheros .rdp, ve a Ajustes (icono de engranaje) › Importar conexiones. Si no, pulsa «Conexión nueva» (+).</li>
+<li>Rellena al menos el Nombre y el Servidor, elige el Tipo y pulsa Guardar.</li>
+<li>Opcional: en Ajustes elige si quieres guardar las conexiones solo en este PC o en Google Drive / OneDrive.</li>
+</ol>
+<!-- /wp:list -->
+
+<!-- wp:paragraph -->
+<p>No hace falta crear ninguna cuenta. Solo si eliges guardar en la nube entrarás con tu cuenta de Google o de Microsoft.</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:heading {"level":3} -->
+<h3 class="wp-block-heading">Flujo normal</h3>
+<!-- /wp:heading -->
+
+<!-- wp:list -->
+<ul class="wp-block-list">
+<li>Para conectar: doble clic sobre la conexión, o selecciónala y pulsa Conectar (o Intro), o arrástrala al área de pestañas.</li>
+<li>Si la conexión no tiene contraseña guardada, se te pide al conectar, con la casilla «Recordarla en este PC (cifrada)».</li>
+<li>Cada sesión se abre en una pestaña. Pasa de una a otra con un clic, con Ctrl+Tab / Ctrl+Mayús+Tab o con el botón de sesiones abiertas de la barra inferior.</li>
+<li>Para editar una conexión: selecciónala y pulsa Editar, o Ctrl + doble clic.</li>
+<li>Para cerrar una sesión: botón «Desconectar esta pestaña» en la propia pestaña.</li>
+</ul>
+<!-- /wp:list -->
+
+<!-- wp:heading {"level":3} -->
+<h3 class="wp-block-heading">Ventana principal</h3>
+<!-- /wp:heading -->
+
+<!-- wp:paragraph -->
+<p><strong>Barra superior del árbol (de izquierda a derecha)</strong>
+- Conectar: abre la conexión seleccionada.
+- Conexión nueva (+): abre el editor de conexión vacío.
+- Carpeta nueva: pide el «Nombre de la carpeta» y la crea.
+- Editar: abre el editor de la conexión seleccionada (o renombra la carpeta seleccionada).
+- Duplicar: crea una copia de la conexión seleccionada.
+- Borrar: pide confirmación («¿Borrar …?»). Si es una carpeta, borra también las conexiones que contiene («¿Borrar la carpeta … y las N conexiones que tiene dentro?»).
+- Buscar…: filtra el árbol por nombre, servidor, usuario, carpeta o notas; solo se ven las carpetas que tienen alguna conexión que encaja.</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph -->
+<p><strong>Árbol de conexiones</strong>
+- Doble clic: conectar. Ctrl + doble clic: editar. Intro: conectar. Supr: borrar.
+- Arrastrar una conexión o una carpeta sobre otra carpeta la mueve allí (sobre una conexión, a la carpeta de esa conexión). La carpeta de destino se resalta al pasar por encima.
+- Arrastrar una conexión al área de pestañas la abre.
+- Al cerrar, se recuerdan las carpetas abiertas, la conexión seleccionada y el ancho del panel.</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph -->
+<p><strong>Botones inferiores del árbol</strong>
+- Ajustes (engranaje): «Ajustes: dónde se guardan las conexiones», importación y comportamiento de la ventana.
+- Abrir la carpeta del fichero de conexiones: abre en el Explorador la carpeta donde se guardan las conexiones.
+- Español / English: cambia el idioma al momento.
+- Acerca de: contacto con el autor, idioma, privacidad, licencia y aviso legal.</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph -->
+<p><strong>Área de pestañas</strong>
+- Sin sesiones abiertas muestra: «Haz doble clic en una conexión, o selecciónala y pulsa Conectar. Cada sesión se abre en su pestaña.»
+- Cada pestaña lleva sus botones:
+  - Más pequeño / Más grande (− y +): zoom de la pestaña. En SSH cambia la letra del terminal; en ficheros, la de los paneles; en RDP, la escala del escritorio remoto (del 100 al 200 %). Se recuerda para la próxima vez que abras esa conexión.
+  - Pantalla completa (F11; Ctrl+Esc para volver).
+  - Desconectar esta pestaña.</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph -->
+<p><strong>Barra de estado</strong>
+- Sesiones abiertas: menú con todas las pestañas para cambiar a cualquiera, útil cuando el escritorio remoto se queda con el teclado (atajos Ctrl+Tab / Ctrl+Mayús+Tab).
+- Mensajes de estado: «Conectando con…», «Conectado con…», resultado de la sincronización con la nube, etc.</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph -->
+<p><strong>Pantalla completa</strong>
+- RDP: usa la pantalla completa del propio cliente de Windows, con su barra de conexión arriba (se esconde sola; sus botones de minimizar y cerrar funcionan: cerrar desconecta y cierra la pestaña).
+- SSH y ficheros: la ventana ocupa toda la pantalla y arriba aparece una barra que se esconde sola y vuelve al llevar el ratón al borde superior, con el nombre de la sesión, «Salir de pantalla completa (Ctrl+Esc)», sesiones abiertas y «Desconectar esta pestaña».
+- La pantalla donde se abre se elige en el editor de conexión, opción «Pantalla completa en».</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph -->
+<p><strong>Área de notificación</strong>
+- Al minimizar, la ventana se esconde y deja su icono junto al reloj (si no lo ves, está en los iconos ocultos de Windows 11). Un clic la trae de vuelta; con el botón derecho, «Abrir» y «Salir». Las sesiones abiertas siguen vivas. Se puede desactivar en Ajustes › Ventana.</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:heading {"level":3} -->
+<h3 class="wp-block-heading">Editor de conexión</h3>
+<!-- /wp:heading -->
+
+<!-- wp:paragraph -->
+<p>Se abre con «Conexión nueva» o «Editar». Las pestañas que aparecen dependen del tipo: RDP muestra General, Pantalla, Recursos locales, Experiencia y Avanzado; SFTP / SCP y FTP / FTPS muestran General y Transferencias; SSH solo General. Abajo, Cancelar y Guardar («El nombre y el servidor son obligatorios.»).</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:heading {"level":4} -->
+<h4 class="wp-block-heading">Pestaña General (todos los tipos)</h4>
+<!-- /wp:heading -->
+
+<!-- wp:list -->
+<ul class="wp-block-list">
+<li>Nombre: cómo aparece en el árbol.</li>
+<li>Tipo: RDP, SSH, SFTP / SCP o FTP / FTPS. Al cambiarlo se propone el puerto habitual (3389 para RDP, 22 para SSH y SFTP, 21 para FTP y 990 para FTPS implícito).</li>
+<li>Carpeta: la carpeta del árbol donde va la conexión (se puede elegir o escribir una nueva).</li>
+<li>Servidor: nombre o dirección IP.</li>
+<li>Puerto.</li>
+<li>Usuario.</li>
+<li>Dominio (solo RDP).</li>
+<li>Contraseña, con botón de ojo para verla u ocultarla. «Déjala vacía para que se pida al conectar.»</li>
+<li>Clave privada (fichero) (SSH y SFTP), con botón «Elegir fichero»: «Fichero OpenSSH o PEM. Si se pone, la contraseña es la de la clave.»</li>
+<li>Cifrado (solo FTP / FTPS): «Ninguno (FTP en claro)», «FTPS explícito (AUTH TLS, puerto 21)» o «FTPS implícito (puerto 990)».</li>
+<li>«Transferir por SCP en vez de SFTP (la navegación va siempre por SFTP)» (solo SFTP / SCP).</li>
+<li>Carpeta remota al abrir y Carpeta local al abrir (SFTP y FTP): «Vacías: la carpeta que dé el servidor y tu perfil de usuario.» Si no pones carpeta remota, se empieza en la raíz del servidor (/).</li>
+<li>Pantalla completa en: «La pantalla donde esté la ventana» o una pantalla concreta («Pantalla N (ancho×alto)», marcando la principal).</li>
+<li>Notas: texto libre (también lo encuentra el buscador).</li>
+</ul>
+<!-- /wp:list -->
+
+<!-- wp:heading {"level":4} -->
+<h4 class="wp-block-heading">Pestaña Pantalla (RDP)</h4>
+<!-- /wp:heading -->
+
+<!-- wp:list -->
+<ul class="wp-block-list">
+<li>Tamaño del escritorio remoto:</li>
+<li>«Ajustar a la pestaña (sigue a la ventana)» (por defecto): pide al servidor la resolución que cabe en la pestaña, nítida y sin barras, y la cambia al redimensionar la ventana.</li>
+<li>Tamaños fijos: 1024 × 768, 1280 × 800, 1366 × 768, 1600 × 900, 1920 × 1080, 1920 × 1200, 2560 × 1440.</li>
+<li>«A medida…»: habilita Ancho y Alto (mínimo 200 píxeles cada uno). Un tamaño fijo se escala a la pestaña.</li>
+<li>«Usar todos los monitores en pantalla completa»: en pantalla completa el escritorio remoto tiene un monitor por cada pantalla de tu PC (la sesión se reconecta a pantalla completa para tenerlos); en la pestaña siempre es una sola pantalla. Desactivada por defecto.</li>
+<li>Colores: «Color de alta densidad (15 bits)», «Color de alta densidad (16 bits)», «Color verdadero (24 bits)» o «Máxima calidad (32 bits)» (por defecto).</li>
+<li>«Mostrar la barra de conexión en pantalla completa» (activada por defecto).</li>
+</ul>
+<!-- /wp:list -->
+
+<!-- wp:heading {"level":4} -->
+<h4 class="wp-block-heading">Pestaña Recursos locales (RDP)</h4>
+<!-- /wp:heading -->
+
+<!-- wp:list -->
+<ul class="wp-block-list">
+<li>Audio remoto: «Reproducir en este PC» (por defecto), «Reproducir en el equipo remoto» o «No reproducir».</li>
+<li>«Grabar desde este PC (micrófono)»: usa tu micrófono en la sesión remota (desactivada por defecto).</li>
+<li>Combinaciones de teclas de Windows (Alt+Tab, Win…): «En este PC», «En el equipo remoto» o «En el equipo remoto solo a pantalla completa» (por defecto).</li>
+<li>Dispositivos y recursos locales que se usan en la sesión remota:</li>
+<li>Impresoras (activada por defecto).</li>
+<li>Portapapeles (texto, imágenes y ficheros) (activada por defecto).</li>
+<li>Unidades de este PC (copiar y mover ficheros con el Explorador) (activada por defecto): tus discos aparecen en el equipo remoto como «C en tu PC» en Este equipo, incluidos los USB que enchufes durante la sesión.</li>
+<li>Tarjetas inteligentes y Windows Hello (activada por defecto).</li>
+<li>Puertos serie (desactivada por defecto).</li>
+<li>Otros dispositivos Plug and Play (cámaras, reproductores…) (desactivada por defecto).</li>
+</ul>
+<!-- /wp:list -->
+
+<!-- wp:heading {"level":4} -->
+<h4 class="wp-block-heading">Pestaña Experiencia (RDP)</h4>
+<!-- /wp:heading -->
+
+<!-- wp:list -->
+<ul class="wp-block-list">
+<li>Efectos visuales (desactívalos en conexiones lentas), todos activados por defecto:</li>
+<li>Fondo de escritorio.</li>
+<li>Suavizado de fuentes.</li>
+<li>Composición del escritorio.</li>
+<li>Mostrar el contenido de la ventana al arrastrarla.</li>
+<li>Animación de menús y ventanas.</li>
+<li>Estilos visuales.</li>
+<li>Caché persistente de mapas de bits.</li>
+<li>Conexión: «Volver a conectar si se corta la conexión» (activada por defecto).</li>
+</ul>
+<!-- /wp:list -->
+
+<!-- wp:heading {"level":4} -->
+<h4 class="wp-block-heading">Pestaña Avanzado (RDP)</h4>
+<!-- /wp:heading -->
+
+<!-- wp:list -->
+<ul class="wp-block-list">
+<li>Si falla la autenticación del servidor (certificado): «Conectar sin avisar», «Avisar» (por defecto; avisa y te deja seguir, como el cliente de Windows) o «No conectar».</li>
+<li>«Sesión de administración (consola, /admin)».</li>
+<li>Puerta de enlace de Escritorio remoto: «No usar puerta de enlace» (por defecto), «Usar siempre la puerta de enlace» o «Usar la puerta de enlace salvo para direcciones locales».</li>
+<li>Servidor de puerta de enlace.</li>
+<li>«Usar el mismo usuario y contraseña que el escritorio remoto» (activada por defecto). Si la quitas, aparecen Usuario, Dominio y Contraseña propios de la puerta de enlace.</li>
+</ul>
+<!-- /wp:list -->
+
+<!-- wp:heading {"level":4} -->
+<h4 class="wp-block-heading">Pestaña Transferencias (SFTP / SCP y FTP / FTPS)</h4>
+<!-- /wp:heading -->
+
+<!-- wp:list -->
+<ul class="wp-block-list">
+<li>Ficheros a la vez: de 1 a 8 (por defecto 2). «Cada transferencia simultánea abre su propia conexión con el servidor. 1 es lo más seguro; 2–4 acelera muchos ficheros pequeños.»</li>
+<li>Reintentos si falla: de 0 a 5 (por defecto 1).</li>
+<li>Si el fichero ya existe en el destino: «Avisar y confirmar antes de sobrescribir» (por defecto), «Sobrescribir» o «Saltar».</li>
+<li>«Conservar la fecha de modificación del original» (activada por defecto).</li>
+<li>«Enseñar los ficheros ocultos (con punto delante) al abrir».</li>
+<li>Keep-alive (segundos, 0 = no): por defecto 30.</li>
+<li>Tiempo de espera (segundos): por defecto 20.</li>
+<li>Solo FTP:</li>
+<li>Conexiones de datos: «Pasivo (lo normal detrás de un router)» (por defecto) o «Activo».</li>
+<li>Codificación de los nombres de fichero: UTF-8 (por defecto) o Latin-1 (ISO-8859-1).</li>
+</ul>
+<!-- /wp:list -->
+
+<!-- wp:heading {"level":3} -->
+<h3 class="wp-block-heading">Sesión de escritorio remoto (RDP)</h3>
+<!-- /wp:heading -->
+
+<!-- wp:list -->
+<ul class="wp-block-list">
+<li>El escritorio aparece dentro de la pestaña y se ajusta a su tamaño si elegiste «Ajustar a la pestaña».</li>
+<li>El zoom (− y +) cambia la escala del escritorio remoto entre el 100 y el 200 %, y se recupera al volver a abrir la conexión.</li>
+<li>Para copiar ficheros entre tu PC y el servidor: Ctrl+C en un Explorador y Ctrl+V en el otro, o usa las unidades de tu PC que aparecen en el equipo remoto.</li>
+</ul>
+<!-- /wp:list -->
+
+<!-- wp:heading {"level":3} -->
+<h3 class="wp-block-heading">Sesión SSH</h3>
+<!-- /wp:heading -->
+
+<!-- wp:list -->
+<ul class="wp-block-list">
+<li>Terminal con colores, cursor y programas a pantalla completa como vim, htop o less.</li>
+<li>Historial: rueda del ratón o Mayús+RePág / Mayús+AvPág.</li>
+<li>Copiar: Ctrl+Mayús+C. Pegar: Ctrl+Mayús+V. Botón derecho: copia si hay texto seleccionado y pega si no lo hay.</li>
+<li>El terminal se adapta al tamaño de la ventana.</li>
+</ul>
+<!-- /wp:list -->
+
+<!-- wp:heading {"level":3} -->
+<h3 class="wp-block-heading">Sesión de ficheros (SFTP / SCP y FTP / FTPS)</h3>
+<!-- /wp:heading -->
+
+<!-- wp:paragraph -->
+<p>Mientras conecta, la pestaña muestra «Conectando con…»; al entrar aparece el explorador de dos paneles: este equipo a la izquierda y el servidor a la derecha. Cada panel tiene su barra de ruta (puedes escribir una ruta directamente) y columnas Nombre, Tamaño y Modificado (y, en servidores Linux/Unix, Permisos y Propietario).</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph -->
+<p>Botones de los paneles:
+- Este equipo (panel local): para cambiar de unidad.
+- Subir un nivel (Retroceso).
+- Actualizar.
+- Nueva carpeta (F7).
+- Renombrar (F2).
+- Borrar (Supr): «Las carpetas se van con todo lo de dentro; no hay papelera.»
+- Subir la selección al servidor / Bajar la selección a este PC (F5, o arrástrala al otro lado).
+- Abrir: en local, con el programa por defecto de Windows; en remoto, una copia con el programa por defecto.
+- Editar aquí (ficheros de texto).
+- Copiar la ruta.
+- Ver ficheros ocultos.
+- Permisos y propietario (servidores Unix).
+- Cancelar la transferencia (mientras hay una en curso).</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph -->
+<p>Doble clic en un fichero de texto del servidor lo abre en el editor integrado; en un fichero local, lo abre con su programa de Windows. Las transferencias van en cola, con progreso («Subiendo… · N de M»).</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph -->
+<p>Si un fichero ya existe y la conexión está en «Avisar y confirmar», sale «El fichero ya existe» con Sobrescribir, Saltar y la casilla «Hacer lo mismo con los demás».</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph -->
+<p><strong>Ventana Permisos y propietario</strong> (solo servidores Linux/Unix)
+- Permisos: casillas Leer, Escribir y Ejecutar para Propietario, Grupo y Otros, con el valor Octal a la vista.
+- Propietario y grupo: nombres o números; vacío = no cambiar. En SFTP, cambiar por nombre usa una orden por SSH con las mismas credenciales; la mayoría de servidores FTP no dejan cambiar el propietario.
+- «Aplicar a todo lo de dentro de las carpetas».
+- Aplicar.</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph -->
+<p><strong>Editor de texto integrado</strong>
+- Guardar en el servidor (Ctrl+S), con la misma codificación y finales de línea.
+- Buscar (Ctrl+F): Siguiente (Intro) y Anterior (Mayús+Intro).
+- Ctrl + y Ctrl − cambian el tamaño de letra (se recuerda).
+- La barra inferior indica línea y columna, y la hora del último guardado.
+- Al cerrar con cambios pregunta si guardarlos en el servidor (Guardar, Descartar o Cancelar).</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:heading {"level":3} -->
+<h3 class="wp-block-heading">Ajustes</h3>
+<!-- /wp:heading -->
+
+<!-- wp:paragraph -->
+<p><strong>Dónde se guardan las conexiones</strong>
+- Este PC: las conexiones se quedan en tu perfil de usuario; nada sale del equipo.
+- Google Drive: entras con Google en el navegador; el fichero va a la carpeta privada de la aplicación en tu Drive, sin acceso al resto de tus ficheros. En la pantalla de permisos de Google hay que marcar la casilla de Google Drive.
+- OneDrive: entras con Microsoft; el fichero va a la carpeta de la aplicación en tu OneDrive, sin acceso al resto de tus ficheros.
+- Debajo se indica con qué cuenta has entrado y la última sincronización.</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph -->
+<p><strong>Frase de cifrado</strong> (solo con Google Drive u OneDrive)
+- Casilla de la frase, con botón de ojo para verla. Mínimo 8 caracteres.
+- Guardar la frase y sincronizar.
+- Sincronizar ahora.
+- La frase no sale de tu PC ni se guarda en tu cuenta: usa la misma en cada equipo. Si la olvidas, la copia de la nube no se puede leer. Sin frase no se sube nada.
+- Al arrancar se baja la copia de la nube si es más reciente y cada cambio se sube; si guardas desde dos equipos, gana el último.</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph -->
+<p><strong>Importar conexiones</strong>
+- Botón «Importar de Remote Desktop Manager (.rdm) o ficheros de Escritorio remoto (.rdp)».
+- De un .rdm se importan las conexiones RDP, SSH, FTP/FTPS y SFTP/SCP con sus carpetas. De los .rdp (puedes elegir varios a la vez) sale una conexión por fichero, con su nombre y sus opciones.
+- Las contraseñas no se importan: se piden al conectar. Al terminar se indica cuántas se han importado, cuántas ya existían y cuántas se han dejado fuera por ser de tipos no admitidos.</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph -->
+<p><strong>Ventana</strong>
+- «Al minimizar, al área de notificación» (activada por defecto). Desactivada, se minimiza a la barra de tareas como cualquier ventana.</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph -->
+<p>Cerrar: cierra los ajustes.</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:heading {"level":3} -->
+<h3 class="wp-block-heading">Acerca de</h3>
+<!-- /wp:heading -->
+
+<!-- wp:paragraph -->
+<p>Contacto («Escribir al autor»), cambio de idioma, privacidad, licencia MIT y aviso legal.</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:heading {"level":3} -->
+<h3 class="wp-block-heading">Opciones para accesos directos</h3>
+<!-- /wp:heading -->
+
+<!-- wp:paragraph -->
+<p>Puedes crear un acceso directo que abra una conexión al arrancar: <code>sOCRCManager.exe --open "Nombre de la conexión"</code>. También <code>--edit "Nombre"</code> abre su editor y <code>--edit-file "Nombre" "/ruta"</code> abre un fichero del servidor en el editor integrado.</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:heading -->
+<h2 class="wp-block-heading">Preguntas frecuentes</h2>
+<!-- /wp:heading -->
+
+<!-- wp:paragraph -->
+<p><strong>No conecta a un servidor SSH, SFTP o FTP. ¿Qué pasa?</strong>
+Sale una ventana «No se ha podido conectar» con la razón: el nombre no resuelve (revisa el nombre o el DNS), el puerto está cerrado (puerto equivocado o servicio parado), no responde a tiempo (equipo apagado o cortafuegos), no hay ruta (revisa la red o la VPN), usuario o contraseña incorrectos, o el servidor no ofrece TLS. En este último caso prueba FTP sin cifrar o «FTPS implícito» en el puerto 990.</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph -->
+<p><strong>El escritorio remoto dice que no puede continuar por el certificado.</strong>
+En el editor de conexión, pestaña Avanzado, «Si falla la autenticación del servidor (certificado)» debe estar en «Avisar» (te deja seguir tras avisar) o «Conectar sin avisar». «No conectar» bloquea los servidores con certificado propio.</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph -->
+<p><strong>Al abrir una conexión RDP el zoom vuelve al 100 %.</strong>
+Desde la versión 2026.9.23.1 el zoom se aplica después de iniciar sesión y se reintenta unos segundos hasta que el servidor lo acepta. Actualiza a la última versión.</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph -->
+<p><strong>He minimizado la ventana y ha desaparecido.</strong>
+Está en el área de notificación, junto al reloj (en Windows 11, quizá en los iconos ocultos, la flecha ^). Un clic la trae de vuelta. Si prefieres que se minimice a la barra de tareas, desactiva Ajustes › Ventana › «Al minimizar, al área de notificación».</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph -->
+<p><strong>Con «Usar todos los monitores», ¿por qué la pestaña solo tiene una pantalla?</strong>
+Dentro de la pestaña el escritorio remoto siempre usa una sola pantalla. Al pulsar pantalla completa la sesión se reconecta (un par de segundos) con un monitor remoto por cada pantalla de tu PC, y al volver a la pestaña vuelve a una.</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph -->
+<p><strong>He entrado con Google y la sincronización falla.</strong>
+Google muestra cada permiso como una casilla; si la de Google Drive se queda sin marcar, la aplicación avisa: «vuelve a entrar y marca la casilla de Google Drive». Vuelve a entrar desde Ajustes y márcala.</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph -->
+<p><strong>En otro PC dice «El fichero de la nube está cifrado con otra frase».</strong>
+Tienes que escribir en Ajustes › Frase de cifrado exactamente la misma frase que usaste en el primer equipo. Si la has olvidado, la copia de la nube no se puede recuperar.</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph -->
+<p><strong>He importado de Remote Desktop Manager y me pide las contraseñas.</strong>
+Es normal: las contraseñas de RDM y de los ficheros .rdp van cifradas para el usuario que las guardó y no se pueden importar. Al conectar se piden y puedes marcar «Recordarla en este PC (cifrada)».</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:separator -->
+<hr class="wp-block-separator has-alpha-channel-opacity"/>
+<!-- /wp:separator -->
+
+<!-- wp:paragraph -->
+<p>¿No encuentras lo que buscas? Escribe a <a href="mailto:jsoladelarosa@gmail.com">jsoladelarosa@gmail.com</a> o abre una incidencia en <a href="https://github.com/donki/RCManager/issues">GitHub</a>.</p>
+<!-- /wp:paragraph -->

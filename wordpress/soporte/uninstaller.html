@@ -1,0 +1,211 @@
+<!-- wp:paragraph -->
+<p>Cómo funciona <a href="https://socraticweb0.wordpress.com/aplicaciones/uninstaller/">sOC Uninstaller</a> y qué hace cada opción.</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:heading {"level":3} -->
+<h3 class="wp-block-heading">Primera puesta en marcha en Android</h3>
+<!-- /wp:heading -->
+
+<!-- wp:list {"ordered":true} -->
+<ol class="wp-block-list">
+<li>Instala la aplicación desde Google Play y ábrela.</li>
+<li>No te pedirá ningún permiso en pantalla. Para funcionar necesita dos permisos que se conceden al instalar: ver la lista de aplicaciones instaladas (para enseñártela) y pedir desinstalaciones (para abrir el diálogo de desinstalar del sistema). También se conecta a internet solo para comprobar si hay versión nueva.</li>
+<li>Verás la lista de tus aplicaciones. Por defecto solo salen las que has instalado tú; las del sistema quedan ocultas.</li>
+</ol>
+<!-- /wp:list -->
+
+<!-- wp:heading {"level":3} -->
+<h3 class="wp-block-heading">Primera puesta en marcha en Windows</h3>
+<!-- /wp:heading -->
+
+<!-- wp:list {"ordered":true} -->
+<ol class="wp-block-list">
+<li>Descarga sOCUninstaller.exe (o el zip) desde las releases de GitHub. Es un único archivo: ábrelo y listo. La primera vez tarda un poco más porque se prepara en tu carpeta de usuario.</li>
+<li>Si quieres tenerla a mano, ancla la ventana a la barra de tareas: el anclaje sigue valiendo tras actualizar.</li>
+<li>Algunos desinstaladores pedirán permiso de administrador, como siempre en Windows.</li>
+</ol>
+<!-- /wp:list -->
+
+<!-- wp:heading {"level":3} -->
+<h3 class="wp-block-heading">Flujo normal</h3>
+<!-- /wp:heading -->
+
+<!-- wp:list {"ordered":true} -->
+<ol class="wp-block-list">
+<li>En «Aplicaciones instaladas», busca u ordena para encontrar lo que quieres quitar.</li>
+<li>Marca la casilla de cada aplicación (tocar la fila también la marca).</li>
+<li>Pulsa <strong>Desinstalar seleccionadas (N)</strong> y confirma en «Desinstalar aplicaciones» con <strong>Continuar</strong>.</li>
+<li>En Android, el sistema te pedirá confirmar cada una. En Windows, si alguna admite desinstalación silenciosa, se te preguntará antes «¿Desatendido?».</li>
+<li>Al acabar verás «N de M aplicaciones desinstaladas» y la lista se refresca con lo que queda.</li>
+</ol>
+<!-- /wp:list -->
+
+<!-- wp:heading {"level":3} -->
+<h3 class="wp-block-heading">Menú lateral</h3>
+<!-- /wp:heading -->
+
+<!-- wp:list -->
+<ul class="wp-block-list">
+<li><strong>Inicio</strong>: la lista de aplicaciones.</li>
+<li><strong>Espacio en disco</strong>: solo en Windows.</li>
+<li><strong>Ajustes</strong>: idioma y, en Windows, opciones de la bandeja y del arranque.</li>
+<li><strong>Acerca de</strong>: información de la aplicación.</li>
+</ul>
+<!-- /wp:list -->
+
+<!-- wp:heading {"level":3} -->
+<h3 class="wp-block-heading">Aplicaciones instaladas (Inicio)</h3>
+<!-- /wp:heading -->
+
+<!-- wp:paragraph -->
+<p>Cabecera:
+- <strong>Contador</strong>: «N aplicaciones instaladas · N seleccionadas · por criterio». Tocarlo abre también el menú de ordenación.
+- <strong>Ordenar por</strong>: Fecha de instalación, Nombre (A–Z), Última actualización y Tamaño. El criterio activo sale marcado.
+- <strong>Actualizar</strong>: vuelve a leer la lista. También puedes deslizar hacia abajo para actualizar.
+- <strong>Buscar</strong>: muestra la caja «Buscar por nombre o paquete». El contador refleja lo que queda a la vista.
+- <strong>Seleccionar todo</strong>: marca todo lo que se ve (si hay búsqueda, solo lo filtrado).
+- <strong>Quitar selección</strong>: desmarca todo.
+- <strong>Mostrar apps del sistema</strong>: enseña u oculta las aplicaciones del sistema (en Windows, los componentes de Windows). La elección se recuerda.
+- <strong>Espacio en disco</strong> (solo Windows): abre la utilidad de espacio en disco.</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph -->
+<p>Lista:
+- Cada fila lleva el icono, el nombre, el paquete (en Windows, el editor) y el detalle «Inst. fecha · Act. fecha · tamaño», y la casilla de selección a la derecha.
+- Lista vacía: «No hay aplicaciones para mostrar. Desliza para actualizar o activa «Mostrar apps del sistema».»</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph -->
+<p>Botón inferior:
+- <strong>Desinstalar seleccionadas (N)</strong>: lanza la desinstalación de todo lo marcado. Sin nada marcado avisa «Selecciona al menos una aplicación.».</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph -->
+<p>Diálogos de desinstalación:
+- <strong>Desinstalar aplicaciones</strong>: en Android, «Vas a desinstalar N aplicaciones. Android te pedirá confirmación para cada una.»; en Windows, explica que cada programa abre su propio desinstalador y que las apps de la Store se quitan directamente. Botones <strong>Continuar</strong> y <strong>Cancelar</strong>.
+- <strong>¿Desatendido?</strong> (solo Windows): indica cuántos se pueden quitar sin preguntas (Windows Installer, Inno Setup, NSIS y apps de la Store). <strong>Desatendido</strong> los quita en silencio; <strong>Con asistente</strong> abre el asistente de cada uno. Los que no lo admiten abren su asistente en cualquier caso.
+- <strong>Progreso</strong>: «Desinstalando…», barra y «n de N: nombre».</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:heading {"level":3} -->
+<h3 class="wp-block-heading">Espacio en disco (solo Windows)</h3>
+<!-- /wp:heading -->
+
+<!-- wp:paragraph -->
+<p>Barra de escaneo:
+- <strong>Selector de unidad</strong>: elige una unidad (local o de red).
+- <strong>Unidad, carpeta o ruta de red (\servidor\recurso)</strong>: escribe una ruta y pulsa Intro.
+- <strong>Escanear</strong> (reproducir): empieza a medir. Verás «Escaneando… carpetas, ficheros, tamaño» y el árbol va creciendo mientras tanto.
+- <strong>Parar</strong>: detiene el escaneo y deja a la vista lo recorrido.</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph -->
+<p>Vistas:
+- <strong>Árbol de carpetas</strong>: cada carpeta con su tamaño, el porcentaje de la carpeta superior, número de ficheros y carpetas y última modificación. Se despliega por filas. Las carpetas que no se pudieron leer se marcan.
+- <strong>Mapa de rectángulos (un toque elige, dos entran en la carpeta)</strong>: cada carpeta es un rectángulo proporcional a lo que ocupa.
+- <strong>Ficheros más grandes</strong>: los archivos que más ocupan, con su carpeta.
+- <strong>Por tipo de fichero</strong>: cuánto ocupa cada extensión.
+- <strong>Por antigüedad</strong>: Modificados el último mes, De 1 a 6 meses, De 6 meses a un año, De 1 a 2 años, Más de 2 años.
+- <strong>Ficheros duplicados</strong>: grupos de archivos con el mismo contenido de verdad, con lo que recuperarías dejando una sola copia.</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph -->
+<p>Acciones (sobre la fila elegida o sobre todo lo marcado con las casillas):
+- <strong>Subir un nivel</strong>: en el mapa, vuelve a la carpeta superior.
+- <strong>Ver en el Explorador</strong>: abre la carpeta o señala el archivo en el Explorador de Windows.
+- <strong>Copiar ruta</strong>: copia la ruta (o las rutas, una por línea).
+- <strong>Enviar a la papelera</strong>: pide confirmación y lo manda a la papelera, con deshacer desde Windows. Con varios marcados van todos en una sola operación. Lo que ya está dentro de la papelera se <strong>borra definitivamente</strong>, y se avisa de que no se podrá recuperar.
+- <strong>Exportar a CSV</strong>: guarda la vista actual en un archivo CSV en tu carpeta Documentos.</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph -->
+<p>Avisos de seguridad:
+- <strong>Carpeta del sistema</strong>: antes de borrar algo de Windows, de Archivos de programa, de ProgramData, de un perfil de usuario o de la raíz de la unidad, explica el riesgo. El botón por defecto es Cancelar; para seguir hay que pulsar <strong>Seguir de todos modos</strong>.
+- <strong>Sin permisos</strong>: si algo no se puede borrar, ofrece <strong>Cambiar permisos y reintentar</strong> (Windows pedirá permiso de administrador).</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:heading {"level":3} -->
+<h3 class="wp-block-heading">Ajustes</h3>
+<!-- /wp:heading -->
+
+<!-- wp:list -->
+<ul class="wp-block-list">
+<li><strong>Idioma</strong>: botones <strong>Español</strong> y <strong>English</strong>; «Selecciona tu idioma preferido». El cambio se aplica al momento.</li>
+<li><strong>Windows</strong> (solo en Windows):</li>
+<li><strong>Quedarse en el área de notificación al minimizar</strong> (interruptor): al minimizar, la ventana se esconde en la bandeja. Clic en el icono para volver; botón derecho para <strong>Abrir</strong> o <strong>Salir</strong>.</li>
+<li><strong>Arrancar con Windows</strong> (interruptor): arranca escondida en el área de notificación al iniciar sesión.</li>
+</ul>
+<!-- /wp:list -->
+
+<!-- wp:heading {"level":3} -->
+<h3 class="wp-block-heading">Acerca de</h3>
+<!-- /wp:heading -->
+
+<!-- wp:list -->
+<ul class="wp-block-list">
+<li>Nombre, «Versión X», «Desinstala varias apps a la vez» y Socratic.</li>
+<li><strong>Contacto</strong>: botón con el correo; «Toca para enviar un correo electrónico».</li>
+<li><strong>Privacidad</strong>, <strong>Licencia</strong> (MIT) y <strong>Aviso Legal</strong> con «Uso bajo su propio riesgo».</li>
+<li><strong>Volver</strong>.</li>
+</ul>
+<!-- /wp:list -->
+
+<!-- wp:heading {"level":3} -->
+<h3 class="wp-block-heading">Aviso de actualización</h3>
+<!-- /wp:heading -->
+
+<!-- wp:paragraph -->
+<p>Si hay una versión más nueva: «Actualización disponible: Hay una versión más reciente (X). Tienes la Y. ¿Quieres actualizar?», con <strong>Actualizar</strong> y <strong>Ahora no</strong>.</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:heading -->
+<h2 class="wp-block-heading">Preguntas frecuentes</h2>
+<!-- /wp:heading -->
+
+<!-- wp:paragraph -->
+<p><strong>En Android tengo que confirmar cada aplicación, ¿no se pueden quitar todas de golpe?</strong>
+No. Android no permite a ninguna aplicación desinstalar otras en silencio: por seguridad, cada desinstalación la confirma el usuario. sOC Uninstaller te ahorra ir buscándolas una por una.</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph -->
+<p><strong>No me sale la aplicación que busco.</strong>
+Puede ser una aplicación del sistema. Pulsa «Mostrar apps del sistema» o usa el buscador.</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph -->
+<p><strong>En Google Play no veo el buscador, los ajustes ni el progreso.</strong>
+La versión de producción de Google Play es la de agosto de 2026. La nueva está en prueba cerrada y pasará a producción cuando Google la apruebe. Mientras tanto, el APK nuevo está en las releases de GitHub.</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph -->
+<p><strong>En Windows, un programa me sigue haciendo preguntas aunque elegí «Desatendido».</strong>
+Solo los instaladores que lo admiten (Windows Installer, Inno Setup, NSIS y apps de la Store) se quitan en silencio; el resto abre su asistente. Windows puede pedir permiso de administrador igualmente.</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph -->
+<p><strong>Espacio en disco no me deja borrar una carpeta.</strong>
+Si es por permisos, acepta «Cambiar permisos y reintentar» y concede el permiso de administrador. Si sale el aviso «Carpeta del sistema», piénsalo dos veces: borrar eso puede dejar Windows o tus programas inservibles. Para quitar un programa, desinstálalo desde Inicio.</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph -->
+<p><strong>He mandado algo a la papelera por error.</strong>
+Recupéralo desde la Papelera de reciclaje de Windows o con Ctrl+Z en el Explorador. Lo que ya estaba dentro de la papelera y borraste desde la aplicación no se puede recuperar.</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph -->
+<p><strong>No encuentro Espacio en disco en el móvil.</strong>
+Solo existe en Windows. En Android haría falta el permiso de acceso a todo el almacenamiento, que la aplicación no pide.</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph -->
+<p><strong>¿Está en la Microsoft Store?</strong>
+Todavía no. Descarga la versión de Windows desde las releases de GitHub.</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:separator -->
+<hr class="wp-block-separator has-alpha-channel-opacity"/>
+<!-- /wp:separator -->
+
+<!-- wp:paragraph -->
+<p>¿No encuentras lo que buscas? Escribe a <a href="mailto:jsoladelarosa@gmail.com">jsoladelarosa@gmail.com</a> o abre una incidencia en <a href="https://github.com/donki/Uninstaller/issues">GitHub</a>.</p>
+<!-- /wp:paragraph -->

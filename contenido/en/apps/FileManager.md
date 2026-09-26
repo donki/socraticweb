@@ -50,6 +50,7 @@ It has no ads, no purchases and no account. Everything happens on your device: t
 ### Main screen
 
 Top bar:
+- **Menu (three lines)**: opens the side menu with **Home**, **Settings** and **About**, and the app version at the bottom.
 - **Back arrow**: goes up to the parent folder (it doesn't appear at the root).
 - **Title**: "Internal storage" at the root or the folder name; below it, the number of items.
 - **Magnifying glass (Search)**: shows the "Search in this folder…" box. Type and the files in the current folder and all its subfolders are searched by name (up to 500 results). If there are no matches: "No files match your search".

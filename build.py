@@ -77,7 +77,7 @@ IDIOMAS = {
         "estado_en": "En {}", "y": " y ", "estado_github": "Descarga en GitHub", "navegador": "Navegador",
         "portada_ante": "Software libre para Android y Windows",
         "portada_h1": "Aplicaciones que respetan tu privacidad",
-        "portada_entrada": "Herramientas pequeñas y honestas: cada una hace una cosa y la hace bien, funciona "
+        "portada_entrada": "Herramientas pequeñas: cada una hace una cosa y la hace bien, funciona "
                            "sin conexión siempre que puede y no pide más permisos de los que necesita.",
         "ver_apps": "Ver las aplicaciones", "soporte_nav": "Soporte",
         "cifras": ["aplicaciones", "rastreadores", "licencia libre"],
@@ -144,7 +144,7 @@ IDIOMAS = {
         "estado_en": "On {}", "y": " and ", "estado_github": "Download on GitHub", "navegador": "Browser",
         "portada_ante": "Open-source software for Android and Windows",
         "portada_h1": "Apps that respect your privacy",
-        "portada_entrada": "Small, honest tools: each one does one thing and does it well, works offline "
+        "portada_entrada": "Small tools: each one does one thing and does it well, works offline "
                            "whenever it can and never asks for more permissions than it needs.",
         "ver_apps": "See the apps", "soporte_nav": "Support",
         "cifras": ["apps", "trackers", "open-source license"],
@@ -372,6 +372,12 @@ def preparar_banderas():
     """Banderas de España y de EE. UU. para cambiar de idioma: PNG dibujados aquí (nada de emoji, General §6.2;
     WordPress.com gratuito no admite SVG). 72×48 para verse nítidas a 24×16."""
     from PIL import Image, ImageDraw
+    # El logo de la cabecera: el icono del perfil de desarrollador de Google Play, a 108 px (se ve a 36).
+    logo = IMG / "marca" / "logo.png"
+    origen = PROYECTOS / "Mobile" / "GooglePlayConsole" / "dev-profile" / "socratic_dev_icon_512.png"
+    if not logo.exists() or logo.stat().st_mtime < origen.stat().st_mtime:
+        logo.parent.mkdir(parents=True, exist_ok=True)
+        Image.open(origen).convert("RGB").resize((108, 108), Image.LANCZOS).save(logo, "PNG", optimize=True)
     destino = IMG / "banderas"
     destino.mkdir(parents=True, exist_ok=True)
     es, us = destino / "es.png", destino / "en.png"
@@ -685,11 +691,9 @@ def antetitulo(texto: str, color=ACENTO) -> str:
 def cabecera_pagina(ante: str, h1: str, entrada: str, bs: list[str], otro: str, extra: str = "",
                     grande=True, icono: str = "") -> str:
     """La franja oscura con degradado con la que empieza cada página. «otro»: la misma página en el otro idioma."""
-    idioma = parrafo(f'<a href="{otro}" lang="{L["otro"]}">{L["ir_otro"]} →</a>', style={
-        "typography": {"fontSize": "0.875rem", "fontWeight": "600"},
-        "elements": {"link": {"color": {"text": ACENTO_CLARO}}}})
+    # «otro» ya no se enseña (el cambio de idioma son las banderas de la cabecera); se deja el
+    # parámetro para no perder qué página es la equivalente en el otro idioma.
     hijos = [
-        idioma,
         icono,
         antetitulo(ante, ACENTO_CLARO),
         titulo(html.escape(h1), 1, size="x-large" if grande else "large",
@@ -984,10 +988,15 @@ def cabecera_tema() -> str:
     nav = ("<!-- wp:navigation {\"overlayMenu\":\"mobile\",\"style\":{\"typography\":{\"fontWeight\":\"500\"},"
            "\"spacing\":{\"blockGap\":\"28px\"}},\"layout\":{\"type\":\"flex\",\"justifyContent\":\"right\"}} -->\n"
            + enlaces_nav + "\n<!-- /wp:navigation -->")
-    # El nombre del sitio lleva a la portada del idioma (el bloque site-title siempre iría a la castellana).
-    marca = parrafo(f'<a href="{url()}"><strong>sOCratic</strong></a>', size="medium", clase="soc-marca", style={
-        "typography": {"fontWeight": "800", "letterSpacing": "-0.02em"},
-        "elements": {"link": {"color": {"text": TINTA}, "typography": {"textDecoration": "none"}}}})
+    # Logo (el icono del perfil de desarrollador de Google Play) y nombre, a la portada del idioma
+    # (el bloque site-title siempre iría a la castellana).
+    marca = grupo(
+        imagen("img/marca/logo.png", "sOCratic", ancho="36px", radio="9px", borde=False, enlace=url()),
+        parrafo(f'<a href="{url()}"><strong>sOCratic</strong></a>', size="medium", clase="soc-marca", style={
+            "typography": {"fontWeight": "800", "letterSpacing": "-0.02em"},
+            "elements": {"link": {"color": {"text": TINTA}, "typography": {"textDecoration": "none"}}}}),
+        style={"spacing": {"blockGap": "10px"}},
+        layout={"type": "flex", "flexWrap": "nowrap", "verticalAlignment": "center"})
     # Banderas para cambiar de idioma, tras GitHub; se ven también en el móvil, junto al botón del menú.
     banderas = grupo(*[
         imagen(f"img/banderas/{i}.png", IDIOMAS[i]["nombre_propio"], ancho="24px", radio="3px",

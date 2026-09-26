@@ -50,6 +50,7 @@ No tiene anuncios, ni compras, ni cuenta. Todo ocurre en tu dispositivo: la apli
 ### Pantalla principal
 
 Barra superior:
+- **Menú (tres rayas)**: abre el menú lateral con **Inicio**, **Configuración** y **Acerca de**, y la versión de la aplicación al pie.
 - **Flecha atrás**: sube a la carpeta superior (no aparece en la raíz).
 - **Título**: «Almacenamiento interno» en la raíz o el nombre de la carpeta; debajo, el número de elementos.
 - **Lupa (Buscar)**: muestra la caja «Buscar en esta carpeta…». Escribe y se buscan por nombre los archivos de la carpeta actual y de todas sus subcarpetas (hasta 500 resultados). Si no hay coincidencias: «Ningún fichero coincide con la búsqueda».

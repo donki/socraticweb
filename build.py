@@ -1002,7 +1002,10 @@ def cabecera_tema() -> str:
         imagen(f"img/banderas/{i}.png", IDIOMAS[i]["nombre_propio"], ancho="24px", radio="3px",
                enlace=url(idioma=i))
         for i in ("es", "en")],
-        style={"spacing": {"blockGap": "10px"}}, layout={"type": "flex", "flexWrap": "nowrap"})
+        # Altura de línea 0: si no, la imagen (en línea dentro del enlace) se queda en la línea base de
+        # una caja de 26 px y sale unos 5 px más baja que el texto del menú.
+        style={"spacing": {"blockGap": "10px"}, "typography": {"lineHeight": "0"}},
+        layout={"type": "flex", "flexWrap": "nowrap", "verticalAlignment": "center"})
     derecha = grupo(nav, banderas, style={"spacing": {"blockGap": "24px"}},
                     layout={"type": "flex", "flexWrap": "nowrap", "verticalAlignment": "center"})
     fila = grupo(marca, derecha, align="wide",

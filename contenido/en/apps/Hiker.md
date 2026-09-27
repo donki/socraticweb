@@ -30,7 +30,7 @@ For each route you get a detail sheet with distance, elevation gain and loss, al
 ### Getting started
 1. Open Hiker. Android will ask you for **location while using the app** permission: accept it with precise location, because that's what places your position on the map and records the route. The app doesn't need location "all the time": when you record, it does so with a visible notification.
 2. When you start recording, Android may ask you for **notifications** permission: it's the "Recording the route" notification, which lets recording continue with the screen off.
-3. The first time, Hiker asks you about **Battery Optimization** ("...allow the app to run without battery restrictions. Do you want to change this setting now?") and about **Background Execution**. Answer **Yes** and remove the restrictions in the settings that open: that way the system won't cut off recording on long routes. Each question appears only once.
+3. The first time, Hiker asks you about **Battery Optimization** ("...allow Hiker to run without battery restrictions. Do you want to change this setting now?") and about **Background Execution**. Answer **Yes** and remove the restrictions in the settings that open: that way the system won't cut off recording on long routes. Each question appears only once.
 4. Wait for the map to center on your position ("Getting location..."). Outdoors and after a few seconds, accuracy improves.
 
 ### Everyday use
@@ -59,18 +59,18 @@ For each route you get a detail sheet with distance, elevation gain and loss, al
 - **Record button** (red): starts recording. While recording, the **Recording the route** bar appears with the time, distance and points logged, and the **Stop** button.
 - **When you stop**:
   1. "Route recorded. N points recorded (X km). Do you want to save it?": **Save** or **Discard** (discarding removes it from the map).
-  2. If you save, Hiker checks the paths on the map ("Snapping the route… Checking the paths on the map"). If there's no connection, it lets you know and saves the route as it was recorded; if it already fit, it tells you so and continues.
-  3. If it has snapped it, you'll see both versions: in red the one that would be saved and in gray the other, with the text "In red: snapped route — N points snapped to paths and M pulled out of buildings" or "In red: recorded route". The **toggle** button (arrows) switches which one is in red and the **save** button (floppy disk) keeps the one in red.
-  4. Finally, **Save Route** asks you for the **Route name** (**Save** / **Cancel**) and confirms "Route 'name' saved successfully".
-- **Follow bar** (when you load a route from Routes): "Following the route" with the total length; on the move it shows "On the route: X from the track" and "X left", with a green dot, or "Off route: X from the route", with the dot in red, if you get more than 50 m away. The **Stop** button on the bar stops following it.
-- **Interrupted recording**: if Android closed the app while you were recording, when you open it again you'll see "An unsaved recording with N points was left. Recover it?": **Recover** or **Discard**.
+  2. If you save, Hiker checks the paths on the map ("Adjusting the route… Checking the paths on the map"). If there's no connection, it lets you know and saves the route as it was recorded; if it already fit, it tells you so and continues.
+  3. If it has snapped it, you'll see both versions: in red the one that would be saved and in gray the other, with the text "In red: adjusted route — N points snapped to paths and M moved out of buildings" or "In red: recorded route". The **toggle** button (arrows) switches which one is in red and the **save** button (floppy disk) keeps the one in red.
+  4. Finally, **Save route** asks you for the **Route name** (**Save** / **Cancel**) and confirms "Route “name” saved."
+- **Follow bar** (when you load a route from Routes): "Following the route" with the total length; on the move it shows "On the route: X from the track" and "X to go", with a green dot, or "Off route: X from the route", with the dot in red, if you get more than 50 m away. The **Stop** button on the bar stops following it.
+- **Interrupted recording**: if Android closed the app while you were recording, when you open it again you'll see "An unsaved recording with N points was left behind. Do you want to recover it?": **Recover** or **Discard**.
 
 ### Routes screen (Saved Routes)
 - Each route shows its name, **Distance** in km and **Date**, with three buttons:
   - **Information**: opens the route's detail sheet.
   - **Location**: draws it on the map and starts following it.
-  - **Trash**: deletes it after asking "Delete the route 'name'?".
-- **Load GPX** (folder icon): choose a .gpx file on your phone and it's imported as a route ("Route 'name' imported."). If the file has no points, it lets you know.
+  - **Trash**: deletes it after asking "Delete the route “name”?".
+- **Load GPX** (folder icon): choose a .gpx file on your phone and it's imported as a route ("Route “name” imported."). If the file has no points, it lets you know.
 - **Refresh** (arrows icon): reloads the list.
 
 ### Route detail screen
@@ -99,7 +99,7 @@ No: each point is saved on the phone right away. When you open Hiker again you'l
 **The map doesn't center on my position or shows up somewhere else.**
 Check that location is turned on on your phone and that Hiker has precise location permission. Wait a few seconds outdoors and tap the location button. In dense forests, canyons or among tall buildings the GPS signal is worse.
 
-**When saving it says "Could not check the map".**
+**When saving it says "The map could not be checked".**
 Snapping to paths needs a connection. Without one, the route is still saved as it was recorded.
 
 **Snapping moved my route onto a path I didn't take.**
@@ -115,4 +115,4 @@ That's Heading mode. Turn it off in the side menu › **GPS** › **Heading: Off
 Some imported GPX files don't include the altitude of each point; without it, elevation gain and loss and the profile can't be calculated.
 
 ## Privacy
-Your routes and your position are saved only on your phone; there are no accounts, ads or trackers, and Hiker doesn't send your tracks to any server. To draw the map, the map library and the OpenFreeMap tiles for the area you're viewing are downloaded and, only when snapping a route to paths, OpenStreetMap is asked which paths and buildings there are in the area it goes through (without saving anything there); in addition, at startup it checks whether there's a new version.
+Your routes and your position are saved only on your phone; there are no accounts, ads or trackers, and Hiker doesn't send your tracks to any server. To draw the map, the OpenFreeMap tiles for the area you're viewing are downloaded (the map library, MapLibre, ships inside the app) and, only when snapping a route to paths, OpenStreetMap is asked which paths and buildings there are in the area it goes through (without saving anything there); in addition, at startup it checks whether there's a new version.

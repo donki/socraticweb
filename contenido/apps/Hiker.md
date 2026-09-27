@@ -62,7 +62,7 @@ De cada ruta tienes una ficha con distancia, desniveles, altitudes, tiempos, vel
   1. «Ruta grabada. Se han grabado N puntos (X km). ¿Quieres guardarla?»: **Guardar** o **Descartar** (descartar la borra del mapa).
   2. Si guardas, Hiker consulta los caminos del mapa («Ajustando la ruta… Consultando los caminos del mapa»). Si no hay conexión, avisa y guarda la ruta tal como se grabó; si ya encajaba, te lo dice y sigue.
   3. Si la ha ajustado, verás las dos versiones: en rojo la que se guardaría y en gris la otra, con el texto «En rojo: ruta ajustada — N puntos pegados a caminos y M sacados de edificios» o «En rojo: ruta grabada». El botón de **alternar** (flechas) cambia cuál está en rojo y el botón de **guardar** (disquete) se queda con la que está en rojo.
-  4. Por último, **Guardar Ruta** te pide el **Nombre de la ruta** (**Guardar** / **Cancelar**) y confirma «Ruta 'nombre' guardada correctamente».
+  4. Por último, **Guardar ruta** te pide el **Nombre de la ruta** (**Guardar** / **Cancelar**) y confirma «Ruta “nombre” guardada.»
 - **Barra de seguimiento** (al cargar una ruta desde Rutas): «Siguiendo la ruta» con la longitud total; en marcha muestra «En la ruta: a X del trazado» y «Quedan X», con un punto verde, o «Te has salido: a X de la ruta», con el punto en rojo, si te alejas más de 50 m. El botón **Parar** de la barra deja de seguirla.
 - **Grabación interrumpida**: si Android cerró la aplicación mientras grababas, al volver a abrirla aparece «Quedó una grabación sin guardar con N puntos. ¿La recuperas?»: **Recuperar** o **Descartar**.
 
@@ -70,8 +70,8 @@ De cada ruta tienes una ficha con distancia, desniveles, altitudes, tiempos, vel
 - Cada ruta muestra su nombre, **Distancia** en km y **Fecha**, con tres botones:
   - **Información**: abre la ficha de la ruta.
   - **Ubicación**: la dibuja en el mapa y empieza a seguirla.
-  - **Papelera**: la borra tras preguntar «¿Eliminar la ruta 'nombre'?».
-- **Cargar GPX** (icono de carpeta): elige un fichero .gpx del móvil y lo importa como ruta («Ruta 'nombre' importada.»). Si el fichero no tiene puntos, avisa.
+  - **Papelera**: la borra tras preguntar «¿Eliminar la ruta “nombre”?».
+- **Cargar GPX** (icono de carpeta): elige un fichero .gpx del móvil y lo importa como ruta («Ruta “nombre” importada.»). Si el fichero no tiene puntos, avisa.
 - **Actualizar** (icono de flechas): vuelve a leer la lista.
 
 ### Pantalla Ficha de ruta
@@ -116,4 +116,4 @@ Es el modo Rumbo. Desactívalo en el menú lateral › **GPS** › **Rumbo: No**
 Algunos ficheros GPX importados no incluyen la altitud de cada punto; sin ella no se pueden calcular los desniveles ni el perfil.
 
 ## Privacidad
-Tus rutas y tu posición se guardan solo en tu móvil; no hay cuentas, ni anuncios, ni rastreadores, y Hiker no envía tus recorridos a ningún servidor. Para dibujar el mapa se descargan la biblioteca del mapa y las teselas de OpenFreeMap de la zona que ves y, solo al ajustar una ruta a los caminos, se consulta a OpenStreetMap qué caminos y edificios hay por la zona por la que pasa (sin guardar nada allí); además, al arrancar se comprueba si hay una versión nueva.
+Tus rutas y tu posición se guardan solo en tu móvil; no hay cuentas, ni anuncios, ni rastreadores, y Hiker no envía tus recorridos a ningún servidor. Para dibujar el mapa se descargan las teselas de OpenFreeMap de la zona que ves (la biblioteca del mapa, MapLibre, va dentro de la aplicación) y, solo al ajustar una ruta a los caminos, se consulta a OpenStreetMap qué caminos y edificios hay por la zona por la que pasa (sin guardar nada allí); además, al arrancar se comprueba si hay una versión nueva.

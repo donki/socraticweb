@@ -8,7 +8,7 @@
   - Microsoft Store (no publicada): ficha preparada con el nombre «sOC Credentials», pero sin identificador de producto; el README dice «en cuanto Partner Center dé el enlace» (fuentes: README.md, store/microsoft/ficha-es-ES.md). Ojo: la versión de la Store no puede usar las extensiones de navegador; para eso hace falta la versión EXE de GitHub (README.md).
   - Edge Add-ons (publicada el 2026-09-24): https://microsoftedge.microsoft.com/addons/detail/soc-credentials/pcilggpjodagihemfbimfbnnmlbfhfbk (fuentes: 09-PENDIENTE-Credentials.md punto 7, CHANGELOG.md 2026.09.24.04, README.md; la URL responde 200 el 2026-09-25).
   - Chrome Web Store (no publicada): ficha preparada, falta la cuenta de desarrollador; sin ID (fuentes: 09-PENDIENTE-Credentials.md punto 7, store/chrome/ficha-es-ES.md).
-  - Firefox Add-ons (no publicada): ficha preparada, sin enviar a AMO; sin ID de tienda (fuentes: 09-PENDIENTE-Credentials.md punto 7, store/firefox/ficha-es-ES.md). Hasta entonces, en Firefox solo se puede cargar como complemento temporal.
+  - Firefox Add-ons (publicada el 2026-09-27): https://addons.mozilla.org/firefox/addon/soc-credentials/
 - descarga_alternativa: https://github.com/donki/Credentials/releases (APK, EXE/ZIP y MSIX de cada versión; última: v2026.09.25.03)
 
 ## Descripción
@@ -104,7 +104,7 @@ Campo **Contraseña maestra** con botón para verla, **Desbloquear** y, en Andro
 - **Windows**:
   - **Quedarse en el área de notificación al minimizar** (clic en el icono para volver; botón derecho para **Abrir** o **Salir**).
   - **Arrancar con Windows**: pide la contraseña maestra una vez al iniciar sesión y vuelve a pedirla tras bloquear Windows (Win+L).
-- **Extensiones del navegador** (Windows): estado por navegador (**Instalada** / **No instalada**) con **Instalar…**, y **Ofrecer instalarla al desbloquear**. En Edge se abre la tienda (pulsa «Obtener» y «Agregar extensión»); en Chrome, «Modo de desarrollador» y «Cargar descomprimida» con la ruta ya copiada; en Firefox, «Cargar complemento temporal…» desde about:debugging.
+- **Extensiones del navegador** (Windows): estado por navegador (**Instalada** / **No instalada**) con **Instalar…**, y **Ofrecer instalarla al desbloquear**. En Edge y en Firefox se abre su tienda (en Edge, «Obtener» y «Agregar extensión»; en Firefox, «Agregar a Firefox»); en Chrome, «Modo de desarrollador» y «Cargar descomprimida» con la ruta ya copiada.
 - **Zona peligrosa**: **Borrar esta bóveda del dispositivo** (hay que escribir BORRAR; si no está en la nube, se pierde todo).
 
 ### Extensión del navegador (Edge, Chrome, Firefox)
@@ -128,8 +128,6 @@ Versión, descripción, **Contacto**, **Privacidad**, **Licencia**, **Aviso lega
 **En Edge o Chrome del móvil me sigue ofreciendo Google en vez de sOC Credentials.** En Android 14 y posteriores los navegadores obedecen al **Servicio preferido de contraseñas**, no al de autocompletar. En Ajustes › Autocompletar revisa los tres sitios: el servicio de autocompletar, el servicio preferido y los ajustes del propio navegador.
 
 **La extensión dice que no puede hablar con sOC Credentials.** Abre la aplicación una vez: ella sola registra el puente con el navegador. Si acabas de actualizar, con abrirla basta. Recuerda que la versión de la Microsoft Store no admite las extensiones; usa la versión EXE.
-
-**En Firefox la extensión desaparece al cerrar el navegador.** Hasta que se publique en la tienda de Firefox solo se puede cargar como complemento temporal y hay que volver a cargarla cada vez.
 
 **Me sale «La copia de la nube se creó con otra contraseña maestra».** Escribe la contraseña maestra con la que se creó esa copia para mezclarla; tu contraseña actual se mantiene.
 

@@ -8,7 +8,7 @@
   - Microsoft Store (no publicada): ficha preparada con el nombre «sOC Credentials», pero sin identificador de producto; el README dice «en cuanto Partner Center dé el enlace» (fuentes: README.md, store/microsoft/ficha-es-ES.md). Ojo: la versión de la Store no puede usar las extensiones de navegador; para eso hace falta la versión EXE de GitHub (README.md).
   - Edge Add-ons (publicada el 2026-09-24): https://microsoftedge.microsoft.com/addons/detail/soc-credentials/pcilggpjodagihemfbimfbnnmlbfhfbk (fuentes: 09-PENDIENTE-Credentials.md punto 7, CHANGELOG.md 2026.09.24.04, README.md; la URL responde 200 el 2026-09-25).
   - Chrome Web Store (no publicada): ficha preparada, falta la cuenta de desarrollador; sin ID (fuentes: 09-PENDIENTE-Credentials.md punto 7, store/chrome/ficha-es-ES.md).
-  - Firefox Add-ons (no publicada): ficha preparada, sin enviar a AMO; sin ID de tienda (fuentes: 09-PENDIENTE-Credentials.md punto 7, store/firefox/ficha-es-ES.md). Hasta entonces, en Firefox solo se puede cargar como complemento temporal.
+  - Firefox Add-ons (publicada el 2026-09-27): https://addons.mozilla.org/firefox/addon/soc-credentials/
 - descarga_alternativa: https://github.com/donki/Credentials/releases (APK, EXE/ZIP y MSIX de cada versión; última: v2026.09.25.03)
 
 ## Description
@@ -104,7 +104,7 @@ Open the app and unlock it with the master password (or your fingerprint). Find 
 - **Windows**:
   - **Keep in the notification area when minimised** (click the icon to bring it back; right-click for **Open** or **Exit**).
   - **Start with Windows**: asks for the master password once when you sign in, and asks again after you lock Windows (Win+L).
-- **Browser extensions** (Windows): status per browser (**Installed** / **Not installed**) with **Install…**, and **Offer to install it when unlocking**. In Edge the store opens (click "Get" and "Add extension"); in Chrome, "Developer mode" and "Load unpacked" with the path already copied; in Firefox, "Load Temporary Add-on…" from about:debugging.
+- **Browser extensions** (Windows): status per browser (**Installed** / **Not installed**) with **Install…**, and **Offer to install it when unlocking**. In Edge and Firefox their store opens (in Edge, "Get" and "Add extension"; in Firefox, "Add to Firefox"); in Chrome, "Developer mode" and "Load unpacked" with the path already copied.
 - **Danger zone**: **Delete this vault from the device** (you have to type DELETE; if it is not in the cloud, everything is lost).
 
 ### Browser extension (Edge, Chrome, Firefox)
@@ -128,8 +128,6 @@ Version, description, **Contact**, **Privacy**, **License**, **Legal Notice** an
 **Edge or Chrome on my phone still offers Google instead of sOC Credentials.** On Android 14 and later, browsers follow the **Preferred password service**, not the autofill one. In Settings › Autofill, check all three places: the autofill service, the preferred service and the browser's own settings.
 
 **The extension says it can't talk to sOC Credentials.** Open the app once: it registers the bridge with the browser by itself. If you have just updated, opening it is enough. Remember that the Microsoft Store version doesn't support the extensions; use the EXE version.
-
-**In Firefox the extension disappears when I close the browser.** Until it is published in the Firefox store, it can only be loaded as a temporary add-on and has to be loaded again every time.
 
 **I get "The copy in the cloud was created with a different master password".** Type the master password that copy was created with to merge it; your current password is kept.
 

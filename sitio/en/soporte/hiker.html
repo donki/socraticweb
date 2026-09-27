@@ -64,7 +64,7 @@
 <ol class="wp-block-list">
 <li>Open Hiker. Android will ask you for <strong>location while using the app</strong> permission: accept it with precise location, because that's what places your position on the map and records the route. The app doesn't need location "all the time": when you record, it does so with a visible notification.</li>
 <li>When you start recording, Android may ask you for <strong>notifications</strong> permission: it's the "Recording the route" notification, which lets recording continue with the screen off.</li>
-<li>The first time, Hiker asks you about <strong>Battery Optimization</strong> ("...allow the app to run without battery restrictions. Do you want to change this setting now?") and about <strong>Background Execution</strong>. Answer <strong>Yes</strong> and remove the restrictions in the settings that open: that way the system won't cut off recording on long routes. Each question appears only once.</li>
+<li>The first time, Hiker asks you about <strong>Battery Optimization</strong> ("...allow Hiker to run without battery restrictions. Do you want to change this setting now?") and about <strong>Background Execution</strong>. Answer <strong>Yes</strong> and remove the restrictions in the settings that open: that way the system won't cut off recording on long routes. Each question appears only once.</li>
 <li>Wait for the map to center on your position ("Getting location..."). Outdoors and after a few seconds, accuracy improves.</li>
 </ol>
 
@@ -104,13 +104,13 @@
 <li><strong>Record button</strong> (red): starts recording. While recording, the <strong>Recording the route</strong> bar appears with the time, distance and points logged, and the <strong>Stop</strong> button.</li>
 <li><strong>When you stop</strong>:<ol>
 <li>"Route recorded. N points recorded (X km). Do you want to save it?": <strong>Save</strong> or <strong>Discard</strong> (discarding removes it from the map).</li>
-<li>If you save, Hiker checks the paths on the map ("Snapping the route… Checking the paths on the map"). If there's no connection, it lets you know and saves the route as it was recorded; if it already fit, it tells you so and continues.</li>
-<li>If it has snapped it, you'll see both versions: in red the one that would be saved and in gray the other, with the text "In red: snapped route — N points snapped to paths and M pulled out of buildings" or "In red: recorded route". The <strong>toggle</strong> button (arrows) switches which one is in red and the <strong>save</strong> button (floppy disk) keeps the one in red.</li>
-<li>Finally, <strong>Save Route</strong> asks you for the <strong>Route name</strong> (<strong>Save</strong> / <strong>Cancel</strong>) and confirms "Route 'name' saved successfully".</li>
+<li>If you save, Hiker checks the paths on the map ("Adjusting the route… Checking the paths on the map"). If there's no connection, it lets you know and saves the route as it was recorded; if it already fit, it tells you so and continues.</li>
+<li>If it has snapped it, you'll see both versions: in red the one that would be saved and in gray the other, with the text "In red: adjusted route — N points snapped to paths and M moved out of buildings" or "In red: recorded route". The <strong>toggle</strong> button (arrows) switches which one is in red and the <strong>save</strong> button (floppy disk) keeps the one in red.</li>
+<li>Finally, <strong>Save route</strong> asks you for the <strong>Route name</strong> (<strong>Save</strong> / <strong>Cancel</strong>) and confirms "Route “name” saved."</li>
 </ol>
 </li>
-<li><strong>Follow bar</strong> (when you load a route from Routes): "Following the route" with the total length; on the move it shows "On the route: X from the track" and "X left", with a green dot, or "Off route: X from the route", with the dot in red, if you get more than 50 m away. The <strong>Stop</strong> button on the bar stops following it.</li>
-<li><strong>Interrupted recording</strong>: if Android closed the app while you were recording, when you open it again you'll see "An unsaved recording with N points was left. Recover it?": <strong>Recover</strong> or <strong>Discard</strong>.</li>
+<li><strong>Follow bar</strong> (when you load a route from Routes): "Following the route" with the total length; on the move it shows "On the route: X from the track" and "X to go", with a green dot, or "Off route: X from the route", with the dot in red, if you get more than 50 m away. The <strong>Stop</strong> button on the bar stops following it.</li>
+<li><strong>Interrupted recording</strong>: if Android closed the app while you were recording, when you open it again you'll see "An unsaved recording with N points was left behind. Do you want to recover it?": <strong>Recover</strong> or <strong>Discard</strong>.</li>
 </ul>
 
 <h3 id="routes-screen-saved-routes" class="wp-block-heading has-medium-font-size has-text-color" style="color:#0f172a;margin-top:var(--wp--preset--spacing--40);font-weight:700;line-height:1.25">Routes screen (Saved Routes)</h3>
@@ -119,10 +119,10 @@
 <li>Each route shows its name, <strong>Distance</strong> in km and <strong>Date</strong>, with three buttons:<ul>
 <li><strong>Information</strong>: opens the route's detail sheet.</li>
 <li><strong>Location</strong>: draws it on the map and starts following it.</li>
-<li><strong>Trash</strong>: deletes it after asking "Delete the route 'name'?".</li>
+<li><strong>Trash</strong>: deletes it after asking "Delete the route “name”?".</li>
 </ul>
 </li>
-<li><strong>Load GPX</strong> (folder icon): choose a .gpx file on your phone and it's imported as a route ("Route 'name' imported."). If the file has no points, it lets you know.</li>
+<li><strong>Load GPX</strong> (folder icon): choose a .gpx file on your phone and it's imported as a route ("Route “name” imported."). If the file has no points, it lets you know.</li>
 <li><strong>Refresh</strong> (arrows icon): reloads the list.</li>
 </ul>
 
@@ -166,7 +166,7 @@
 <p>Check that location is turned on on your phone and that Hiker has precise location permission. Wait a few seconds outdoors and tap the location button. In dense forests, canyons or among tall buildings the GPS signal is worse.</p>
 </details>
 
-<details class="wp-block-details" style="border-bottom-color:#e2e8f0;border-bottom-width:1px;border-bottom-style:solid;padding-top:18px;padding-bottom:18px"><summary><strong>When saving it says &quot;Could not check the map&quot;.</strong></summary>
+<details class="wp-block-details" style="border-bottom-color:#e2e8f0;border-bottom-width:1px;border-bottom-style:solid;padding-top:18px;padding-bottom:18px"><summary><strong>When saving it says &quot;The map could not be checked&quot;.</strong></summary>
 <p>Snapping to paths needs a connection. Without one, the route is still saved as it was recorded.</p>
 </details>
 

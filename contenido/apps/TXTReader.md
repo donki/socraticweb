@@ -6,7 +6,7 @@
 - tiendas:
   - Google Play (producción): https://play.google.com/store/apps/details?id=com.socratic.txtreader (ficha pública accesible el 2026-09-25; paquete en TXTReader.csproj y Mobile/GooglePlayConsole/TXTReader/ficha.md; la pista alpha de prueba cerrada también existe según GRUPOS-VERIFICADORES.md)
   - Microsoft Store: no publicada (no hay ficha en Mobile/MicrosoftStore ni versión para Windows)
-  - Edge Add-ons / Chrome / Firefox: no aplica
+  - Tiendas de extensiones de navegador: no aplica
 - descarga_alternativa: https://github.com/donki/TXTReader/releases (última: v2026.09.14.0, APK)
 
 ## Descripción
@@ -15,7 +15,7 @@ TXT Reader es un lector de archivos de texto para Android, rápido y sin distrac
 
 Detecta sola la codificación del fichero, así que las tildes, las eñes y los caracteres especiales se ven bien aunque el archivo venga de Windows, de un servidor o de otro programa. Puedes buscar dentro del texto con resaltado al momento, ajustar el tamaño de la letra y seleccionar y copiar fragmentos.
 
-Los archivos se abren desde la propia aplicación o desde cualquier otra con «Abrir con»: el gestor de archivos, las descargas, el correo o la nube (OneDrive, Google Drive, Dropbox). No tiene anuncios, no pide cuenta y no necesita permisos de almacenamiento.
+Los archivos se abren desde la propia aplicación o desde cualquier otra con «Abrir con»: el gestor de archivos, las descargas, el correo o la nube (OneDrive, Google Drive u otros servicios). No tiene anuncios, no pide cuenta y no necesita permisos de almacenamiento.
 
 ## Funciones principales
 
@@ -45,7 +45,7 @@ Los archivos se abren desde la propia aplicación o desde cualquier otra con «A
 3. Escribe en la caja de búsqueda para resaltar coincidencias, mueve la barra lateral para cambiar el tamaño de letra y mantén pulsado para seleccionar y copiar.
 4. Pulsa el botón Atrás de Android para volver a la pantalla principal. El archivo queda en «Archivos Recientes».
 
-También puedes abrir un archivo desde otra aplicación con «Abrir con» › TXT Reader (o «Compartir» / «Exportar» en Google Drive y Dropbox).
+También puedes abrir un archivo desde otra aplicación con «Abrir con» › TXT Reader (o «Compartir» / «Exportar» en Google Drive y otros servicios de nube).
 
 ### Menú lateral
 
@@ -89,8 +89,8 @@ Al abrir la aplicación, si hay una versión más nueva aparece «Actualización
 **No encuentro mi archivo en el selector o sale en gris.**
 El selector solo enseña ficheros de texto. Si tu archivo tiene una extensión rara, asegúrate de tener la última versión: desde la 2026.08.01 también se admiten .gpx y otros que Android no sabe clasificar.
 
-**Me sale «No se pudo acceder al archivo de Google Drive / Dropbox / almacenamiento en la nube».**
-El archivo no está disponible sin conexión. Comprueba que tienes internet y permiso sobre el archivo; si persiste, descárgalo primero al teléfono y ábrelo desde ahí. En Dropbox, usa «Exportar» y elige TXT Reader.
+**Me sale que no se pudo acceder al archivo de la nube.**
+El archivo no está disponible sin conexión. Comprueba que tienes internet y permiso sobre el archivo; si persiste, descárgalo primero al teléfono y ábrelo desde ahí. En algunos servicios de nube hay que usar «Exportar» y elegir TXT Reader.
 
 **Un archivo reciente ha desaparecido de la lista.**
 Al tocarlo, la aplicación comprobó que ya no existe (se borró o se movió) y lo quitó del historial. Ábrelo de nuevo con «Seleccionar Archivo» desde su nueva ubicación.

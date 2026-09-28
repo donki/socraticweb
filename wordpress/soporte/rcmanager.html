@@ -83,7 +83,7 @@
 <!-- wp:list {"ordered":true} -->
 <ol class="wp-block-list">
 <li>Abre la aplicación. El árbol está vacío y te indica: «Todavía no hay conexiones. Añade una con + y aparecerá aquí.»</li>
-<li>Si ya tienes conexiones en Remote Desktop Manager o en ficheros .rdp, ve a Ajustes (icono de engranaje) › Importar conexiones. Si no, pulsa «Conexión nueva» (+).</li>
+<li>Si ya tienes conexiones en otro gestor (ficheros .rdm) o en ficheros .rdp, ve a Ajustes (icono de engranaje) › Importar conexiones. Si no, pulsa «Conexión nueva» (+).</li>
 <li>Rellena al menos el Nombre y el Servidor, elige el Tipo y pulsa Guardar.</li>
 <li>Opcional: en Ajustes elige si quieres guardar las conexiones solo en este PC o en Google Drive / OneDrive.</li>
 </ol>
@@ -224,7 +224,7 @@
 <li>Usuario.</li>
 <li>Dominio (solo RDP).</li>
 <li>Contraseña, con botón de ojo para verla u ocultarla. «Déjala vacía para que se pida al conectar.»</li>
-<li>Clave privada (fichero) (SSH y SFTP), con botón «Elegir fichero»: «Fichero OpenSSH o PEM. Si se pone, la contraseña es la de la clave.»</li>
+<li>Clave privada (fichero) (SSH y SFTP), con botón «Elegir fichero»: para el fichero de la clave privada (en el formato habitual de SSH o en PEM); si se pone, la contraseña es la de la clave.</li>
 <li>Cifrado (solo FTP / FTPS): «Ninguno (FTP en claro)», «FTPS explícito (AUTH TLS, puerto 21)» o «FTPS implícito (puerto 990)».</li>
 <li>«Transferir por SCP en vez de SFTP (la navegación va siempre por SFTP)» (solo SFTP / SCP).</li>
 <li>Carpeta remota al abrir y Carpeta local al abrir (SFTP y FTP): «Vacías: la carpeta que dé el servidor y tu perfil de usuario.» Si no pones carpeta remota, se empieza en la raíz del servidor (/).</li>
@@ -359,7 +359,7 @@
 <!-- /wp:heading -->
 
 <!-- wp:paragraph -->
-<p>Mientras conecta, la pestaña muestra «Conectando con…»; al entrar aparece el explorador de dos paneles: este equipo a la izquierda y el servidor a la derecha. Cada panel tiene su barra de ruta (puedes escribir una ruta directamente) y columnas Nombre, Tamaño y Modificado (y, en servidores Linux/Unix, Permisos y Propietario).</p>
+<p>Mientras conecta, la pestaña muestra «Conectando con…»; al entrar aparece el explorador de dos paneles: este equipo a la izquierda y el servidor a la derecha. Cada panel tiene su barra de ruta (puedes escribir una ruta directamente) y columnas Nombre, Tamaño y Modificado (y, en los servidores que los tienen, Permisos y Propietario).</p>
 <!-- /wp:paragraph -->
 
 <!-- wp:paragraph -->
@@ -379,7 +379,7 @@
 <li>Editar aquí (ficheros de texto).</li>
 <li>Copiar la ruta.</li>
 <li>Ver ficheros ocultos.</li>
-<li>Permisos y propietario (servidores Unix).</li>
+<li>Permisos y propietario (en los servidores que los tienen).</li>
 <li>Cancelar la transferencia (mientras hay una en curso).</li>
 </ul>
 <!-- /wp:list -->
@@ -393,7 +393,7 @@
 <!-- /wp:paragraph -->
 
 <!-- wp:paragraph -->
-<p><strong>Ventana Permisos y propietario</strong> (solo servidores Linux/Unix)</p>
+<p><strong>Ventana Permisos y propietario</strong> (solo en los servidores que los tienen)</p>
 <!-- /wp:paragraph -->
 
 <!-- wp:list -->
@@ -456,7 +456,7 @@
 
 <!-- wp:list -->
 <ul class="wp-block-list">
-<li>Botón «Importar de Remote Desktop Manager (.rdm) o ficheros de Escritorio remoto (.rdp)».</li>
+<li>Botón para importar de otro gestor de conexiones (ficheros .rdm) o de ficheros de Escritorio remoto (.rdp).</li>
 <li>De un .rdm se importan las conexiones RDP, SSH, FTP/FTPS y SFTP/SCP con sus carpetas. De los .rdp (puedes elegir varios a la vez) sale una conexión por fichero, con su nombre y sus opciones.</li>
 <li>Las contraseñas no se importan: se piden al conectar. Al terminar se indica cuántas se han importado, cuántas ya existían y cuántas se han dejado fuera por ser de tipos no admitidos.</li>
 </ul>
@@ -548,9 +548,9 @@
 <!-- /wp:details -->
 
 <!-- wp:details {"style":{"border":{"bottom":{"color":"#e2e8f0","width":"1px"}},"spacing":{"padding":{"top":"18px","bottom":"18px"}}}} -->
-<details class="wp-block-details" style="border-bottom-color:#e2e8f0;border-bottom-width:1px;border-bottom-style:solid;padding-top:18px;padding-bottom:18px"><summary><strong>He importado de Remote Desktop Manager y me pide las contraseñas.</strong></summary>
+<details class="wp-block-details" style="border-bottom-color:#e2e8f0;border-bottom-width:1px;border-bottom-style:solid;padding-top:18px;padding-bottom:18px"><summary><strong>He importado de otro gestor de conexiones y me pide las contraseñas.</strong></summary>
 <!-- wp:paragraph -->
-<p>Es normal: las contraseñas de RDM y de los ficheros .rdp van cifradas para el usuario que las guardó y no se pueden importar. Al conectar se piden y puedes marcar «Recordarla en este PC (cifrada)».</p>
+<p>Es normal: las contraseñas de los ficheros .rdm y .rdp van cifradas para el usuario que las guardó y no se pueden importar. Al conectar se piden y puedes marcar «Recordarla en este PC (cifrada)».</p>
 <!-- /wp:paragraph --></details>
 <!-- /wp:details -->
 </div>

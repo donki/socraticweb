@@ -95,7 +95,7 @@ Tres columnas: **Pendientes**, **En curso** y **Hechas**, con los mismos filtros
 - Botones de arriba: **Nuevo grupo** (+), **Unirse a un grupo** (llave), **Escanear el QR** y **Actualizar**.
 - **Nuevo grupo**: nombre (por ejemplo «Familia, Piso compartido, Proyecto...») y **Clave compartida** de al menos 6 caracteres. Se crea con una primera lista «General».
 - **Unirse a un grupo**: **Código del grupo (6 caracteres)** y la clave; o **Escanear el QR** de la invitación. En Windows el QR se puede leer **De una imagen**, **Del portapapeles** o **De la pantalla**.
-- En cada grupo: **Invitar a alguien** (pone una clave nueva: la invitación anterior deja de valer, a quien ya está no le afecta) y enseña el QR con **Compartir** y **Copiar código y clave** (en Windows también **Enviar por correo** y **Enviar por WhatsApp**); **Nueva lista del grupo**; y papelera, que pregunta **Salir: los demás miembros lo conservan** o **Borrarlo para todos, con sus listas y tareas** (solo quien lo creó puede borrarlo).
+- En cada grupo: **Invitar a alguien** (pone una clave nueva: la invitación anterior deja de valer, a quien ya está no le afecta) y enseña el QR con **Compartir** y **Copiar código y clave** (en Windows también **Enviar por correo** y un botón para enviarlo por una aplicación de mensajería); **Nueva lista del grupo**; y papelera, que pregunta **Salir: los demás miembros lo conservan** o **Borrarlo para todos, con sus listas y tareas** (solo quien lo creó puede borrarlo).
 
 ### Ajustes (Android)
 

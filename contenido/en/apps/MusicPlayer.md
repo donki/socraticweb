@@ -12,7 +12,7 @@ Music Player plays the music you already have stored on your phone, with no acco
 
 It keeps playing with the screen off, with the controls in the notification, and it works in Android Auto: in the car you have your whole library organized into artists, playlists and songs, with the steering-wheel buttons and by voice.
 
-If you want, it can look up a photo and a short bio of each artist on Wikipedia; it's off by default and, when you turn it on, the only thing that leaves your phone is the artist's name. It also shows the song's lyrics when the file itself includes them, and even highlights the line that's playing.
+If you want, it can look up a photo and a short bio of each artist in a free online encyclopedia; it's off by default and, when you turn it on, the only thing that leaves your phone is the artist's name. It also shows the song's lyrics when the file itself includes them, and even highlights the line that's playing.
 
 ## Main features
 - Plays the audio formats Android supports: MP3, AAC/M4A, FLAC, OGG, Opus, WAV, MIDI and AMR.
@@ -76,7 +76,7 @@ Press and hold a song in Songs, in an artist or in a playlist. A bar appears wit
 
 ### Artist screen
 - Artist photo, name and number of songs.
-- Artist **bio** (if online lookup is turned on), trimmed to three lines with a three-dot button to see it in full or collapse it, and the source: "Image and text: Wikipedia / Wikidata (CC BY-SA), artist matched with MusicBrainz."
+- Artist **bio** (if online lookup is turned on), trimmed to three lines with a three-dot button to see it in full or collapse it, and the source of the image and text, with the attribution its license requires.
 - If lookup is off, a notice with the **Turn on online lookup** button.
 - **Refresh info** (arrows icon): looks up the photo and the bio again ("Info updated" or "Nothing found for this group").
 - **Picture** (picture icon): changes the artist's photo: **From this device**, **From a web address** (you paste the address of an image), **Search it on Google** or **Remove the custom one**.
@@ -128,7 +128,7 @@ Press and hold a song in Songs, in an artist or in a playlist. A bar appears wit
 - **Group by composer** (switch): groups by composer instead of by performer. Useful for classical music.
 
 **Online information**
-- **Look up artist photos and biographies** (switch, off by default): when you turn it on, only the artist's name is sent to MusicBrainz and Wikidata/Wikipedia to look up a photo and a short bio.
+- **Look up artist photos and biographies** (switch, off by default): when you turn it on, only the artist's name is sent to an open music database and a free encyclopedia to look up a photo and a short bio.
 - **Delete downloaded images**: clears the saved photos ("Downloaded images deleted").
 
 **Android Auto**
@@ -177,4 +177,4 @@ Music Player doesn't download lyrics: it only shows the ones included in the fil
 "Delete from device" deletes the file from your phone and can't be undone. If you only wanted to take it out of a playlist, use **Remove from this playlist**.
 
 ## Privacy
-Your music, your playlists and your preferences stay on your phone: no accounts, no ads, no analytics. There are only two internet connections: the check for a new version at startup and, only if you turn it on, the lookup of artist photos and bios, which sends only the artist's name to MusicBrainz, Wikidata and Wikipedia. If you also tap **Look up info online** when editing a song, its title and artist are looked up on MusicBrainz.
+Your music, your playlists and your preferences stay on your phone: no accounts, no ads, no analytics. There are only two internet connections: the check for a new version at startup and, only if you turn it on, the lookup of artist photos and bios, which sends only the artist's name to an open music database and a free encyclopedia. If you also tap **Look up info online** when editing a song, its title and artist are looked up in that music database.

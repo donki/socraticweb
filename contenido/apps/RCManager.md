@@ -14,7 +14,7 @@ sOC Remote Connections Manager reúne en una sola ventana todas las conexiones q
 
 El escritorio remoto usa el mismo cliente que trae Windows, con todas sus opciones de siempre (pantalla, recursos locales, experiencia, certificado, puerta de enlace…), y el escritorio se ajusta solo al tamaño de la pestaña. Para los ficheros tienes un explorador de dos paneles, tu PC a un lado y el servidor al otro, con el que subes y bajas carpetas enteras arrastrando, e incluso puedes editar ficheros de texto del servidor sin descargarlos.
 
-Tus conexiones se guardan en tu PC con las contraseñas cifradas para tu usuario de Windows, o, si lo prefieres, en tu propio Google Drive u OneDrive cifradas con una frase que solo tú conoces, para tenerlas iguales en todos tus equipos. Puedes importar lo que ya tengas en Remote Desktop Manager o en ficheros .rdp. Es software libre, sin cuenta, sin anuncios y sin rastreadores.
+Tus conexiones se guardan en tu PC con las contraseñas cifradas para tu usuario de Windows, o, si lo prefieres, en tu propio Google Drive u OneDrive cifradas con una frase que solo tú conoces, para tenerlas iguales en todos tus equipos. Puedes importar lo que ya tengas en otro gestor de conexiones (ficheros .rdm) o en ficheros .rdp. Es software libre, sin cuenta, sin anuncios y sin rastreadores.
 
 ## Funciones principales
 
@@ -23,11 +23,11 @@ Tus conexiones se guardan en tu PC con las contraseñas cifradas para tu usuario
 - Escritorio remoto con todas las opciones del cliente de Windows, organizadas en las mismas pestañas que el original, resolución que sigue a la pestaña, pantalla completa en el monitor que elijas y uso de todos los monitores.
 - Unidades de tu PC dentro del escritorio remoto y portapapeles compartido con texto, imágenes y ficheros.
 - Terminal SSH con colores, historial, copiar y pegar, y entrada con contraseña o clave privada.
-- Explorador de ficheros de dos paneles con cola de transferencias, progreso y cancelar, y cambio de permisos y propietario en servidores Linux.
+- Explorador de ficheros de dos paneles con cola de transferencias, progreso y cancelar, y cambio de permisos y propietario en los servidores que los tienen.
 - Editor de texto integrado que guarda directamente en el servidor.
 - Zoom por pestaña (letra del terminal y de los paneles, escala del escritorio remoto) que se recuerda por conexión.
 - Conexiones en este PC o sincronizadas cifradas en Google Drive u OneDrive.
-- Importación desde Remote Desktop Manager (.rdm) y desde ficheros .rdp.
+- Importación desde otro gestor de conexiones (ficheros .rdm) y desde ficheros .rdp.
 
 ## Guía de uso (soporte)
 
@@ -43,7 +43,7 @@ Requisitos: Windows 10 (versión 2004) o posterior, o Windows 11. Para el escrit
 ### Primera puesta en marcha
 
 1. Abre la aplicación. El árbol está vacío y te indica: «Todavía no hay conexiones. Añade una con + y aparecerá aquí.»
-2. Si ya tienes conexiones en Remote Desktop Manager o en ficheros .rdp, ve a Ajustes (icono de engranaje) › Importar conexiones. Si no, pulsa «Conexión nueva» (+).
+2. Si ya tienes conexiones en otro gestor (ficheros .rdm) o en ficheros .rdp, ve a Ajustes (icono de engranaje) › Importar conexiones. Si no, pulsa «Conexión nueva» (+).
 3. Rellena al menos el Nombre y el Servidor, elige el Tipo y pulsa Guardar.
 4. Opcional: en Ajustes elige si quieres guardar las conexiones solo en este PC o en Google Drive / OneDrive.
 
@@ -112,7 +112,7 @@ Se abre con «Conexión nueva» o «Editar». Las pestañas que aparecen depende
 - Usuario.
 - Dominio (solo RDP).
 - Contraseña, con botón de ojo para verla u ocultarla. «Déjala vacía para que se pida al conectar.»
-- Clave privada (fichero) (SSH y SFTP), con botón «Elegir fichero»: «Fichero OpenSSH o PEM. Si se pone, la contraseña es la de la clave.»
+- Clave privada (fichero) (SSH y SFTP), con botón «Elegir fichero»: para el fichero de la clave privada (en el formato habitual de SSH o en PEM); si se pone, la contraseña es la de la clave.
 - Cifrado (solo FTP / FTPS): «Ninguno (FTP en claro)», «FTPS explícito (AUTH TLS, puerto 21)» o «FTPS implícito (puerto 990)».
 - «Transferir por SCP en vez de SFTP (la navegación va siempre por SFTP)» (solo SFTP / SCP).
 - Carpeta remota al abrir y Carpeta local al abrir (SFTP y FTP): «Vacías: la carpeta que dé el servidor y tu perfil de usuario.» Si no pones carpeta remota, se empieza en la raíz del servidor (/).
@@ -185,7 +185,7 @@ Se abre con «Conexión nueva» o «Editar». Las pestañas que aparecen depende
 
 ### Sesión de ficheros (SFTP / SCP y FTP / FTPS)
 
-Mientras conecta, la pestaña muestra «Conectando con…»; al entrar aparece el explorador de dos paneles: este equipo a la izquierda y el servidor a la derecha. Cada panel tiene su barra de ruta (puedes escribir una ruta directamente) y columnas Nombre, Tamaño y Modificado (y, en servidores Linux/Unix, Permisos y Propietario).
+Mientras conecta, la pestaña muestra «Conectando con…»; al entrar aparece el explorador de dos paneles: este equipo a la izquierda y el servidor a la derecha. Cada panel tiene su barra de ruta (puedes escribir una ruta directamente) y columnas Nombre, Tamaño y Modificado (y, en los servidores que los tienen, Permisos y Propietario).
 
 Botones de los paneles:
 - Este equipo (panel local): para cambiar de unidad.
@@ -199,14 +199,14 @@ Botones de los paneles:
 - Editar aquí (ficheros de texto).
 - Copiar la ruta.
 - Ver ficheros ocultos.
-- Permisos y propietario (servidores Unix).
+- Permisos y propietario (en los servidores que los tienen).
 - Cancelar la transferencia (mientras hay una en curso).
 
 Doble clic en un fichero de texto del servidor lo abre en el editor integrado; en un fichero local, lo abre con su programa de Windows. Las transferencias van en cola, con progreso («Subiendo… · N de M»).
 
 Si un fichero ya existe y la conexión está en «Avisar y confirmar», sale «El fichero ya existe» con Sobrescribir, Saltar y la casilla «Hacer lo mismo con los demás».
 
-**Ventana Permisos y propietario** (solo servidores Linux/Unix)
+**Ventana Permisos y propietario** (solo en los servidores que los tienen)
 - Permisos: casillas Leer, Escribir y Ejecutar para Propietario, Grupo y Otros, con el valor Octal a la vista.
 - Propietario y grupo: nombres o números; vacío = no cambiar. En SFTP, cambiar por nombre usa una orden por SSH con las mismas credenciales; la mayoría de servidores FTP no dejan cambiar el propietario.
 - «Aplicar a todo lo de dentro de las carpetas».
@@ -235,7 +235,7 @@ Si un fichero ya existe y la conexión está en «Avisar y confirmar», sale «E
 - Al arrancar se baja la copia de la nube si es más reciente y cada cambio se sube; si guardas desde dos equipos, gana el último.
 
 **Importar conexiones**
-- Botón «Importar de Remote Desktop Manager (.rdm) o ficheros de Escritorio remoto (.rdp)».
+- Botón para importar de otro gestor de conexiones (ficheros .rdm) o de ficheros de Escritorio remoto (.rdp).
 - De un .rdm se importan las conexiones RDP, SSH, FTP/FTPS y SFTP/SCP con sus carpetas. De los .rdp (puedes elegir varios a la vez) sale una conexión por fichero, con su nombre y sus opciones.
 - Las contraseñas no se importan: se piden al conectar. Al terminar se indica cuántas se han importado, cuántas ya existían y cuántas se han dejado fuera por ser de tipos no admitidos.
 
@@ -275,8 +275,8 @@ Google muestra cada permiso como una casilla; si la de Google Drive se queda sin
 **En otro PC dice «El fichero de la nube está cifrado con otra frase».**
 Tienes que escribir en Ajustes › Frase de cifrado exactamente la misma frase que usaste en el primer equipo. Si la has olvidado, la copia de la nube no se puede recuperar.
 
-**He importado de Remote Desktop Manager y me pide las contraseñas.**
-Es normal: las contraseñas de RDM y de los ficheros .rdp van cifradas para el usuario que las guardó y no se pueden importar. Al conectar se piden y puedes marcar «Recordarla en este PC (cifrada)».
+**He importado de otro gestor de conexiones y me pide las contraseñas.**
+Es normal: las contraseñas de los ficheros .rdm y .rdp van cifradas para el usuario que las guardó y no se pueden importar. Al conectar se piden y puedes marcar «Recordarla en este PC (cifrada)».
 
 ## Privacidad
 

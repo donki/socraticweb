@@ -6,7 +6,7 @@
 - tiendas:
   - Google Play (producción): https://play.google.com/store/apps/details?id=com.socratic.filemanager (ficha pública accesible el 2026-09-25 con el título «File Manager: sin anuncios»; D:\sOCProjects\11-PENDIENTE-FileManager.md y Mobile/GooglePlayConsole/FileManager/ficha.md)
   - Microsoft Store: no publicada (no hay ficha en Mobile/MicrosoftStore ni versión para Windows)
-  - Edge Add-ons / Chrome / Firefox: no aplica
+  - Tiendas de extensiones de navegador: no aplica
 - descarga_alternativa: https://github.com/donki/FileManager/releases (última: v2026.09.14.0, APK)
 
 ## Descripción

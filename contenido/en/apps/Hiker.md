@@ -91,7 +91,7 @@ For each route you get a detail sheet with distance, elevation gain and loss, al
 
 ## FAQ
 **The route comes out in pieces or gets cut off with the screen off.**
-Remove Hiker's battery and background restrictions (Android Settings › Apps › Hiker › Battery › Unrestricted; on Xiaomi, also "Autostart"). Keep notifications permission turned on: the "Recording the route" notification is what lets Android keep providing positions with the screen off.
+Remove Hiker's battery and background restrictions (Android Settings › Apps › Hiker › Battery › Unrestricted; on some manufacturers' phones, also "Autostart"). Keep notifications permission turned on: the "Recording the route" notification is what lets Android keep providing positions with the screen off.
 
 **Android closed the app in the middle of the route. Have I lost what I recorded?**
 No: each point is saved on the phone right away. When you open Hiker again you'll see "Recording interrupted" and you can tap **Recover**.
@@ -106,7 +106,7 @@ Snapping to paths needs a connection. Without one, the route is still saved as i
 Before saving you can tap the toggle button to see the recorded route in red and save that one instead of the snapped one.
 
 **Can I load routes made in another app or on the web?**
-Yes, if they're in GPX format: in **Routes** tap **Load GPX** and choose the file. To create or edit routes on your computer you can use free web tools such as GPX Studio and then move the file to your phone.
+Yes, if they're in GPX format: in **Routes** tap **Load GPX** and choose the file. To create or edit routes on your computer you can use free web GPX editors and then move the file to your phone.
 
 **The map rotates by itself and makes me dizzy.**
 That's Heading mode. Turn it off in the side menu › **GPS** › **Heading: Off**.
@@ -115,4 +115,4 @@ That's Heading mode. Turn it off in the side menu › **GPS** › **Heading: Off
 Some imported GPX files don't include the altitude of each point; without it, elevation gain and loss and the profile can't be calculated.
 
 ## Privacy
-Your routes and your position are saved only on your phone; there are no accounts, ads or trackers, and Hiker doesn't send your tracks to any server. To draw the map, the OpenFreeMap tiles for the area you're viewing are downloaded (the map library, MapLibre, ships inside the app) and, only when snapping a route to paths, OpenStreetMap is asked which paths and buildings there are in the area it goes through (without saving anything there); in addition, at startup it checks whether there's a new version.
+Your routes and your position are saved only on your phone; there are no accounts, ads or trackers, and Hiker doesn't send your tracks to any server. To draw the map, the tiles for the area you're viewing are downloaded from the map service (the library that draws it ships inside the app) and, only when snapping a route to paths, a public map data service is asked which paths and buildings there are in the area it goes through (without saving anything there); in addition, at startup it checks whether there's a new version.

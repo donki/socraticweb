@@ -34,7 +34,7 @@ Todo ocurre en tu teléfono: no hay cuentas, ni servidores, ni anuncios, y la ap
 2. Después te pedirá permiso para **mostrar notificaciones**, que sirve para avisarte de cada SMS que llega.
 3. Si no eres la aplicación predeterminada, se te pedirán por separado los permisos de **recibir SMS** y **enviar SMS**.
 4. Si quieres usar el reenvío automático, abre el menú lateral, entra en **Configuración** y añade al menos un número de destino.
-5. Si tu móvil cierra las aplicaciones en segundo plano (Xiaomi, Huawei, Oppo, algunos Samsung...), entra en **Diagnósticos** y pulsa **Configurar todos los permisos**, o bien **Batería** y **Autostart**, para que el reenvío siga funcionando con la pantalla apagada y tras reiniciar.
+5. Si tu móvil cierra las aplicaciones en segundo plano (algunos fabricantes lo hacen para ahorrar batería), entra en **Diagnósticos** y pulsa **Configurar todos los permisos**, o bien **Batería** y **Autostart**, para que el reenvío siga funcionando con la pantalla apagada y tras reiniciar.
 
 La aplicación no pide acceso a tu agenda: cuando eliges un contacto se abre el selector del sistema, que solo le pasa el número que escoges.
 

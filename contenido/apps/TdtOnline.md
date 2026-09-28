@@ -14,11 +14,11 @@ TDT Online te trae los canales de la Televisión Digital Terrestre en directo po
 
 Los canales se ordenan por categorías, con sus logotipos, un buscador y una categoría de favoritos para tener a mano los de siempre. La parrilla te enseña lo que se emite ahora y lo que viene después en cada canal, y la aplicación recuerda el último canal que viste para volver a él con un toque.
 
-En la tele se maneja cómodamente con la cruceta del mando, y en el móvil con el dedo. La aplicación solo abre las emisiones que cada cadena publica en abierto por internet: no aloja ni reemite nada. Por eso no están las cadenas que solo se ven en sus propias plataformas con registro (como Antena 3, laSexta, Telecinco o Cuatro).
+En la tele se maneja cómodamente con la cruceta del mando, y en el móvil con el dedo. La aplicación solo abre las emisiones que cada cadena publica en abierto por internet: no aloja ni reemite nada. Por eso no están las cadenas que solo se ven en sus propias plataformas con registro (como las de los grandes grupos privados).
 
 ## Funciones principales
 
-- Canales de la TDT en directo por internet (RTVE, autonómicas, temáticas e internacionales) con sus logotipos.
+- Canales de la TDT en directo por internet (públicas, autonómicas, temáticas e internacionales) con sus logotipos.
 - Categorías en pestañas, con «Favoritos» y «Todos» al principio.
 - Buscador de canales por nombre, sin importar acentos ni mayúsculas.
 - Favoritos con un toque en la estrella o manteniendo pulsado OK en el mando.
@@ -62,7 +62,7 @@ Una fila por canal (favoritos delante) con el programa en curso, su barra de pro
 
 ### Ajustes
 
-- **Listas de canales**: las listas que usa la aplicación. Se descargan cada vez que arranca; la primera manda en el orden de las categorías y las demás añaden canales y emisiones de repuesto. Se admiten JSON de tdt-canales, JSON de TDTChannels y M3U/M3U8. La de fábrica lleva la etiqueta **lista por defecto**.
+- **Listas de canales**: las listas que usa la aplicación. Se descargan cada vez que arranca; la primera manda en el orden de las categorías y las demás añaden canales y emisiones de repuesto. Se admiten JSON de tdt-canales, el JSON de otras listas comunitarias de canales de la TDT y M3U/M3U8. La de fábrica lleva la etiqueta **lista por defecto**.
 - Papelera en cada lista: la quita («Lista quitada»).
 - Campo de dirección (**https://…/lista.m3u8**) y botón **+**: añade una lista («Lista añadida»). Avisa si la dirección no es válida o si la lista ya está.
 - **↻**: vuelve a descargar las listas ahora mismo.
@@ -75,13 +75,13 @@ Versión, descripción, **Contacto**, **Idioma** (**Español** / **English**; se
 
 ## Preguntas frecuentes
 
-**¿Por qué no están Antena 3, laSexta, Telecinco, Cuatro y otras?** Esas cadenas (y Neox, Nova, Mega, FDF, Energy, Divinity, Be Mad o Boing) no publican su emisión en abierto: solo se ven en sus propias plataformas, con registro y protección anticopia. La aplicación solo puede ofrecer emisiones abiertas.
+**¿Por qué no están algunas cadenas privadas nacionales?** Esas cadenas, y sus canales temáticos, no publican su emisión en abierto: solo se ven en sus propias plataformas, con registro y protección anticopia. La aplicación solo puede ofrecer emisiones abiertas.
 
 **Sale «No se ha podido cargar la lista de canales».** Comprueba la conexión a internet y pulsa actualizar (en la tele, el botón Menú o Actualizar del mando). Si has añadido listas propias y alguna no baja, se avisa y se sigue con las demás.
 
 **Un canal dice «Este canal no se puede ver ahora mismo».** La cadena ha cortado o cambiado su emisión por internet. La aplicación ya ha probado las direcciones de repuesto; inténtalo más tarde.
 
-**¿Dónde está DMAX?** Solo aparece cuando la cadena tiene su directo encendido en su web; ahora mismo lo tiene apagado, así que no sale.
+**Hay una cadena que a veces está y a veces no.** Algunas cadenas solo aparecen cuando tienen su directo encendido en su web; cuando lo apagan, no salen.
 
 **La parrilla sale vacía.** La guía tarda un momento en cargarse al arrancar («Cargando la guía de programación…»). Si sigue vacía, la fuente de la guía no está disponible en ese momento.
 

@@ -1,6 +1,6 @@
 # sOC Credentials
 - slug: credentials
-- plataformas: Android, Windows, browser extension for Edge, Chrome and Firefox (on Windows)
+- plataformas: Android, Windows, browser extension for Edge, Chrome and other browsers (on Windows)
 - lema: Your passwords and verification codes, encrypted and yours alone, on your phone and PC.
 - github: https://github.com/donki/Credentials
 - tiendas:
@@ -8,16 +8,16 @@
   - Microsoft Store (no publicada): ficha preparada con el nombre «sOC Credentials», pero sin identificador de producto; el README dice «en cuanto Partner Center dé el enlace» (fuentes: README.md, store/microsoft/ficha-es-ES.md). Ojo: la versión de la Store no puede usar las extensiones de navegador; para eso hace falta la versión EXE de GitHub (README.md).
   - Edge Add-ons (publicada el 2026-09-24): https://microsoftedge.microsoft.com/addons/detail/soc-credentials/pcilggpjodagihemfbimfbnnmlbfhfbk (fuentes: 09-PENDIENTE-Credentials.md punto 7, CHANGELOG.md 2026.09.24.04, README.md; la URL responde 200 el 2026-09-25).
   - Chrome Web Store (no publicada): ficha preparada, falta la cuenta de desarrollador; sin ID (fuentes: 09-PENDIENTE-Credentials.md punto 7, store/chrome/ficha-es-ES.md).
-  - Firefox Add-ons (publicada el 2026-09-27): https://addons.mozilla.org/firefox/addon/soc-credentials/
+  - Otros navegadores (publicada el 2026-09-27): https://addons.mozilla.org/firefox/addon/soc-credentials/
 - descarga_alternativa: https://github.com/donki/Credentials/releases (APK, EXE/ZIP y MSIX de cada versión; última: v2026.09.25.03)
 
 ## Description
 
 sOC Credentials keeps your passwords and your two-step verification codes in a vault encrypted with a single master password that only you know. There is no server of ours and no account with us: the vault lives on your device or, if you prefer, in the app's private folder inside your own Google Drive or OneDrive, always encrypted. That way you have the same passwords on your phone and your PC.
 
-Besides storing them, it fills them in. On Android it becomes the system autofill service, offers you the right account in each app and in the browser, and suggests saving new ones. On Windows it fills in passwords in desktop programs and, with its extension for Edge, Chrome and Firefox, on websites too, including each site's verification code.
+Besides storing them, it fills them in. On Android it becomes the system autofill service, offers you the right account in each app and in the browser, and suggests saving new ones. On Windows it fills in passwords in desktop programs and, with its extension for Edge, Chrome and other browsers, on websites too, including each site's verification code.
 
-You can bring everything you already had: import from browsers, from other password managers and from verification code apps such as Google Authenticator. And no ads, no analytics, and an open-source license.
+You can bring everything you already had: import from browsers, from other password managers and from verification code apps. And no ads, no analytics, and an open-source license.
 
 ## Main features
 
@@ -26,8 +26,8 @@ You can bring everything you already had: import from browsers, from other passw
 - Live two-step verification codes (TOTP), added by pasting the link or the key, or by scanning the QR code; with the secret key, a QR code to move them to another app, and backup codes.
 - Password generator and strength meter; history of previous passwords.
 - Android autofill in apps and browsers, with an offer to save new ones.
-- On Windows: filling in desktop apps and an extension for Edge, Chrome and Firefox.
-- Import from Chrome, Edge, Firefox, Brave, Bitwarden, KeePass, Aegis, 2FAS and Google Authenticator; encrypted or plain-text export.
+- On Windows: filling in desktop apps and an extension for Edge, Chrome and other browsers.
+- Import from other software (browsers, password managers and verification code apps); encrypted or plain-text export.
 - Unlock with fingerprint or face on Android, and an option to trust the device.
 - Lock after inactivity and automatic clipboard clearing.
 - Step-by-step setup guide; Spanish and English.
@@ -39,7 +39,7 @@ You can bring everything you already had: import from browsers, from other passw
 1. Install the app (Android: APK from GitHub; Windows: EXE from GitHub, recommended if you want the browser extensions).
 2. **Create your vault** screen: type a **Master password** (at least 8 characters) and **Repeat the master password**, then tap **Create**. It is the only key to everything: nobody can recover it, not even us. Write it down somewhere safe.
 3. After the first unlock, the **Setup guide** opens by itself. Each step has a button that does it for you (or takes you to the system screen) and is marked **Done** automatically; optional steps are marked **Optional**. Buttons **Back**, **Next** and **Finish**. You can come back to it from the menu.
-   - On Windows: **Always at hand** (start with Windows and stay next to the clock), **Passwords in apps** (turn on desktop autofill), **Extension for Edge / Chrome / Firefox** (one step for each installed browser), **Turn off the browser's manager** and **Your passwords on all your devices** (cloud).
+   - On Windows: **Always at hand** (start with Windows and stay next to the clock), **Passwords in apps** (turn on desktop autofill), the **extension** step for each installed browser, **Turn off the browser's manager** and **Your passwords on all your devices** (cloud).
    - On Android: **Autofill service**, **Preferred password service** (Android 14 or later), **Passwords in <browser>**, **Sign in with your fingerprint** and **Your passwords on all your devices**.
 4. Permissions on Android: **camera**, only to scan two-factor QR codes (if you deny it, you can paste the code); **internet**, only if you keep the vault in the cloud. Android will also ask you to choose sOC Credentials as the autofill service.
 5. If you want the vault in the cloud: **Settings › Where the vault lives** and choose **Google Drive** or **OneDrive**; sign in with your account and grant access to the app folder.
@@ -91,8 +91,8 @@ Open the app and unlock it with the master password (or your fingerprint). Find 
   - **Clear clipboard after**: **Never**, 15, 30, 60 or 120 s.
   - **Change master password**.
 - **Import and export**:
-  - **Import…**: CSV from Chrome, Edge, Firefox, Brave, Bitwarden or KeePass; JSON from Aegis, 2FAS or sOC Credentials. Duplicates are skipped.
-  - **Scan Google Authenticator QR**: imports all the codes from that app's export QR code.
+  - **Import…**: the file exported by browsers, other password managers or verification code apps (CSV or JSON), or a sOC Credentials backup. Duplicates are skipped.
+  - **Scan export QR**: imports all the codes from the QR another verification code app uses to export them.
   - **Export encrypted vault**.
   - **Export as plain JSON (unencrypted!)**: asks for confirmation; keep the file safe and delete it when you are done.
 - **Autofill** (Android):
@@ -104,10 +104,10 @@ Open the app and unlock it with the master password (or your fingerprint). Find 
 - **Windows**:
   - **Keep in the notification area when minimised** (click the icon to bring it back; right-click for **Open** or **Exit**).
   - **Start with Windows**: asks for the master password once when you sign in, and asks again after you lock Windows (Win+L).
-- **Browser extensions** (Windows): status per browser (**Installed** / **Not installed**) with **Install…**, and **Offer to install it when unlocking**. In Edge and Firefox their store opens (in Edge, "Get" and "Add extension"; in Firefox, "Add to Firefox"); in Chrome, "Developer mode" and "Load unpacked" with the path already copied.
+- **Browser extensions** (Windows): status per browser (**Installed** / **Not installed**) with **Install…**, and **Offer to install it when unlocking**. In Edge and in browsers with an add-on store, their store opens (in Edge, "Get" and "Add extension"; in the others, the button to add it); in Chrome, "Developer mode" and "Load unpacked" with the path already copied.
 - **Danger zone**: **Delete this vault from the device** (you have to type DELETE; if it is not in the cloud, everything is lost).
 
-### Browser extension (Edge, Chrome, Firefox)
+### Browser extension (Edge, Chrome and other browsers)
 
 - Icon in the toolbar: shows the entries for the site with **Fill**, **Copy username**, **Copy password** and **Copy code**, and **Search the vault…**.
 - **Generate password**: **Length**, **Uppercase**, **Digits**, **Symbols**, **Generate** and **Use in page**.

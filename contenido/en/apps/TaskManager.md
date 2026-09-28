@@ -95,7 +95,7 @@ Three columns: **To do**, **In progress** and **Done**, with the same filters an
 - Buttons at the top: **New group** (+), **Join a group** (key), **Scan the QR code** and **Refresh**.
 - **New group**: name (for example "Family, Flatmates, Project...") and a **Shared key** of at least 6 characters. It's created with a first list called "General".
 - **Join a group**: **Group code (6 characters)** and the key; or **Scan the QR code** from the invitation. On Windows the QR code can be read **From an image**, **From the clipboard** or **From the screen**.
-- In each group: **Invite someone** (issues a new key: the previous invitation stops working, but anyone already in is not affected) and shows the QR code with **Share** and **Copy code and key** (on Windows also **Send by email** and **Send on WhatsApp**); **New group list**; and a trash can, which asks **Leave: it stays for the other members** or **Delete for everyone, with its lists and tasks** (only the person who created it can delete it).
+- In each group: **Invite someone** (issues a new key: the previous invitation stops working, but anyone already in is not affected) and shows the QR code with **Share** and **Copy code and key** (on Windows also **Send by email** and a button to send it through a messaging app); **New group list**; and a trash can, which asks **Leave: it stays for the other members** or **Delete for everyone, with its lists and tasks** (only the person who created it can delete it).
 
 ### Settings (Android)
 

@@ -74,32 +74,37 @@ IDIOMAS = {
         "nombre_propio": "Español",
         "ir_otro": "Read in English", "parte_cab": "header", "parte_pie": "footer", "plantilla": "",
         "descargar_en": "Descargar en {}", "descargar_github": "Descargar desde GitHub",
+        "descargar_otros": "Extensión para otros navegadores", "otros_navegadores": "otros navegadores",
         "estado_en": "En {}", "y": " y ", "estado_github": "Descarga en GitHub", "navegador": "Navegador",
-        "portada_ante": "Software libre para Android y Windows",
-        "portada_h1": "Aplicaciones que respetan tu privacidad",
-        "portada_entrada": "Herramientas pequeñas: cada una hace una cosa y la hace bien, funciona "
-                           "sin conexión siempre que puede y no pide más permisos de los que necesita.",
+        "portada_ante": "Uso libre, sin anuncios y con el código abierto",
+        "portada_h1": "Aplicaciones para aprender y para usar libremente",
+        "portada_entrada": "Estas aplicaciones nacen de las ganas de aprender a hacerlas. Son de uso libre y sin "
+                           "anuncios, y su código fuente está abierto en GitHub para que quien quiera aprenda "
+                           "también: puedes usarlas, leer cómo están hechas, reutilizar el código o mejorarlo.",
         "ver_apps": "Ver las aplicaciones", "soporte_nav": "Soporte",
-        "cifras": ["aplicaciones", "rastreadores", "licencia libre"],
+        "cifras": ["aplicaciones", "anuncios", "rastreadores", "código abierto"],
         "catalogo_ante": "Catálogo", "catalogo_h2": "Aplicaciones",
         "catalogo_entrada": "Si una aplicación está en una tienda, el enlace te lleva allí; si no, a su página "
                             "de descargas en GitHub.",
-        "trabajo_ante": "Cómo trabajamos", "trabajo_h2": "Hechas para durar y para confiar en ellas",
-        "trabajo_entrada": "Dos compromisos que valen para todas las aplicaciones, hoy y en cada versión.",
+        "trabajo_ante": "La idea", "trabajo_h2": "Aprender haciendo, y compartirlo",
+        "trabajo_entrada": "Tres compromisos que valen para todas las aplicaciones, hoy y en cada versión.",
         "principios": [
+            ("Uso libre y sin anuncios", "Todas las aplicaciones se pueden usar libremente, sin pagar y sin "
+                                         "anuncios."),
+            ("Código abierto para aprender", "Se hacen para aprender, y todo el código fuente está en GitHub "
+                                             "con licencia MIT para que quien quiera aprenda también: puedes "
+                                             "leerlo, reutilizarlo o mejorarlo."),
             ("Privacidad primero", "Sin analítica, sin perfiles y sin rastreadores. Lo que escribes se queda en "
                                    "tu dispositivo, y si una aplicación sincroniza, viaja cifrado."),
-            ("Código abierto", "Todo el código está en GitHub con licencia MIT: puedes leerlo, compilarlo y "
-                               "comprobar lo que hace."),
         ],
-        "apps_entrada": "Todas con el código en GitHub. Si una está en una tienda, el enlace te lleva allí; si "
-                        "no, a su página de descargas.",
+        "apps_entrada": "Todas de uso libre, sin anuncios y con el código en GitHub. Si una está en una tienda, "
+                        "el enlace te lleva allí; si no, a su página de descargas.",
         "soporte_h1": "Guías de uso",
         "soporte_entrada": "Cómo se pone en marcha cada aplicación, qué hace cada pantalla y cada opción, y las "
                            "dudas más habituales.",
         "ver_app": "Ver aplicación", "ver_guia": "Ver guía", "guia": "Guía de uso",
         "aplicacion": "Aplicación", "ficha": "Ficha", "plataformas": "Plataformas", "descarga": "Descarga",
-        "licencia": "Licencia", "licencia_valor": "MIT, gratuita", "codigo_fuente": "Código fuente",
+        "licencia": "Licencia", "licencia_valor": "MIT, de uso libre", "codigo_fuente": "Código fuente",
         "soporte_dato": "Soporte", "correo": "Correo", "privacidad_h": "Privacidad",
         "politica_privacidad": "Política de privacidad", "que_es": "Qué es",
         "funciones": "Funciones principales", "capturas_ante": "Capturas", "capturas_h2": "Así es {}",
@@ -123,9 +128,10 @@ IDIOMAS = {
         "cookies_h1": "Política de cookies",
         "cookies_entrada": "Qué cookies hay en esta web, quién las pone y cómo rechazarlas.",
         "nav": [("apps", "Aplicaciones"), ("soporte", "Soporte"), ("privacidad", "Privacidad")],
-        "pie_lema": "Aplicaciones libres para Android y Windows, con tus datos bajo tu control.",
+        "pie_lema": "Aplicaciones de uso libre y sin anuncios para Android y Windows, hechas para aprender y "
+                    "con el código fuente abierto.",
         "sitio": "Sitio", "contacto": "Contacto", "cookies_nav": "Cookies", "aviso_nav": "Aviso legal",
-        "copyright": "© 2026 sOCratic · Software libre con licencia MIT",
+        "copyright": "© 2026 sOCratic · Código abierto con licencia MIT",
         "cookies_aviso": "Esta web está alojada en WordPress.com, que usa cookies para sus estadísticas de "
                          "visitas. Puedes aceptarlas o ver cómo rechazarlas en la <a href=\"{}\">política de "
                          "cookies</a>.",
@@ -141,32 +147,36 @@ IDIOMAS = {
         "nombre_propio": "English",
         "ir_otro": "Leer en español", "parte_cab": "header-en", "parte_pie": "footer-en", "plantilla": "page-en",
         "descargar_en": "Get it on {}", "descargar_github": "Download from GitHub",
+        "descargar_otros": "Extension for other browsers", "otros_navegadores": "other browsers",
         "estado_en": "On {}", "y": " and ", "estado_github": "Download on GitHub", "navegador": "Browser",
-        "portada_ante": "Open-source software for Android and Windows",
-        "portada_h1": "Apps that respect your privacy",
-        "portada_entrada": "Small tools: each one does one thing and does it well, works offline "
-                           "whenever it can and never asks for more permissions than it needs.",
+        "portada_ante": "Free to use, no ads, open source",
+        "portada_h1": "Apps made to learn from and free to use",
+        "portada_entrada": "These apps come from wanting to learn how to make them. They are free to use and "
+                           "have no ads, and their source code is open on GitHub so anyone who wants to can "
+                           "learn too: use them, read how they are made, reuse the code or improve it.",
         "ver_apps": "See the apps", "soporte_nav": "Support",
-        "cifras": ["apps", "trackers", "open-source license"],
+        "cifras": ["apps", "ads", "trackers", "open source"],
         "catalogo_ante": "Catalog", "catalogo_h2": "Apps",
         "catalogo_entrada": "If an app is in a store, the link takes you there; if not, to its download page "
                             "on GitHub.",
-        "trabajo_ante": "How we work", "trabajo_h2": "Built to last and to be trusted",
-        "trabajo_entrada": "Two commitments that apply to every app, today and in every release.",
+        "trabajo_ante": "The idea", "trabajo_h2": "Learning by doing, and sharing it",
+        "trabajo_entrada": "Three commitments that apply to every app, today and in every release.",
         "principios": [
+            ("Free to use, no ads", "Every app can be used freely, without paying and without ads."),
+            ("Open source to learn from", "They are made to learn, and all the source code is on GitHub under "
+                                          "the MIT license so anyone who wants to can learn too: you can read "
+                                          "it, reuse it or improve it."),
             ("Privacy first", "No analytics, no profiling and no trackers. What you write stays on your "
                               "device, and if an app syncs, it travels encrypted."),
-            ("Open source", "All the code is on GitHub under the MIT license: you can read it, build it and "
-                            "check what it does."),
         ],
-        "apps_entrada": "All with their code on GitHub. If an app is in a store, the link takes you there; if "
-                        "not, to its download page.",
+        "apps_entrada": "All free to use, with no ads and with their code on GitHub. If an app is in a store, "
+                        "the link takes you there; if not, to its download page.",
         "soporte_h1": "User guides",
         "soporte_entrada": "How to get each app up and running, what every screen and option does, and the most "
                            "common questions.",
         "ver_app": "View app", "ver_guia": "View guide", "guia": "User guide",
         "aplicacion": "App", "ficha": "Details", "plataformas": "Platforms", "descarga": "Download",
-        "licencia": "License", "licencia_valor": "MIT, free", "codigo_fuente": "Source code",
+        "licencia": "License", "licencia_valor": "MIT, free to use", "codigo_fuente": "Source code",
         "soporte_dato": "Support", "correo": "Email", "privacidad_h": "Privacy",
         "politica_privacidad": "Privacy policy", "que_es": "What it is",
         "funciones": "Main features", "capturas_ante": "Screenshots", "capturas_h2": "A look at {}",
@@ -190,9 +200,10 @@ IDIOMAS = {
         "cookies_h1": "Cookie policy",
         "cookies_entrada": "Which cookies this website uses, who sets them and how to reject them.",
         "nav": [("apps", "Apps"), ("soporte", "Support"), ("privacidad", "Privacy")],
-        "pie_lema": "Open-source apps for Android and Windows, with your data under your control.",
+        "pie_lema": "Free-to-use, ad-free apps for Android and Windows, made to learn and with open source "
+                    "code.",
         "sitio": "Site", "contacto": "Contact", "cookies_nav": "Cookies", "aviso_nav": "Legal notice",
-        "copyright": "© 2026 sOCratic · Open-source software, MIT license",
+        "copyright": "© 2026 sOCratic · Open source, MIT license",
         "cookies_aviso": "This website is hosted on WordPress.com, which uses cookies for its visitor "
                          "statistics. You can accept them or see how to reject them in the <a href=\"{}\">cookie "
                          "policy</a>.",
@@ -320,16 +331,22 @@ def etiquetas(app: dict) -> list[str]:
 
 def enlaces(app: dict) -> list[tuple[str, str]]:
     """Botones de descarga: las tiendas donde está publicada; si no hay ninguna, GitHub."""
-    botones = [(L["descargar_en"].format(t["tienda"]), t["url"]) for t in app["tiendas"] if t["publicada"]]
+    botones = [(L["descargar_otros"] if otros_navegadores(t) else L["descargar_en"].format(t["tienda"]), t["url"])
+               for t in app["tiendas"] if t["publicada"]]
     # Una tienda de extensiones solo da la extensión: la aplicación se sigue bajando de GitHub.
-    solo_extension = all(re.search(r"add-ons|chrome|firefox", t, re.I) for t, _ in botones)
+    solo_extension = all(re.search(r"add-ons|chrome|navegadores|browsers", t, re.I) for t, _ in botones)
     if (not botones or solo_extension) and app["releases"]:
         botones.append((L["descargar_github"], app["releases"]))
     return botones
 
 
+def otros_navegadores(t: dict) -> bool:
+    """La tienda de complementos de un navegador que no es de Microsoft ni de Google: no se nombra (Web §4)."""
+    return t["tienda"].lower() == "otros navegadores"
+
+
 def estado(app: dict) -> str:
-    pub = [t["tienda"] for t in app["tiendas"] if t["publicada"]]
+    pub = [L["otros_navegadores"] if otros_navegadores(t) else t["tienda"] for t in app["tiendas"] if t["publicada"]]
     return L["estado_en"].format(L["y"].join(pub)) if pub else L["estado_github"]
 
 
@@ -801,7 +818,7 @@ def portada_wp(apps: list[dict]) -> str:
                                                      "color": {"text": "#ffffff"}}),
               parrafo(t, style={"color": {"text": ACENTO_CLARO}, "typography": {"fontSize": "0.95rem"}}),
               style={"spacing": {"blockGap": "6px"}})
-        for n, t in zip([str(len(apps)), "0", "MIT"], L["cifras"])], minimo="9rem")
+        for n, t in zip([str(len(apps)), "0", "0", "MIT"], L["cifras"])], minimo="9rem")
     cifras = grupo(cifras, style={"spacing": {"margin": {"top": "var:preset|spacing|60"}, "padding": {"top": "28px"}},
                                   "border": {"top": {"color": "rgba(255,255,255,0.2)", "width": "1px"}}})
     # Tira de iconos de todo el catálogo en la franja de entrada.
@@ -1232,7 +1249,7 @@ def publicar(paginas: list[dict]):
             print("borrada    ", slug)
     # Portada fija y comentarios cerrados: esto solo lo aplica la API v2 (la v1.2 contesta 200 y no hace nada).
     r = post(s, f"{API}/settings", {
-        "title": "sOCratic", "description": "Aplicaciones libres para Android y Windows",
+        "title": "sOCratic", "description": "Aplicaciones de uso libre, sin anuncios y con el código abierto",
         "show_on_front": "page", "page_on_front": ids["es-portada"],
         "default_comment_status": "closed", "default_ping_status": "closed"})
     print("ajustes:", r.status_code, "" if r.ok else r.text[:300])

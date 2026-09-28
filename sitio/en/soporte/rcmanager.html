@@ -76,7 +76,7 @@
 
 <ol class="wp-block-list">
 <li>Open the app. The tree is empty and tells you: "No connections yet. Add one with + and it will show up here."</li>
-<li>If you already have connections in Remote Desktop Manager or in .rdp files, go to Settings (gear icon) › Import connections. Otherwise, click "New connection" (+).</li>
+<li>If you already have connections in another manager (.rdm files) or in .rdp files, go to Settings (gear icon) › Import connections. Otherwise, click "New connection" (+).</li>
 <li>Fill in at least the Name and the Host, choose the Type and click Save.</li>
 <li>Optional: in Settings, choose whether to store your connections only on this PC or in Google Drive / OneDrive.</li>
 </ol>
@@ -173,7 +173,7 @@
 <li>User.</li>
 <li>Domain (RDP only).</li>
 <li>Password, with an eye button to show or hide it. "Leave empty to be asked when connecting."</li>
-<li>Private key (file) (SSH and SFTP), with a "Choose file" button: "OpenSSH or PEM file. If set, the password is the key passphrase."</li>
+<li>Private key (file) (SSH and SFTP), with a "Choose file" button: for the private key file (in the usual SSH format or PEM); if set, the password is the key passphrase.</li>
 <li>Encryption (FTP / FTPS only): "None (plain FTP)", "FTPS explicit (AUTH TLS, port 21)" or "FTPS implicit (port 990)".</li>
 <li>"Transfer with SCP instead of SFTP (browsing always uses SFTP)" (SFTP / SCP only).</li>
 <li>Remote folder to open and Local folder to open (SFTP and FTP): "Leave empty for the server's default folder and your user profile." If you don't set a remote folder, it starts at the root of the server (/).</li>
@@ -276,7 +276,7 @@
 
 <h3 id="file-session-sftp-scp-and-ftp-ftps" class="wp-block-heading has-medium-font-size has-text-color" style="color:#0f172a;margin-top:var(--wp--preset--spacing--40);font-weight:700;line-height:1.25">File session (SFTP / SCP and FTP / FTPS)</h3>
 
-<p>While connecting, the tab shows "Connecting to…"; once connected, the two-pane explorer appears: this PC on the left and the server on the right. Each pane has its own path bar (you can type a path directly) and Name, Size and Modified columns (and, on Linux/Unix servers, Permissions and Owner).</p>
+<p>While connecting, the tab shows "Connecting to…"; once connected, the two-pane explorer appears: this PC on the left and the server on the right. Each pane has its own path bar (you can type a path directly) and Name, Size and Modified columns (and, on servers that have them, Permissions and Owner).</p>
 
 <p>Pane buttons:</p>
 
@@ -292,7 +292,7 @@
 <li>Edit here (text files).</li>
 <li>Copy the path.</li>
 <li>Show hidden files.</li>
-<li>Permissions and owner (Unix servers).</li>
+<li>Permissions and owner (on servers that have them).</li>
 <li>Cancel the transfer (while one is in progress).</li>
 </ul>
 
@@ -300,7 +300,7 @@
 
 <p>If a file already exists and the connection is set to "Ask before overwriting", a "File already exists" dialog appears with Overwrite, Skip and the "Do the same for the rest" checkbox.</p>
 
-<p><strong>Permissions and owner window</strong> (Linux/Unix servers only)</p>
+<p><strong>Permissions and owner window</strong> (only on servers that have them)</p>
 
 <ul class="wp-block-list">
 <li>Permissions: Read, Write and Execute checkboxes for Owner, Group and Others, with the Octal value shown.</li>
@@ -343,7 +343,7 @@
 <p><strong>Import connections</strong></p>
 
 <ul class="wp-block-list">
-<li>"Import from Remote Desktop Manager (.rdm) or Remote Desktop files (.rdp)" button.</li>
+<li>Button to import from another connection manager (.rdm files) or from Remote Desktop files (.rdp).</li>
 <li>From an .rdm file, RDP, SSH, FTP/FTPS and SFTP/SCP connections are imported with their folders. From .rdp files (you can select several at once) you get one connection per file, with its name and options.</li>
 <li>Passwords are not imported: they are asked for when connecting. When it finishes, it tells you how many were imported, how many already existed and how many were skipped because they are of unsupported types.</li>
 </ul>
@@ -395,8 +395,8 @@
 <p>In Settings › Encryption passphrase you have to type exactly the same passphrase you used on the first computer. If you have forgotten it, the cloud copy cannot be recovered.</p>
 </details>
 
-<details class="wp-block-details" style="border-bottom-color:#e2e8f0;border-bottom-width:1px;border-bottom-style:solid;padding-top:18px;padding-bottom:18px"><summary><strong>I imported from Remote Desktop Manager and it asks me for the passwords.</strong></summary>
-<p>That is expected: passwords in RDM and in .rdp files are encrypted for the user who saved them and cannot be imported. You are asked for them when connecting, and you can tick "Remember it on this PC (encrypted)".</p>
+<details class="wp-block-details" style="border-bottom-color:#e2e8f0;border-bottom-width:1px;border-bottom-style:solid;padding-top:18px;padding-bottom:18px"><summary><strong>I imported from another connection manager and it asks me for the passwords.</strong></summary>
+<p>That is expected: passwords in .rdm and .rdp files are encrypted for the user who saved them and cannot be imported. You are asked for them when connecting, and you can tick "Remember it on this PC (encrypted)".</p>
 </details>
 </div>
 </div>
@@ -414,7 +414,7 @@
 
 <footer class="wp-block-group alignfull soc-sec has-text-color has-background has-link-color" style="color:#cbd5e1;background-color:#0f172a;padding-top:var(--wp--preset--spacing--70);padding-bottom:var(--wp--preset--spacing--50);margin-top:0;margin-bottom:0">
 <div class="wp-block-columns"><div class="wp-block-column" style="flex-basis:40%"><p class="has-text-color" style="color:#ffffff;font-size:1.4rem"><strong>sOCratic</strong></p>
-<p>Open-source apps for Android and Windows, with your data under your control.</p>
+<p>Free-to-use, ad-free apps for Android and Windows, made to learn and with open source code.</p>
 </div>
 <div class="wp-block-column" style="flex-basis:20%"><p class="has-text-color" style="color:#94a3b8;font-size:0.8rem;font-weight:700;letter-spacing:0.1em;text-transform:uppercase">Site</p>
 <p style="margin-top:6px"><a href="../../en/apps/index.html">Apps</a></p>
@@ -433,7 +433,7 @@
 
 <hr class="wp-block-separator has-text-color has-alpha-channel-opacity has-background" style="background-color:#1e293b;color:#1e293b"/>
 
-<p class="has-text-color" style="color:#94a3b8;font-size:0.875rem">© 2026 sOCratic · Open-source software, MIT license</p>
+<p class="has-text-color" style="color:#94a3b8;font-size:0.875rem">© 2026 sOCratic · Open source, MIT license</p>
 
 <div class="wp-block-jetpack-cookie-consent alignwide has-text-color has-background has-link-color" style="border-radius:14px;color:#ffffff;background-color:#0f172a;padding-top:1.25em;padding-right:1.5em;padding-bottom:1.25em;padding-left:1.5em" role="dialog" aria-modal="true"><p>This website is hosted on WordPress.com, which uses cookies for its visitor statistics. You can accept them or see how to reject them in the <a href="../../en/cookies.html">cookie policy</a>.</p><div class="wp-block-button"><a class="wp-block-button__link has-text-color has-background wp-element-button" href="#" style="border-radius:10px;color:#4338ca;background-color:#ffffff;padding-top:12px;padding-bottom:12px;padding-left:22px;padding-right:22px">Accept</a></div>
 <span>365</span></div>

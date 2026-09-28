@@ -6,7 +6,7 @@
 - tiendas:
   - Google Play (producción): https://play.google.com/store/apps/details?id=com.socratic.txtreader (ficha pública accesible el 2026-09-25; paquete en TXTReader.csproj y Mobile/GooglePlayConsole/TXTReader/ficha.md; la pista alpha de prueba cerrada también existe según GRUPOS-VERIFICADORES.md)
   - Microsoft Store: no publicada (no hay ficha en Mobile/MicrosoftStore ni versión para Windows)
-  - Edge Add-ons / Chrome / Firefox: no aplica
+  - Tiendas de extensiones de navegador: no aplica
 - descarga_alternativa: https://github.com/donki/TXTReader/releases (última: v2026.09.14.0, APK)
 
 ## Description
@@ -15,7 +15,7 @@ TXT Reader is a fast, distraction-free text file reader for Android. It opens no
 
 It detects the file's encoding on its own, so accents and special characters display correctly even if the file comes from Windows, a server or another program. You can search the text with instant highlighting, adjust the font size, and select and copy passages.
 
-You can open files from the app itself or from any other app with "Open with": your file manager, downloads, email or the cloud (OneDrive, Google Drive, Dropbox). It has no ads, doesn't ask for an account and doesn't need storage permissions.
+You can open files from the app itself or from any other app with "Open with": your file manager, downloads, email or the cloud (OneDrive, Google Drive or other services). It has no ads, doesn't ask for an account and doesn't need storage permissions.
 
 ## Main features
 
@@ -45,7 +45,7 @@ You can open files from the app itself or from any other app with "Open with": y
 3. Type in the search box to highlight matches, move the side slider to change the font size, and long-press to select and copy.
 4. Tap Android's Back button to return to the main screen. The file stays in "Recent Files".
 
-You can also open a file from another app with "Open with" › TXT Reader (or "Share" / "Export" in Google Drive and Dropbox).
+You can also open a file from another app with "Open with" › TXT Reader (or "Share" / "Export" in Google Drive and other cloud services).
 
 ### Side menu
 
@@ -89,8 +89,8 @@ When you open the app, if there's a newer version you'll see "Update available: 
 **I can't find my file in the picker, or it's grayed out.**
 The picker only shows text files. If your file has an unusual extension, make sure you have the latest version: since 2026.08.01, .gpx and other files Android can't classify are supported too.
 
-**I get "Could not access the Google Drive / Dropbox / cloud storage file".**
-The file isn't available offline. Check that you're online and have permission for the file; if it keeps happening, download it to your phone first and open it from there. In Dropbox, use "Export" and choose TXT Reader.
+**I get a message that the cloud file could not be accessed.**
+The file isn't available offline. Check that you're online and have permission for the file; if it keeps happening, download it to your phone first and open it from there. In some cloud services you have to use "Export" and choose TXT Reader.
 
 **A recent file has disappeared from the list.**
 When you tapped it, the app found that it no longer exists (it was deleted or moved) and removed it from the history. Open it again with "Select File" from its new location.

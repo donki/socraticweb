@@ -92,7 +92,7 @@ De cada ruta tienes una ficha con distancia, desniveles, altitudes, tiempos, vel
 
 ## Preguntas frecuentes
 **La ruta sale a trozos o se corta con la pantalla apagada.**
-Quita a Hiker las restricciones de batería y de segundo plano (Ajustes de Android › Aplicaciones › Hiker › Batería › Sin restricciones; en Xiaomi, también «Inicio automático»). Deja activado el permiso de notificaciones: la notificación «Grabando la ruta» es lo que permite a Android seguir dando posiciones con la pantalla apagada.
+Quita a Hiker las restricciones de batería y de segundo plano (Ajustes de Android › Aplicaciones › Hiker › Batería › Sin restricciones; en algunos fabricantes, también «Inicio automático»). Deja activado el permiso de notificaciones: la notificación «Grabando la ruta» es lo que permite a Android seguir dando posiciones con la pantalla apagada.
 
 **Android cerró la aplicación en mitad de la ruta. ¿He perdido lo grabado?**
 No: cada punto se guarda en el móvil al momento. Al volver a abrir Hiker verás «Grabación interrumpida» y podrás pulsar **Recuperar**.
@@ -107,7 +107,7 @@ El ajuste a los caminos necesita conexión. Sin ella, la ruta se guarda igualmen
 Antes de guardar puedes pulsar el botón de alternar para ver la ruta grabada en rojo y guardar esa en lugar de la ajustada.
 
 **¿Puedo cargar rutas hechas en otra aplicación o en la web?**
-Sí, si están en formato GPX: en **Rutas** pulsa **Cargar GPX** y elige el fichero. Para crear o editar rutas en el ordenador puedes usar herramientas web gratuitas como GPX Studio y luego pasar el fichero al móvil.
+Sí, si están en formato GPX: en **Rutas** pulsa **Cargar GPX** y elige el fichero. Para crear o editar rutas en el ordenador puedes usar herramientas web gratuitas de edición de GPX y luego pasar el fichero al móvil.
 
 **El mapa gira solo y me mareo.**
 Es el modo Rumbo. Desactívalo en el menú lateral › **GPS** › **Rumbo: No**.
@@ -116,4 +116,4 @@ Es el modo Rumbo. Desactívalo en el menú lateral › **GPS** › **Rumbo: No**
 Algunos ficheros GPX importados no incluyen la altitud de cada punto; sin ella no se pueden calcular los desniveles ni el perfil.
 
 ## Privacidad
-Tus rutas y tu posición se guardan solo en tu móvil; no hay cuentas, ni anuncios, ni rastreadores, y Hiker no envía tus recorridos a ningún servidor. Para dibujar el mapa se descargan las teselas de OpenFreeMap de la zona que ves (la biblioteca del mapa, MapLibre, va dentro de la aplicación) y, solo al ajustar una ruta a los caminos, se consulta a OpenStreetMap qué caminos y edificios hay por la zona por la que pasa (sin guardar nada allí); además, al arrancar se comprueba si hay una versión nueva.
+Tus rutas y tu posición se guardan solo en tu móvil; no hay cuentas, ni anuncios, ni rastreadores, y Hiker no envía tus recorridos a ningún servidor. Para dibujar el mapa se descargan del servicio de mapas las teselas de la zona que ves (la biblioteca que lo dibuja va dentro de la aplicación) y, solo al ajustar una ruta a los caminos, se consulta a un servicio público de datos de mapas qué caminos y edificios hay por la zona por la que pasa (sin guardar nada allí); además, al arrancar se comprueba si hay una versión nueva.

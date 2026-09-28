@@ -44,7 +44,7 @@ La herramienta que usa para comunicarse con Android (adb) ya va incluida: la pri
 
 1. En el móvil, activa las Opciones de desarrollador (normalmente, tocando siete veces «Número de compilación» en Ajustes › Información del teléfono).
 2. En Ajustes › Opciones de desarrollador, activa **Depuración USB**.
-3. En **Xiaomi, Redmi y POCO** activa además **«Depuración USB (ajustes de seguridad)»**: sin eso se ve la pantalla pero el ratón y el teclado no la controlan.
+3. Si tu móvil tiene además la opción **«Depuración USB (ajustes de seguridad)»** (algunos fabricantes la añaden), actívala: sin eso se ve la pantalla pero el ratón y el teclado no la controlan.
 4. Conecta el móvil por USB. El móvil pregunta si confías en este PC: acepta en su pantalla.
 
 ### Primera puesta en marcha y flujo normal
@@ -139,7 +139,7 @@ Contacto («Escribir al autor»), idioma, privacidad, licencia MIT y aviso legal
 
 ## Preguntas frecuentes
 
-**Veo la pantalla del móvil pero el ratón y el teclado no hacen nada (Xiaomi, Redmi, POCO).**
+**Veo la pantalla del móvil pero el ratón y el teclado no hacen nada.**
 En esas marcas hay que activar, además de la Depuración USB, la opción «Depuración USB (ajustes de seguridad)» en las Opciones de desarrollador. Sin ella la pantalla se ve pero no se puede controlar.
 
 **Dice «No hay ningún móvil conectado».**

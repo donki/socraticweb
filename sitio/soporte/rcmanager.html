@@ -76,7 +76,7 @@
 
 <ol class="wp-block-list">
 <li>Abre la aplicación. El árbol está vacío y te indica: «Todavía no hay conexiones. Añade una con + y aparecerá aquí.»</li>
-<li>Si ya tienes conexiones en Remote Desktop Manager o en ficheros .rdp, ve a Ajustes (icono de engranaje) › Importar conexiones. Si no, pulsa «Conexión nueva» (+).</li>
+<li>Si ya tienes conexiones en otro gestor (ficheros .rdm) o en ficheros .rdp, ve a Ajustes (icono de engranaje) › Importar conexiones. Si no, pulsa «Conexión nueva» (+).</li>
 <li>Rellena al menos el Nombre y el Servidor, elige el Tipo y pulsa Guardar.</li>
 <li>Opcional: en Ajustes elige si quieres guardar las conexiones solo en este PC o en Google Drive / OneDrive.</li>
 </ol>
@@ -173,7 +173,7 @@
 <li>Usuario.</li>
 <li>Dominio (solo RDP).</li>
 <li>Contraseña, con botón de ojo para verla u ocultarla. «Déjala vacía para que se pida al conectar.»</li>
-<li>Clave privada (fichero) (SSH y SFTP), con botón «Elegir fichero»: «Fichero OpenSSH o PEM. Si se pone, la contraseña es la de la clave.»</li>
+<li>Clave privada (fichero) (SSH y SFTP), con botón «Elegir fichero»: para el fichero de la clave privada (en el formato habitual de SSH o en PEM); si se pone, la contraseña es la de la clave.</li>
 <li>Cifrado (solo FTP / FTPS): «Ninguno (FTP en claro)», «FTPS explícito (AUTH TLS, puerto 21)» o «FTPS implícito (puerto 990)».</li>
 <li>«Transferir por SCP en vez de SFTP (la navegación va siempre por SFTP)» (solo SFTP / SCP).</li>
 <li>Carpeta remota al abrir y Carpeta local al abrir (SFTP y FTP): «Vacías: la carpeta que dé el servidor y tu perfil de usuario.» Si no pones carpeta remota, se empieza en la raíz del servidor (/).</li>
@@ -276,7 +276,7 @@
 
 <h3 id="sesion-de-ficheros-sftp-scp-y-ftp-ftps" class="wp-block-heading has-medium-font-size has-text-color" style="color:#0f172a;margin-top:var(--wp--preset--spacing--40);font-weight:700;line-height:1.25">Sesión de ficheros (SFTP / SCP y FTP / FTPS)</h3>
 
-<p>Mientras conecta, la pestaña muestra «Conectando con…»; al entrar aparece el explorador de dos paneles: este equipo a la izquierda y el servidor a la derecha. Cada panel tiene su barra de ruta (puedes escribir una ruta directamente) y columnas Nombre, Tamaño y Modificado (y, en servidores Linux/Unix, Permisos y Propietario).</p>
+<p>Mientras conecta, la pestaña muestra «Conectando con…»; al entrar aparece el explorador de dos paneles: este equipo a la izquierda y el servidor a la derecha. Cada panel tiene su barra de ruta (puedes escribir una ruta directamente) y columnas Nombre, Tamaño y Modificado (y, en los servidores que los tienen, Permisos y Propietario).</p>
 
 <p>Botones de los paneles:</p>
 
@@ -292,7 +292,7 @@
 <li>Editar aquí (ficheros de texto).</li>
 <li>Copiar la ruta.</li>
 <li>Ver ficheros ocultos.</li>
-<li>Permisos y propietario (servidores Unix).</li>
+<li>Permisos y propietario (en los servidores que los tienen).</li>
 <li>Cancelar la transferencia (mientras hay una en curso).</li>
 </ul>
 
@@ -300,7 +300,7 @@
 
 <p>Si un fichero ya existe y la conexión está en «Avisar y confirmar», sale «El fichero ya existe» con Sobrescribir, Saltar y la casilla «Hacer lo mismo con los demás».</p>
 
-<p><strong>Ventana Permisos y propietario</strong> (solo servidores Linux/Unix)</p>
+<p><strong>Ventana Permisos y propietario</strong> (solo en los servidores que los tienen)</p>
 
 <ul class="wp-block-list">
 <li>Permisos: casillas Leer, Escribir y Ejecutar para Propietario, Grupo y Otros, con el valor Octal a la vista.</li>
@@ -343,7 +343,7 @@
 <p><strong>Importar conexiones</strong></p>
 
 <ul class="wp-block-list">
-<li>Botón «Importar de Remote Desktop Manager (.rdm) o ficheros de Escritorio remoto (.rdp)».</li>
+<li>Botón para importar de otro gestor de conexiones (ficheros .rdm) o de ficheros de Escritorio remoto (.rdp).</li>
 <li>De un .rdm se importan las conexiones RDP, SSH, FTP/FTPS y SFTP/SCP con sus carpetas. De los .rdp (puedes elegir varios a la vez) sale una conexión por fichero, con su nombre y sus opciones.</li>
 <li>Las contraseñas no se importan: se piden al conectar. Al terminar se indica cuántas se han importado, cuántas ya existían y cuántas se han dejado fuera por ser de tipos no admitidos.</li>
 </ul>
@@ -395,8 +395,8 @@
 <p>Tienes que escribir en Ajustes › Frase de cifrado exactamente la misma frase que usaste en el primer equipo. Si la has olvidado, la copia de la nube no se puede recuperar.</p>
 </details>
 
-<details class="wp-block-details" style="border-bottom-color:#e2e8f0;border-bottom-width:1px;border-bottom-style:solid;padding-top:18px;padding-bottom:18px"><summary><strong>He importado de Remote Desktop Manager y me pide las contraseñas.</strong></summary>
-<p>Es normal: las contraseñas de RDM y de los ficheros .rdp van cifradas para el usuario que las guardó y no se pueden importar. Al conectar se piden y puedes marcar «Recordarla en este PC (cifrada)».</p>
+<details class="wp-block-details" style="border-bottom-color:#e2e8f0;border-bottom-width:1px;border-bottom-style:solid;padding-top:18px;padding-bottom:18px"><summary><strong>He importado de otro gestor de conexiones y me pide las contraseñas.</strong></summary>
+<p>Es normal: las contraseñas de los ficheros .rdm y .rdp van cifradas para el usuario que las guardó y no se pueden importar. Al conectar se piden y puedes marcar «Recordarla en este PC (cifrada)».</p>
 </details>
 </div>
 </div>
@@ -414,7 +414,7 @@
 
 <footer class="wp-block-group alignfull soc-sec has-text-color has-background has-link-color" style="color:#cbd5e1;background-color:#0f172a;padding-top:var(--wp--preset--spacing--70);padding-bottom:var(--wp--preset--spacing--50);margin-top:0;margin-bottom:0">
 <div class="wp-block-columns"><div class="wp-block-column" style="flex-basis:40%"><p class="has-text-color" style="color:#ffffff;font-size:1.4rem"><strong>sOCratic</strong></p>
-<p>Aplicaciones libres para Android y Windows, con tus datos bajo tu control.</p>
+<p>Aplicaciones de uso libre y sin anuncios para Android y Windows, hechas para aprender y con el código fuente abierto.</p>
 </div>
 <div class="wp-block-column" style="flex-basis:20%"><p class="has-text-color" style="color:#94a3b8;font-size:0.8rem;font-weight:700;letter-spacing:0.1em;text-transform:uppercase">Sitio</p>
 <p style="margin-top:6px"><a href="../apps/index.html">Aplicaciones</a></p>
@@ -433,7 +433,7 @@
 
 <hr class="wp-block-separator has-text-color has-alpha-channel-opacity has-background" style="background-color:#1e293b;color:#1e293b"/>
 
-<p class="has-text-color" style="color:#94a3b8;font-size:0.875rem">© 2026 sOCratic · Software libre con licencia MIT</p>
+<p class="has-text-color" style="color:#94a3b8;font-size:0.875rem">© 2026 sOCratic · Código abierto con licencia MIT</p>
 
 <div class="wp-block-jetpack-cookie-consent alignwide has-text-color has-background has-link-color" style="border-radius:14px;color:#ffffff;background-color:#0f172a;padding-top:1.25em;padding-right:1.5em;padding-bottom:1.25em;padding-left:1.5em" role="dialog" aria-modal="true"><p>Esta web está alojada en WordPress.com, que usa cookies para sus estadísticas de visitas. Puedes aceptarlas o ver cómo rechazarlas en la <a href="../cookies.html">política de cookies</a>.</p><div class="wp-block-button"><a class="wp-block-button__link has-text-color has-background wp-element-button" href="#" style="border-radius:10px;color:#4338ca;background-color:#ffffff;padding-top:12px;padding-bottom:12px;padding-left:22px;padding-right:22px">Aceptar</a></div>
 <span>365</span></div>

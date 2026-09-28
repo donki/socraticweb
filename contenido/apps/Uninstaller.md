@@ -6,7 +6,7 @@
 - tiendas:
   - Google Play (producción, con la versión 2026.08.01 y el nombre «Uninstaller»; la 2026.09.19.07 está en prueba cerrada): https://play.google.com/store/apps/details?id=com.socratic.uninstaller (ficha pública accesible el 2026-09-25; D:\sOCProjects\08-PENDIENTE-Uninstaller.md y D:\sOCProjects\01-TAREAS-Uninstaller.md: la alpha 2026091907 se publicó el 2026-09-24 y espera la revisión de Google antes de pasar a producción)
   - Microsoft Store (no publicada): sin ID todavía. El nombre «sOC Uninstaller» está por reservar en Partner Center y la ficha está preparada pero sin enviar (D:\sOCProjects\08-PENDIENTE-Uninstaller.md, puntos 6 y 7; Mobile/MicrosoftStore/Uninstaller/ficha-es-ES.md)
-  - Edge Add-ons / Chrome / Firefox: no aplica
+  - Tiendas de extensiones de navegador: no aplica
 - descarga_alternativa: https://github.com/donki/Uninstaller/releases (última: v2026.09.22.02, con sOCUninstaller.exe, el zip y el MSIX de Windows; el último APK publicado ahí es el de v2026.09.19.07)
 
 ## Descripción
@@ -79,7 +79,7 @@ Botón inferior:
 
 Diálogos de desinstalación:
 - **Desinstalar aplicaciones**: en Android, «Vas a desinstalar N aplicaciones. Android te pedirá confirmación para cada una.»; en Windows, explica que cada programa abre su propio desinstalador y que las apps de la Store se quitan directamente. Botones **Continuar** y **Cancelar**.
-- **¿Desatendido?** (solo Windows): indica cuántos se pueden quitar sin preguntas (Windows Installer, Inno Setup, NSIS y apps de la Store). **Desatendido** los quita en silencio; **Con asistente** abre el asistente de cada uno. Los que no lo admiten abren su asistente en cualquier caso.
+- **¿Desatendido?** (solo Windows): indica cuántos se pueden quitar sin preguntas (Windows Installer, otros instaladores habituales y apps de la Store). **Desatendido** los quita en silencio; **Con asistente** abre el asistente de cada uno. Los que no lo admiten abren su asistente en cualquier caso.
 - **Progreso**: «Desinstalando…», barra y «n de N: nombre».
 
 ### Espacio en disco (solo Windows)
@@ -139,7 +139,7 @@ Puede ser una aplicación del sistema. Pulsa «Mostrar apps del sistema» o usa 
 La versión de producción de Google Play es la de agosto de 2026. La nueva está en prueba cerrada y pasará a producción cuando Google la apruebe. Mientras tanto, el APK nuevo está en las releases de GitHub.
 
 **En Windows, un programa me sigue haciendo preguntas aunque elegí «Desatendido».**
-Solo los instaladores que lo admiten (Windows Installer, Inno Setup, NSIS y apps de la Store) se quitan en silencio; el resto abre su asistente. Windows puede pedir permiso de administrador igualmente.
+Solo los instaladores que lo admiten (Windows Installer, otros instaladores habituales y apps de la Store) se quitan en silencio; el resto abre su asistente. Windows puede pedir permiso de administrador igualmente.
 
 **Espacio en disco no me deja borrar una carpeta.**
 Si es por permisos, acepta «Cambiar permisos y reintentar» y concede el permiso de administrador. Si sale el aviso «Carpeta del sistema», piénsalo dos veces: borrar eso puede dejar Windows o tus programas inservibles. Para quitar un programa, desinstálalo desde Inicio.

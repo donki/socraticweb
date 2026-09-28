@@ -6,7 +6,7 @@
 - tiendas:
   - Google Play (prueba cerrada): https://play.google.com/store/apps/details?id=com.socratic.pdfreader (solo en la pista alpha de prueba cerrada, sin producción, según D:\sOCProjects\02-PENDIENTE-PDFReader.md; la ficha pública devolvía «No se ha encontrado» el 2026-09-25, así que el enlace aún no sirve al público)
   - Microsoft Store: no publicada (no hay ficha en Mobile/MicrosoftStore; la versión de Windows existe en el código pero no se distribuye)
-  - Edge Add-ons / Chrome / Firefox: no aplica
+  - Tiendas de extensiones de navegador: no aplica
 - descarga_alternativa: https://github.com/donki/PDFReader/releases (última: v2026.09.15.0, APK)
 
 ## Descripción

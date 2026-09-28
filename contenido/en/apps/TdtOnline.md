@@ -14,11 +14,11 @@ TDT Online brings you the channels of Spanish digital terrestrial TV (TDT, Spain
 
 Channels are sorted into categories, with their logos, a search box and a favorites category to keep your usual ones close at hand. The TV guide shows you what's on now and what's coming up next on each channel, and the app remembers the last channel you watched so you can go back to it with one tap.
 
-On the TV you can use it comfortably with the remote's D-pad, and on the phone with your finger. The app only opens the streams that each broadcaster publishes openly on the internet: it doesn't host or rebroadcast anything. That's why the channels you can only watch on their own sign-in platforms (such as Antena 3, laSexta, Telecinco or Cuatro) aren't there.
+On the TV you can use it comfortably with the remote's D-pad, and on the phone with your finger. The app only opens the streams that each broadcaster publishes openly on the internet: it doesn't host or rebroadcast anything. That's why the channels you can only watch on their own sign-in platforms (such as those of the big private groups) aren't there.
 
 ## Main features
 
-- Spanish TDT channels live over the internet (RTVE, regional, themed and international channels) with their logos.
+- Spanish TDT channels live over the internet (public, regional, themed and international channels) with their logos.
 - Categories in tabs, with "Favorites" and "All" first.
 - Channel search by name, ignoring accents and capitalization.
 - Favorites with one tap on the star or by holding OK on the remote.
@@ -62,7 +62,7 @@ One row per channel (favorites first) with the show currently on, its progress b
 
 ### Settings
 
-- **Channel lists**: the lists the app uses. They're downloaded every time it starts; the first one sets the order of the categories and the others add channels and backup streams. tdt-canales JSON, TDTChannels JSON and M3U/M3U8 are accepted. The built-in one is labeled **default list**.
+- **Channel lists**: the lists the app uses. They're downloaded every time it starts; the first one sets the order of the categories and the others add channels and backup streams. tdt-canales JSON, the JSON of other community TDT channel lists and M3U/M3U8 are accepted. The built-in one is labeled **default list**.
 - Trash can on each list: removes it ("List removed").
 - Address field (**https://…/list.m3u8**) and **+** button: adds a list ("List added"). It warns you if the address isn't valid or if the list is already there.
 - **↻**: downloads the lists again right now.
@@ -75,13 +75,13 @@ Version, description, **Contact**, **Language** (**Español** / **English**; app
 
 ## FAQ
 
-**Why aren't Antena 3, laSexta, Telecinco, Cuatro and others there?** Those channels (and Neox, Nova, Mega, FDF, Energy, Divinity, Be Mad or Boing) don't publish their broadcast openly: you can only watch them on their own platforms, with sign-in and copy protection. The app can only offer open streams.
+**Why aren't some national private channels there?** Those channels, and their themed channels, don't publish their broadcast openly: you can only watch them on their own platforms, with sign-in and copy protection. The app can only offer open streams.
 
 **I get "Could not load the channel list".** Check your internet connection and press refresh (on the TV, the Menu or Refresh button on the remote). If you've added your own lists and one of them doesn't download, you'll get a warning and the app carries on with the rest.
 
 **A channel says "This channel cannot be played right now".** The broadcaster has cut or changed its internet stream. The app has already tried the backup addresses; try again later.
 
-**Where's DMAX?** It only shows up when the channel has its live stream turned on on its website; right now it's off, so it doesn't appear.
+**A channel is sometimes there and sometimes not.** Some channels only show up when they have their live stream turned on on their website; when they turn it off, they don't appear.
 
 **The TV guide is empty.** The guide takes a moment to load at startup ("Loading the programme guide…"). If it stays empty, the guide source isn't available at that moment.
 

@@ -34,7 +34,7 @@ Everything stays on your phone: no accounts, no ads, no trackers. It's free soft
 3. Set your **Maximum cigarettes per day** (what you smoke right now is a good starting point).
 4. Adjust your **Waking hours**: the time you get up and the time you go to bed. With that and your maximum, the app works out the time between cigarettes.
 5. Fill in the **Price Settings** (pack price, cigarettes per pack and currency) so the money figures come out right.
-6. If your phone closes apps in the background (Xiaomi, Huawei, Samsung with aggressive battery saving...), tap **Configure All Permissions** so the notification doesn't disappear.
+6. If your phone closes apps in the background (some manufacturers do this with aggressive battery saving), tap **Configure All Permissions** so the notification doesn't disappear.
 
 There's no save button to tap: every setting is saved as soon as you change it.
 

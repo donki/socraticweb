@@ -34,7 +34,7 @@ Todo se queda en tu móvil: no hay cuentas, ni anuncios, ni rastreadores. Es sof
 3. Pon tu **Cigarros máximos por día** (lo que fumas ahora mismo es un buen punto de partida).
 4. Ajusta el **Horario de vigilia**: la hora a la que te levantas y la hora a la que te acuestas. Con eso y el máximo, la aplicación calcula el tiempo entre cigarros.
 5. Rellena la **Configuración de Precios** (precio de la cajetilla, cigarros por cajetilla y divisa) para que las cuentas de dinero salgan bien.
-6. Si usas un móvil que cierra las aplicaciones en segundo plano (Xiaomi, Huawei, Samsung con ahorro agresivo...), pulsa **Configurar Todos los Permisos** para que la notificación no desaparezca.
+6. Si usas un móvil que cierra las aplicaciones en segundo plano (algunos fabricantes lo hacen con un ahorro de batería agresivo), pulsa **Configurar Todos los Permisos** para que la notificación no desaparezca.
 
 No hay que pulsar ningún botón de guardar: cada ajuste se guarda al cambiarlo.
 

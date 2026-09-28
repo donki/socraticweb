@@ -14,7 +14,7 @@ sOC Remote Connections Manager brings together in a single window all the connec
 
 Remote Desktop uses the same client that comes with Windows, with all its familiar options (display, local resources, experience, certificate, gateway…), and the remote desktop automatically fits the size of the tab. For files you get a two-pane explorer, your PC on one side and the server on the other, where you upload and download entire folders by dragging, and you can even edit text files on the server without downloading them.
 
-Your connections are stored on your PC with the passwords encrypted for your Windows user or, if you prefer, in your own Google Drive or OneDrive, encrypted with a passphrase only you know, so you have the same connections on all your computers. You can import what you already have in Remote Desktop Manager or in .rdp files. It is free software, with no account, no ads and no trackers.
+Your connections are stored on your PC with the passwords encrypted for your Windows user or, if you prefer, in your own Google Drive or OneDrive, encrypted with a passphrase only you know, so you have the same connections on all your computers. You can import what you already have in another connection manager (.rdm files) or in .rdp files. It is free software, with no account, no ads and no trackers.
 
 ## Main features
 
@@ -23,11 +23,11 @@ Your connections are stored on your PC with the passwords encrypted for your Win
 - Remote Desktop with all the options of the Windows client, organized in the same tabs as the original, a resolution that follows the tab, full screen on the monitor of your choice, and use of all your monitors.
 - Your PC's drives inside the remote desktop, and a shared clipboard with text, images and files.
 - SSH terminal with colors, scrollback, copy and paste, and sign-in with a password or a private key.
-- Two-pane file explorer with a transfer queue, progress and cancel, and changing permissions and owner on Linux servers.
+- Two-pane file explorer with a transfer queue, progress and cancel, and changing permissions and owner on servers that have them.
 - Built-in text editor that saves directly to the server.
 - Per-tab zoom (terminal and pane font size, remote desktop scale), remembered per connection.
 - Connections on this PC or synced, encrypted, in Google Drive or OneDrive.
-- Import from Remote Desktop Manager (.rdm) and from .rdp files.
+- Import from another connection manager (.rdm files) and from .rdp files.
 
 ## User guide (support)
 
@@ -43,7 +43,7 @@ Requirements: Windows 10 (version 2004) or later, or Windows 11. Remote Desktop 
 ### Getting started
 
 1. Open the app. The tree is empty and tells you: "No connections yet. Add one with + and it will show up here."
-2. If you already have connections in Remote Desktop Manager or in .rdp files, go to Settings (gear icon) › Import connections. Otherwise, click "New connection" (+).
+2. If you already have connections in another manager (.rdm files) or in .rdp files, go to Settings (gear icon) › Import connections. Otherwise, click "New connection" (+).
 3. Fill in at least the Name and the Host, choose the Type and click Save.
 4. Optional: in Settings, choose whether to store your connections only on this PC or in Google Drive / OneDrive.
 
@@ -112,7 +112,7 @@ It opens with "New connection" or "Edit". The tabs shown depend on the type: RDP
 - User.
 - Domain (RDP only).
 - Password, with an eye button to show or hide it. "Leave empty to be asked when connecting."
-- Private key (file) (SSH and SFTP), with a "Choose file" button: "OpenSSH or PEM file. If set, the password is the key passphrase."
+- Private key (file) (SSH and SFTP), with a "Choose file" button: for the private key file (in the usual SSH format or PEM); if set, the password is the key passphrase.
 - Encryption (FTP / FTPS only): "None (plain FTP)", "FTPS explicit (AUTH TLS, port 21)" or "FTPS implicit (port 990)".
 - "Transfer with SCP instead of SFTP (browsing always uses SFTP)" (SFTP / SCP only).
 - Remote folder to open and Local folder to open (SFTP and FTP): "Leave empty for the server's default folder and your user profile." If you don't set a remote folder, it starts at the root of the server (/).
@@ -185,7 +185,7 @@ It opens with "New connection" or "Edit". The tabs shown depend on the type: RDP
 
 ### File session (SFTP / SCP and FTP / FTPS)
 
-While connecting, the tab shows "Connecting to…"; once connected, the two-pane explorer appears: this PC on the left and the server on the right. Each pane has its own path bar (you can type a path directly) and Name, Size and Modified columns (and, on Linux/Unix servers, Permissions and Owner).
+While connecting, the tab shows "Connecting to…"; once connected, the two-pane explorer appears: this PC on the left and the server on the right. Each pane has its own path bar (you can type a path directly) and Name, Size and Modified columns (and, on servers that have them, Permissions and Owner).
 
 Pane buttons:
 - This PC (local pane): to change drives.
@@ -199,14 +199,14 @@ Pane buttons:
 - Edit here (text files).
 - Copy the path.
 - Show hidden files.
-- Permissions and owner (Unix servers).
+- Permissions and owner (on servers that have them).
 - Cancel the transfer (while one is in progress).
 
 Double-clicking a text file on the server opens it in the built-in editor; on a local file, it opens it with its Windows program. Transfers are queued, with progress ("Uploading… · N of M").
 
 If a file already exists and the connection is set to "Ask before overwriting", a "File already exists" dialog appears with Overwrite, Skip and the "Do the same for the rest" checkbox.
 
-**Permissions and owner window** (Linux/Unix servers only)
+**Permissions and owner window** (only on servers that have them)
 - Permissions: Read, Write and Execute checkboxes for Owner, Group and Others, with the Octal value shown.
 - Owner and group: names or numbers; empty = no change. With SFTP, changing by name runs a command over SSH with the same credentials; most FTP servers do not allow changing the owner.
 - "Apply to everything inside the folders".
@@ -235,7 +235,7 @@ If a file already exists and the connection is set to "Ask before overwriting", 
 - At startup the cloud copy is downloaded if it is newer, and every change is uploaded; if you save from two computers, the last one wins.
 
 **Import connections**
-- "Import from Remote Desktop Manager (.rdm) or Remote Desktop files (.rdp)" button.
+- Button to import from another connection manager (.rdm files) or from Remote Desktop files (.rdp).
 - From an .rdm file, RDP, SSH, FTP/FTPS and SFTP/SCP connections are imported with their folders. From .rdp files (you can select several at once) you get one connection per file, with its name and options.
 - Passwords are not imported: they are asked for when connecting. When it finishes, it tells you how many were imported, how many already existed and how many were skipped because they are of unsupported types.
 
@@ -275,8 +275,8 @@ Google shows each permission as a checkbox; if the Google Drive one is left unti
 **On another PC it says "The cloud file was encrypted with a different passphrase."**
 In Settings › Encryption passphrase you have to type exactly the same passphrase you used on the first computer. If you have forgotten it, the cloud copy cannot be recovered.
 
-**I imported from Remote Desktop Manager and it asks me for the passwords.**
-That is expected: passwords in RDM and in .rdp files are encrypted for the user who saved them and cannot be imported. You are asked for them when connecting, and you can tick "Remember it on this PC (encrypted)".
+**I imported from another connection manager and it asks me for the passwords.**
+That is expected: passwords in .rdm and .rdp files are encrypted for the user who saved them and cannot be imported. You are asked for them when connecting, and you can tick "Remember it on this PC (encrypted)".
 
 ## Privacy
 

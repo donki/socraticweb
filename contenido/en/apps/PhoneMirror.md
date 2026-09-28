@@ -44,7 +44,7 @@ The tool it uses to communicate with Android (adb) is already included: the firs
 
 1. On your phone, turn on Developer options (usually by tapping "Build number" seven times in Settings › About phone).
 2. In Settings › Developer options, turn on **USB debugging**.
-3. On **Xiaomi, Redmi and POCO**, also turn on **"USB debugging (Security settings)"**: without it the screen shows but the mouse and keyboard can't control it.
+3. If your phone also has a **"USB debugging (Security settings)"** option (some manufacturers add it), turn it on: without it the screen shows but the mouse and keyboard can't control it.
 4. Plug your phone in by USB. The phone asks whether you trust this PC: accept on its screen.
 
 ### Getting started and everyday use
@@ -139,7 +139,7 @@ Contact ("Write to the author"), language, privacy, MIT license and legal notice
 
 ## FAQ
 
-**I can see my phone's screen but the mouse and keyboard don't do anything (Xiaomi, Redmi, POCO).**
+**I can see my phone's screen but the mouse and keyboard don't do anything.**
 On those brands, in addition to USB debugging, you have to turn on the "USB debugging (Security settings)" option in Developer options. Without it, the screen shows but can't be controlled.
 
 **It says "No phone connected".**

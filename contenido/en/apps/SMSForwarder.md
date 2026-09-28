@@ -34,7 +34,7 @@ Everything happens on your phone: no accounts, no servers, no ads, and the app d
 2. Next, it will ask for permission to **show notifications**, which it uses to let you know about every SMS that arrives.
 3. If it isn't the default app, you'll be asked separately for the **receive SMS** and **send SMS** permissions.
 4. If you want to use automatic forwarding, open the side menu, go to **Settings** and add at least one destination number.
-5. If your phone closes apps in the background (Xiaomi, Huawei, Oppo, some Samsung models...), go to **Diagnostics** and tap **Configure all permissions**, or **Battery** and **Autostart**, so forwarding keeps working with the screen off and after a restart.
+5. If your phone closes apps in the background (some manufacturers do this to save battery), go to **Diagnostics** and tap **Configure all permissions**, or **Battery** and **Autostart**, so forwarding keeps working with the screen off and after a restart.
 
 The app doesn't ask for access to your contacts: when you pick a contact, the system picker opens and only passes along the number you choose.
 

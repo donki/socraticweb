@@ -13,7 +13,7 @@ Music Player reproduce la música que ya tienes guardada en el móvil, sin cuent
 
 Sigue sonando con la pantalla apagada, con los controles en la notificación, y funciona en Android Auto: en el coche tienes toda tu biblioteca organizada en grupos, listas y canciones, con los botones del volante y por voz.
 
-Si quieres, puede buscar la foto y una reseña breve de cada grupo en Wikipedia; viene apagado y, al activarlo, lo único que sale del móvil es el nombre del grupo. También muestra la letra de la canción cuando el propio fichero la trae, e incluso va marcando la línea que suena.
+Si quieres, puede buscar la foto y una reseña breve de cada grupo en una enciclopedia libre de internet; viene apagado y, al activarlo, lo único que sale del móvil es el nombre del grupo. También muestra la letra de la canción cuando el propio fichero la trae, e incluso va marcando la línea que suena.
 
 ## Funciones principales
 - Reproduce los formatos de audio que admite Android: MP3, AAC/M4A, FLAC, OGG, Opus, WAV, MIDI y AMR.
@@ -77,7 +77,7 @@ Mantén pulsada una canción en Canciones, en un grupo o en una lista. Aparece u
 
 ### Pantalla del grupo
 - Foto del grupo, nombre y número de canciones.
-- **Reseña** del grupo (si la búsqueda en línea está activada), recortada a tres líneas con un botón de tres puntos para verla entera o plegarla, y la fuente: «Imagen y texto: Wikipedia / Wikidata (CC BY-SA); grupo identificado con MusicBrainz.»
+- **Reseña** del grupo (si la búsqueda en línea está activada), recortada a tres líneas con un botón de tres puntos para verla entera o plegarla, y la fuente de la imagen y el texto, con la atribución que pide su licencia.
 - Si la búsqueda está apagada, aviso con el botón **Activar búsqueda en línea**.
 - **Actualizar información** (icono de flechas): vuelve a buscar la foto y la reseña («Información actualizada» o «No se ha encontrado nada de este grupo»).
 - **Imagen** (icono de imagen): cambia la foto del grupo: **Del dispositivo**, **De una dirección** (pegas la dirección de una imagen), **Buscarla en Google** o **Quitar la personalizada**.
@@ -129,7 +129,7 @@ Mantén pulsada una canción en Canciones, en un grupo o en una lista. Aparece u
 - **Agrupar por compositor** (interruptor): agrupa por compositor en lugar de por intérprete. Útil para música clásica.
 
 **Información en línea**
-- **Buscar fotos y biografías de los grupos** (interruptor, apagado por defecto): al activarlo, solo se envía el nombre del grupo a MusicBrainz y Wikidata/Wikipedia para buscar una foto y una biografía breve.
+- **Buscar fotos y biografías de los grupos** (interruptor, apagado por defecto): al activarlo, solo se envía el nombre del grupo a una base de datos musical abierta y a una enciclopedia libre para buscar una foto y una biografía breve.
 - **Borrar las imágenes descargadas**: vacía las fotos guardadas («Imágenes descargadas borradas»).
 
 **Android Auto**
@@ -178,4 +178,4 @@ Music Player no descarga letras: solo muestra la que trae el propio fichero o un
 «Eliminar del dispositivo» borra el fichero del móvil y no se puede deshacer. Si solo querías sacarla de una lista, usa **Quitar de esta lista**.
 
 ## Privacidad
-Tu música, tus listas y tus preferencias se quedan en el móvil: no hay cuentas, ni anuncios, ni analítica. Solo hay dos conexiones a Internet: la comprobación de si hay una versión nueva al arrancar y, únicamente si la activas, la búsqueda de fotos y reseñas de grupos, que envía solo el nombre del grupo a MusicBrainz, Wikidata y Wikipedia. Si además pulsas **Buscar información en internet** al editar una canción, se consulta en MusicBrainz su título y su grupo.
+Tu música, tus listas y tus preferencias se quedan en el móvil: no hay cuentas, ni anuncios, ni analítica. Solo hay dos conexiones a Internet: la comprobación de si hay una versión nueva al arrancar y, únicamente si la activas, la búsqueda de fotos y reseñas de grupos, que envía solo el nombre del grupo a una base de datos musical abierta y a una enciclopedia libre. Si además pulsas **Buscar información en internet** al editar una canción, se consultan en esa base de datos musical su título y su grupo.

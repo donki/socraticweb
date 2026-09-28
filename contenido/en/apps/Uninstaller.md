@@ -6,7 +6,7 @@
 - tiendas:
   - Google Play (producción, con la versión 2026.08.01 y el nombre «Uninstaller»; la 2026.09.19.07 está en prueba cerrada): https://play.google.com/store/apps/details?id=com.socratic.uninstaller (ficha pública accesible el 2026-09-25; D:\sOCProjects\08-PENDIENTE-Uninstaller.md y D:\sOCProjects\01-TAREAS-Uninstaller.md: la alpha 2026091907 se publicó el 2026-09-24 y espera la revisión de Google antes de pasar a producción)
   - Microsoft Store (no publicada): sin ID todavía. El nombre «sOC Uninstaller» está por reservar en Partner Center y la ficha está preparada pero sin enviar (D:\sOCProjects\08-PENDIENTE-Uninstaller.md, puntos 6 y 7; Mobile/MicrosoftStore/Uninstaller/ficha-es-ES.md)
-  - Edge Add-ons / Chrome / Firefox: no aplica
+  - Tiendas de extensiones de navegador: no aplica
 - descarga_alternativa: https://github.com/donki/Uninstaller/releases (última: v2026.09.22.02, con sOCUninstaller.exe, el zip y el MSIX de Windows; el último APK publicado ahí es el de v2026.09.19.07)
 
 ## Description
@@ -79,7 +79,7 @@ Bottom button:
 
 Uninstall dialogs:
 - **Uninstall apps**: on Android, "You are about to uninstall N apps. Android will ask you to confirm each one."; on Windows, it explains that each program opens its own uninstaller and that Store apps are removed directly. **Continue** and **Cancel** buttons.
-- **Unattended?** (Windows only): tells you how many can be removed without questions (Windows Installer, Inno Setup, NSIS and Store apps). **Unattended** removes them silently; **With wizard** opens each one's wizard. The ones that don't support it open their wizard either way.
+- **Unattended?** (Windows only): tells you how many can be removed without questions (Windows Installer, other common installers and Store apps). **Unattended** removes them silently; **With wizard** opens each one's wizard. The ones that don't support it open their wizard either way.
 - **Progress**: "Uninstalling…", a bar and "n of N: name".
 
 ### Disk space (Windows only)
@@ -139,7 +139,7 @@ It may be a system app. Tap "Show system apps" or use the search box.
 The production version on Google Play is the one from August 2026. The new one is in closed testing and will move to production once Google approves it. In the meantime, the new APK is available in the GitHub releases.
 
 **On Windows, a program keeps asking me questions even though I chose "Unattended".**
-Only installers that support it (Windows Installer, Inno Setup, NSIS and Store apps) are removed silently; the rest open their wizard. Windows may still ask for administrator permission.
+Only installers that support it (Windows Installer, other common installers and Store apps) are removed silently; the rest open their wizard. Windows may still ask for administrator permission.
 
 **Disk space won't let me delete a folder.**
 If it's a permissions issue, accept "Change permissions and retry" and grant administrator permission. If you get the "System folder" warning, think twice: deleting that could leave Windows or your programs unusable. To remove a program, uninstall it from Home.

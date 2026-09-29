@@ -3,6 +3,7 @@
 Fuentes:
   contenido/apps/*.md         fichas de cada aplicación en castellano (y contenido/en/apps/ en inglés)
   contenido/legal/*.md        aviso legal, cookies y privacidad de la web (y contenido/en/legal/)
+  contenido/constitucion/*.md la constitución explicada, un fichero por documento (y contenido/en/constitucion/)
   contenido/imagenes.json     de dónde salen el icono y las capturas de cada aplicación
   CONTENIDO-PARA-GOOGLE-SITES.md  la política de privacidad de las aplicaciones (castellano)
 
@@ -45,6 +46,8 @@ SITE_ID = 257589098
 WP_URL = "https://socraticweb0.wordpress.com"
 CONTACTO = "jsoladelarosa@gmail.com"
 GITHUB_PERFIL = "https://github.com/donki"
+CONSTITUCION_REPO = "https://github.com/donki/constitution"
+CONSTITUCION_LOCAL = PROYECTOS / "Mobile" / "FileManager" / "constitution"
 TEMA = "pub/assembler"
 
 # Paleta: índigo sobre pizarra.
@@ -80,14 +83,18 @@ IDIOMAS = {
         "portada_h1": "Aplicaciones para aprender y para usar libremente",
         "portada_entrada": "Estas aplicaciones nacen de las ganas de aprender a hacerlas. Son de uso libre y sin "
                            "anuncios, y su código fuente está abierto en GitHub para que quien quiera aprenda "
-                           "también: puedes usarlas, leer cómo están hechas, reutilizar el código o mejorarlo.",
+                           "también: puedes usarlas, leer cómo están hechas, reutilizar el código o mejorarlo. "
+                           "Y son un experimento de programación con IA: primero se escribe qué debe hacer cada "
+                           "una, y la programan modelos de lenguaje grandes (LLM) a partir de eso.",
         "ver_apps": "Ver las aplicaciones", "soporte_nav": "Soporte",
         "cifras": ["aplicaciones", "anuncios", "rastreadores", "código abierto"],
         "catalogo_ante": "Catálogo", "catalogo_h2": "Aplicaciones",
         "catalogo_entrada": "Si una aplicación está en una tienda, el enlace te lleva allí; si no, a su página "
                             "de descargas en GitHub.",
         "trabajo_ante": "La idea", "trabajo_h2": "Aprender haciendo, y compartirlo",
-        "trabajo_entrada": "Tres compromisos que valen para todas las aplicaciones, hoy y en cada versión.",
+        "trabajo_entrada": "Lo que vale para todas las aplicaciones, hoy y en cada versión. Las normas completas "
+                           "están en la constitución, explicada punto por punto.",
+        "ver_constitucion": "Leer la constitución",
         "principios": [
             ("Uso libre y sin anuncios", "Todas las aplicaciones se pueden usar libremente, sin pagar y sin "
                                          "anuncios."),
@@ -96,6 +103,12 @@ IDIOMAS = {
                                              "leerlo, reutilizarlo o mejorarlo."),
             ("Privacidad primero", "Sin analítica, sin perfiles y sin rastreadores. Lo que escribes se queda en "
                                    "tu dispositivo, y si una aplicación sincroniza, viaja cifrado."),
+            ("Un experimento de programación con IA", "Todo esto es un experimento de desarrollo guiado por "
+                                                      "especificaciones: primero se escribe qué debe hacer cada "
+                                                      "aplicación y con qué normas (la constitución), y a partir "
+                                                      "de eso la programan modelos de lenguaje grandes (LLM). "
+                                                      "Sirve para aprender qué se puede hacer así y cómo "
+                                                      "hacerlo bien."),
         ],
         "apps_entrada": "Todas de uso libre, sin anuncios y con el código en GitHub. Si una está en una tienda, "
                         "el enlace te lleva allí; si no, a su página de descargas.",
@@ -127,9 +140,18 @@ IDIOMAS = {
         "aviso_h1": "Aviso legal", "aviso_entrada": "Quién está detrás de esta web y en qué condiciones se usa.",
         "cookies_h1": "Política de cookies",
         "cookies_entrada": "Qué cookies hay en esta web, quién las pone y cómo rechazarlas.",
-        "nav": [("apps", "Aplicaciones"), ("soporte", "Soporte"), ("privacidad", "Privacidad")],
+        "nav": [("apps", "Aplicaciones"), ("soporte", "Soporte"), ("constitucion", "Constitución"),
+                ("privacidad", "Privacidad")],
         "pie_lema": "Aplicaciones de uso libre y sin anuncios para Android y Windows, hechas para aprender y "
-                    "con el código fuente abierto.",
+                    "con el código fuente abierto. Un experimento de programación con IA guiada por "
+                    "especificaciones.",
+        "constitucion": "constitucion", "t_constitucion": "Constitución", "const_ante": "Constitución",
+        "const_ante_doc": "Constitución · {}", "texto_completo": "Texto completo en GitHub",
+        "toda_const": "Toda la constitución", "actualizado": "Última actualización del texto: {}",
+        "en_esta_pagina": "En esta página", "leer": "Leer", "documentos_h2": "Los documentos",
+        "documentos_entrada": "Cada documento, regla a regla: qué dice y por qué.",
+        "meses": ["enero", "febrero", "marzo", "abril", "mayo", "junio", "julio", "agosto", "septiembre",
+                  "octubre", "noviembre", "diciembre"], "fecha": "{d} de {m} de {a}",
         "sitio": "Sitio", "contacto": "Contacto", "cookies_nav": "Cookies", "aviso_nav": "Aviso legal",
         "copyright": "© 2026 sOCratic · Código abierto con licencia MIT",
         "cookies_aviso": "Esta web está alojada en WordPress.com, que usa cookies para sus estadísticas de "
@@ -153,14 +175,18 @@ IDIOMAS = {
         "portada_h1": "Apps made to learn from and free to use",
         "portada_entrada": "These apps come from wanting to learn how to make them. They are free to use and "
                            "have no ads, and their source code is open on GitHub so anyone who wants to can "
-                           "learn too: use them, read how they are made, reuse the code or improve it.",
+                           "learn too: use them, read how they are made, reuse the code or improve it. "
+                           "And they are an experiment in AI programming: first we write down what each one "
+                           "must do, and large language models (LLMs) write the code from that.",
         "ver_apps": "See the apps", "soporte_nav": "Support",
         "cifras": ["apps", "ads", "trackers", "open source"],
         "catalogo_ante": "Catalog", "catalogo_h2": "Apps",
         "catalogo_entrada": "If an app is in a store, the link takes you there; if not, to its download page "
                             "on GitHub.",
         "trabajo_ante": "The idea", "trabajo_h2": "Learning by doing, and sharing it",
-        "trabajo_entrada": "Three commitments that apply to every app, today and in every release.",
+        "trabajo_entrada": "What applies to every app, today and in every release. The full rules are in the "
+                           "constitution, explained point by point.",
+        "ver_constitucion": "Read the constitution",
         "principios": [
             ("Free to use, no ads", "Every app can be used freely, without paying and without ads."),
             ("Open source to learn from", "They are made to learn, and all the source code is on GitHub under "
@@ -168,6 +194,11 @@ IDIOMAS = {
                                           "it, reuse it or improve it."),
             ("Privacy first", "No analytics, no profiling and no trackers. What you write stays on your "
                               "device, and if an app syncs, it travels encrypted."),
+            ("An experiment in AI programming", "All of this is an experiment in spec-driven development: "
+                                                "first we write down what each app must do and the rules it "
+                                                "follows (the constitution), and large language models (LLMs) "
+                                                "write the code from that. It is a way to learn what can be "
+                                                "done like this and how to do it well."),
         ],
         "apps_entrada": "All free to use, with no ads and with their code on GitHub. If an app is in a store, "
                         "the link takes you there; if not, to its download page.",
@@ -199,9 +230,17 @@ IDIOMAS = {
         "aviso_h1": "Legal notice", "aviso_entrada": "Who is behind this website and the terms for using it.",
         "cookies_h1": "Cookie policy",
         "cookies_entrada": "Which cookies this website uses, who sets them and how to reject them.",
-        "nav": [("apps", "Apps"), ("soporte", "Support"), ("privacidad", "Privacy")],
+        "nav": [("apps", "Apps"), ("soporte", "Support"), ("constitucion", "Constitution"),
+                ("privacidad", "Privacy")],
         "pie_lema": "Free-to-use, ad-free apps for Android and Windows, made to learn and with open source "
-                    "code.",
+                    "code. An experiment in spec-driven programming with AI.",
+        "constitucion": "constitution", "t_constitucion": "Constitution", "const_ante": "Constitution",
+        "const_ante_doc": "Constitution · {}", "texto_completo": "Full text on GitHub",
+        "toda_const": "The whole constitution", "actualizado": "Text last updated: {}",
+        "en_esta_pagina": "On this page", "leer": "Read", "documentos_h2": "The documents",
+        "documentos_entrada": "Each document, rule by rule: what it says and why.",
+        "meses": ["January", "February", "March", "April", "May", "June", "July", "August", "September",
+                  "October", "November", "December"], "fecha": "{m} {d}, {a}",
         "sitio": "Site", "contacto": "Contact", "cookies_nav": "Cookies", "aviso_nav": "Legal notice",
         "copyright": "© 2026 sOCratic · Open source, MIT license",
         "cookies_aviso": "This website is hosted on WordPress.com, which uses cookies for its visitor "
@@ -295,6 +334,56 @@ def leer_apps(idioma: str) -> list[dict]:
         apps.append(leer_app(ruta, IDIOMAS[idioma]["secciones"]))
     apps.sort(key=lambda a: (not en_tienda(a), a["nombre"].lower()))
     return apps
+
+
+def leer_constitucion(idioma: str) -> tuple[dict, list[dict]]:
+    """La constitución explicada: contenido/constitucion/*.md (index.md es la página índice).
+
+    Cada fichero: «# Título», cabecera «- clave: valor» (slug, documento, orden, actualizado, lema) y el
+    cuerpo en Markdown. No se copian los .md de la constitución: se explican a mano (Web §4).
+    Si falta la traducción de uno, se usa el castellano.
+    """
+    docs, indice = [], None
+    for ruta in sorted((CONTENIDO / "constitucion").glob("*.md")):
+        if idioma != "es":
+            traducida = CONTENIDO / idioma / "constitucion" / ruta.name
+            if traducida.exists():
+                ruta = traducida
+            else:
+                print(f"aviso: falta {traducida.relative_to(RAIZ)}; va en castellano")
+        lineas = ruta.read_text(encoding="utf-8").splitlines()
+        campos, i = {}, 1
+        while i < len(lineas) and (m := re.match(r"^- (\w+):\s*(.*)$", lineas[i])):
+            campos[m.group(1).lower()] = m.group(2).strip()
+            i += 1
+        d = {"titulo": lineas[0].removeprefix("# ").strip(), "cuerpo": "\n".join(lineas[i:]).strip(),
+             "fichero": ruta.stem, **campos}
+        if ruta.stem == "index":
+            indice = d
+        else:
+            docs.append(d)
+    docs.sort(key=lambda d: int(d.get("orden", 99)))
+    return indice, docs
+
+
+def comprobar_constitucion(docs: list[dict]):
+    """Avisa si un documento de la constitución es más nuevo que su página (Web §4: mismo ciclo)."""
+    import subprocess
+    for d in docs:
+        try:
+            r = subprocess.run(["git", "-C", str(CONSTITUCION_LOCAL), "log", "-1", "--format=%ad", "--date=short",
+                                "--", d["documento"]], capture_output=True, text=True, timeout=20)
+        except (OSError, subprocess.SubprocessError):
+            return
+        fecha = r.stdout.strip()
+        if fecha and fecha > d.get("actualizado", ""):
+            print(f"aviso: {d['documento']} cambió el {fecha} y contenido/constitucion/{d['fichero']}.md "
+                  f"explica el texto del {d.get('actualizado')}: revísala (es y en)")
+
+
+def fecha_larga(iso: str) -> str:
+    a, m, d = iso.split("-")
+    return L["fecha"].format(d=int(d), m=L["meses"][int(m) - 1], a=a)
 
 
 def md(texto: str) -> str:
@@ -397,6 +486,10 @@ def preparar_banderas():
     if not logo.exists() or logo.stat().st_mtime < origen.stat().st_mtime:
         logo.parent.mkdir(parents=True, exist_ok=True)
         Image.open(origen).convert("RGB").resize((108, 108), Image.LANCZOS).save(logo, "PNG", optimize=True)
+    # El favicon (icono del sitio): el mismo logo a 512 px, el mínimo que pide WordPress para el icono.
+    favicon = IMG / "marca" / "favicon.png"
+    if not favicon.exists() or favicon.stat().st_mtime < origen.stat().st_mtime:
+        Image.open(origen).convert("RGB").resize((512, 512), Image.LANCZOS).save(favicon, "PNG", optimize=True)
     destino = IMG / "banderas"
     destino.mkdir(parents=True, exist_ok=True)
     es, us = destino / "es.png", destino / "en.png"
@@ -686,6 +779,10 @@ def wp_html(h: str) -> str:
 
 # ---------------------------------------------------------------- piezas del diseño
 
+# Hueco entre la franja de color de una página interior y lo primero que va debajo.
+TRAS_CABECERA = "var:preset|spacing|40"
+
+
 def seccion(*hijos, fondo=None, ancho=ANCHO, arriba="var:preset|spacing|70", abajo="var:preset|spacing|70",
             clase="soc-sec") -> str:
     st = {"spacing": {"padding": {"top": arriba, "bottom": abajo}, "margin": {"top": "0", "bottom": "0"}}}
@@ -724,10 +821,12 @@ def cabecera_pagina(ante: str, h1: str, entrada: str, bs: list[str], otro: str, 
         extra,
     ]
     relleno = "var:preset|spacing|80" if grande else "var:preset|spacing|70"
+    # Debajo, menos aire en las páginas interiores: con tanto hueco parecía que la página acababa ahí.
+    abajo = relleno if grande else "var:preset|spacing|50"
     return grupo(*hijos, align="full", clase="soc-hero soc-sec",
                  style={"color": {"gradient": DEGRADADO, "text": "#ffffff"},
                         "elements": {"link": {"color": {"text": "#ffffff"}}},
-                        "spacing": {"padding": {"top": relleno, "bottom": relleno},
+                        "spacing": {"padding": {"top": relleno, "bottom": abajo},
                                     "margin": {"top": "0", "bottom": "0"}}},
                  layout={"type": "constrained", "contentSize": ANCHO})
 
@@ -829,7 +928,8 @@ def portada_wp(apps: list[dict]) -> str:
                    style={"spacing": {"blockGap": "14px", "margin": {"top": "var:preset|spacing|50"}}},
                    layout={"type": "flex", "flexWrap": "wrap"})
     trabajo = columnas(
-        ("38%", encabezado_seccion(L["trabajo_ante"], L["trabajo_h2"], L["trabajo_entrada"])),
+        ("38%", encabezado_seccion(L["trabajo_ante"], L["trabajo_h2"], L["trabajo_entrada"]) + "\n\n"
+         + botones(boton(L["ver_constitucion"], url("constitucion"), fondo=ACENTO, color="#ffffff"))),
         ("62%", grupo(*[principio(i + 1, t, d) for i, (t, d) in enumerate(L["principios"])],
                       style={"spacing": {"blockGap": "var:preset|spacing|50"}})),
         hueco="var:preset|spacing|70")
@@ -848,7 +948,7 @@ def indice_apps_wp(apps: list[dict]) -> str:
         cabecera_pagina(L["catalogo_ante"], L["catalogo_h2"], L["apps_entrada"],
                         [boton_contorno_claro(L["soporte_nav"], url("soporte"))],
                         otro=url("apps", idioma=L["otro"]), grande=False),
-        seccion(rejilla(*[tarjeta_app(a, "apps", L["ver_app"]) for a in apps])),
+        seccion(rejilla(*[tarjeta_app(a, "apps", L["ver_app"]) for a in apps]), arriba=TRAS_CABECERA),
     ])
 
 
@@ -856,7 +956,7 @@ def indice_soporte_wp(apps: list[dict]) -> str:
     return "\n\n".join([
         cabecera_pagina(L["soporte_nav"], L["soporte_h1"], L["soporte_entrada"], [],
                         otro=url("soporte", idioma=L["otro"]), grande=False),
-        seccion(rejilla(*[tarjeta_app(a, "soporte", L["ver_guia"]) for a in apps])),
+        seccion(rejilla(*[tarjeta_app(a, "soporte", L["ver_guia"]) for a in apps]), arriba=TRAS_CABECERA),
     ])
 
 
@@ -917,7 +1017,7 @@ def pagina_app_wp(app: dict) -> str:
         cabecera_pagina(" · ".join(etiquetas(app)) or L["aplicacion"], app["nombre"], html.escape(app["lema"]),
                         descarga, otro=url("apps", app["slug"], idioma=L["otro"]), grande=False,
                         icono=icono_app(app, ancho="88px", radio="20px")),
-        seccion(columnas(("64%", izquierda), ("36%", derecha))),
+        seccion(columnas(("64%", izquierda), ("36%", derecha)), arriba=TRAS_CABECERA),
         seccion(*capturas, fondo=SUAVE) if capturas else "",
         llamada(L["dudas_h"].format(html.escape(app["nombre"])), L["dudas_texto"],
                 [boton(L["abrir_guia"], url("soporte", app["slug"]), fondo=ACENTO, color="#ffffff")],
@@ -966,7 +1066,7 @@ def pagina_soporte_wp(app: dict) -> str:
                          boton_contorno_claro(L["todas_guias"], url("soporte"))],
                         otro=url("soporte", app["slug"], idioma=L["otro"]), grande=False,
                         icono=icono_app(app, ancho="64px", radio="16px")),
-        seccion(*contenido, ancho=LECTURA),
+        seccion(*contenido, ancho=LECTURA, arriba=TRAS_CABECERA),
         ayuda,
     ] if x)
 
@@ -986,14 +1086,70 @@ def privacidad_wp() -> str:
     return "\n\n".join([
         cabecera_pagina(L["legal"], L["t_privacidad"], L["privacidad_entrada"], [],
                         otro=url("privacidad", idioma=L["otro"]), grande=False),
-        seccion(wp_html(md(texto)), ancho=LECTURA),
+        seccion(wp_html(md(texto)), ancho=LECTURA, arriba=TRAS_CABECERA),
     ])
 
 
 def pagina_legal(clave: str, fichero: str, h1: str, entrada: str) -> str:
     return "\n\n".join([
         cabecera_pagina(L["legal"], h1, entrada, [], otro=url(clave, idioma=L["otro"]), grande=False),
-        seccion(wp_html(md(texto_legal(fichero))), ancho=LECTURA),
+        seccion(wp_html(md(texto_legal(fichero))), ancho=LECTURA, arriba=TRAS_CABECERA),
+    ])
+
+
+def enlace_constitucion(doc: dict | None) -> str:
+    if doc and doc.get("documento"):
+        return f"{CONSTITUCION_REPO}/blob/main/{doc['documento']}"
+    return CONSTITUCION_REPO
+
+
+def fecha_texto(doc: dict) -> str:
+    return parrafo(html.escape(L["actualizado"].format(fecha_larga(doc["actualizado"]))), style={
+        "color": {"text": APAGADO}, "typography": {"fontSize": "0.9rem", "fontWeight": "600"}})
+
+
+def indice_constitucion_wp(indice: dict, docs: list[dict]) -> str:
+    tarjetas = []
+    for d in docs:
+        u = url("constitucion", d["slug"])
+        tarjetas.append(tarjeta(
+            antetitulo(L["const_ante"]),
+            titulo(f'<a href="{u}">{html.escape(d["titulo"])}</a>', 3, size="medium",
+                   style={"typography": {"fontWeight": "700", "lineHeight": "1.25"},
+                          "elements": {"link": {"color": {"text": TINTA}, "typography": {"textDecoration": "none"}}}}),
+            parrafo(html.escape(d.get("lema", "")), style={"color": {"text": APAGADO}}),
+            parrafo(html.escape(fecha_larga(d["actualizado"])), style={
+                "color": {"text": APAGADO}, "typography": {"fontSize": "0.85rem", "fontWeight": "600"}}),
+            parrafo(f'<a href="{u}">{L["leer"]} →</a>', style={
+                "typography": {"fontWeight": "600"}, "elements": {"link": {"color": {"text": ACENTO}}}})))
+    return "\n\n".join([
+        cabecera_pagina(L["const_ante"], indice["titulo"], html.escape(indice.get("lema", "")),
+                        [boton_claro(L["texto_completo"], enlace_constitucion(None))],
+                        otro=url("constitucion", idioma=L["otro"]), grande=False),
+        seccion(fecha_texto(indice), wp_html(md(indice["cuerpo"])), ancho=LECTURA, arriba=TRAS_CABECERA),
+        seccion(encabezado_seccion(L["const_ante"], L["documentos_h2"], L["documentos_entrada"]),
+                rejilla(*tarjetas), fondo=SUAVE),
+    ])
+
+
+def pagina_constitucion_wp(doc: dict) -> str:
+    cuerpo = md(doc["cuerpo"])
+    indice = [(i, re.sub(r"<[^>]+>", "", t)) for i, t in re.findall(r'<h2 id="([^"]+)">(.*?)</h2>', cuerpo)]
+    lista = "".join(f'<li><a href="#{i}">{t}</a></li>' for i, t in indice)
+    contenido = [
+        fecha_texto(doc),
+        tarjeta(
+            parrafo(f"<strong>{L['en_esta_pagina']}</strong>", style={"color": {"text": TINTA}}),
+            f"<!-- wp:list -->\n<ul class=\"wp-block-list\">{lista}</ul>\n<!-- /wp:list -->",
+            fondo=SUAVE) if len(indice) > 1 else "",
+        wp_html(cuerpo),
+    ]
+    return "\n\n".join([
+        cabecera_pagina(L["const_ante"], doc["titulo"], html.escape(doc.get("lema", "")),
+                        [boton_claro(L["texto_completo"], enlace_constitucion(doc)),
+                         boton_contorno_claro(L["toda_const"], url("constitucion"))],
+                        otro=url("constitucion", doc["slug"], idioma=L["otro"]), grande=False),
+        seccion(*contenido, ancho=LECTURA, arriba=TRAS_CABECERA),
     ])
 
 
@@ -1070,7 +1226,7 @@ def pie_tema() -> str:
         ])),
         ("20%", parrafo(L["sitio"], style=claro) + "\n" + lista([
             (L["catalogo_h2"], url("apps")), (L["soporte_nav"], url("soporte")),
-            (L["nombre_otro"], url(idioma=L["otro"]))])),
+            (L["t_constitucion"], url("constitucion")), (L["nombre_otro"], url(idioma=L["otro"]))])),
         ("20%", parrafo(L["legal"], style=claro) + "\n" + lista([
             (L["aviso_nav"], url("aviso")), (L["privacidad_h"], url("privacidad")),
             (L["cookies_nav"], url("cookies"))])),
@@ -1244,17 +1400,24 @@ def publicar(paginas: list[dict]):
     if ("about", 0) in existentes:
         s.delete(f"{API}/pages/{existentes[('about', 0)]}", params={"force": True})
     vivas = {(p["slug"], ids.get(p["padre"], 0) if p["padre"] else 0) for p in paginas}
-    contenedores = {ids[k] for k in ("es-apps", "es-soporte", "en-apps", "en-soporte", "en-portada") if k in ids}
+    contenedores = {ids[k] for k in ("es-apps", "es-soporte", "es-constitucion", "en-apps", "en-soporte",
+                                     "en-constitucion", "en-portada") if k in ids}
     for (slug, padre), pid in existentes.items():
         if padre in contenedores and (slug, padre) not in vivas:
             s.delete(f"{API}/pages/{pid}", params={"force": True})
             print("borrada    ", slug)
     # Portada fija y comentarios cerrados: esto solo lo aplica la API v2 (la v1.2 contesta 200 y no hace nada).
     r = post(s, f"{API}/settings", {
-        "title": "sOCratic", "description": "Aplicaciones de uso libre, sin anuncios y con el código abierto",
+        "title": "sOCratic", "description": "Aplicaciones de uso libre, sin anuncios y con el código abierto: un experimento "
+                       "de programación con IA guiada por especificaciones",
         "show_on_front": "page", "page_on_front": ids["es-portada"],
         "default_comment_status": "closed", "default_ping_status": "closed"})
     print("ajustes:", r.status_code, "" if r.ok else r.text[:300])
+    # Favicon: el logo de sOCratic (lo sube subir_medios como cualquier imagen).
+    icono = medios().get("img/marca/favicon.png", {}).get("id")
+    if icono:
+        r = post(s, f"{API}/settings", {"site_icon": icono})
+        print("favicon:", r.status_code, "" if r.ok else r.text[:300])
     r = post(s, f"https://public-api.wordpress.com/rest/v1.2/sites/{SITE_ID}/settings", {
         "lang_id": 19, "default_likes_enabled": False, "sharing_show": []})
     print("ajustes wpcom:", r.status_code, "" if r.ok else r.text[:300])
@@ -1262,7 +1425,7 @@ def publicar(paginas: list[dict]):
 
 # ---------------------------------------------------------------- principal
 
-def paginas_idioma(idioma: str, apps: list[dict]) -> list[dict]:
+def paginas_idioma(idioma: str, apps: list[dict], constitucion: tuple[dict, list[dict]]) -> list[dict]:
     usar(idioma)
     i = idioma
     raiz = f"{i}-portada" if i != "es" else None  # en inglés todo cuelga de /en/
@@ -1287,6 +1450,13 @@ def paginas_idioma(idioma: str, apps: list[dict]) -> list[dict]:
                pagina_legal("cookies", "cookies.md", L["cookies_h1"], L["cookies_entrada"]), "cookies.html",
                url("cookies")),
     ]
+    indice_c, docs_c = constitucion
+    paginas.append(pagina("constitucion", L["constitucion"], L["t_constitucion"], raiz, 6,
+                          indice_constitucion_wp(indice_c, docs_c), "constitucion/index.html", url("constitucion")))
+    for n, doc in enumerate(docs_c):
+        paginas.append(pagina(f"const-{doc['slug']}", doc["slug"], doc["titulo"], f"{i}-constitucion", n,
+                              pagina_constitucion_wp(doc), f"constitucion/{doc['slug']}.html",
+                              url("constitucion", doc["slug"])))
     for n, app in enumerate(apps):
         paginas.append(pagina(f"app-{app['slug']}", app["slug"], app["nombre"], f"{i}-apps", n,
                               pagina_app_wp(app), f"apps/{app['slug']}.html", url("apps", app["slug"])))
@@ -1309,8 +1479,10 @@ def main():
         subir_medios()
 
     paginas, partes, plantillas = [], {}, {}
+    constitucion = {i: leer_constitucion(i) for i in ("es", "en")}
+    comprobar_constitucion(constitucion["es"][1])
     for idioma, apps in (("es", apps_es), ("en", apps_en)):
-        p, t = paginas_idioma(idioma, apps)
+        p, t = paginas_idioma(idioma, apps, constitucion[idioma])
         paginas += p
         partes.update(t)
         plantillas[L["plantilla"] or "page"] = plantilla_pagina()

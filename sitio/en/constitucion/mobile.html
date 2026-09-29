@@ -1,0 +1,349 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Mobile apps constitution</title>
+<link rel="stylesheet" href="../../estilo.css">
+</head>
+<body>
+<header class="wp-block-group alignfull has-background" style="border-bottom-color:#e2e8f0;border-bottom-width:1px;border-bottom-style:solid;background-color:#ffffff;margin-top:0;margin-bottom:0">
+<div class="wp-block-group alignwide" style="padding-top:18px;padding-bottom:18px">
+<div class="wp-block-group">
+<figure class="wp-block-image size-full has-custom-border is-resized"><a href="../../en/index.html"><img src="../../img/marca/logo.png" alt="sOCratic" class="" style="border-radius:9px;width:36px"/></a></figure>
+
+<p class="has-medium-font-size soc-marca has-link-color" style="font-weight:800;letter-spacing:-0.02em"><a href="../../en/index.html"><strong>sOCratic</strong></a></p>
+</div>
+
+<div class="wp-block-group">
+<a href="../../en/apps/index.html">Apps</a>
+<a href="../../en/soporte/index.html">Support</a>
+<a href="../../en/constitucion/index.html">Constitution</a>
+<a href="../../en/privacidad.html">Privacy</a>
+<a href="https://github.com/donki">GitHub</a>
+
+<div class="wp-block-group" style="line-height:0">
+<figure class="wp-block-image size-full has-custom-border is-resized"><a href="../../index.html"><img src="../../img/banderas/es.png" alt="Español" class="has-border-color" style="border-color:#e2e8f0;border-width:1px;border-radius:3px;width:24px"/></a></figure>
+
+<figure class="wp-block-image size-full has-custom-border is-resized"><a href="../../en/index.html"><img src="../../img/banderas/en.png" alt="English" class="has-border-color" style="border-color:#e2e8f0;border-width:1px;border-radius:3px;width:24px"/></a></figure>
+</div>
+</div>
+</div>
+</header>
+
+<div class="wp-block-group alignfull soc-hero soc-sec has-text-color has-background has-link-color" style="color:#ffffff;background:linear-gradient(135deg,#1e1b4b 0%,#312e81 55%,#4338ca 100%);padding-top:var(--wp--preset--spacing--70);padding-bottom:var(--wp--preset--spacing--50);margin-top:0;margin-bottom:0">
+<p class="has-text-color" style="color:#c7d2fe;font-size:0.8rem;font-weight:700;letter-spacing:0.12em;text-transform:uppercase">Constitution</p>
+
+<h1 class="wp-block-heading has-large-font-size has-text-color" style="color:#ffffff;font-weight:700;line-height:1.08;letter-spacing:-0.02em">Mobile apps constitution</h1>
+
+<p class="has-text-color" style="color:#e0e7ff;font-size:1.2rem;line-height:1.6">Signing, versions, permissions, Google Play rules, the back button and the two apps that use a server.</p>
+
+<div class="wp-block-buttons"><div class="wp-block-button"><a class="wp-block-button__link has-text-color has-background wp-element-button" href="https://github.com/donki/constitution/blob/main/CONSTITUCION-MOBILE.md" style="border-radius:10px;color:#4338ca;background-color:#ffffff;padding-top:12px;padding-bottom:12px;padding-left:22px;padding-right:22px" target="_blank" rel="noreferrer noopener">Full text on GitHub</a></div>
+<div class="wp-block-button is-style-outline"><a class="wp-block-button__link has-text-color wp-element-button" href="../../en/constitucion/index.html" style="border-width:1.5px;border-style:solid;border-radius:10px;color:#ffffff;padding-top:12px;padding-bottom:12px;padding-left:22px;padding-right:22px">The whole constitution</a></div>
+</div>
+</div>
+
+<div class="wp-block-group alignfull soc-sec" style="padding-top:var(--wp--preset--spacing--40);padding-bottom:var(--wp--preset--spacing--70);margin-top:0;margin-bottom:0">
+<p class="has-text-color" style="color:#64748b;font-size:0.9rem;font-weight:600">Text last updated: September 28, 2026</p>
+
+<div class="wp-block-group soc-card has-border-color has-background" style="border-color:#e2e8f0;border-width:1px;border-radius:16px;background-color:#f8fafc;padding-top:28px;padding-bottom:28px;padding-left:28px;padding-right:28px">
+<p class="has-text-color" style="color:#0f172a"><strong>On this page</strong></p>
+
+<ul class="wp-block-list"><li><a href="#1-structure">1. Structure</a></li><li><a href="#2-signing">2. Signing</a></li><li><a href="#3-versions">3. Versions</a></li><li><a href="#4-permissions">4. Permissions</a></li><li><a href="#5-google-play-rules">5. Google Play rules</a></li><li><a href="#6-publishing">6. Publishing</a></li><li><a href="#7-interface">7. Interface</a></li><li><a href="#8-task-manager-account-server-and-encryption">8. Task Manager: account, server and encryption</a></li><li><a href="#9-device-testing">9. Device testing</a></li><li><a href="#10-family-together-anonymous-user-server-notifications-and-location">10. Family Together: anonymous user, server, notifications and location</a></li></ul>
+</div>
+
+<p>Extends the general constitution for the apps built with .NET MAUI. Each one targets <strong>Android,
+Windows or both</strong>, from the same project. On Google Play there are File Manager, Hiker, Music
+Player, PDF Reader, QuitSmoke, SMS Forwarder, TXT Reader and sOC Uninstaller, which is also on the
+Microsoft Store. Task Manager is distributed outside Play and is the only one with a desktop client
+and a server; Family Together, for family location sharing, is in development.</p>
+
+<h2 id="1-structure" class="wp-block-heading has-large-font-size has-text-color" style="color:#0f172a;margin-top:var(--wp--preset--spacing--50);font-weight:700;line-height:1.25">1. Structure</h2>
+
+<p><strong>What it says.</strong> Each app has its own folder and its own repository. The signing setup and the
+shared code live in a common folder that all of them point to with relative paths, so none of them
+can be moved. The Google Play listings (texts, icon, feature graphic, screenshots) and the demo
+videos Google asks for are kept separately.</p>
+
+<p><strong>Why.</strong> A single source for what is shared; and the listings and videos next to everything else,
+so a release can be redone without hunting for them.</p>
+
+<h2 id="2-signing" class="wp-block-heading has-large-font-size has-text-color" style="color:#0f172a;margin-top:var(--wp--preset--spacing--50);font-weight:700;line-height:1.25">2. Signing</h2>
+
+<h3 id="21-all-with-the-same-key-as-file-manager" class="wp-block-heading has-medium-font-size has-text-color" style="color:#0f172a;margin-top:var(--wp--preset--spacing--40);font-weight:700;line-height:1.25">2.1 All with the same key as File Manager</h3>
+
+<p><strong>What it says.</strong> All apps are signed with <strong>the same key as File Manager</strong>, with no upload keys of
+their own. If one turns up signed with a different key, it is fixed to use the common one, never
+the other way around. Old copies of keys lying around are not valid for signing: the only valid one
+is the one the shared configuration points to.</p>
+
+<p><strong>Why.</strong> A single key to look after, and a single configuration that each project imports instead
+of repeating it.</p>
+
+<h3 id="22-new-apps-the-common-key-from-day-one" class="wp-block-heading has-medium-font-size has-text-color" style="color:#0f172a;margin-top:var(--wp--preset--spacing--40);font-weight:700;line-height:1.25">2.2 New apps: the common key from day one</h3>
+
+<p><strong>What it says.</strong> Before uploading the first version of a new app, in Google Play Console you choose
+to use <strong>the same signing key as another app in the account: File Manager</strong>. No new key is created.
+This can only be done while the app has no version uploaded yet, and there is no way to do it from
+a program: a person does it in the console.</p>
+
+<p><strong>Why.</strong> If a new app is left with the key Google generates, Play rejects the first package signed
+with the common one ("that key already signs another app that users receive; create a different
+one"), and retrying does not help. It happened with sOC Credentials (three attempts), Task Manager
+and TDT Online.</p>
+
+<h3 id="23-two-inherited-exceptions" class="wp-block-heading has-medium-font-size has-text-color" style="color:#0f172a;margin-top:var(--wp--preset--spacing--40);font-weight:700;line-height:1.25">2.3 Two inherited exceptions</h3>
+
+<p><strong>What it says.</strong> Task Manager and TDT Online were registered with their own upload key before this
+rule, and on Play it can no longer be changed. What they upload to Play goes with their own key;
+what gets installed over a cable, with the common one. This is not to be repeated.</p>
+
+<p><strong>Why.</strong> It is written down so nobody tries to "fix" it and finds out that Play does not allow it.</p>
+
+<h3 id="24-the-key-must-not-be-lost" class="wp-block-heading has-medium-font-size has-text-color" style="color:#0f172a;margin-top:var(--wp--preset--spacing--40);font-weight:700;line-height:1.25">2.4 The key must not be lost</h3>
+
+<p><strong>What it says.</strong> The key's public certificate is exported and stored, and the password is not in
+the repository: it is supplied at build time.</p>
+
+<p><strong>Why.</strong> If the key were lost, we would have to ask Google to reset the upload key, with the wait
+that involves; with the certificate at hand, the request is immediate.</p>
+
+<h2 id="3-versions" class="wp-block-heading has-large-font-size has-text-color" style="color:#0f172a;margin-top:var(--wp--preset--spacing--50);font-weight:700;line-height:1.25">3. Versions</h2>
+
+<p><strong>What it says.</strong> The internal version number follows the format <strong>YYYYMMDDNN</strong>: the date plus a
+counter of the day's builds, <strong>always with two digits</strong> (2026090701, not 202609071). The visible
+version, the same: 2026.09.07.01. The number only goes up, never down: before building for the
+store, you check which one is published, and the project's number has to match the uploaded
+package's.</p>
+
+<p><strong>Why.</strong> Android only requires the number to go up; reading it as a date is our own convenience.
+But a one-digit counter breaks it: the day you reach build 13 you get a ten-digit number, and the
+next day build 1 comes out with nine, that is, <strong>smaller</strong>. Android rejects it as if it were an
+older version. It happened with Task Manager on September 7, 2026. With two digits there is room for
+99 builds a day, and the number still fits within Android's maximum until the year 2099.</p>
+
+<h2 id="4-permissions" class="wp-block-heading has-large-font-size has-text-color" style="color:#0f172a;margin-top:var(--wp--preset--spacing--50);font-weight:700;line-height:1.25">4. Permissions</h2>
+
+<p><strong>What it says.</strong> We ask for <strong>the bare minimum</strong>, and each permission has to match a real, visible
+feature. Permissions tied to a feature are explained in the Play listing. Restricted permissions
+(SMS, call log, background location, installing packages, access to all files) need a declaration
+in the console and, often, a video.</p>
+
+<p><strong>Why.</strong> Each permission is access to the user's data that has to be justified; and Google Play
+requires it as a rule, not as a recommendation.</p>
+
+<h2 id="5-google-play-rules" class="wp-block-heading has-large-font-size has-text-color" style="color:#0f172a;margin-top:var(--wp--preset--spacing--50);font-weight:700;line-height:1.25">5. Google Play rules</h2>
+
+<h3 id="51-sms-only-as-the-default-messaging-app" class="wp-block-heading has-medium-font-size has-text-color" style="color:#0f172a;margin-top:var(--wp--preset--spacing--40);font-weight:700;line-height:1.25">5.1 SMS: only as the default messaging app</h3>
+
+<p><strong>What it says.</strong> Using the send-SMS permission to forward messages is a use case Google
+<strong>prohibits</strong>. The only valid route is for the app to be the <strong>default SMS app</strong>, with everything
+that requires implementing. And an app that asks to be the default (for SMS, phone, browser...)
+asks for that role <strong>before any other permission</strong>, and no screen asks for permissions at the same
+time as that dialog. It is tested by removing the role and the permissions and opening the app:
+only the role dialog should appear.</p>
+
+<p><strong>Why.</strong> Google Play rejected SMS Forwarder in September 2026 for this, with the same code it had
+approved in August; and the first fix still asked for a permission at the same time as the role.</p>
+
+<h3 id="52-the-target-android-version-is-mandatory" class="wp-block-heading has-medium-font-size has-text-color" style="color:#0f172a;margin-top:var(--wp--preset--spacing--40);font-weight:700;line-height:1.25">5.2 The target Android version is mandatory</h3>
+
+<p><strong>What it says.</strong> No app is built or uploaded with a target Android version below the one Google
+Play requires at that moment: today, <strong>Android 16</strong>, for new apps and for any update. It is set in
+two places in the project that have to match, it is checked in the manifest the build generates
+(that is what actually gets uploaded) and, before each release, you check whether Google has raised
+the requirement.</p>
+
+<p><strong>Why.</strong> If it is left unset, the version depends on what is installed on the computer doing the
+build: two apps were being built for an older version without anyone knowing, and they were fixed
+in August 2026. Better to raise it <strong>before</strong> building than after the rejection.</p>
+
+<h3 id="53-closed-testing-first" class="wp-block-heading has-medium-font-size has-text-color" style="color:#0f172a;margin-top:var(--wp--preset--spacing--40);font-weight:700;line-height:1.25">5.3 Closed testing first</h3>
+
+<p><strong>What it says.</strong> There is a closed testing track, with the same tester groups for all apps.</p>
+
+<p><strong>Why.</strong> Whatever breaks, breaks first in front of a few people who know they are testing.</p>
+
+<h3 id="54-demo-video-with-no-cuts" class="wp-block-heading has-medium-font-size has-text-color" style="color:#0f172a;margin-top:var(--wp--preset--spacing--40);font-weight:700;line-height:1.25">5.4 Demo video with no cuts</h3>
+
+<p><strong>What it says.</strong> When Google asks for a video, it is recorded with no cuts, showing the full flow
+that justifies the permissions.</p>
+
+<p><strong>Why.</strong> It is what the reviewer needs to see to approve a sensitive permission; a video with cuts
+looks like it is hiding something.</p>
+
+<h3 id="55-console-declarations-that-block-the-release" class="wp-block-heading has-medium-font-size has-text-color" style="color:#0f172a;margin-top:var(--wp--preset--spacing--40);font-weight:700;line-height:1.25">5.5 Console declarations that block the release</h3>
+
+<p><strong>What it says.</strong> Some permissions let you upload the package but do not let you complete the
+release until a form is filled in on the web console: <strong>foreground services</strong> (this affects Hiker,
+which records routes that way, and will affect Music Player because of background music), the
+<strong>read-SMS permission</strong> (what has SMS Forwarder blocked) and newly registered apps, which only
+accept draft releases.</p>
+
+<p><strong>Why.</strong> It is not a bug in the publishing program but a Google rule, and the message says so
+plainly; knowing this avoids wasting time looking for an error that does not exist.</p>
+
+<h3 id="56-developer-verification" class="wp-block-heading has-medium-font-size has-text-color" style="color:#0f172a;margin-top:var(--wp--preset--spacing--40);font-weight:700;line-height:1.25">5.6 Developer verification</h3>
+
+<p><strong>What it says.</strong> For an app to be installable on a certified Android device, its package name has
+to be registered to a developer with a verified identity. Google Play apps are covered when they
+are registered, but you check once in the console that there are no warnings. If packages signed
+with our own key are ever distributed outside Play, that key will have to be registered too.</p>
+
+<p><strong>Why.</strong> An unregistered package can mean removal from the store worldwide, even though the install
+block is not yet enforced in Spain.</p>
+
+<h2 id="6-publishing" class="wp-block-heading has-large-font-size has-text-color" style="color:#0f172a;margin-top:var(--wp--preset--spacing--50);font-weight:700;line-height:1.25">6. Publishing</h2>
+
+<p><strong>What it says.</strong> Fixed order: bump the version, build the signed package, check the actual version
+number in the generated manifest, upload it to the testing tracks, test on a real device and only
+then move to production. Two notes about the Google Play programming interface: a review option
+that some apps require and others forbid (try without it first), and updating the tester list
+<strong>replaces</strong> it entirely, so you read the current one and merge.</p>
+
+<p><strong>Why.</strong> Each step guards against the next: checking the number before uploading avoids a
+rejection, and testing before production keeps a bug from reaching everyone. The tester lesson was
+learned by deleting them by accident.</p>
+
+<h2 id="7-interface" class="wp-block-heading has-large-font-size has-text-color" style="color:#0f172a;margin-top:var(--wp--preset--spacing--50);font-weight:700;line-height:1.25">7. Interface</h2>
+
+<h3 id="71-shared-design-and-screens" class="wp-block-heading has-medium-font-size has-text-color" style="color:#0f172a;margin-top:var(--wp--preset--spacing--40);font-weight:700;line-height:1.25">7.1 Shared design and screens</h3>
+
+<p><strong>What it says.</strong> The shared indigo design, our own dialogs, buttons with flat icons (never emoji),
+an "About" screen that is the same in all of them (logo, version, contact, language, license) and,
+in the ones that sync, who is signed in and with which account, with an option to sign out.</p>
+
+<p><strong>Why.</strong> Someone who uses one app in the catalog already knows their way around the others; and
+knowing which account you are syncing with is part of privacy.</p>
+
+<h3 id="72-the-back-button" class="wp-block-heading has-medium-font-size has-text-color" style="color:#0f172a;margin-top:var(--wp--preset--spacing--40);font-weight:700;line-height:1.25">7.2 The back button</h3>
+
+<p><strong>What it says.</strong> On any screen other than the home screen, back <strong>returns to the previous one</strong>,
+just like the arrow at the top; if something is open on top (a menu, a dialog, a search box), that
+closes first. On the home screen, the app <strong>hides</strong> without closing or asking, and when you come
+back it is where you left it. It is tested on the phone, with the gesture and with the button, on
+every screen.</p>
+
+<p><strong>Why.</strong> It is what anyone who uses Android expects. And there are two documented traps: if the
+main activity intercepts the button, the screens never find out; and <strong>Android 16 turns on
+"predictive back"</strong>, with which the button stops reaching the screens and the app closes from
+anywhere. Until .NET MAUI supports it, it is turned off in the manifest. It does not show up in the
+emulator with an older Android version: only on a real phone with Android 16 (it was discovered
+with File Manager in September 2026).</p>
+
+<h2 id="8-task-manager-account-server-and-encryption" class="wp-block-heading has-large-font-size has-text-color" style="color:#0f172a;margin-top:var(--wp--preset--spacing--50);font-weight:700;line-height:1.25">8. Task Manager: account, server and encryption</h2>
+
+<p>It is the app with an account and a server, and its description has to match word for word the
+privacy policy and the listing.</p>
+
+<ul class="wp-block-list">
+<li><strong>Sign-in with an account the user already has</strong>, from Google or Microsoft, using the standard
+  sign-in protocol (OAuth 2.0 with PKCE) against the provider itself. We never see the password.
+  Microsoft sign-in is built but hidden until it is tested with a real account.</li>
+<li><strong>Server:</strong> a managed database service, hosted in the United Kingdom. It is the only third party,
+  and only as hosting.</li>
+<li><strong>What is stored:</strong> tasks, lists, steps, attachments, profiles, groups and their members, and
+  records of what was deleted (only identifier and date, no text).</li>
+<li><strong>What is encrypted:</strong> titles, notes, tags, list and step names, attachment names and addresses,
+  group name, nicknames, and from the profile the name, email and photo. With AES-256-GCM.</li>
+<li><strong>What is not encrypted, on purpose:</strong> dates, flags, numbers, identifiers, the code for joining a
+  group (it is what gets searched on) and the hash of its password (it has to be compared).</li>
+<li><strong>Authorization is checked on the server</strong>, row by row. The app not asking for something protects
+  nothing.</li>
+<li><strong>It keeps working without the server</strong>: the data is also on the device; what you lose is sync.</li>
+<li><strong>Notification between devices is not instant</strong>, and that is a decision: one pass every 30
+  minutes plus the refresh button.</li>
+</ul>
+
+<p><strong>Why.</strong> It is the app in the catalog that handles the most personal data, so how it treats that
+data is written down in detail so it can be looked up without opening the code. Instant
+notifications would require Google's notification service and its associated project, and for a
+to-do list it is not worth it.</p>
+
+<h2 id="9-device-testing" class="wp-block-heading has-large-font-size has-text-color" style="color:#0f172a;margin-top:var(--wp--preset--spacing--50);font-weight:700;line-height:1.25">9. Device testing</h2>
+
+<p><strong>What it says.</strong> There is a reference phone and a reference tablet, and each app's test material
+is kept organized. Two traps noted: some manufacturers, when installing over a cable, show a
+confirmation dialog with a six-second countdown that denies itself, and the leftover error looks
+like a permissions issue; and a locally signed package cannot be installed over the same app
+installed from Google Play, because the signature is different: you have to uninstall first.</p>
+
+<p><strong>Why.</strong> These are errors that throw you off and waste a lot of time the first time; once written
+down, the second time takes ten seconds.</p>
+
+<h2 id="10-family-together-anonymous-user-server-notifications-and-location" class="wp-block-heading has-large-font-size has-text-color" style="color:#0f172a;margin-top:var(--wp--preset--spacing--50);font-weight:700;line-height:1.25">10. Family Together: anonymous user, server, notifications and location</h2>
+
+<p>Family Together shares location within a closed family group. Its own rules:</p>
+
+<ul class="wp-block-list">
+<li><strong>Anonymous user</strong> created when it is first opened: just a display name and, optionally, a
+  picture. Linking Google or Microsoft is optional and serves to recover the user on a new phone;
+  that link is verified on the server, recovering moves the groups to the new phone, two users are
+  never merged, and an account already linked to someone else is rejected with a notice.</li>
+<li><strong>Server:</strong> for now, a managed database service; the goal is our own installation of the same
+  server (open source) in the cloud, in the European Union. <strong>Without a daily backup outside the
+  server it does not go to production</strong>, only the secure web port is opened, admin access uses a
+  key and the dashboards are not public. Without the server the app does not work, because its
+  whole point is sharing.</li>
+<li><strong>Row-level permissions on every table</strong>: each person only sees what belongs to their groups, and
+  joining, approving, removing or recovering is only done through server functions that check the
+  role of whoever asks. A test with a user from another group must return nothing.</li>
+<li><strong>Encryption:</strong> group name, member names and pictures, zone names <strong>and the coordinates too</strong>,
+  with the group key. That key <strong>never passes through the server in the clear</strong>: it goes from phone
+  to phone encrypted with a key exchange (ECDH). The only things left unencrypted are dates,
+  identifiers, battery and the invitation code.</li>
+<li><strong>One position for each group</strong> you share with, encrypted with that group's key, and it is kept
+  for <strong>30 days</strong>; after that it deletes itself.</li>
+<li><strong>Instant notifications</strong> with Google's notification service, messaging only: messages carry only
+  identifiers and the text is put together on the phone; recipients are worked out by the server
+  when sending; each notification has an identifier to discard duplicates, and there are separate
+  channels for SOS, zones and requests.</li>
+<li><strong>The map</strong> uses a free map library <strong>bundled inside the app</strong> and an open map style that needs no
+  key. No Google Maps and no Google Play services for the map.</li>
+<li><strong>Background location</strong> with a foreground service: it is sent when you move more than 25 meters,
+  inaccurate readings are discarded, and offline they are queued with their original time. There
+  is a guide so the manufacturer's battery saver does not cut it off.</li>
+<li><strong>Only the last phone that signed in shares location</strong>: when the user is recovered on another
+  one, the previous one stops sending.</li>
+<li><strong>Permissions</strong> (precise and background location, foreground service, notifications and camera to
+  read the QR code), all declared in the console, with a video and explained in the listing.</li>
+</ul>
+
+<p><strong>Why.</strong> A family's location is among the most sensitive data there is. That is why even the
+coordinates are encrypted (the database does not need them: zones are detected on the phone), the
+server never sees the group key, and storing one position per group means pausing is enforced at
+the source: what was recorded while paused for a group never reaches it. Notification messages
+carry no text so that the service delivering them does not know what they say, and the map is
+inside the app so it does not depend on loading it from outside.</p>
+</div>
+
+<footer class="wp-block-group alignfull soc-sec has-text-color has-background has-link-color" style="color:#cbd5e1;background-color:#0f172a;padding-top:var(--wp--preset--spacing--70);padding-bottom:var(--wp--preset--spacing--50);margin-top:0;margin-bottom:0">
+<div class="wp-block-columns"><div class="wp-block-column" style="flex-basis:40%"><p class="has-text-color" style="color:#ffffff;font-size:1.4rem"><strong>sOCratic</strong></p>
+<p>Free-to-use, ad-free apps for Android and Windows, made to learn and with open source code. An experiment in spec-driven programming with AI.</p>
+</div>
+<div class="wp-block-column" style="flex-basis:20%"><p class="has-text-color" style="color:#94a3b8;font-size:0.8rem;font-weight:700;letter-spacing:0.1em;text-transform:uppercase">Site</p>
+<p style="margin-top:6px"><a href="../../en/apps/index.html">Apps</a></p>
+<p style="margin-top:6px"><a href="../../en/soporte/index.html">Support</a></p>
+<p style="margin-top:6px"><a href="../../en/constitucion/index.html">Constitution</a></p>
+<p style="margin-top:6px"><a href="../../index.html">Español</a></p>
+</div>
+<div class="wp-block-column" style="flex-basis:20%"><p class="has-text-color" style="color:#94a3b8;font-size:0.8rem;font-weight:700;letter-spacing:0.1em;text-transform:uppercase">Legal</p>
+<p style="margin-top:6px"><a href="../../en/aviso-legal.html">Legal notice</a></p>
+<p style="margin-top:6px"><a href="../../en/privacidad.html">Privacy</a></p>
+<p style="margin-top:6px"><a href="../../en/cookies.html">Cookies</a></p>
+</div>
+<div class="wp-block-column" style="flex-basis:20%"><p class="has-text-color" style="color:#94a3b8;font-size:0.8rem;font-weight:700;letter-spacing:0.1em;text-transform:uppercase">Contact</p>
+<p style="margin-top:6px"><a href="https://github.com/donki">GitHub</a></p>
+</div>
+</div>
+
+<hr class="wp-block-separator has-text-color has-alpha-channel-opacity has-background" style="background-color:#1e293b;color:#1e293b"/>
+
+<p class="has-text-color" style="color:#94a3b8;font-size:0.875rem">© 2026 sOCratic · Open source, MIT license</p>
+
+<div class="wp-block-jetpack-cookie-consent alignwide has-text-color has-background has-link-color" style="border-radius:14px;color:#ffffff;background-color:#0f172a;padding-top:1.25em;padding-right:1.5em;padding-bottom:1.25em;padding-left:1.5em" role="dialog" aria-modal="true"><p>This website is hosted on WordPress.com, which uses cookies for its visitor statistics. You can accept them or see how to reject them in the <a href="../../en/cookies.html">cookie policy</a>.</p><div class="wp-block-button"><a class="wp-block-button__link has-text-color has-background wp-element-button" href="#" style="border-radius:10px;color:#4338ca;background-color:#ffffff;padding-top:12px;padding-bottom:12px;padding-left:22px;padding-right:22px">Accept</a></div>
+<span>365</span></div>
+</footer>
+
+</body>
+</html>

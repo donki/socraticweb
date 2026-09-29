@@ -1,0 +1,351 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Constitución de las aplicaciones móviles</title>
+<link rel="stylesheet" href="../estilo.css">
+</head>
+<body>
+<header class="wp-block-group alignfull has-background" style="border-bottom-color:#e2e8f0;border-bottom-width:1px;border-bottom-style:solid;background-color:#ffffff;margin-top:0;margin-bottom:0">
+<div class="wp-block-group alignwide" style="padding-top:18px;padding-bottom:18px">
+<div class="wp-block-group">
+<figure class="wp-block-image size-full has-custom-border is-resized"><a href="../index.html"><img src="../img/marca/logo.png" alt="sOCratic" class="" style="border-radius:9px;width:36px"/></a></figure>
+
+<p class="has-medium-font-size soc-marca has-link-color" style="font-weight:800;letter-spacing:-0.02em"><a href="../index.html"><strong>sOCratic</strong></a></p>
+</div>
+
+<div class="wp-block-group">
+<a href="../apps/index.html">Aplicaciones</a>
+<a href="../soporte/index.html">Soporte</a>
+<a href="../constitucion/index.html">Constitución</a>
+<a href="../privacidad.html">Privacidad</a>
+<a href="https://github.com/donki">GitHub</a>
+
+<div class="wp-block-group" style="line-height:0">
+<figure class="wp-block-image size-full has-custom-border is-resized"><a href="../index.html"><img src="../img/banderas/es.png" alt="Español" class="has-border-color" style="border-color:#e2e8f0;border-width:1px;border-radius:3px;width:24px"/></a></figure>
+
+<figure class="wp-block-image size-full has-custom-border is-resized"><a href="../en/index.html"><img src="../img/banderas/en.png" alt="English" class="has-border-color" style="border-color:#e2e8f0;border-width:1px;border-radius:3px;width:24px"/></a></figure>
+</div>
+</div>
+</div>
+</header>
+
+<div class="wp-block-group alignfull soc-hero soc-sec has-text-color has-background has-link-color" style="color:#ffffff;background:linear-gradient(135deg,#1e1b4b 0%,#312e81 55%,#4338ca 100%);padding-top:var(--wp--preset--spacing--70);padding-bottom:var(--wp--preset--spacing--50);margin-top:0;margin-bottom:0">
+<p class="has-text-color" style="color:#c7d2fe;font-size:0.8rem;font-weight:700;letter-spacing:0.12em;text-transform:uppercase">Constitución</p>
+
+<h1 class="wp-block-heading has-large-font-size has-text-color" style="color:#ffffff;font-weight:700;line-height:1.08;letter-spacing:-0.02em">Constitución de las aplicaciones móviles</h1>
+
+<p class="has-text-color" style="color:#e0e7ff;font-size:1.2rem;line-height:1.6">Firma, versiones, permisos, reglas de Google Play, el botón de atrás y las dos aplicaciones que usan servidor.</p>
+
+<div class="wp-block-buttons"><div class="wp-block-button"><a class="wp-block-button__link has-text-color has-background wp-element-button" href="https://github.com/donki/constitution/blob/main/CONSTITUCION-MOBILE.md" style="border-radius:10px;color:#4338ca;background-color:#ffffff;padding-top:12px;padding-bottom:12px;padding-left:22px;padding-right:22px" target="_blank" rel="noreferrer noopener">Texto completo en GitHub</a></div>
+<div class="wp-block-button is-style-outline"><a class="wp-block-button__link has-text-color wp-element-button" href="../constitucion/index.html" style="border-width:1.5px;border-style:solid;border-radius:10px;color:#ffffff;padding-top:12px;padding-bottom:12px;padding-left:22px;padding-right:22px">Toda la constitución</a></div>
+</div>
+</div>
+
+<div class="wp-block-group alignfull soc-sec" style="padding-top:var(--wp--preset--spacing--40);padding-bottom:var(--wp--preset--spacing--70);margin-top:0;margin-bottom:0">
+<p class="has-text-color" style="color:#64748b;font-size:0.9rem;font-weight:600">Última actualización del texto: 28 de septiembre de 2026</p>
+
+<div class="wp-block-group soc-card has-border-color has-background" style="border-color:#e2e8f0;border-width:1px;border-radius:16px;background-color:#f8fafc;padding-top:28px;padding-bottom:28px;padding-left:28px;padding-right:28px">
+<p class="has-text-color" style="color:#0f172a"><strong>En esta página</strong></p>
+
+<ul class="wp-block-list"><li><a href="#1-estructura">1. Estructura</a></li><li><a href="#2-firma">2. Firma</a></li><li><a href="#3-versiones">3. Versiones</a></li><li><a href="#4-permisos">4. Permisos</a></li><li><a href="#5-reglas-de-google-play">5. Reglas de Google Play</a></li><li><a href="#6-publicacion">6. Publicación</a></li><li><a href="#7-interfaz">7. Interfaz</a></li><li><a href="#8-task-manager-cuenta-servidor-y-cifrado">8. Task Manager: cuenta, servidor y cifrado</a></li><li><a href="#9-pruebas-en-dispositivo">9. Pruebas en dispositivo</a></li><li><a href="#10-family-together-usuario-anonimo-servidor-avisos-y-ubicacion">10. Family Together: usuario anónimo, servidor, avisos y ubicación</a></li></ul>
+</div>
+
+<p>Amplía la constitución general para las aplicaciones hechas con .NET MAUI. Cada una tiene por
+objetivo <strong>Android, Windows o los dos</strong>, con el mismo proyecto. En Google Play están File Manager,
+Hiker, Music Player, PDF Reader, QuitSmoke, SMS Forwarder, TXT Reader y sOC Uninstaller, que además
+está en la Microsoft Store. Task Manager se reparte fuera de Play y es la única con cliente de
+escritorio y servidor; Family Together, de localización familiar, está en desarrollo.</p>
+
+<h2 id="1-estructura" class="wp-block-heading has-large-font-size has-text-color" style="color:#0f172a;margin-top:var(--wp--preset--spacing--50);font-weight:700;line-height:1.25">1. Estructura</h2>
+
+<p><strong>Qué dice.</strong> Cada aplicación tiene su carpeta y su repositorio. La firma y el código común están en
+una carpeta compartida a la que todas apuntan con rutas relativas, así que ninguna se puede mover de
+sitio. Aparte se guardan las fichas de Google Play (textos, icono, imagen destacada, capturas) y los
+vídeos de demostración que pide Google.</p>
+
+<p><strong>Por qué.</strong> Una sola fuente para lo común; y las fichas y los vídeos, junto al resto, para poder
+rehacer una publicación sin buscarlos.</p>
+
+<h2 id="2-firma" class="wp-block-heading has-large-font-size has-text-color" style="color:#0f172a;margin-top:var(--wp--preset--spacing--50);font-weight:700;line-height:1.25">2. Firma</h2>
+
+<h3 id="21-todas-con-la-misma-clave-que-file-manager" class="wp-block-heading has-medium-font-size has-text-color" style="color:#0f172a;margin-top:var(--wp--preset--spacing--40);font-weight:700;line-height:1.25">2.1 Todas con la misma clave que File Manager</h3>
+
+<p><strong>Qué dice.</strong> Todas las aplicaciones se firman con <strong>la misma clave que File Manager</strong>, sin claves de
+subida propias. Si alguna aparece firmada con otra, se corrige para que use la común, nunca al
+revés. Las copias viejas de claves que quedan por ahí no valen para firmar: la única válida es la
+que indica la configuración compartida.</p>
+
+<p><strong>Por qué.</strong> Una sola clave que custodiar, y una sola configuración que cada proyecto importa en vez
+de repetirla.</p>
+
+<h3 id="22-aplicaciones-nuevas-la-clave-comun-desde-el-alta" class="wp-block-heading has-medium-font-size has-text-color" style="color:#0f172a;margin-top:var(--wp--preset--spacing--40);font-weight:700;line-height:1.25">2.2 Aplicaciones nuevas: la clave común desde el alta</h3>
+
+<p><strong>Qué dice.</strong> Antes de subir la primera versión de una aplicación nueva, en Google Play Console se
+elige usar <strong>la misma clave de firma que otra aplicación de la cuenta: File Manager</strong>. No se crea
+ninguna clave nueva. Solo se puede hacer mientras la aplicación no tiene ninguna versión subida, y no
+hay forma de hacerlo por programa: lo hace una persona en la consola.</p>
+
+<p><strong>Por qué.</strong> Si una aplicación nueva se deja con la clave que genera Google, Play rechaza el primer
+paquete firmado con la común («esa clave ya firma otra aplicación que reciben los usuarios; crea una
+distinta»), y reintentar no sirve. Pasó con sOC Credentials (tres intentos), Task Manager y TDT
+Online.</p>
+
+<h3 id="23-dos-excepciones-heredadas" class="wp-block-heading has-medium-font-size has-text-color" style="color:#0f172a;margin-top:var(--wp--preset--spacing--40);font-weight:700;line-height:1.25">2.3 Dos excepciones heredadas</h3>
+
+<p><strong>Qué dice.</strong> Task Manager y TDT Online se dieron de alta con clave de subida propia antes de esta
+regla, y en Play ya no se puede cambiar. Lo que suben a Play va con su clave; lo que se instala por
+cable, con la común. No se repite.</p>
+
+<p><strong>Por qué.</strong> Se documenta para que nadie intente «arreglarlo» y se encuentre con que Play no lo
+permite.</p>
+
+<h3 id="24-la-clave-no-se-puede-perder" class="wp-block-heading has-medium-font-size has-text-color" style="color:#0f172a;margin-top:var(--wp--preset--spacing--40);font-weight:700;line-height:1.25">2.4 La clave no se puede perder</h3>
+
+<p><strong>Qué dice.</strong> El certificado público de la clave está exportado y guardado, y la contraseña no está
+en el repositorio: se da al compilar.</p>
+
+<p><strong>Por qué.</strong> Si se perdiera la clave habría que pedirle a Google que restableciera la clave de
+subida, con la espera que eso supone; con el certificado a mano, la solicitud es inmediata.</p>
+
+<h2 id="3-versiones" class="wp-block-heading has-large-font-size has-text-color" style="color:#0f172a;margin-top:var(--wp--preset--spacing--50);font-weight:700;line-height:1.25">3. Versiones</h2>
+
+<p><strong>Qué dice.</strong> El número de versión interno sigue el formato <strong>AAAAMMDDNN</strong>: la fecha más un contador
+de compilaciones del día, <strong>siempre con dos cifras</strong> (2026090701, no 202609071). La versión que se
+ve, igual: 2026.09.07.01. El número solo sube, nunca baja: antes de compilar para la tienda se
+comprueba cuál está publicado, y el del proyecto tiene que coincidir con el del paquete subido.</p>
+
+<p><strong>Por qué.</strong> Android solo exige que el número suba; que se lea como una fecha es comodidad nuestra.
+Pero el contador a una cifra lo rompe: el día que se llega a la compilación 13 sale un número de
+diez cifras, y al día siguiente la compilación 1 sale con nueve, es decir, <strong>menor</strong>. Android lo
+rechaza como si fuera una versión anterior. Pasó con Task Manager el 7 de septiembre de 2026. Con
+dos cifras caben 99 compilaciones al día, y el número sigue cabiendo en el máximo de Android hasta
+el año 2099.</p>
+
+<h2 id="4-permisos" class="wp-block-heading has-large-font-size has-text-color" style="color:#0f172a;margin-top:var(--wp--preset--spacing--50);font-weight:700;line-height:1.25">4. Permisos</h2>
+
+<p><strong>Qué dice.</strong> Se pide <strong>el mínimo imprescindible</strong>, y cada permiso tiene que corresponder a una
+función real y visible. Los permisos con función asociada se explican en la ficha de Play. Los
+permisos restringidos (SMS, registro de llamadas, ubicación en segundo plano, instalar paquetes,
+acceso a todos los ficheros) necesitan una declaración en la consola y, a menudo, un vídeo.</p>
+
+<p><strong>Por qué.</strong> Cada permiso es un acceso a los datos del usuario que hay que justificar; y Google
+Play lo exige como norma, no como recomendación.</p>
+
+<h2 id="5-reglas-de-google-play" class="wp-block-heading has-large-font-size has-text-color" style="color:#0f172a;margin-top:var(--wp--preset--spacing--50);font-weight:700;line-height:1.25">5. Reglas de Google Play</h2>
+
+<h3 id="51-sms-solo-como-aplicacion-de-mensajes-por-defecto" class="wp-block-heading has-medium-font-size has-text-color" style="color:#0f172a;margin-top:var(--wp--preset--spacing--40);font-weight:700;line-height:1.25">5.1 SMS: solo como aplicación de mensajes por defecto</h3>
+
+<p><strong>Qué dice.</strong> Usar el permiso de enviar SMS para reenviar mensajes es un caso <strong>prohibido</strong> por Google.
+La única vía válida es que la aplicación sea la <strong>aplicación de SMS por defecto</strong>, con todo lo que eso
+obliga a implementar. Y una aplicación que pide ser la predeterminada (de SMS, de teléfono, de
+navegador…) pide ese papel <strong>antes que ningún otro permiso</strong>, y ninguna pantalla pide permisos a la
+vez que ese diálogo. Se prueba quitando el papel y los permisos y abriendo la aplicación: solo debe
+salir el diálogo del papel.</p>
+
+<p><strong>Por qué.</strong> Google Play rechazó SMS Forwarder en septiembre de 2026 por esto, con el mismo código que
+había aprobado en agosto; y el primer arreglo seguía pidiendo un permiso a la vez que el papel.</p>
+
+<h3 id="52-la-version-de-android-objetivo-es-obligatoria" class="wp-block-heading has-medium-font-size has-text-color" style="color:#0f172a;margin-top:var(--wp--preset--spacing--40);font-weight:700;line-height:1.25">5.2 La versión de Android objetivo es obligatoria</h3>
+
+<p><strong>Qué dice.</strong> Ninguna aplicación se compila ni se sube con una versión de Android objetivo por debajo
+de la que exige Google Play en ese momento: hoy, <strong>Android 16</strong>, para aplicaciones nuevas y para
+cualquier actualización. Se fija en dos sitios del proyecto que tienen que coincidir, se comprueba en
+el manifiesto que genera la compilación (es lo que de verdad se sube) y, antes de cada publicación,
+se mira si Google ha subido la exigencia.</p>
+
+<p><strong>Por qué.</strong> Si se deja sin fijar, la versión depende de lo que tenga instalado el equipo que
+compila: dos aplicaciones se estaban compilando para una versión anterior sin que nadie lo supiera y
+se corrigieron en agosto de 2026. Mejor subirla <strong>antes</strong> de compilar que después del rechazo.</p>
+
+<h3 id="53-prueba-cerrada-primero" class="wp-block-heading has-medium-font-size has-text-color" style="color:#0f172a;margin-top:var(--wp--preset--spacing--40);font-weight:700;line-height:1.25">5.3 Prueba cerrada primero</h3>
+
+<p><strong>Qué dice.</strong> Hay una pista de prueba cerrada, con los mismos grupos de probadores para todas las
+aplicaciones.</p>
+
+<p><strong>Por qué.</strong> Lo que falla, falla primero ante unos pocos que saben que están probando.</p>
+
+<h3 id="54-video-de-demostracion-sin-cortes" class="wp-block-heading has-medium-font-size has-text-color" style="color:#0f172a;margin-top:var(--wp--preset--spacing--40);font-weight:700;line-height:1.25">5.4 Vídeo de demostración sin cortes</h3>
+
+<p><strong>Qué dice.</strong> Cuando Google pide vídeo, se graba sin cortes y enseñando el flujo completo que
+justifica los permisos.</p>
+
+<p><strong>Por qué.</strong> Es lo que el revisor necesita ver para aprobar un permiso sensible; un vídeo con cortes
+parece que esconde algo.</p>
+
+<h3 id="55-declaraciones-de-la-consola-que-bloquean-la-publicacion" class="wp-block-heading has-medium-font-size has-text-color" style="color:#0f172a;margin-top:var(--wp--preset--spacing--40);font-weight:700;line-height:1.25">5.5 Declaraciones de la consola que bloquean la publicación</h3>
+
+<p><strong>Qué dice.</strong> Algunos permisos dejan subir el paquete pero no dejan cerrar la publicación hasta que
+se rellena un formulario en la consola web: los <strong>servicios en primer plano</strong> (le pasa a Hiker, que
+graba rutas así, y le pasará a Music Player por la música en segundo plano), el <strong>permiso de leer
+SMS</strong> (lo que tiene bloqueado a SMS Forwarder) y las aplicaciones recién dadas de alta, que solo
+admiten versiones en borrador.</p>
+
+<p><strong>Por qué.</strong> No es un fallo del programa de publicación sino una norma de Google, y el mensaje lo dice
+tal cual; saberlo evita perder tiempo buscando un error que no existe.</p>
+
+<h3 id="56-verificacion-de-desarrollador" class="wp-block-heading has-medium-font-size has-text-color" style="color:#0f172a;margin-top:var(--wp--preset--spacing--40);font-weight:700;line-height:1.25">5.6 Verificación de desarrollador</h3>
+
+<p><strong>Qué dice.</strong> Para que una aplicación se pueda instalar en un Android certificado, su nombre de
+paquete tiene que estar registrado a nombre de un desarrollador con la identidad verificada. Las
+aplicaciones de Google Play quedan cubiertas al darlas de alta, pero se comprueba una vez en la
+consola que no hay avisos. Si algún día se reparten paquetes fuera de Play firmados con la clave
+propia, habrá que registrarla también.</p>
+
+<p><strong>Por qué.</strong> Un paquete sin registrar puede suponer la retirada de la tienda en todo el mundo, aunque
+el bloqueo de instalación aún no se aplique en España.</p>
+
+<h2 id="6-publicacion" class="wp-block-heading has-large-font-size has-text-color" style="color:#0f172a;margin-top:var(--wp--preset--spacing--50);font-weight:700;line-height:1.25">6. Publicación</h2>
+
+<p><strong>Qué dice.</strong> Orden fijo: subir la versión, compilar el paquete firmado, comprobar el número de
+versión real en el manifiesto generado, subirlo a las pistas de prueba, probar en un dispositivo real
+y solo entonces pasar a producción. Dos notas de la interfaz de programación de Google Play: una
+opción de revisión que unas aplicaciones exigen y otras prohíben (se prueba primero sin ella), y que
+actualizar la lista de probadores la <strong>sustituye</strong> entera, así que se lee la actual y se combina.</p>
+
+<p><strong>Por qué.</strong> Cada paso protege del siguiente: comprobar el número antes de subir evita un rechazo, y
+probar antes de producción evita que el fallo llegue a todos. Lo de los probadores se aprendió
+borrándolos sin querer.</p>
+
+<h2 id="7-interfaz" class="wp-block-heading has-large-font-size has-text-color" style="color:#0f172a;margin-top:var(--wp--preset--spacing--50);font-weight:700;line-height:1.25">7. Interfaz</h2>
+
+<h3 id="71-diseno-y-pantallas-comunes" class="wp-block-heading has-medium-font-size has-text-color" style="color:#0f172a;margin-top:var(--wp--preset--spacing--40);font-weight:700;line-height:1.25">7.1 Diseño y pantallas comunes</h3>
+
+<p><strong>Qué dice.</strong> El diseño índigo común, diálogos propios, botones con iconos planos (nunca emoji), una
+pantalla «Acerca de» igual en todas (logo, versión, contacto, idioma, licencia) y, en las que
+sincronizan, quién ha entrado y con qué cuenta, con opción de salir.</p>
+
+<p><strong>Por qué.</strong> Quien usa una aplicación del catálogo ya sabe moverse por las demás; y saber con qué
+cuenta se está sincronizando es parte de la privacidad.</p>
+
+<h3 id="72-el-boton-de-atras" class="wp-block-heading has-medium-font-size has-text-color" style="color:#0f172a;margin-top:var(--wp--preset--spacing--40);font-weight:700;line-height:1.25">7.2 El botón de atrás</h3>
+
+<p><strong>Qué dice.</strong> En cualquier pantalla que no sea la de inicio, atrás <strong>vuelve a la anterior</strong>, igual que
+la flecha de arriba; si hay algo abierto encima (un menú, un diálogo, un buscador), primero se cierra
+eso. En la pantalla de inicio, la aplicación <strong>se oculta</strong> sin cerrarse ni preguntar, y al volver
+sigue donde estaba. Se prueba en el móvil, con el gesto y con el botón, en cada pantalla.</p>
+
+<p><strong>Por qué.</strong> Es lo que espera cualquiera que usa Android. Y hay dos trampas documentadas: si la
+actividad principal intercepta el botón, las pantallas no se enteran; y <strong>Android 16 activa el «atrás
+predictivo»</strong>, con el que el botón deja de llegar a las pantallas y la aplicación se cierra desde
+cualquier sitio. Hasta que .NET MAUI lo soporte, se desactiva en el manifiesto. En el emulador con
+una versión anterior de Android no se ve: solo en un móvil real con Android 16 (se descubrió con File
+Manager en septiembre de 2026).</p>
+
+<h2 id="8-task-manager-cuenta-servidor-y-cifrado" class="wp-block-heading has-large-font-size has-text-color" style="color:#0f172a;margin-top:var(--wp--preset--spacing--50);font-weight:700;line-height:1.25">8. Task Manager: cuenta, servidor y cifrado</h2>
+
+<p>Es la aplicación con cuenta y servidor, y su descripción tiene que coincidir palabra por palabra con
+la política de privacidad y con la ficha.</p>
+
+<ul class="wp-block-list">
+<li><strong>Entrada con una cuenta que el usuario ya tiene</strong>, de Google o de Microsoft, con el protocolo
+  estándar de inicio de sesión (OAuth 2.0 con PKCE) contra el propio proveedor. Nunca vemos la
+  contraseña. La entrada con Microsoft está hecha pero oculta hasta probarla con una cuenta real.</li>
+<li><strong>Servidor:</strong> un servicio de base de datos gestionado, alojado en Reino Unido. Es el único tercero,
+  y solo como alojamiento.</li>
+<li><strong>Qué se guarda:</strong> tareas, listas, pasos, adjuntos, perfiles, grupos y sus miembros, y apuntes de
+  lo borrado (solo identificador y fecha, sin texto).</li>
+<li><strong>Qué va cifrado:</strong> títulos, notas, etiquetas, nombres de lista y de paso, nombre y dirección de los
+  adjuntos, nombre de grupo, apodos, y del perfil el nombre, el correo y la foto. Con AES-256-GCM.</li>
+<li><strong>Qué no va cifrado, a propósito:</strong> fechas, marcas, números, identificadores, el código para unirse
+  a un grupo (es por donde se busca) y el hash de su clave (hay que compararlo).</li>
+<li><strong>La autorización se comprueba en el servidor</strong>, fila a fila. Que la aplicación no pida algo no
+  protege nada.</li>
+<li><strong>Sin servidor sigue funcionando</strong>: los datos están también en el dispositivo; lo que se pierde es
+  sincronizar.</li>
+<li><strong>El aviso entre dispositivos no es inmediato</strong>, y es una decisión: una pasada cada 30 minutos más
+  el botón de refrescar.</li>
+</ul>
+
+<p><strong>Por qué.</strong> Es la aplicación del catálogo que más datos personales toca, así que su tratamiento se
+escribe con detalle para poder consultarlo sin abrir el código. Un aviso instantáneo exigiría el
+servicio de avisos de Google y su proyecto asociado, y para una lista de tareas no compensa.</p>
+
+<h2 id="9-pruebas-en-dispositivo" class="wp-block-heading has-large-font-size has-text-color" style="color:#0f172a;margin-top:var(--wp--preset--spacing--50);font-weight:700;line-height:1.25">9. Pruebas en dispositivo</h2>
+
+<p><strong>Qué dice.</strong> Hay un móvil y una tableta de referencia, y el material de pruebas de cada aplicación se
+guarda ordenado. Dos trampas apuntadas: algunos fabricantes, al instalar por cable, sacan un diálogo
+de confirmación con una cuenta atrás de seis segundos que se deniega solo, y el error que queda
+parece de permisos; y un paquete firmado en local no se puede instalar encima de la misma aplicación
+instalada desde Google Play, porque la firma es distinta: hay que desinstalar primero.</p>
+
+<p><strong>Por qué.</strong> Son errores que despistan y que hacen perder mucho tiempo la primera vez; apuntados, la
+segunda son diez segundos.</p>
+
+<h2 id="10-family-together-usuario-anonimo-servidor-avisos-y-ubicacion" class="wp-block-heading has-large-font-size has-text-color" style="color:#0f172a;margin-top:var(--wp--preset--spacing--50);font-weight:700;line-height:1.25">10. Family Together: usuario anónimo, servidor, avisos y ubicación</h2>
+
+<p>Family Together comparte la ubicación dentro de un grupo familiar cerrado. Sus reglas propias:</p>
+
+<ul class="wp-block-list">
+<li><strong>Usuario anónimo</strong> creado al abrirla por primera vez: solo un nombre visible y, si se quiere, una
+  imagen. Vincular Google o Microsoft es opcional y sirve para recuperar el usuario en un móvil
+  nuevo; esa vinculación se verifica en el servidor, al recuperar se pasan los grupos al móvil nuevo,
+  nunca se fusionan dos usuarios, y una cuenta ya vinculada a otro se rechaza con aviso.</li>
+<li><strong>Servidor:</strong> de momento, un servicio de base de datos gestionado; el destino es una instalación
+  propia del mismo servidor (de código abierto) en la nube, en la Unión Europea. <strong>Sin copia de
+  seguridad diaria fuera del servidor no se pasa a producción</strong>, solo se abre el puerto seguro de la
+  web, el acceso de administración va con clave y los paneles no son públicos. Sin servidor la
+  aplicación no funciona, porque su razón de ser es compartir.</li>
+<li><strong>Permisos por fila en todas las tablas</strong>: cada persona solo ve lo de sus grupos, y unirse, aprobar,
+  expulsar o recuperar solo se hace con funciones del servidor que comprueban el papel de quien lo
+  pide. Una prueba con un usuario de otro grupo no debe devolver nada.</li>
+<li><strong>Cifrado:</strong> nombre del grupo, nombres e imágenes de los miembros, nombres de las zonas <strong>y también
+  las coordenadas</strong>, con la clave del grupo. Esa clave <strong>nunca pasa en claro por el servidor</strong>: va de
+  móvil a móvil cifrada con un intercambio de claves (ECDH). Sin cifrar solo quedan fechas,
+  identificadores, batería y el código de invitación.</li>
+<li><strong>Una posición por cada grupo</strong> en el que se comparte, cifrada con la clave de ese grupo, y se
+  guarda <strong>30 días</strong>; después se borra sola.</li>
+<li><strong>Avisos al momento</strong> con el servicio de avisos de Google, solo mensajería: los mensajes llevan solo
+  identificadores y el texto se monta en el móvil; los destinatarios los calcula el servidor al
+  enviar; cada aviso tiene un identificador para descartar repetidos, y hay canales separados para
+  SOS, zonas y solicitudes.</li>
+<li><strong>El mapa</strong> usa una biblioteca de mapas libre <strong>empaquetada dentro de la aplicación</strong> y un estilo de
+  mapa abierto que no pide clave. Nada de Google Maps ni de los servicios de Google Play para el mapa.</li>
+<li><strong>Ubicación en segundo plano</strong> con un servicio en primer plano: se envía cuando uno se mueve más de
+  25 metros, se descartan las lecturas imprecisas, y sin conexión se guardan en cola con su hora
+  original. Hay una guía para que el ahorro de batería del fabricante no la corte.</li>
+<li><strong>Solo el último móvil que ha entrado comparte ubicación</strong>: al recuperar el usuario en otro, el
+  anterior deja de enviar.</li>
+<li><strong>Permisos</strong> (ubicación precisa y en segundo plano, servicio en primer plano, notificaciones y
+  cámara para leer el código QR), todos declarados en la consola, con vídeo y explicados en la ficha.</li>
+</ul>
+
+<p><strong>Por qué.</strong> La ubicación de una familia es de los datos más delicados que existen. Por eso se cifran
+hasta las coordenadas (la base de datos no las necesita: las zonas se detectan en el móvil), la
+clave del grupo nunca la ve el servidor, y guardar una posición por grupo hace que la pausa se cumpla
+en origen: lo registrado mientras se estaba en pausa para un grupo nunca le llega. Los mensajes de
+aviso no llevan texto para que el servicio que los entrega no sepa qué dicen, y el mapa va dentro de
+la aplicación para no depender de cargarlo de fuera.</p>
+</div>
+
+<footer class="wp-block-group alignfull soc-sec has-text-color has-background has-link-color" style="color:#cbd5e1;background-color:#0f172a;padding-top:var(--wp--preset--spacing--70);padding-bottom:var(--wp--preset--spacing--50);margin-top:0;margin-bottom:0">
+<div class="wp-block-columns"><div class="wp-block-column" style="flex-basis:40%"><p class="has-text-color" style="color:#ffffff;font-size:1.4rem"><strong>sOCratic</strong></p>
+<p>Aplicaciones de uso libre y sin anuncios para Android y Windows, hechas para aprender y con el código fuente abierto. Un experimento de programación con IA guiada por especificaciones.</p>
+</div>
+<div class="wp-block-column" style="flex-basis:20%"><p class="has-text-color" style="color:#94a3b8;font-size:0.8rem;font-weight:700;letter-spacing:0.1em;text-transform:uppercase">Sitio</p>
+<p style="margin-top:6px"><a href="../apps/index.html">Aplicaciones</a></p>
+<p style="margin-top:6px"><a href="../soporte/index.html">Soporte</a></p>
+<p style="margin-top:6px"><a href="../constitucion/index.html">Constitución</a></p>
+<p style="margin-top:6px"><a href="../en/index.html">English</a></p>
+</div>
+<div class="wp-block-column" style="flex-basis:20%"><p class="has-text-color" style="color:#94a3b8;font-size:0.8rem;font-weight:700;letter-spacing:0.1em;text-transform:uppercase">Legal</p>
+<p style="margin-top:6px"><a href="../aviso-legal.html">Aviso legal</a></p>
+<p style="margin-top:6px"><a href="../privacidad.html">Privacidad</a></p>
+<p style="margin-top:6px"><a href="../cookies.html">Cookies</a></p>
+</div>
+<div class="wp-block-column" style="flex-basis:20%"><p class="has-text-color" style="color:#94a3b8;font-size:0.8rem;font-weight:700;letter-spacing:0.1em;text-transform:uppercase">Contacto</p>
+<p style="margin-top:6px"><a href="https://github.com/donki">GitHub</a></p>
+</div>
+</div>
+
+<hr class="wp-block-separator has-text-color has-alpha-channel-opacity has-background" style="background-color:#1e293b;color:#1e293b"/>
+
+<p class="has-text-color" style="color:#94a3b8;font-size:0.875rem">© 2026 sOCratic · Código abierto con licencia MIT</p>
+
+<div class="wp-block-jetpack-cookie-consent alignwide has-text-color has-background has-link-color" style="border-radius:14px;color:#ffffff;background-color:#0f172a;padding-top:1.25em;padding-right:1.5em;padding-bottom:1.25em;padding-left:1.5em" role="dialog" aria-modal="true"><p>Esta web está alojada en WordPress.com, que usa cookies para sus estadísticas de visitas. Puedes aceptarlas o ver cómo rechazarlas en la <a href="../cookies.html">política de cookies</a>.</p><div class="wp-block-button"><a class="wp-block-button__link has-text-color has-background wp-element-button" href="#" style="border-radius:10px;color:#4338ca;background-color:#ffffff;padding-top:12px;padding-bottom:12px;padding-left:22px;padding-right:22px">Aceptar</a></div>
+<span>365</span></div>
+</footer>
+
+</body>
+</html>

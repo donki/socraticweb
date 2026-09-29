@@ -7,7 +7,7 @@
   - Google Play (no publicada): la app todavía no está creada en Play Console; la URL prevista sería https://play.google.com/store/apps/details?id=com.socratic.credentials, que hoy da 404 (fuentes: D:\sOCProjects\09-PENDIENTE-Credentials.md punto 8, D:\sOCProjects\03-TAREAS-Credentials.md punto 1, README.md; comprobado el 2026-09-25).
   - Microsoft Store (no publicada): ficha preparada con el nombre «sOC Credentials», pero sin identificador de producto; el README dice «en cuanto Partner Center dé el enlace» (fuentes: README.md, store/microsoft/ficha-es-ES.md). Ojo: la versión de la Store no puede usar las extensiones de navegador; para eso hace falta la versión EXE de GitHub (README.md).
   - Edge Add-ons (publicada el 2026-09-24): https://microsoftedge.microsoft.com/addons/detail/soc-credentials/pcilggpjodagihemfbimfbnnmlbfhfbk (fuentes: 09-PENDIENTE-Credentials.md punto 7, CHANGELOG.md 2026.09.24.04, README.md; la URL responde 200 el 2026-09-25).
-  - Chrome Web Store (no publicada): ficha preparada, falta la cuenta de desarrollador; sin ID (fuentes: 09-PENDIENTE-Credentials.md punto 7, store/chrome/ficha-es-ES.md).
+  - Chrome Web Store: no se publica (decisión de Josep del 2026-09-29, cuesta 5 $); en Chrome la extensión se carga desempaquetada con la guía de la app.
   - Otros navegadores (publicada el 2026-09-27): https://addons.mozilla.org/firefox/addon/soc-credentials/
 - descarga_alternativa: https://github.com/donki/Credentials/releases (APK, EXE/ZIP y MSIX de cada versión; última: v2026.09.25.03)
 

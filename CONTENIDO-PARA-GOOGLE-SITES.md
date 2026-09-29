@@ -69,7 +69,7 @@ Contacto: jsoladelarosa@gmail.com
 
 **Texto:**
 
-Última actualización: 1 de septiembre de 2026.
+Última actualización: 29 de septiembre de 2026.
 
 Las aplicaciones de sOCratic respetan la privacidad de sus usuarios. Esta política de privacidad explica cómo se gestionan los datos al utilizarlas y se aplica a todas las aplicaciones publicadas por sOCratic en Google Play.
 
@@ -87,6 +87,14 @@ Cada aplicación accede únicamente a los datos que necesita para la función qu
 - El contenido que escribes **se cifra en tu dispositivo antes de enviarse** y se guarda cifrado: en el servidor no es legible. Sin cifrar quedan solo los datos que el servidor necesita para funcionar (fechas, marcas de estado e identificadores), que no revelan lo que has escrito.
 - Se guarda únicamente lo que esa función necesita, y solo tú —o las personas con quienes compartas algo expresamente— podéis acceder a ello.
 - Sigue sin haber publicidad, perfiles, analítica ni rastreadores.
+
+**Una aplicación, la de localización familiar (Family Together), comparte tu ubicación con las personas de un grupo cerrado** que creas tú o al que te unes con la aprobación de un administrador del grupo. Es su función y lo explica al abrirla por primera vez. En ella se cumple lo siguiente:
+
+- No hay cuenta ni contraseña: tu usuario es un identificador anónimo que se crea en el móvil. Si quieres, puedes vincular una cuenta de Google o de Microsoft solo para recuperar tu usuario en otro móvil; se guarda únicamente el identificador de esa cuenta, nunca la contraseña.
+- Se envían tu posición (latitud, longitud y precisión), la hora y el nivel de batería cada vez que te mueves unos 25 metros, también con la aplicación cerrada; y además tu nombre visible, tu avatar si lo pones, las zonas del grupo, los avisos que activas y los SOS que envías.
+- Las coordenadas, los nombres (el tuyo, los de los grupos y los de las zonas) y el avatar **se cifran de extremo a extremo** en el móvil con una clave que solo tienen los móviles del grupo: el servidor guarda datos que no puede leer. En claro quedan solo fechas, identificadores y el nivel de batería.
+- Cada grupo es cerrado: solo sus miembros ven sus datos. Puedes pausar la compartición en cada grupo, abandonarlo y **borrar tu historial** cuando quieras desde la aplicación; el historial de posiciones se borra solo a los 30 días.
+- El dibujo de los recorridos ajustado a las calles se calcula en el móvil: al servicio de mapas solo se le piden zonas fijas del mapa, nunca el recorrido.
 
 Cada aplicación solicita los permisos mínimos necesarios para su función. Antes de conceder cualquier permiso, Android te informa de cuál es y tú decides si lo autorizas; puedes revocarlo en cualquier momento desde los ajustes del sistema. Las acciones que afectan al dispositivo, como instalar o desinstalar una aplicación, siempre las confirmas tú en el diálogo del sistema.
 
@@ -112,6 +120,14 @@ En las aplicaciones que sincronizan, el proveedor que aloja la base de datos act
 Algunas aplicaciones consultan al arrancar un fichero público del repositorio del proyecto en GitHub para avisarte de si existe una versión más reciente. Esa consulta no envía ningún dato tuyo: solo descarga un fichero público con el número de versión, y si no hay red la aplicación funciona igual.
 
 La aplicación de rutas descarga las teselas del mapa de un proveedor de mapas público. Ese proveedor recibe, como en cualquier petición web, la dirección IP del dispositivo y la zona del mapa solicitada, pero no recibe tus rutas ni ningún dato personal.
+
+En la aplicación de localización familiar intervienen estos terceros:
+
+- **Supabase** aloja el servidor y la base de datos, en la Unión Europea, y guarda lo descrito en el apartado 1 con el contenido cifrado.
+- **Google (Firebase Cloud Messaging)** transporta los avisos (SOS, zonas y solicitudes para unirse). Recibe un identificador de avisos del dispositivo; los mensajes llevan solo identificadores, nunca texto legible ni tu posición. No se usa ningún otro servicio de Google ni de Firebase.
+- **OpenFreeMap** sirve las teselas del mapa: recibe la dirección IP y la zona del mapa que se mira, no tu posición ni tus datos.
+- **OpenStreetMap, a través de Overpass** (overpass-api.de, de FOSSGIS e. V., Alemania, y overpass.kumi.systems, de Kumi Systems, Austria): para ajustar a las calles los recorridos del historial, el móvil pide el mapa de calles de cuadrados fijos de unos 2 km. Reciben la dirección IP y esos cuadrados, nunca el recorrido, las horas ni quién es la persona. Se puede apagar en los ajustes de la aplicación.
+- **Google o Microsoft**, solo si vinculas tu cuenta, comprueban quién eres al vincularla o al recuperarla.
 
 En las aplicaciones que sincronizan intervienen además dos servicios: el proveedor de identidad con el que eliges entrar, que es quien comprueba quién eres, y el proveedor que aloja la base de datos. La propia aplicación indica cuáles son.
 
@@ -139,4 +155,4 @@ Cualquier cambio se publicará en esta misma página, actualizando la fecha de �
 
 Si tienes preguntas sobre esta política de privacidad, puedes contactar con el desarrollador en: jsoladelarosa@gmail.com
 
-sOCratic — Política de privacidad actualizada el 1 de septiembre de 2026.
+sOCratic — Política de privacidad actualizada el 29 de septiembre de 2026.

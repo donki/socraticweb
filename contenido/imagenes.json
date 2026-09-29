@@ -7,6 +7,10 @@
                  "Mobile/GooglePlayConsole/Credentials/capturas/es-ES/3-ajustes.png",
                  "Mobile/GooglePlayConsole/Credentials/capturas/es-ES/4-desbloqueo.png"]
   },
+  "familytogether": {
+    "icono": "Mobile/GooglePlayConsole/FamilyTogether/icon_512.png",
+    "capturas": ["Mobile/GooglePlayConsole/FamilyTogether/capturas/es-ES/01-mapa.png"]
+  },
   "filemanager": {
     "icono": "Mobile/GooglePlayConsole/FileManager/icon_512.png",
     "capturas": ["Mobile/GooglePlayConsole/FileManager/capturas/es-ES/phone/01.png",

@@ -33,7 +33,7 @@ Entras con una cuenta que ya tienes, de Google o de Microsoft, y lo que escribes
 
 ### Primera puesta en marcha
 
-1. Instala la aplicación (Android desde Google Play o el APK de GitHub; Windows con el EXE o el MSIX de GitHub).
+1. Instala la aplicación (Android desde Google Play o el APK de GitHub; Windows desde la [Microsoft Store](https://apps.microsoft.com/detail/9PHJK2391727) o con el EXE o el MSIX de GitHub).
 2. Se abre la pantalla **Tu cuenta** con tres opciones:
    - **Continuar con Google** / **Continuar con Microsoft** (en Windows: **Entrar con Google** / **Entrar con Microsoft**): se abre la página de tu proveedor, inicias sesión allí y vuelves a la aplicación. El nombre de tu cuenta será tu nombre en la aplicación. La cuenta es lo que permite que el móvil y el PC compartan las mismas listas y lo que hace posibles los grupos.
    - **Seguir sin cuenta**: las tareas se quedan solo en ese dispositivo, sin sincronizar y sin grupos. Si desinstalas la aplicación, se pierden. Puedes entrar con una cuenta más adelante.
@@ -109,7 +109,7 @@ Tres columnas: **Pendientes**, **En curso** y **Hechas**, con los mismos filtros
 
 ### Acerca de (Android y Windows)
 
-Versión, **Contacto** (**Escribir al autor**), **También disponible en** (enlace a la versión de Windows desde Android y a Google Play y a GitHub desde Windows), **Idioma** (**Español** / **English**; se aplica al momento), **Privacidad**, **Licencia** y **Aviso legal**.
+Versión, **Contacto** (**Escribir al autor**), **También disponible en** (enlace a la versión de Windows en la Microsoft Store desde Android, y a Google Play y a GitHub desde Windows), **Idioma** (**Español** / **English**; se aplica al momento), **Privacidad**, **Licencia** y **Aviso legal**.
 
 ### Windows: bandeja y panel rápido
 
@@ -145,6 +145,8 @@ Versión, **Contacto** (**Escribir al autor**), **También disponible en** (enla
 **He invitado a alguien y dice que la invitación no vale.** Cada **Invitación nueva** cambia la clave y anula la anterior. Envía la última.
 
 **Quiero cambiar de cuenta.** Ajustes › **Cerrar sesión** y entra con la otra. No se pierde nada: al volver a la anterior, sus listas siguen ahí.
+
+**La versión de la Microsoft Store no tiene algo que sale en esta guía.** La Store recibe cada versión unos días después que GitHub, cuando pasa su revisión, así que a veces va por detrás. Si te falta una opción, espera a que la Store se actualice o instala la última de https://github.com/donki/TaskManager/releases.
 
 ## Privacidad
 

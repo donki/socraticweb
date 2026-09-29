@@ -5,7 +5,7 @@
 - github: https://github.com/donki/Credentials
 - tiendas:
   - Google Play (no publicada): la app todavía no está creada en Play Console; la URL prevista sería https://play.google.com/store/apps/details?id=com.socratic.credentials, que hoy da 404 (fuentes: D:\sOCProjects\09-PENDIENTE-Credentials.md punto 8, D:\sOCProjects\03-TAREAS-Credentials.md punto 1, README.md; comprobado el 2026-09-25).
-  - Microsoft Store (no publicada): ficha preparada con el nombre «sOC Credentials», pero sin identificador de producto; el README dice «en cuanto Partner Center dé el enlace» (fuentes: README.md, store/microsoft/ficha-es-ES.md). Ojo: la versión de la Store no puede usar las extensiones de navegador; para eso hace falta la versión EXE de GitHub (README.md).
+  - Microsoft Store (publicada): https://apps.microsoft.com/detail/9NDVHX1H2739 (Josep, 2026-09-29: «En Microsoft Store», 240 mercados, gratis; ficha pública comprobada). Ojo: la versión de la Store no puede usar las extensiones de navegador; para eso hace falta la versión EXE de GitHub (README.md).
   - Edge Add-ons (publicada el 2026-09-24): https://microsoftedge.microsoft.com/addons/detail/soc-credentials/pcilggpjodagihemfbimfbnnmlbfhfbk (fuentes: 09-PENDIENTE-Credentials.md punto 7, CHANGELOG.md 2026.09.24.04, README.md; la URL responde 200 el 2026-09-25).
   - Chrome Web Store: no se publica (decisión de Josep del 2026-09-29, cuesta 5 $); en Chrome la extensión se carga desempaquetada con la guía de la app.
   - Otros navegadores (publicada el 2026-09-27): https://addons.mozilla.org/firefox/addon/soc-credentials/
@@ -36,7 +36,7 @@ Puedes traer todo lo que ya tenías: importa desde los navegadores, desde otros 
 
 ### Primera puesta en marcha
 
-1. Instala la aplicación (Android: APK de GitHub; Windows: EXE de GitHub, recomendado si quieres las extensiones del navegador).
+1. Instala la aplicación. Android: el APK de las releases de GitHub. Windows: desde la [Microsoft Store](https://apps.microsoft.com/detail/9NDVHX1H2739), que la mantiene al día sola, o el EXE de las releases de GitHub. **Si quieres las extensiones del navegador, usa el EXE**: la versión de la Microsoft Store no puede conectar con ellas (Windows no le deja registrar el puente con el navegador).
 2. Pantalla **Crea tu bóveda**: escribe una **Contraseña maestra** (al menos 8 caracteres) y **Repite la contraseña maestra**, y pulsa **Crear**. Es la única llave de todo: nadie puede recuperarla, tampoco nosotros. Apúntala en un sitio seguro.
 3. Tras el primer desbloqueo se abre sola la **Guía de configuración**. Cada paso tiene un botón que lo hace por ti (o te lleva a la pantalla del sistema) y se marca como **Hecho** solo; los opcionales van marcados como **Opcional**. Botones **Anterior**, **Siguiente** y **Terminar**. Puedes volver a ella desde el menú.
    - En Windows: **Siempre a mano** (arrancar con Windows y quedarse junto al reloj), **Contraseñas en las aplicaciones** (activar el relleno de escritorio), el paso de la **extensión** de cada navegador instalado, **Apaga el gestor del navegador** y **Tus contraseñas en todos tus dispositivos** (nube).
@@ -127,13 +127,15 @@ Versión, descripción, **Contacto**, **Privacidad**, **Licencia**, **Aviso lega
 
 **En Edge o Chrome del móvil me sigue ofreciendo Google en vez de sOC Credentials.** En Android 14 y posteriores los navegadores obedecen al **Servicio preferido de contraseñas**, no al de autocompletar. En Ajustes › Autocompletar revisa los tres sitios: el servicio de autocompletar, el servicio preferido y los ajustes del propio navegador.
 
-**La extensión dice que no puede hablar con sOC Credentials.** Abre la aplicación una vez: ella sola registra el puente con el navegador. Si acabas de actualizar, con abrirla basta. Recuerda que la versión de la Microsoft Store no admite las extensiones; usa la versión EXE.
+**La extensión dice que no puede hablar con sOC Credentials.** Abre la aplicación una vez: ella sola registra el puente con el navegador. Si acabas de actualizar, con abrirla basta. Recuerda que la versión de la Microsoft Store no admite las extensiones: para usarlas, desinstala la de la Store e instala el EXE de https://github.com/donki/Credentials/releases (si tu bóveda está en la nube, no pierdes nada; si no, expórtala antes).
 
 **Me sale «La copia de la nube se creó con otra contraseña maestra».** Escribe la contraseña maestra con la que se creó esa copia para mezclarla; tu contraseña actual se mantiene.
 
 **El navegador me ofrece guardar la contraseña dos veces.** Apaga su gestor propio desde el icono de la extensión (sección **Navegador**) o desde los ajustes del navegador.
 
 **No puedo escanear el QR.** Sin permiso de cámara no se puede escanear; pega el enlace otpauth:// o la clave secreta en su lugar.
+
+**La versión de la Microsoft Store no tiene algo que sale en esta guía.** La Store recibe cada versión unos días después que GitHub, cuando pasa su revisión, así que a veces va por detrás. Si te falta una opción, espera a que la Store se actualice o instala la última de https://github.com/donki/Credentials/releases.
 
 ## Privacidad
 

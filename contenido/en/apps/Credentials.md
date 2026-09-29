@@ -5,7 +5,7 @@
 - github: https://github.com/donki/Credentials
 - tiendas:
   - Google Play (no publicada): la app todavía no está creada en Play Console; la URL prevista sería https://play.google.com/store/apps/details?id=com.socratic.credentials, que hoy da 404 (fuentes: D:\sOCProjects\09-PENDIENTE-Credentials.md punto 8, D:\sOCProjects\03-TAREAS-Credentials.md punto 1, README.md; comprobado el 2026-09-25).
-  - Microsoft Store (no publicada): ficha preparada con el nombre «sOC Credentials», pero sin identificador de producto; el README dice «en cuanto Partner Center dé el enlace» (fuentes: README.md, store/microsoft/ficha-es-ES.md). Ojo: la versión de la Store no puede usar las extensiones de navegador; para eso hace falta la versión EXE de GitHub (README.md).
+  - Microsoft Store (publicada): https://apps.microsoft.com/detail/9NDVHX1H2739 (Josep, 2026-09-29: «En Microsoft Store», 240 mercados, gratis; ficha pública comprobada). Ojo: la versión de la Store no puede usar las extensiones de navegador; para eso hace falta la versión EXE de GitHub (README.md).
   - Edge Add-ons (publicada el 2026-09-24): https://microsoftedge.microsoft.com/addons/detail/soc-credentials/pcilggpjodagihemfbimfbnnmlbfhfbk (fuentes: 09-PENDIENTE-Credentials.md punto 7, CHANGELOG.md 2026.09.24.04, README.md; la URL responde 200 el 2026-09-25).
   - Chrome Web Store: no se publica (decisión de Josep del 2026-09-29, cuesta 5 $); en Chrome la extensión se carga desempaquetada con la guía de la app.
   - Otros navegadores (publicada el 2026-09-27): https://addons.mozilla.org/firefox/addon/soc-credentials/
@@ -36,7 +36,7 @@ You can bring everything you already had: import from browsers, from other passw
 
 ### Getting started
 
-1. Install the app (Android: APK from GitHub; Windows: EXE from GitHub, recommended if you want the browser extensions).
+1. Install the app. Android: the APK from the GitHub releases. Windows: from the [Microsoft Store](https://apps.microsoft.com/detail/9NDVHX1H2739), which keeps it up to date for you, or the EXE from the GitHub releases. **If you want the browser extensions, use the EXE**: the Microsoft Store version can't connect to them (Windows doesn't let it register the bridge with the browser).
 2. **Create your vault** screen: type a **Master password** (at least 8 characters) and **Repeat the master password**, then tap **Create**. It is the only key to everything: nobody can recover it, not even us. Write it down somewhere safe.
 3. After the first unlock, the **Setup guide** opens by itself. Each step has a button that does it for you (or takes you to the system screen) and is marked **Done** automatically; optional steps are marked **Optional**. Buttons **Back**, **Next** and **Finish**. You can come back to it from the menu.
    - On Windows: **Always at hand** (start with Windows and stay next to the clock), **Passwords in apps** (turn on desktop autofill), the **extension** step for each installed browser, **Turn off the browser's manager** and **Your passwords on all your devices** (cloud).
@@ -127,13 +127,15 @@ Version, description, **Contact**, **Privacy**, **License**, **Legal Notice** an
 
 **Edge or Chrome on my phone still offers Google instead of sOC Credentials.** On Android 14 and later, browsers follow the **Preferred password service**, not the autofill one. In Settings › Autofill, check all three places: the autofill service, the preferred service and the browser's own settings.
 
-**The extension says it can't talk to sOC Credentials.** Open the app once: it registers the bridge with the browser by itself. If you have just updated, opening it is enough. Remember that the Microsoft Store version doesn't support the extensions; use the EXE version.
+**The extension says it can't talk to sOC Credentials.** Open the app once: it registers the bridge with the browser by itself. If you have just updated, opening it is enough. Remember that the Microsoft Store version doesn't support the extensions: to use them, uninstall the Store version and install the EXE from https://github.com/donki/Credentials/releases (if your vault is in the cloud you lose nothing; if not, export it first).
 
 **I get "The copy in the cloud was created with a different master password".** Type the master password that copy was created with to merge it; your current password is kept.
 
 **The browser offers to save the password twice.** Turn off its own manager from the extension icon (**Browser** section) or from the browser's settings.
 
 **I can't scan the QR code.** Without camera permission it can't be scanned; paste the otpauth:// link or the secret key instead.
+
+**The Microsoft Store version is missing something shown in this guide.** The Store gets each version a few days after GitHub, once it passes review, so it's sometimes behind. If an option is missing, wait for the Store to update or install the latest one from https://github.com/donki/Credentials/releases.
 
 ## Privacy
 

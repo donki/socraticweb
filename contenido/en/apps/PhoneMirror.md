@@ -4,7 +4,7 @@
 - lema: Your Android phone's screen on Windows, controlled with your mouse and keyboard.
 - github: https://github.com/donki/PhoneMirror
 - tiendas:
-  - Microsoft Store (en revisión): https://apps.microsoft.com/detail/9N0S24Z4DLS1 — identificador de producto 9N0S24Z4DLS1 (fuente: nota del proyecto sobre el rechazo del 2026-09-15). Rechazada el 2026-09-15 y reenviada el 2026-09-22 a la espera de certificación (fuente: D:\sOCProjects\TAREAS.md, «Josep lo reenvió a la Store el 2026-09-22 (queda esperar la certificación)»). Comprobado el 2026-09-25: el catálogo público de la Store todavía responde «producto no encontrado» para ese identificador, así que el enlace aún no funciona. El README.md del repositorio enlaza de momento a la búsqueda por nombre.
+  - Microsoft Store (publicada): https://apps.microsoft.com/detail/9N0S24Z4DLS1 (Josep, 2026-09-29: «En Microsoft Store», 240 mercados, gratis; ficha pública comprobada)
   - Google Play: no aplica (solo Windows).
 - descarga_alternativa: https://github.com/donki/PhoneMirror/releases (última: v2026.9.21.0; ejecutable y paquete MSIX)
 
@@ -36,7 +36,7 @@ Everything goes through the cable (or your local network) between the PC and the
 1. Download the latest version from https://github.com/donki/PhoneMirror/releases. You can choose:
    - The `sOCPhoneMirror.exe` executable: that alone is all you need, no installation required.
    - The `.msix` package, which installs like any other Windows app.
-2. Once it's published, you'll also be able to install it from the Microsoft Store.
+2. You can also install it from the [Microsoft Store](https://apps.microsoft.com/detail/9N0S24Z4DLS1), which keeps it up to date for you.
 
 The tool it uses to communicate with Android (adb) is already included: the first time you open the app, it sets it up on its own. With the standalone executable, it also becomes available to new Windows consoles ("adb added to your PATH…").
 
@@ -162,6 +162,9 @@ That's normal: the app doesn't stream audio. The volume and mute buttons control
 
 **I dragged a file and I don't know where it went.**
 APKs get installed; any other file is copied to the phone's Download folder. The bottom bar confirms "… copied to Download".
+
+**The Microsoft Store version is missing something shown in this guide.**
+The Store gets each version a few days after GitHub, once it passes review, so it's sometimes behind. If an option is missing, wait for the Store to update or install the latest one from https://github.com/donki/PhoneMirror/releases.
 
 ## Privacy
 

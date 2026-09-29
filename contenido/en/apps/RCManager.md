@@ -278,6 +278,9 @@ In Settings › Encryption passphrase you have to type exactly the same passphra
 **I imported from another connection manager and it asks me for the passwords.**
 That is expected: passwords in .rdm and .rdp files are encrypted for the user who saved them and cannot be imported. You are asked for them when connecting, and you can tick "Remember it on this PC (encrypted)".
 
+**The Microsoft Store version is missing something shown in this guide.**
+The Store gets each version a few days after GitHub, once it passes review, so it's sometimes behind. If an option is missing, wait for the Store to update or install the latest one from https://github.com/donki/RCManager/releases.
+
 ## Privacy
 
 Connections are stored in your Windows user profile with the passwords encrypted for your account, and sessions go straight from your PC to your servers. Only if you choose Google Drive or OneDrive is the connections file uploaded to the app's private folder in your own account, encrypted with a passphrase that never leaves your PC. There is no server of our own, no account, no ads, no trackers and no analytics.

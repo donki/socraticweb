@@ -33,7 +33,7 @@ You sign in with an account you already have, Google or Microsoft, and what you 
 
 ### Getting started
 
-1. Install the app (Android from Google Play or the APK on GitHub; Windows with the EXE or the MSIX on GitHub).
+1. Install the app (Android from Google Play or the APK on GitHub; Windows from the [Microsoft Store](https://apps.microsoft.com/detail/9PHJK2391727) or with the EXE or the MSIX on GitHub).
 2. The **Your account** screen opens with three options:
    - **Continue with Google** / **Continue with Microsoft** (on Windows: **Sign in with Google** / **Sign in with Microsoft**): your provider's page opens, you sign in there and come back to the app. Your account name becomes your name in the app. The account is what lets your phone and your PC share the same lists, and it's what makes groups possible.
    - **Continue without an account**: tasks stay on that device only, with no syncing and no groups. If you uninstall the app, they're lost. You can sign in with an account later.
@@ -109,7 +109,7 @@ Three columns: **To do**, **In progress** and **Done**, with the same filters an
 
 ### About (Android and Windows)
 
-Version, **Contact** (**Write to the author**), **Also available on** (a link to the Windows version from Android, and to Google Play and GitHub from Windows), **Language** (**Español** / **English**; applies right away), **Privacy**, **License** and **Legal notice**.
+Version, **Contact** (**Write to the author**), **Also available on** (a link to the Windows version on the Microsoft Store from Android, and to Google Play and GitHub from Windows), **Language** (**Español** / **English**; applies right away), **Privacy**, **License** and **Legal notice**.
 
 ### Windows: tray and quick panel
 
@@ -145,6 +145,8 @@ Version, **Contact** (**Write to the author**), **Also available on** (a link to
 **I invited someone and they say the invitation doesn't work.** Each **New invitation** changes the key and cancels the previous one. Send the latest one.
 
 **I want to switch accounts.** Settings › **Sign out** and sign in with the other one. Nothing is lost: when you go back to the previous account, its lists are still there.
+
+**The Microsoft Store version is missing something shown in this guide.** The Store gets each version a few days after GitHub, once it passes review, so it's sometimes behind. If an option is missing, wait for the Store to update or install the latest one from https://github.com/donki/TaskManager/releases.
 
 ## Privacy
 

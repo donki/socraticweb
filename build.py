@@ -330,12 +330,11 @@ def etiquetas(app: dict) -> list[str]:
 # ---------------------------------------------------------------- enlaces
 
 def enlaces(app: dict) -> list[tuple[str, str]]:
-    """Botones de descarga: las tiendas donde está publicada; si no hay ninguna, GitHub."""
+    """Botones de descarga: las tiendas donde está publicada y, siempre detrás, las releases de GitHub
+    (Web §4: «GitHub, siempre»; ahí están el APK, el EXE y el MSIX de cada versión)."""
     botones = [(L["descargar_otros"] if otros_navegadores(t) else L["descargar_en"].format(t["tienda"]), t["url"])
                for t in app["tiendas"] if t["publicada"]]
-    # Una tienda de extensiones solo da la extensión: la aplicación se sigue bajando de GitHub.
-    solo_extension = all(re.search(r"add-ons|chrome|navegadores|browsers", t, re.I) for t, _ in botones)
-    if (not botones or solo_extension) and app["releases"]:
+    if app["releases"]:
         botones.append((L["descargar_github"], app["releases"]))
     return botones
 
@@ -347,7 +346,10 @@ def otros_navegadores(t: dict) -> bool:
 
 def estado(app: dict) -> str:
     pub = [L["otros_navegadores"] if otros_navegadores(t) else t["tienda"] for t in app["tiendas"] if t["publicada"]]
-    return L["estado_en"].format(L["y"].join(pub)) if pub else L["estado_github"]
+    if not pub:
+        return L["estado_github"]
+    lista = pub[0] if len(pub) == 1 else ", ".join(pub[:-1]) + L["y"] + pub[-1]
+    return L["estado_en"].format(lista)
 
 
 def en_tienda(app: dict) -> bool:

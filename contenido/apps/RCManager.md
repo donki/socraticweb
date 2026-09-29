@@ -278,6 +278,9 @@ Tienes que escribir en Ajustes › Frase de cifrado exactamente la misma frase q
 **He importado de otro gestor de conexiones y me pide las contraseñas.**
 Es normal: las contraseñas de los ficheros .rdm y .rdp van cifradas para el usuario que las guardó y no se pueden importar. Al conectar se piden y puedes marcar «Recordarla en este PC (cifrada)».
 
+**La versión de la Microsoft Store no tiene algo que sale en esta guía.**
+La Store recibe cada versión unos días después que GitHub, cuando pasa su revisión, así que a veces va por detrás. Si te falta una opción, espera a que la Store se actualice o instala la última de https://github.com/donki/RCManager/releases.
+
 ## Privacidad
 
 Las conexiones se guardan en tu perfil de usuario de Windows con las contraseñas cifradas para tu cuenta, y las sesiones van directamente de tu PC a tus servidores. Solo si eliges Google Drive u OneDrive, el fichero de conexiones se sube a la carpeta privada de la aplicación en tu propia cuenta, cifrado con una frase que no sale de tu PC. No hay servidor propio, ni cuenta, ni anuncios, ni rastreadores, ni analítica.

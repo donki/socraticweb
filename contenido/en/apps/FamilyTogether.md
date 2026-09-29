@@ -37,7 +37,7 @@ No account or password is needed: the first time you open it you only choose the
    - **Allow all the time** (**Allow all the time**): Android does not offer it in a dialog; Settings opens and there you choose Permissions > Location > Allow all the time. Without it your group only sees you while the app is open.
    - **Notifications** (**Allow notifications**): for SOS alerts, zone alerts and join requests. While sharing, Android also shows a persistent notification, "Sharing your location".
    - **No battery restrictions** (**Exclude from battery optimisation**): if Android puts the app to sleep, your group stops seeing you and alerts arrive late.
-   - **Autostart** (**Open the manufacturer's settings**, **Optional**): only appears on phones from brands that need it.
+   - **Autostart** (**Open the manufacturer's settings**, **Optional**): where to let the app start on its own if your phone comes with its own battery or autostart manager.
    - **All set**: tap **Finish**. You can come back to the guide any time from the menu.
 4. Create a group or join one from **Groups**.
 
@@ -56,8 +56,8 @@ No account or password is needed: the first time you open it you only choose the
 ### Map screen
 - **Choose a group**: the selector at the top, if you are in more than one.
 - **Refresh** (arrows, top right): asks for the positions again.
-- When it opens, the map centres on your position (blue dot with its accuracy). The centre button (**Show everyone**) fits all the group's members in view.
-- Below the map, the group list: each member with their avatar or initials and "N min ago · battery N%", **Paused** (with the end time, if any) or **No position yet**. Tapping a member centres the map on them.
+- When it opens, the map centres on your position: your own marker (your photo or initial with your name) is where your phone is right now. The centre button (**Show everyone**) fits all the group's members in view.
+- The map fills the screen. **Find a person** (the magnifying glass, bottom right, above SOS) opens the group list: each member with their avatar or initials and "N min ago · battery N%", **Paused** (with the end time, if any) or **No position yet**. Choosing someone closes the list and centres the map on them; from the list you can also **Show everyone**. Back, or tapping outside, closes it.
 - **SOS** (red button): "Send an SOS to your groups".
 - Banners that may appear at the top, with their button:
   - "Your location is not being shared…", "Your group only sees you while the app is open…" or "The service that shares your location is stopped…": **Open the guide** and complete the pending step.

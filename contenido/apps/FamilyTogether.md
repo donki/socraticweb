@@ -37,7 +37,7 @@ No hace falta cuenta ni contraseña: al abrirla por primera vez solo eliges el n
    - **Permitir siempre** (**Permitir todo el tiempo**): Android no lo ofrece en un diálogo; se abren los ajustes y ahí eliges Permisos > Ubicación > Permitir todo el tiempo. Sin esto tu grupo solo te ve con la aplicación abierta.
    - **Notificaciones** (**Permitir notificaciones**): para los SOS, los avisos de zonas y las solicitudes para unirse. Mientras compartes, Android muestra además una notificación fija, «Compartiendo tu ubicación».
    - **Sin restricciones de batería** (**Excluir del ahorro de batería**): si Android duerme la aplicación, tu grupo deja de verte y los avisos llegan tarde.
-   - **Inicio automático** (**Abrir los ajustes del fabricante**, **Opcional**): solo aparece en los móviles de las marcas que lo necesitan.
+   - **Inicio automático** (**Abrir los ajustes del fabricante**, **Opcional**): dónde permitir que la app se inicie sola si tu móvil trae su propio gestor de batería o de inicio automático.
    - **Listo**: pulsa **Terminar**. Puedes volver a la guía cuando quieras desde el menú.
 4. Crea un grupo o únete a uno desde **Grupos**.
 
@@ -56,8 +56,8 @@ No hace falta cuenta ni contraseña: al abrirla por primera vez solo eliges el n
 ### Pantalla Mapa
 - **Elige un grupo**: el selector de arriba, si estás en más de uno.
 - **Actualizar** (flechas, arriba a la derecha): vuelve a pedir las posiciones.
-- Al abrir, el mapa se centra en tu posición (punto azul con su precisión). El botón de centrar (**Ver a todos**) encuadra a todos los miembros del grupo.
-- Debajo del mapa, la lista del grupo: cada miembro con su avatar o sus iniciales y «hace N min · batería N %», **En pausa** (con la hora de fin, si la tiene) o **Sin posición todavía**. Tocar un miembro centra el mapa en él.
+- Al abrir, el mapa se centra en tu posición: tu propia marca (tu foto o tu inicial con tu nombre) va donde está tu móvil ahora. El botón de centrar (**Ver a todos**) encuadra a todos los miembros del grupo.
+- El mapa ocupa toda la pantalla. **Buscar a una persona** (la lupa, abajo a la derecha, encima del SOS) abre la lista del grupo: cada miembro con su avatar o sus iniciales y «hace N min · batería N %», **En pausa** (con la hora de fin, si la tiene) o **Sin posición todavía**. Al elegir a alguien la lista se cierra y el mapa se centra en esa persona; desde la lista también puedes **Ver a todos**. Atrás, o tocar fuera, la cierra.
 - **SOS** (botón rojo): «Enviar un SOS a tus grupos».
 - Avisos que pueden aparecer arriba, con su botón:
   - «No se está compartiendo tu ubicación…», «Tu grupo solo te ve con la app abierta…» o «El servicio que comparte tu ubicación está parado…»: **Abrir la guía** y completa el paso pendiente.

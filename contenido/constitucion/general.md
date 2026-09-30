@@ -2,7 +2,7 @@
 - slug: general
 - documento: CONSTITUCION-GENERAL.md
 - orden: 1
-- actualizado: 2026-09-29
+- actualizado: 2026-09-30
 - lema: La capa de arriba: lo que vale para todo el catálogo y lo que se ha aprendido trabajando.
 
 La constitución general es la norma común a **todo**: aplicaciones del móvil, programas de Windows,
@@ -438,7 +438,9 @@ límite, errores), sin tocar datos reales, red externa ni servidores. Cada repos
 README tres cifras con fecha: **cuántas pruebas hay** (y cuántas pasan), **qué parte del código
 cubren** —también sobre toda la aplicación, que es la cifra honesta— y **cuánto tarda** el banco. La
 cobertura tiende al 100 % y **nunca baja** de una versión a la siguiente sin explicarlo, y el banco
-en verde es condición para dar una versión por buena.
+en verde es condición para dar una versión por buena. Esas cifras, junto con el **tiempo de
+desarrollo con LLM** (horas aproximadas), se publican también en la ficha de cada aplicación en esta
+web y en su tarjeta del catálogo, y se actualizan en el mismo ciclo que el README.
 
 **Por qué.** Probar a mano no escala: un cambio en un sitio rompe otro que nadie volvió a mirar. Con
 el banco, cada versión comprueba de nuevo todo lo anterior en segundos. Publicar las cifras obliga a

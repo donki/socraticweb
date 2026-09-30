@@ -5,6 +5,7 @@ Fuentes:
   contenido/legal/*.md        aviso legal, cookies y privacidad de la web (y contenido/en/legal/)
   contenido/constitucion/*.md la constitución explicada, un fichero por documento (y contenido/en/constitucion/)
   contenido/imagenes.json     de dónde salen el icono y las capturas de cada aplicación
+  contenido/calidad.json      índices de calidad de cada aplicación (pruebas, coberturas, tiempos; General §8.6)
   CONTENIDO-PARA-GOOGLE-SITES.md  la política de privacidad de las aplicaciones (castellano)
 
 Salidas (copia local, se commitean):
@@ -38,6 +39,7 @@ CONTENIDO = RAIZ / "contenido"
 SITIO = RAIZ / "sitio"
 WP = RAIZ / "wordpress"
 IMAGENES = CONTENIDO / "imagenes.json"
+CALIDAD = CONTENIDO / "calidad.json"  # pruebas, coberturas, tiempo del banco y horas de LLM por slug
 IMG = CONTENIDO / "img"
 MEDIOS = WP / "medios.json"
 PROYECTOS = RAIZ.parent.parent  # D:\sOCProjects
@@ -161,6 +163,21 @@ IDIOMAS = {
         "t_portada": "sOCratic", "t_apps": "Aplicaciones", "t_soporte": "Soporte",
         "t_privacidad": "Política de privacidad", "t_aviso": "Aviso legal", "t_cookies": "Política de cookies",
         "t_guia": "{}: guía de uso",
+        # Índices de calidad (General §8.6): tarjeta del catálogo y bloque «Calidad» de la ficha.
+        "decimal": ",", "n_pruebas": ("{} prueba", "{} pruebas"), "t_cubierta": "{} de la app cubierta",
+        "t_llm": "{} de LLM", "calidad_h": "Calidad", "q_pruebas": "Pruebas automatizadas",
+        "q_pruebas_v": "{}, todas pasan", "q_cob_codigo": "Cobertura del código probado",
+        "q_cob_app": "Cobertura de toda la app", "q_tiempo": "Tiempo del banco de pruebas",
+        "q_ui": "Pruebas de interfaz", "q_ui_v": "{} · {}",
+        "q_llm": "Tiempo de desarrollo con LLM", "q_llm_v": "{} (aproximado)", "q_fecha": "Medido el",
+        "q_explica": "Las pruebas automatizadas comprueban la lógica de la aplicación (cálculos, formatos, "
+                     "cifrado, traducciones…) cada vez que cambia. La cobertura del código probado es la parte "
+                     "de ese código que recorren; la de toda la app cuenta también la interfaz, que estas "
+                     "pruebas no tocan, y por eso es más baja. La regla es que tienda al 100 % y no baje nunca.",
+        "q_llm_explica": "El tiempo de LLM es aproximado: suma lo que el modelo estuvo trabajando en las "
+                         "sesiones de desarrollo, sin contar las esperas; lo más antiguo se estima con el "
+                         "historial de cambios.",
+        "q_regla": "La regla del banco de pruebas",
         "secciones": {},
     },
     "en": {
@@ -250,6 +267,21 @@ IDIOMAS = {
         "t_portada": "sOCratic (English)", "t_apps": "Apps", "t_soporte": "Support",
         "t_privacidad": "Privacy policy", "t_aviso": "Legal notice", "t_cookies": "Cookie policy",
         "t_guia": "{}: user guide",
+        "decimal": ".", "n_pruebas": ("{} test", "{} tests"), "t_cubierta": "{} of the app covered",
+        "t_llm": "{} of LLM", "calidad_h": "Quality", "q_pruebas": "Automated tests",
+        "q_pruebas_v": "{}, all passing", "q_cob_codigo": "Coverage of the tested code",
+        "q_cob_app": "Coverage of the whole app", "q_tiempo": "Test suite run time",
+        "q_ui": "UI tests", "q_ui_v": "{} · {}",
+        "q_llm": "Development time with LLM", "q_llm_v": "{} (approximate)", "q_fecha": "Measured on",
+        "q_explica": "The automated tests check the app's logic (calculations, formats, encryption, "
+                     "translations…) every time it changes. Coverage of the tested code is the share of that "
+                     "code they run through; coverage of the whole app also counts the user interface, which "
+                     "these tests do not touch, so it is lower. The rule is that it keeps moving towards "
+                     "100 % and never goes down.",
+        "q_llm_explica": "The LLM time is approximate: it adds up the time the model spent working in the "
+                         "development sessions, not counting waits; the oldest work is estimated from the "
+                         "change history.",
+        "q_regla": "The test suite rule",
         # Títulos de sección de las fichas en inglés → la clave castellana que usa el programa.
         "secciones": {"description": "descripción", "main features": "funciones principales",
                       "user guide (support)": "guía de uso (soporte)", "faq": "preguntas frecuentes",
@@ -858,7 +890,107 @@ def galeria(rutas: list[str], nombre: str, minimo: str) -> str:
     return rejilla(*[imagen(r, L["captura_de"].format(nombre)) for r in rutas], minimo=minimo, hueco="20px")
 
 
-def tarjeta_app(app: dict, destino: str, llamada: str) -> str:
+# ---------------------------------------------------------------- índices de calidad (General §8.6)
+
+_CALIDAD: dict | None = None
+
+
+def calidad(slug: str) -> dict:
+    """Cifras de contenido/calidad.json para una app; {} si no tiene (y entonces no se pinta nada)."""
+    global _CALIDAD
+    if _CALIDAD is None:
+        _CALIDAD = json.loads(CALIDAD.read_text(encoding="utf-8")) if CALIDAD.exists() else {}
+    return _CALIDAD.get(slug) or {}
+
+
+def numero(x: float, decimales=1) -> str:
+    """Número en el formato del idioma: coma decimal en castellano, punto en inglés; sin «,0»."""
+    t = f"{x:.{decimales}f}".rstrip("0").rstrip(".") if decimales else str(round(x))
+    return t.replace(".", L["decimal"])
+
+
+def porcentaje(x: float, decimales=1) -> str:
+    return f"{numero(x, decimales)} %"
+
+
+def segundos(x: float) -> str:
+    return "< 1 s" if x < 1 else f"~{round(x)} s"
+
+
+def horas(x: float) -> str:
+    return "< 1 h" if x < 1 else f"~{round(x)} h"
+
+
+def n_pruebas(n: int) -> str:
+    return L["n_pruebas"][0 if n == 1 else 1].format(n)
+
+
+def linea_calidad(app: dict) -> str:
+    """Una línea discreta para la tarjeta: pruebas, cobertura de TODA la app (la honesta) y horas de LLM."""
+    q = calidad(app["slug"])
+    partes = []
+    if q.get("pruebas"):
+        partes.append(n_pruebas(q["pruebas"]))
+    if q.get("cobertura_app") is not None:
+        partes.append(L["t_cubierta"].format(porcentaje(q["cobertura_app"], 0)))
+    if q.get("llm_h"):
+        partes.append(L["t_llm"].format(horas(q["llm_h"])))
+    if not partes:
+        return ""
+    return parrafo(html.escape(" · ".join(partes)), style={
+        "color": {"text": APAGADO}, "typography": {"fontSize": "0.8rem", "lineHeight": "1.4"}})
+
+
+def ancla_banco() -> str:
+    """URL de la regla del banco de pruebas (General §8.6) en la página de la constitución, si existe."""
+    carpeta = CONTENIDO / "constitucion" if L["codigo"] == "es" else CONTENIDO / L["codigo"] / "constitucion"
+    ruta = carpeta / "general.md"
+    if not ruta.exists():
+        return ""
+    ids = re.findall(r'<h3 id="(86-[^"]*)"', md(ruta.read_text(encoding="utf-8")))
+    return url("constitucion", "general") + (f"#{ids[0]}" if ids else "")
+
+
+def bloque_calidad(app: dict) -> str:
+    """Tarjeta «Calidad» de la ficha: cada cifra con su etiqueta y una explicación corta."""
+    q = calidad(app["slug"])
+    datos = []
+    if q.get("pruebas"):
+        datos.append(dato(L["q_pruebas"], html.escape(L["q_pruebas_v"].format(q["pruebas"]))))
+    if q.get("cobertura_codigo") is not None:
+        datos.append(dato(L["q_cob_codigo"], porcentaje(q["cobertura_codigo"])))
+    if q.get("cobertura_app") is not None:
+        datos.append(dato(L["q_cob_app"], porcentaje(q["cobertura_app"])))
+    if q.get("tiempo_s") is not None:
+        datos.append(dato(L["q_tiempo"], html.escape(segundos(q["tiempo_s"]))))
+    # Pruebas de interfaz: aparte, cuando las haya (campos opcionales ui_pruebas / ui_tiempo_s).
+    if q.get("ui_pruebas"):
+        ui = n_pruebas(q["ui_pruebas"])
+        if q.get("ui_tiempo_s") is not None:
+            ui = L["q_ui_v"].format(ui, segundos(q["ui_tiempo_s"]))
+        datos.append(dato(L["q_ui"], html.escape(ui)))
+    if q.get("llm_h"):
+        datos.append(dato(L["q_llm"], html.escape(L["q_llm_v"].format(horas(q["llm_h"])))))
+    if not datos:
+        return ""
+    if q.get("fecha"):
+        datos.append(dato(L["q_fecha"], html.escape(fecha_larga(q["fecha"]))))
+    nota = {"color": {"text": APAGADO}, "typography": {"fontSize": "0.85rem", "lineHeight": "1.5"}}
+    textos = []
+    if q.get("pruebas") or q.get("cobertura_app") is not None:
+        textos.append(parrafo(html.escape(L["q_explica"]), style=nota))
+    if q.get("llm_h"):
+        textos.append(parrafo(html.escape(L["q_llm_explica"]), style=nota))
+    regla = ancla_banco()
+    if regla and textos:
+        textos.append(parrafo(f'<a href="{regla}">{html.escape(L["q_regla"])} →</a>', style={
+            "typography": {"fontWeight": "600", "fontSize": "0.9rem"}}))
+    return tarjeta(
+        titulo(L["calidad_h"], 3, size="medium", style={"typography": {"fontWeight": "700"}, "color": {"text": TINTA}}),
+        *datos, *textos)
+
+
+def tarjeta_app(app: dict, destino: str, llamada: str, con_calidad=False) -> str:
     u = url(destino, app["slug"])
     return tarjeta(
         icono_app(app, enlace=u),
@@ -872,6 +1004,8 @@ def tarjeta_app(app: dict, destino: str, llamada: str) -> str:
             "typography": {"fontSize": "0.85rem", "fontWeight": "600"}}),
         parrafo(f'<a href="{u}">{llamada} →</a>', style={
             "typography": {"fontWeight": "600"}, "elements": {"link": {"color": {"text": ACENTO}}}}),
+        # Bajo «Ver aplicación →», solo en el catálogo (portada y aplicaciones), no en las guías.
+        linea_calidad(app) if con_calidad else "",
     )
 
 
@@ -938,7 +1072,7 @@ def portada_wp(apps: list[dict]) -> str:
                         [boton_claro(L["ver_apps"], url("apps")), boton_contorno_claro(L["soporte_nav"], url("soporte"))],
                         otro=url(idioma=L["otro"]), extra=iconos + "\n\n" + cifras),
         seccion(encabezado_seccion(L["catalogo_ante"], L["catalogo_h2"], L["catalogo_entrada"]),
-                rejilla(*[tarjeta_app(a, "apps", L["ver_app"]) for a in apps])),
+                rejilla(*[tarjeta_app(a, "apps", L["ver_app"], con_calidad=True) for a in apps])),
         seccion(trabajo, fondo=SUAVE),
     ])
 
@@ -948,7 +1082,7 @@ def indice_apps_wp(apps: list[dict]) -> str:
         cabecera_pagina(L["catalogo_ante"], L["catalogo_h2"], L["apps_entrada"],
                         [boton_contorno_claro(L["soporte_nav"], url("soporte"))],
                         otro=url("apps", idioma=L["otro"]), grande=False),
-        seccion(rejilla(*[tarjeta_app(a, "apps", L["ver_app"]) for a in apps]), arriba=TRAS_CABECERA),
+        seccion(rejilla(*[tarjeta_app(a, "apps", L["ver_app"], con_calidad=True) for a in apps]), arriba=TRAS_CABECERA),
     ])
 
 
@@ -999,7 +1133,7 @@ def pagina_app_wp(app: dict) -> str:
                       "spacing": {"margin": {"top": "var:preset|spacing|50"}}}),
         wp_html(md(s.get("funciones principales", ""))),
     ])
-    derecha = grupo(ficha, privacidad, style={"spacing": {"blockGap": "24px"}})
+    derecha = grupo(ficha, bloque_calidad(app), privacidad, style={"spacing": {"blockGap": "24px"}})
     capturas = []
     if app.get("capturas") or app.get("capturas_anchas"):
         capturas.append(encabezado_seccion(L["capturas_ante"], L["capturas_h2"].format(app["nombre"])))

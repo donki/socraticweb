@@ -80,7 +80,9 @@
     "cobertura_app": 43.5,
     "tiempo_s": 10,
     "llm_h": 4,
-    "fecha": "2026-09-30"
+    "fecha": "2026-09-30",
+    "ui_pruebas": 6,
+    "ui_tiempo_s": 9
   },
   "smsforwarder": {
     "pruebas": 90,
@@ -96,7 +98,9 @@
     "cobertura_app": 39.0,
     "tiempo_s": 10,
     "llm_h": 22,
-    "fecha": "2026-09-30"
+    "fecha": "2026-09-30",
+    "ui_pruebas": 6,
+    "ui_tiempo_s": 114
   },
   "tdtonline": {
     "pruebas": 108,

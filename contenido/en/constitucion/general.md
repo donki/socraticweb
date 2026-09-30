@@ -451,6 +451,24 @@ again. With the suite, each version rechecks everything before it in seconds. Pu
 forces you not to fool yourself: a coverage figure that only counts the easy-to-test code does not
 say how much of the app is checked.
 
+### 8.7 Automated UI tests
+
+**What it says.** Besides the logic tests, every app with a user interface has tests that drive it
+the way a person would: they open it, go through the menu, press back on every screen, switch
+language, create and delete a test item and, on the phone, check that with large text no label
+runs off the screen. On Android they use a free phone-automation tool, and on Windows another one
+that relies on the system's accessibility layer. Every button that gets pressed has its own
+identifier, so the tests do not depend on the text, which changes with the language. They never use
+real data or accounts: on the phone, only on an emulator and without signing in; on the desktop, in
+an isolated mode that connects to nothing. They run before every version that touches the interface,
+and their count and time are published separately from the logic tests.
+
+**Why.** Some bugs only show up when you use the app: a back button that closes it instead of going
+back, a label that vanishes with large text, a screen that does not open. Checking that by hand in
+every version of every app is slow and gets forgotten; automated, it is checked the same way every
+time. It was first tried on one phone app and one desktop app, and gave the same result in three
+runs in a row before it became a rule.
+
 ## 9. How tasks are recorded
 
 **What it says.** Pending work is noted in working files outside the repositories, one per app,

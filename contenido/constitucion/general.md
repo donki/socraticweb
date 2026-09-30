@@ -447,6 +447,24 @@ el banco, cada versión comprueba de nuevo todo lo anterior en segundos. Publica
 no engañarse: una cobertura que solo cuenta el código fácil de probar no dice cuánto de la
 aplicación está comprobado.
 
+### 8.7 Pruebas de interfaz automatizadas
+
+**Qué dice.** Además de las pruebas de lógica, cada aplicación con interfaz tiene pruebas que la
+manejan como lo haría una persona: la abren, recorren el menú, pulsan atrás en cada pantalla,
+cambian de idioma, crean y borran un elemento de prueba y, en el móvil, comprueban que con la letra
+grande ningún texto se sale de la pantalla. En Android se hacen con una herramienta libre de
+automatización del móvil y en Windows con otra que usa la accesibilidad del sistema. Cada botón que
+se pulsa lleva un identificador propio, para no depender del texto, que cambia con el idioma. Nunca
+usan datos ni cuentas reales: en el móvil, solo en un emulador y entrando sin cuenta; en el
+escritorio, con un modo aislado que no se conecta a nada. Se pasan antes de cada versión que toque
+la interfaz, y su número y su tiempo se publican aparte de los de lógica.
+
+**Por qué.** Hay fallos que solo se ven usando la aplicación: un botón de atrás que cierra la app en
+vez de volver, un texto que desaparece con la letra grande, una pantalla que no se abre. Revisarlo a
+mano en cada versión y en cada app es lento y se olvida; automatizado, se comprueba siempre igual.
+Se probó primero en una app de móvil y otra de escritorio, y dio el mismo resultado en tres tandas
+seguidas antes de hacerlo norma.
+
 ## 9. Cómo se registran las tareas
 
 **Qué dice.** Lo pendiente se apunta en ficheros de trabajo fuera de los repositorios, uno por

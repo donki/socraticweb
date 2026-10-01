@@ -127,7 +127,7 @@
     "fecha": "2026-09-30"
   },
   "wsmanager": {
-    "pruebas": 288,
+    "pruebas": 286,
     "cobertura_codigo": 90.4,
     "cobertura_app": 66.1,
     "tiempo_s": 34,

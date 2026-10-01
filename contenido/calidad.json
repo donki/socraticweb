@@ -125,5 +125,15 @@
     "tiempo_s": 0.15,
     "llm_h": 7,
     "fecha": "2026-09-30"
+  },
+  "wsmanager": {
+    "pruebas": 288,
+    "cobertura_codigo": 90.4,
+    "cobertura_app": 66.1,
+    "tiempo_s": 34,
+    "llm_h": 6,
+    "fecha": "2026-10-01",
+    "ui_pruebas": 8,
+    "ui_tiempo_s": 48
   }
 }

@@ -441,7 +441,9 @@ moved out of the screens into its own classes. They are real tests (results, edg
 without touching real data, external networks, or servers. Each repository publishes in its README
 three dated figures: **how many tests there are** (and how many pass), **how much of the code they
 cover** (also across the whole app, which is the honest figure), and **how long** the suite takes.
-Coverage aims for 100% and **never drops** from one version to the next without an explanation, and a
+Coverage of the whole app must reach **at least 90%** (the goal is 100%); until it does, every version
+**raises** it, there is a written plan to get there, and it **never drops** without an explanation; a new
+app starts at 90% already. A
 green suite is a condition for accepting a version. Those figures, together with the **development
 time with LLM** (approximate hours), are also published on each app's page on this website and on its
 catalog card, and they are updated in the same cycle as the README.

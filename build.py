@@ -173,7 +173,8 @@ IDIOMAS = {
         "q_explica": "Las pruebas automatizadas comprueban la lógica de la aplicación (cálculos, formatos, "
                      "cifrado, traducciones…) cada vez que cambia. La cobertura del código probado es la parte "
                      "de ese código que recorren; la de toda la app cuenta también la interfaz, que estas "
-                     "pruebas no tocan, y por eso es más baja. La regla es que tienda al 100 % y no baje nunca.",
+                     "pruebas no tocan, y por eso es más baja. La regla es llegar al 90 % como mínimo (y tender al 100 %); "
+                     "mientras no se llega, cada versión la sube y nunca la baja.",
         "q_llm_explica": "El tiempo de LLM es aproximado: suma lo que el modelo estuvo trabajando en las "
                          "sesiones de desarrollo, sin contar las esperas; lo más antiguo se estima con el "
                          "historial de cambios.",
@@ -276,8 +277,8 @@ IDIOMAS = {
         "q_explica": "The automated tests check the app's logic (calculations, formats, encryption, "
                      "translations…) every time it changes. Coverage of the tested code is the share of that "
                      "code they run through; coverage of the whole app also counts the user interface, which "
-                     "these tests do not touch, so it is lower. The rule is that it keeps moving towards "
-                     "100 % and never goes down.",
+                     "these tests do not touch, so it is lower. The rule is to reach at least 90 % (aiming "
+                     "for 100 %); until then, every version raises it and never lowers it.",
         "q_llm_explica": "The LLM time is approximate: it adds up the time the model spent working in the "
                          "development sessions, not counting waits; the oldest work is estimated from the "
                          "change history.",

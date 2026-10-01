@@ -437,7 +437,9 @@ se pueda probar, se saca de las pantallas a clases propias. Son pruebas de verda
 límite, errores), sin tocar datos reales, red externa ni servidores. Cada repositorio publica en su
 README tres cifras con fecha: **cuántas pruebas hay** (y cuántas pasan), **qué parte del código
 cubren** —también sobre toda la aplicación, que es la cifra honesta— y **cuánto tarda** el banco. La
-cobertura tiende al 100 % y **nunca baja** de una versión a la siguiente sin explicarlo, y el banco
+cobertura de toda la aplicación tiene que llegar al **90 % como mínimo** (la meta es el 100 %); mientras
+no llega, cada versión la **sube**, hay un plan escrito para alcanzarlo y **nunca baja** sin explicarlo; una
+aplicación nueva nace ya con el 90 %. El banco
 en verde es condición para dar una versión por buena. Esas cifras, junto con el **tiempo de
 desarrollo con LLM** (horas aproximadas), se publican también en la ficha de cada aplicación en esta
 web y en su tarjeta del catálogo, y se actualizan en el mismo ciclo que el README.

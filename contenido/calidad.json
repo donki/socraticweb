@@ -11,12 +11,12 @@
     "fecha": "2026-09-30"
   },
   "familytogether": {
-    "pruebas": 250,
+    "pruebas": 265,
     "cobertura_codigo": 99.0,
     "cobertura_app": 33.0,
-    "tiempo_s": 5,
-    "llm_h": 6,
-    "fecha": "2026-09-30"
+    "tiempo_s": 6,
+    "llm_h": 7,
+    "fecha": "2026-10-01"
   },
   "filemanager": {
     "pruebas": 142,

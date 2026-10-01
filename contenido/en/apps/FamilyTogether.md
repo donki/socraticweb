@@ -18,7 +18,7 @@ No account or password is needed: the first time you open it you only choose the
 ## Main features
 - Map with each group member's last position, with the time and battery level, or "Paused".
 - Background location every time you move about 25 metres, even with the app closed; without a connection, positions are stored and sent later with their original time.
-- Route history for the last 30 days by person and day, snapped to streets and paths on the phone itself, with long stops shown as a single point.
+- Route history: the last 24 hours when you open it and any day of the last 30, by person, snapped to streets and paths on the phone itself, with long stops shown as a single point.
 - Group zones with arrival and departure alerts, only for the people and zones you choose.
 - SOS with a 3-second countdown to cancel it, to all your groups or the ones you tick, even when paused.
 - Pause per group: 1 hour, 8 hours, until tomorrow, until a given time or until you resume it.
@@ -100,8 +100,9 @@ No account or password is needed: the first time you open it you only choose the
 - For each person in the group and each zone, two switches: **On arrival** and **On departure**. You will only be alerted about what you turn on here (for example, "Anna arrived at Home").
 
 ### History screen
-- Choose the group, the **Person** and the day (the last 30 days are kept; anything older is deleted automatically).
-- The route is drawn on the map with **Start** (green), **End** (red) and each **Stop** (a stay of 10 minutes or more in the same place; tap it for "Stopped from … to …"). Below, "N positions, from … to …".
+- Choose the group and the **Person**. It opens on **Last 24 hours** (from this time yesterday until now, even across midnight); for an earlier day, choose **One day** and the date (the last 30 days are kept; anything older is deleted automatically).
+- Your own route for the last 24 hours is also kept on your phone, so you can see it without a connection; it is deleted automatically after a day.
+- The route is drawn on the map with **Start** (green), **End** (red) and each **Stop** (a stay of 10 minutes or more in the same place; tap it for "Stopped from … to …"). Below, "N positions, from … to …" ("yesterday 21:09" if it starts the day before).
 - If the setting is on, you will see "Snapping the route to streets and paths…" and then whether it was snapped fully, partly, or drawn in straight lines because the map could not be looked up.
 - **Delete my history** (bin, at the top): deletes your routes in all your groups, including those not sent yet. Your groups will still see your last position on the map. This cannot be undone.
 

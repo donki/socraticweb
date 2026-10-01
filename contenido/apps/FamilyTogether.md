@@ -18,7 +18,7 @@ No hace falta cuenta ni contraseña: al abrirla por primera vez solo eliges el n
 ## Funciones principales
 - Mapa con la última posición de cada miembro del grupo, con la hora y el nivel de batería, o «En pausa».
 - Ubicación en segundo plano cada vez que te mueves unos 25 metros, también con la aplicación cerrada; sin conexión, las posiciones se guardan y se envían después con su hora.
-- Historial de recorridos de los últimos 30 días por persona y día, ajustado a calles y caminos en el propio móvil, con las paradas largas como un punto.
+- Historial de recorridos: las últimas 24 horas al abrir y cualquier día de los últimos 30, por persona, ajustado a calles y caminos en el propio móvil, con las paradas largas como un punto.
 - Zonas del grupo con avisos al entrar y al salir, solo de las personas y zonas que tú elijas.
 - SOS con cuenta atrás de 3 segundos para cancelarlo, a todos tus grupos o a los que marques, aunque estés en pausa.
 - Pausa por grupo: 1 hora, 8 horas, hasta mañana, hasta una hora concreta o hasta que la reanudes.
@@ -100,8 +100,9 @@ No hace falta cuenta ni contraseña: al abrirla por primera vez solo eliges el n
 - Para cada persona del grupo y cada zona, dos interruptores: **Al entrar** y **Al salir**. Solo te avisará de lo que actives aquí (por ejemplo, «Ana ha llegado a Casa»).
 
 ### Pantalla Historial
-- Elige el grupo, la **Persona** y el día (se guardan los últimos 30 días; lo anterior se borra solo).
-- El recorrido se dibuja en el mapa con **Inicio** (verde), **Fin** (rojo) y cada **Parada** (una estancia de 10 minutos o más en el mismo sitio; al tocarla, «Parada de … a …»). Debajo, «N posiciones, de … a …».
+- Elige el grupo y la **Persona**. Al abrir se ven las **Últimas 24 horas** (desde ayer a esta hora hasta ahora, aunque cruce la medianoche); para un día anterior, elige **Un día** y la fecha (se guardan los últimos 30 días; lo anterior se borra solo).
+- Tu propio recorrido de las últimas 24 horas también se guarda en tu móvil, así que lo ves aunque no haya conexión; se borra solo pasado un día.
+- El recorrido se dibuja en el mapa con **Inicio** (verde), **Fin** (rojo) y cada **Parada** (una estancia de 10 minutos o más en el mismo sitio; al tocarla, «Parada de … a …»). Debajo, «N posiciones, de … a …» («ayer 21:09» si empieza el día anterior).
 - Si está activado el ajuste, verás «Ajustando el recorrido a calles y caminos…» y luego si se ha ajustado entero, en parte o si va en línea recta porque no se ha podido consultar el mapa.
 - **Borrar mi historial** (papelera, arriba): borra tus recorridos en todos tus grupos, también los que aún no se han enviado. Tus grupos seguirán viendo tu última posición en el mapa. No se puede deshacer.
 

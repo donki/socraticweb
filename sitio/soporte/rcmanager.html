@@ -133,9 +133,23 @@
 <li>Cada pestaña lleva sus botones:<ul>
 <li>Más pequeño / Más grande (− y +): zoom de la pestaña. En SSH cambia la letra del terminal; en ficheros, la de los paneles; en RDP, la escala del escritorio remoto (del 100 al 200 %). Se recuerda para la próxima vez que abras esa conexión.</li>
 <li>Pantalla completa (F11; Ctrl+Esc para volver).</li>
+<li>Sacar a una ventana propia (o arrastra la pestaña fuera de la ventana).</li>
 <li>Desconectar esta pestaña.</li>
 </ul>
 </li>
+<li>Con el botón derecho sobre la pestaña: «Sacar a una ventana» y «Desconectar».</li>
+</ul>
+
+<p><strong>Pestañas sueltas (ventanas propias)</strong></p>
+
+<ul class="wp-block-list">
+<li>Arrastra una pestaña fuera de la ventana principal y suéltala donde quieras (en otro monitor, por ejemplo): se abre en su propia ventana, en ese sitio. También con el botón «Sacar a una ventana propia» de la pestaña o con su menú del botón derecho.</li>
+<li>La sesión <strong>no se corta ni se reconecta</strong>: el escritorio remoto, el terminal o el explorador de ficheros pasan tal cual a la ventana nueva.</li>
+<li>Arriba, la ventana suelta lleva la misma barra que tenía la pestaña: zoom, pantalla completa, «Volver a la ventana principal» y desconectar.</li>
+<li>Para devolverla: el botón «Volver a la ventana principal», arrastrar esa barra sobre la ventana principal, o cerrar la ventana con la X (cerrarla no desconecta; para eso está el botón de desconectar).</li>
+<li>Puedes tener varias a la vez. Cada conexión recuerda dónde estuvo su ventana suelta (y en qué monitor) y la vuelve a abrir ahí; si ese monitor ya no está, sale en la pantalla principal.</li>
+<li>El botón de sesiones abiertas de la barra inferior también lista las que están en ventanas sueltas y las trae al frente.</li>
+<li>Al cerrar la ventana principal se cierran también las sueltas (y se desconectan sus sesiones). Antes se pregunta: «Hay N sesión(es) abiertas en ventanas sueltas…». Se puede quitar en Ajustes › Ventana.</li>
 </ul>
 
 <p><strong>Barra de estado</strong></p>
@@ -157,6 +171,13 @@
 
 <ul class="wp-block-list">
 <li>Al minimizar, la ventana se esconde y deja su icono junto al reloj (si no lo ves, está en los iconos ocultos de Windows 11). Un clic la trae de vuelta; con el botón derecho, «Abrir» y «Salir». Las sesiones abiertas siguen vivas. Se puede desactivar en Ajustes › Ventana.</li>
+</ul>
+
+<p><strong>Una sola instancia</strong></p>
+
+<ul class="wp-block-list">
+<li>Si la aplicación ya está abierta (aunque esté escondida junto al reloj) y la abres otra vez —desde el ejecutable, desde la Microsoft Store o desde un acceso directo—, se trae al frente la que ya estaba en vez de abrir otra. Si el acceso directo lleva <code>--open "Nombre"</code>, esa conexión se abre en la ventana que ya estaba.</li>
+<li>Si la que estaba abierta es de una versión anterior, deja el sitio a la nueva; si tiene sesiones abiertas, antes pregunta si cerrarla.</li>
 </ul>
 
 <h3 id="editor-de-conexion" class="wp-block-heading has-medium-font-size has-text-color" style="color:#0f172a;margin-top:var(--wp--preset--spacing--40);font-weight:700;line-height:1.25">Editor de conexión</h3>
@@ -353,6 +374,7 @@
 
 <ul class="wp-block-list">
 <li>«Al minimizar, al área de notificación» (activada por defecto). Desactivada, se minimiza a la barra de tareas como cualquier ventana.</li>
+<li>«Preguntar antes de cerrar las ventanas sueltas» (activada por defecto). Desactivada, al cerrar la ventana principal las pestañas que estén en ventanas propias se cierran sin preguntar.</li>
 </ul>
 
 <p>Cerrar: cierra los ajustes.</p>
@@ -363,7 +385,7 @@
 
 <h3 id="opciones-para-accesos-directos" class="wp-block-heading has-medium-font-size has-text-color" style="color:#0f172a;margin-top:var(--wp--preset--spacing--40);font-weight:700;line-height:1.25">Opciones para accesos directos</h3>
 
-<p>Puedes crear un acceso directo que abra una conexión al arrancar: <code>sOCRCManager.exe --open "Nombre de la conexión"</code>. También <code>--edit "Nombre"</code> abre su editor y <code>--edit-file "Nombre" "/ruta"</code> abre un fichero del servidor en el editor integrado.</p>
+<p>Puedes crear un acceso directo que abra una conexión al arrancar: <code>sOCRCManager.exe --open "Nombre de la conexión"</code>. También <code>--edit "Nombre"</code> abre su editor y <code>--edit-file "Nombre" "/ruta"</code> abre un fichero del servidor en el editor integrado. <code>--tray</code> la arranca escondida en el área de notificación. Si la aplicación ya está abierta, todo esto se hace en la que ya estaba.</p>
 
 <h2 id="preguntas-frecuentes" class="wp-block-heading has-large-font-size has-text-color" style="color:#0f172a;margin-top:var(--wp--preset--spacing--70);font-weight:700">Preguntas frecuentes</h2>
 
@@ -378,6 +400,14 @@
 
 <details class="wp-block-details" style="border-bottom-color:#e2e8f0;border-bottom-width:1px;border-bottom-style:solid;padding-top:18px;padding-bottom:18px"><summary><strong>Al abrir una conexión RDP el zoom vuelve al 100 %.</strong></summary>
 <p>Desde la versión 2026.9.23.1 el zoom se aplica después de iniciar sesión y se reintenta unos segundos hasta que el servidor lo acepta. Actualiza a la última versión.</p>
+</details>
+
+<details class="wp-block-details" style="border-bottom-color:#e2e8f0;border-bottom-width:1px;border-bottom-style:solid;padding-top:18px;padding-bottom:18px"><summary><strong>¿Puedo tener una sesión en otro monitor?</strong></summary>
+<p>Sí: arrastra su pestaña fuera de la ventana y suéltala en el otro monitor (o usa el botón «Sacar a una ventana propia» de la pestaña). La sesión sigue conectada; para devolverla, arrastra la barra de esa ventana sobre la principal o pulsa «Volver a la ventana principal».</p>
+</details>
+
+<details class="wp-block-details" style="border-bottom-color:#e2e8f0;border-bottom-width:1px;border-bottom-style:solid;padding-top:18px;padding-bottom:18px"><summary><strong>He abierto la aplicación otra vez y no sale una segunda ventana.</strong></summary>
+<p>Es lo esperado: solo hay una instancia, y abrirla otra vez trae al frente la que ya estaba (aunque estuviese escondida junto al reloj).</p>
 </details>
 
 <details class="wp-block-details" style="border-bottom-color:#e2e8f0;border-bottom-width:1px;border-bottom-style:solid;padding-top:18px;padding-bottom:18px"><summary><strong>He minimizado la ventana y ha desaparecido.</strong></summary>

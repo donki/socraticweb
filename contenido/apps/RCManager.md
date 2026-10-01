@@ -6,7 +6,7 @@
 - tiendas:
   - Microsoft Store (publicada): https://apps.microsoft.com/detail/9MXKDZMLCS99 (enlace de Josep, 2026-09-25; ficha pública comprobada)
   - Google Play: no aplica (solo Windows).
-- descarga_alternativa: https://github.com/donki/RCManager/releases (última: v2026.9.23.1; ejecutable autocontenido y paquete MSIX)
+- descarga_alternativa: https://github.com/donki/RCManager/releases (última: v2026.10.1.0; ejecutable autocontenido y paquete MSIX)
 
 ## Descripción
 
@@ -26,6 +26,8 @@ Tus conexiones se guardan en tu PC con las contraseñas cifradas para tu usuario
 - Explorador de ficheros de dos paneles con cola de transferencias, progreso y cancelar, y cambio de permisos y propietario en los servidores que los tienen.
 - Editor de texto integrado que guarda directamente en el servidor.
 - Zoom por pestaña (letra del terminal y de los paneles, escala del escritorio remoto) que se recuerda por conexión.
+- Pestañas que se sacan a su propia ventana (para tenerlas en otro monitor) y vuelven, sin que la sesión se corte ni se reconecte.
+- Una sola instancia: abrirla otra vez trae al frente la que ya estaba abierta, aunque esté junto al reloj.
 - Conexiones en este PC o sincronizadas cifradas en Google Drive u OneDrive.
 - Importación desde otro gestor de conexiones (ficheros .rdm) y desde ficheros .rdp.
 
@@ -85,7 +87,18 @@ No hace falta crear ninguna cuenta. Solo si eliges guardar en la nube entrarás 
 - Cada pestaña lleva sus botones:
   - Más pequeño / Más grande (− y +): zoom de la pestaña. En SSH cambia la letra del terminal; en ficheros, la de los paneles; en RDP, la escala del escritorio remoto (del 100 al 200 %). Se recuerda para la próxima vez que abras esa conexión.
   - Pantalla completa (F11; Ctrl+Esc para volver).
+  - Sacar a una ventana propia (o arrastra la pestaña fuera de la ventana).
   - Desconectar esta pestaña.
+- Con el botón derecho sobre la pestaña: «Sacar a una ventana» y «Desconectar».
+
+**Pestañas sueltas (ventanas propias)**
+- Arrastra una pestaña fuera de la ventana principal y suéltala donde quieras (en otro monitor, por ejemplo): se abre en su propia ventana, en ese sitio. También con el botón «Sacar a una ventana propia» de la pestaña o con su menú del botón derecho.
+- La sesión **no se corta ni se reconecta**: el escritorio remoto, el terminal o el explorador de ficheros pasan tal cual a la ventana nueva.
+- Arriba, la ventana suelta lleva la misma barra que tenía la pestaña: zoom, pantalla completa, «Volver a la ventana principal» y desconectar.
+- Para devolverla: el botón «Volver a la ventana principal», arrastrar esa barra sobre la ventana principal, o cerrar la ventana con la X (cerrarla no desconecta; para eso está el botón de desconectar).
+- Puedes tener varias a la vez. Cada conexión recuerda dónde estuvo su ventana suelta (y en qué monitor) y la vuelve a abrir ahí; si ese monitor ya no está, sale en la pantalla principal.
+- El botón de sesiones abiertas de la barra inferior también lista las que están en ventanas sueltas y las trae al frente.
+- Al cerrar la ventana principal se cierran también las sueltas (y se desconectan sus sesiones). Antes se pregunta: «Hay N sesión(es) abiertas en ventanas sueltas…». Se puede quitar en Ajustes › Ventana.
 
 **Barra de estado**
 - Sesiones abiertas: menú con todas las pestañas para cambiar a cualquiera, útil cuando el escritorio remoto se queda con el teclado (atajos Ctrl+Tab / Ctrl+Mayús+Tab).
@@ -98,6 +111,10 @@ No hace falta crear ninguna cuenta. Solo si eliges guardar en la nube entrarás 
 
 **Área de notificación**
 - Al minimizar, la ventana se esconde y deja su icono junto al reloj (si no lo ves, está en los iconos ocultos de Windows 11). Un clic la trae de vuelta; con el botón derecho, «Abrir» y «Salir». Las sesiones abiertas siguen vivas. Se puede desactivar en Ajustes › Ventana.
+
+**Una sola instancia**
+- Si la aplicación ya está abierta (aunque esté escondida junto al reloj) y la abres otra vez —desde el ejecutable, desde la Microsoft Store o desde un acceso directo—, se trae al frente la que ya estaba en vez de abrir otra. Si el acceso directo lleva `--open "Nombre"`, esa conexión se abre en la ventana que ya estaba.
+- Si la que estaba abierta es de una versión anterior, deja el sitio a la nueva; si tiene sesiones abiertas, antes pregunta si cerrarla.
 
 ### Editor de conexión
 
@@ -241,6 +258,7 @@ Si un fichero ya existe y la conexión está en «Avisar y confirmar», sale «E
 
 **Ventana**
 - «Al minimizar, al área de notificación» (activada por defecto). Desactivada, se minimiza a la barra de tareas como cualquier ventana.
+- «Preguntar antes de cerrar las ventanas sueltas» (activada por defecto). Desactivada, al cerrar la ventana principal las pestañas que estén en ventanas propias se cierran sin preguntar.
 
 Cerrar: cierra los ajustes.
 
@@ -250,7 +268,7 @@ Contacto («Escribir al autor»), cambio de idioma, privacidad, licencia MIT y a
 
 ### Opciones para accesos directos
 
-Puedes crear un acceso directo que abra una conexión al arrancar: `sOCRCManager.exe --open "Nombre de la conexión"`. También `--edit "Nombre"` abre su editor y `--edit-file "Nombre" "/ruta"` abre un fichero del servidor en el editor integrado.
+Puedes crear un acceso directo que abra una conexión al arrancar: `sOCRCManager.exe --open "Nombre de la conexión"`. También `--edit "Nombre"` abre su editor y `--edit-file "Nombre" "/ruta"` abre un fichero del servidor en el editor integrado. `--tray` la arranca escondida en el área de notificación. Si la aplicación ya está abierta, todo esto se hace en la que ya estaba.
 
 ## Preguntas frecuentes
 
@@ -262,6 +280,12 @@ En el editor de conexión, pestaña Avanzado, «Si falla la autenticación del s
 
 **Al abrir una conexión RDP el zoom vuelve al 100 %.**
 Desde la versión 2026.9.23.1 el zoom se aplica después de iniciar sesión y se reintenta unos segundos hasta que el servidor lo acepta. Actualiza a la última versión.
+
+**¿Puedo tener una sesión en otro monitor?**
+Sí: arrastra su pestaña fuera de la ventana y suéltala en el otro monitor (o usa el botón «Sacar a una ventana propia» de la pestaña). La sesión sigue conectada; para devolverla, arrastra la barra de esa ventana sobre la principal o pulsa «Volver a la ventana principal».
+
+**He abierto la aplicación otra vez y no sale una segunda ventana.**
+Es lo esperado: solo hay una instancia, y abrirla otra vez trae al frente la que ya estaba (aunque estuviese escondida junto al reloj).
 
 **He minimizado la ventana y ha desaparecido.**
 Está en el área de notificación, junto al reloj (en Windows 11, quizá en los iconos ocultos, la flecha ^). Un clic la trae de vuelta. Si prefieres que se minimice a la barra de tareas, desactiva Ajustes › Ventana › «Al minimizar, al área de notificación».

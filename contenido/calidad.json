@@ -75,14 +75,14 @@
     "fecha": "2026-09-30"
   },
   "rcmanager": {
-    "pruebas": 330,
-    "cobertura_codigo": 94.4,
+    "pruebas": 399,
+    "cobertura_codigo": 94.0,
     "cobertura_app": 43.5,
-    "tiempo_s": 10,
-    "llm_h": 4,
-    "fecha": "2026-09-30",
-    "ui_pruebas": 6,
-    "ui_tiempo_s": 9
+    "tiempo_s": 11,
+    "llm_h": 7,
+    "fecha": "2026-10-01",
+    "ui_pruebas": 10,
+    "ui_tiempo_s": 17
   },
   "smsforwarder": {
     "pruebas": 90,

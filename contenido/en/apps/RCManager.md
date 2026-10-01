@@ -6,7 +6,7 @@
 - tiendas:
   - Microsoft Store (publicada): https://apps.microsoft.com/detail/9MXKDZMLCS99 (enlace de Josep, 2026-09-25; ficha pública comprobada)
   - Google Play: no aplica (solo Windows).
-- descarga_alternativa: https://github.com/donki/RCManager/releases (última: v2026.9.23.1; ejecutable autocontenido y paquete MSIX)
+- descarga_alternativa: https://github.com/donki/RCManager/releases (última: v2026.10.1.0; ejecutable autocontenido y paquete MSIX)
 
 ## Description
 
@@ -26,6 +26,8 @@ Your connections are stored on your PC with the passwords encrypted for your Win
 - Two-pane file explorer with a transfer queue, progress and cancel, and changing permissions and owner on servers that have them.
 - Built-in text editor that saves directly to the server.
 - Per-tab zoom (terminal and pane font size, remote desktop scale), remembered per connection.
+- Tabs that can be moved out to their own window (to keep them on another monitor) and back, without the session dropping or reconnecting.
+- Single instance: opening it again brings the one already open to the front, even when it is next to the clock.
 - Connections on this PC or synced, encrypted, in Google Drive or OneDrive.
 - Import from another connection manager (.rdm files) and from .rdp files.
 
@@ -85,7 +87,18 @@ You don't need to create any account. Only if you choose to store your connectio
 - Each tab has its own buttons:
   - Smaller / Bigger (− and +): zoom for the tab. In SSH it changes the terminal font size; in file sessions, the font size of the panes; in RDP, the scale of the remote desktop (from 100 to 200%). It is remembered the next time you open that connection.
   - Full screen (F11; Ctrl+Esc to come back).
+  - Open in its own window (or drag the tab out of the window).
   - Disconnect this tab.
+- Right-click on the tab: "Open in its own window" and "Disconnect".
+
+**Separate windows (tabs in their own window)**
+- Drag a tab out of the main window and drop it wherever you like (on another monitor, for example): it opens in its own window, right there. You can also use the tab's "Open in its own window" button or its right-click menu.
+- The session **does not drop or reconnect**: the remote desktop, the terminal or the file explorer move as they are to the new window.
+- At the top, the separate window has the same bar the tab had: zoom, full screen, "Back to the main window" and disconnect.
+- To bring it back: the "Back to the main window" button, drag that bar onto the main window, or close the window with the X (closing it does not disconnect; there is the disconnect button for that).
+- You can have several at once. Each connection remembers where its separate window was (and on which monitor) and opens it there again; if that monitor is gone, it shows up on the main screen.
+- The open sessions button on the bottom bar also lists the ones in separate windows and brings them to the front.
+- Closing the main window also closes the separate ones (and disconnects their sessions). It asks first: "N session(s) are open in their own windows…". You can turn that off in Settings › Window.
 
 **Status bar**
 - Open sessions: a menu with all the tabs to switch to any of them, handy when the remote desktop grabs the keyboard (shortcuts Ctrl+Tab / Ctrl+Shift+Tab).
@@ -98,6 +111,10 @@ You don't need to create any account. Only if you choose to store your connectio
 
 **Notification area**
 - When you minimize, the window hides and leaves its icon next to the clock (if you don't see it, it is among the hidden icons in Windows 11). One click brings it back; right-click for "Open" and "Exit". Open sessions stay alive. You can turn this off in Settings › Window.
+
+**Single instance**
+- If the app is already open (even hidden next to the clock) and you open it again — from the executable, from the Microsoft Store or from a shortcut — the one already open comes to the front instead of a new one. If the shortcut has `--open "Name"`, that connection opens in the window that was already there.
+- If the one already open is an older version, it makes way for the new one; if it has open sessions, it asks before closing.
 
 ### Connection editor
 
@@ -241,6 +258,7 @@ If a file already exists and the connection is set to "Ask before overwriting", 
 
 **Window**
 - "Minimize to the notification area" (on by default). When off, the window minimizes to the taskbar like any other window.
+- "Ask before closing separate windows" (on by default). When off, closing the main window closes the tabs that are in their own windows without asking.
 
 Close: closes Settings.
 
@@ -250,7 +268,7 @@ Contact ("Write to the author"), language switch, privacy, MIT license and legal
 
 ### Shortcut options
 
-You can create a shortcut that opens a connection at startup: `sOCRCManager.exe --open "Connection name"`. Also, `--edit "Name"` opens its editor, and `--edit-file "Name" "/path"` opens a file on the server in the built-in editor.
+You can create a shortcut that opens a connection at startup: `sOCRCManager.exe --open "Connection name"`. Also, `--edit "Name"` opens its editor, and `--edit-file "Name" "/path"` opens a file on the server in the built-in editor. `--tray` starts it hidden in the notification area. If the app is already open, all of this happens in the one already open.
 
 ## FAQ
 
@@ -262,6 +280,12 @@ In the connection editor, Advanced tab, "If server authentication fails" must be
 
 **When I open an RDP connection the zoom goes back to 100%.**
 Since version 2026.9.23.1 the zoom is applied after signing in and is retried for a few seconds until the server accepts it. Update to the latest version.
+
+**Can I have a session on another monitor?**
+Yes: drag its tab out of the window and drop it on the other monitor (or use the tab's "Open in its own window" button). The session stays connected; to bring it back, drag that window's bar onto the main window or click "Back to the main window".
+
+**I opened the app again and no second window appears.**
+That is expected: there is only one instance, and opening it again brings the one already open to the front (even if it was hidden next to the clock).
 
 **I minimized the window and it disappeared.**
 It is in the notification area, next to the clock (in Windows 11, it may be among the hidden icons, under the ^ arrow). One click brings it back. If you would rather have it minimize to the taskbar, turn off Settings › Window › "Minimize to the notification area".

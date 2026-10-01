@@ -9,7 +9,7 @@
 <!-- /wp:heading -->
 
 <!-- wp:paragraph {"style":{"color":{"text":"#e0e7ff"},"typography":{"fontSize":"1.2rem","lineHeight":"1.6"}}} -->
-<p class="has-text-color" style="color:#e0e7ff;font-size:1.2rem;line-height:1.6">Signing, versions, permissions, Google Play rules, the back button and the two apps that use a server.</p>
+<p class="has-text-color" style="color:#e0e7ff;font-size:1.2rem;line-height:1.6">Signing, versions, permissions, Google Play rules, the back button, the two apps that use a server and moving to production.</p>
 <!-- /wp:paragraph -->
 
 <!-- wp:buttons {"style":{"spacing":{"blockGap":{"left":"12px","top":"12px"}}}} -->
@@ -26,7 +26,7 @@
 <!-- wp:group {"className":"soc-sec","align":"full","style":{"spacing":{"padding":{"top":"var:preset|spacing|40","bottom":"var:preset|spacing|70"},"margin":{"top":"0","bottom":"0"}}},"layout":{"type":"constrained","contentSize":"780px"}} -->
 <div class="wp-block-group alignfull soc-sec" style="padding-top:var(--wp--preset--spacing--40);padding-bottom:var(--wp--preset--spacing--70);margin-top:0;margin-bottom:0">
 <!-- wp:paragraph {"style":{"color":{"text":"#64748b"},"typography":{"fontSize":"0.9rem","fontWeight":"600"}}} -->
-<p class="has-text-color" style="color:#64748b;font-size:0.9rem;font-weight:600">Text last updated: September 28, 2026</p>
+<p class="has-text-color" style="color:#64748b;font-size:0.9rem;font-weight:600">Text last updated: October 1, 2026</p>
 <!-- /wp:paragraph -->
 
 <!-- wp:group {"className":"soc-card","style":{"border":{"color":"#e2e8f0","width":"1px","radius":"16px"},"color":{"background":"#f8fafc"},"spacing":{"padding":{"top":"28px","bottom":"28px","left":"28px","right":"28px"},"blockGap":"12px"}}} -->
@@ -36,7 +36,7 @@
 <!-- /wp:paragraph -->
 
 <!-- wp:list -->
-<ul class="wp-block-list"><li><a href="#1-structure">1. Structure</a></li><li><a href="#2-signing">2. Signing</a></li><li><a href="#3-versions">3. Versions</a></li><li><a href="#4-permissions">4. Permissions</a></li><li><a href="#5-google-play-rules">5. Google Play rules</a></li><li><a href="#6-publishing">6. Publishing</a></li><li><a href="#7-interface">7. Interface</a></li><li><a href="#8-task-manager-account-server-and-encryption">8. Task Manager: account, server and encryption</a></li><li><a href="#9-device-testing">9. Device testing</a></li><li><a href="#10-family-together-anonymous-user-server-notifications-and-location">10. Family Together: anonymous user, server, notifications and location</a></li></ul>
+<ul class="wp-block-list"><li><a href="#1-structure">1. Structure</a></li><li><a href="#2-signing">2. Signing</a></li><li><a href="#3-versions">3. Versions</a></li><li><a href="#4-permissions">4. Permissions</a></li><li><a href="#5-google-play-rules">5. Google Play rules</a></li><li><a href="#6-publishing">6. Publishing</a></li><li><a href="#7-interface">7. Interface</a></li><li><a href="#8-task-manager-account-server-and-encryption">8. Task Manager: account, server and encryption</a></li><li><a href="#9-device-testing">9. Device testing</a></li><li><a href="#10-family-together-anonymous-user-server-notifications-and-location">10. Family Together: anonymous user, server, notifications and location</a></li><li><a href="#11-moving-to-production-on-google-play-the-questionnaire-ready">11. Moving to production on Google Play: the questionnaire, ready</a></li></ul>
 <!-- /wp:list -->
 </div>
 <!-- /wp:group -->
@@ -429,6 +429,34 @@ server never sees the group key, and storing one position per group means pausin
 the source: what was recorded while paused for a group never reaches it. Notification messages
 carry no text so that the service delivering them does not know what they say, and the map is
 inside the app so it does not depend on loading it from outside.</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:heading {"anchor":"11-moving-to-production-on-google-play-the-questionnaire-ready","style":{"typography":{"fontWeight":"700","lineHeight":"1.25"},"color":{"text":"#0f172a"},"spacing":{"margin":{"top":"var:preset|spacing|50"}}},"fontSize":"large"} -->
+<h2 id="11-moving-to-production-on-google-play-the-questionnaire-ready" class="wp-block-heading has-large-font-size has-text-color" style="color:#0f172a;margin-top:var(--wp--preset--spacing--50);font-weight:700;line-height:1.25">11. Moving to production on Google Play: the questionnaire, ready</h2>
+<!-- /wp:heading -->
+
+<!-- wp:paragraph -->
+<p><strong>What it says.</strong> To move from closed testing to production, the Google Play console asks for a
+questionnaire: how testers were recruited and how hard it was, what they did with the app, what
+they suggested, who the app is for, what value it gives, how many installs are expected, what was
+changed during the test and why it is considered ready. Every app on Play keeps those answers
+written in its repository, in the console's language and with each text within the form's <strong>300
+characters</strong> (with its length next to it), ready to paste; for the multiple-choice questions, the
+proposed option. The changes come from the changelog since the app entered closed testing, and
+"ready" rests on the automated test suite, testing on a real phone, no crashes in the console and a
+complete store listing and data safety form. Two rules: what the testers did or said is <strong>never
+made up</strong>, and whatever can only be known by looking at the console (whether they really used it,
+their comments, recorded crashes) is flagged to be checked before sending. The file is written when
+an app is uploaded to closed testing and kept up to date with every version that changes what it
+says.</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph -->
+<p><strong>Why.</strong> There are nine apps with the same questionnaire, and writing it at the last minute in the
+console, with the character limit on top, ends in vague answers or, worse, in claims nobody has
+checked. Prepared from the repository's data, each answer says what the app really does (its
+permissions, whether it has an account or a server) and anything doubtful is flagged: the day the
+fourteen days of testing are over, asking for production takes a few minutes.</p>
 <!-- /wp:paragraph -->
 </div>
 <!-- /wp:group -->

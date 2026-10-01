@@ -2,8 +2,8 @@
 - slug: movil
 - documento: CONSTITUCION-MOBILE.md
 - orden: 2
-- actualizado: 2026-09-28
-- lema: Firma, versiones, permisos, reglas de Google Play, el botón de atrás y las dos aplicaciones que usan servidor.
+- actualizado: 2026-10-01
+- lema: Firma, versiones, permisos, reglas de Google Play, el botón de atrás, las dos aplicaciones que usan servidor y el paso a producción.
 
 Amplía la constitución general para las aplicaciones hechas con .NET MAUI. Cada una tiene por
 objetivo **Android, Windows o los dos**, con el mismo proyecto. En Google Play están File Manager,
@@ -266,3 +266,25 @@ clave del grupo nunca la ve el servidor, y guardar una posición por grupo hace 
 en origen: lo registrado mientras se estaba en pausa para un grupo nunca le llega. Los mensajes de
 aviso no llevan texto para que el servicio que los entrega no sepa qué dicen, y el mapa va dentro de
 la aplicación para no depender de cargarlo de fuera.
+
+## 11. Paso a producción en Google Play: el cuestionario, preparado
+
+**Qué dice.** Para pasar de la prueba cerrada a producción, la consola de Google Play pide un
+cuestionario: cómo se reclutaron los probadores y cuánto costó, qué hicieron con la aplicación, qué
+sugirieron, a quién va dirigida, qué valor aporta, cuántas instalaciones se esperan, qué se cambió
+durante la prueba y por qué se da por preparada. Cada aplicación de Play lleva esas respuestas
+escritas en su repositorio, en el idioma de la consola y con cada texto dentro de los **300
+caracteres** del formulario (con su longitud al lado), listas para pegar; para las preguntas de
+opciones, la propuesta. Los cambios salen del registro de cambios desde que la aplicación entró en
+la prueba cerrada, y lo de «preparada» se apoya en el banco de pruebas automáticas, las pruebas en
+un móvil real, la ausencia de fallos en la consola y la ficha y la seguridad de los datos
+completas. Dos reglas: **nunca se inventa** lo que hicieron o dijeron los probadores, y lo que solo
+se sabe mirando la consola (si de verdad la usaron, sus comentarios, los fallos registrados) va
+marcado para comprobarlo antes de enviar. El fichero se escribe al subir una aplicación a la prueba
+cerrada y se pone al día con cada versión que cambie lo que dice.
+
+**Por qué.** Son nueve aplicaciones con el mismo cuestionario, y escribirlo a última hora en la
+consola, con el límite de caracteres encima, acaba en respuestas vagas o, peor, en afirmaciones que
+nadie ha comprobado. Preparado con los datos del repositorio, cada respuesta dice lo que la
+aplicación hace de verdad (sus permisos, si tiene cuenta o servidor) y lo dudoso queda señalado: el
+día que se cumplen los catorce días de prueba, pedir producción son unos minutos.

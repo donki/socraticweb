@@ -9,7 +9,7 @@
 <!-- /wp:heading -->
 
 <!-- wp:paragraph {"style":{"color":{"text":"#e0e7ff"},"typography":{"fontSize":"1.2rem","lineHeight":"1.6"}}} -->
-<p class="has-text-color" style="color:#e0e7ff;font-size:1.2rem;line-height:1.6">Firma, versiones, permisos, reglas de Google Play, el botón de atrás y las dos aplicaciones que usan servidor.</p>
+<p class="has-text-color" style="color:#e0e7ff;font-size:1.2rem;line-height:1.6">Firma, versiones, permisos, reglas de Google Play, el botón de atrás, las dos aplicaciones que usan servidor y el paso a producción.</p>
 <!-- /wp:paragraph -->
 
 <!-- wp:buttons {"style":{"spacing":{"blockGap":{"left":"12px","top":"12px"}}}} -->
@@ -26,7 +26,7 @@
 <!-- wp:group {"className":"soc-sec","align":"full","style":{"spacing":{"padding":{"top":"var:preset|spacing|40","bottom":"var:preset|spacing|70"},"margin":{"top":"0","bottom":"0"}}},"layout":{"type":"constrained","contentSize":"780px"}} -->
 <div class="wp-block-group alignfull soc-sec" style="padding-top:var(--wp--preset--spacing--40);padding-bottom:var(--wp--preset--spacing--70);margin-top:0;margin-bottom:0">
 <!-- wp:paragraph {"style":{"color":{"text":"#64748b"},"typography":{"fontSize":"0.9rem","fontWeight":"600"}}} -->
-<p class="has-text-color" style="color:#64748b;font-size:0.9rem;font-weight:600">Última actualización del texto: 28 de septiembre de 2026</p>
+<p class="has-text-color" style="color:#64748b;font-size:0.9rem;font-weight:600">Última actualización del texto: 1 de octubre de 2026</p>
 <!-- /wp:paragraph -->
 
 <!-- wp:group {"className":"soc-card","style":{"border":{"color":"#e2e8f0","width":"1px","radius":"16px"},"color":{"background":"#f8fafc"},"spacing":{"padding":{"top":"28px","bottom":"28px","left":"28px","right":"28px"},"blockGap":"12px"}}} -->
@@ -36,7 +36,7 @@
 <!-- /wp:paragraph -->
 
 <!-- wp:list -->
-<ul class="wp-block-list"><li><a href="#1-estructura">1. Estructura</a></li><li><a href="#2-firma">2. Firma</a></li><li><a href="#3-versiones">3. Versiones</a></li><li><a href="#4-permisos">4. Permisos</a></li><li><a href="#5-reglas-de-google-play">5. Reglas de Google Play</a></li><li><a href="#6-publicacion">6. Publicación</a></li><li><a href="#7-interfaz">7. Interfaz</a></li><li><a href="#8-task-manager-cuenta-servidor-y-cifrado">8. Task Manager: cuenta, servidor y cifrado</a></li><li><a href="#9-pruebas-en-dispositivo">9. Pruebas en dispositivo</a></li><li><a href="#10-family-together-usuario-anonimo-servidor-avisos-y-ubicacion">10. Family Together: usuario anónimo, servidor, avisos y ubicación</a></li></ul>
+<ul class="wp-block-list"><li><a href="#1-estructura">1. Estructura</a></li><li><a href="#2-firma">2. Firma</a></li><li><a href="#3-versiones">3. Versiones</a></li><li><a href="#4-permisos">4. Permisos</a></li><li><a href="#5-reglas-de-google-play">5. Reglas de Google Play</a></li><li><a href="#6-publicacion">6. Publicación</a></li><li><a href="#7-interfaz">7. Interfaz</a></li><li><a href="#8-task-manager-cuenta-servidor-y-cifrado">8. Task Manager: cuenta, servidor y cifrado</a></li><li><a href="#9-pruebas-en-dispositivo">9. Pruebas en dispositivo</a></li><li><a href="#10-family-together-usuario-anonimo-servidor-avisos-y-ubicacion">10. Family Together: usuario anónimo, servidor, avisos y ubicación</a></li><li><a href="#11-paso-a-produccion-en-google-play-el-cuestionario-preparado">11. Paso a producción en Google Play: el cuestionario, preparado</a></li></ul>
 <!-- /wp:list -->
 </div>
 <!-- /wp:group -->
@@ -431,6 +431,34 @@ clave del grupo nunca la ve el servidor, y guardar una posición por grupo hace 
 en origen: lo registrado mientras se estaba en pausa para un grupo nunca le llega. Los mensajes de
 aviso no llevan texto para que el servicio que los entrega no sepa qué dicen, y el mapa va dentro de
 la aplicación para no depender de cargarlo de fuera.</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:heading {"anchor":"11-paso-a-produccion-en-google-play-el-cuestionario-preparado","style":{"typography":{"fontWeight":"700","lineHeight":"1.25"},"color":{"text":"#0f172a"},"spacing":{"margin":{"top":"var:preset|spacing|50"}}},"fontSize":"large"} -->
+<h2 id="11-paso-a-produccion-en-google-play-el-cuestionario-preparado" class="wp-block-heading has-large-font-size has-text-color" style="color:#0f172a;margin-top:var(--wp--preset--spacing--50);font-weight:700;line-height:1.25">11. Paso a producción en Google Play: el cuestionario, preparado</h2>
+<!-- /wp:heading -->
+
+<!-- wp:paragraph -->
+<p><strong>Qué dice.</strong> Para pasar de la prueba cerrada a producción, la consola de Google Play pide un
+cuestionario: cómo se reclutaron los probadores y cuánto costó, qué hicieron con la aplicación, qué
+sugirieron, a quién va dirigida, qué valor aporta, cuántas instalaciones se esperan, qué se cambió
+durante la prueba y por qué se da por preparada. Cada aplicación de Play lleva esas respuestas
+escritas en su repositorio, en el idioma de la consola y con cada texto dentro de los <strong>300
+caracteres</strong> del formulario (con su longitud al lado), listas para pegar; para las preguntas de
+opciones, la propuesta. Los cambios salen del registro de cambios desde que la aplicación entró en
+la prueba cerrada, y lo de «preparada» se apoya en el banco de pruebas automáticas, las pruebas en
+un móvil real, la ausencia de fallos en la consola y la ficha y la seguridad de los datos
+completas. Dos reglas: <strong>nunca se inventa</strong> lo que hicieron o dijeron los probadores, y lo que solo
+se sabe mirando la consola (si de verdad la usaron, sus comentarios, los fallos registrados) va
+marcado para comprobarlo antes de enviar. El fichero se escribe al subir una aplicación a la prueba
+cerrada y se pone al día con cada versión que cambie lo que dice.</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph -->
+<p><strong>Por qué.</strong> Son nueve aplicaciones con el mismo cuestionario, y escribirlo a última hora en la
+consola, con el límite de caracteres encima, acaba en respuestas vagas o, peor, en afirmaciones que
+nadie ha comprobado. Preparado con los datos del repositorio, cada respuesta dice lo que la
+aplicación hace de verdad (sus permisos, si tiene cuenta o servidor) y lo dudoso queda señalado: el
+día que se cumplen los catorce días de prueba, pedir producción son unos minutos.</p>
 <!-- /wp:paragraph -->
 </div>
 <!-- /wp:group -->

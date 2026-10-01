@@ -2,8 +2,8 @@
 - slug: mobile
 - documento: CONSTITUCION-MOBILE.md
 - orden: 2
-- actualizado: 2026-09-28
-- lema: Signing, versions, permissions, Google Play rules, the back button and the two apps that use a server.
+- actualizado: 2026-10-01
+- lema: Signing, versions, permissions, Google Play rules, the back button, the two apps that use a server and moving to production.
 
 Extends the general constitution for the apps built with .NET MAUI. Each one targets **Android,
 Windows or both**, from the same project. On Google Play there are File Manager, Hiker, Music
@@ -264,3 +264,25 @@ server never sees the group key, and storing one position per group means pausin
 the source: what was recorded while paused for a group never reaches it. Notification messages
 carry no text so that the service delivering them does not know what they say, and the map is
 inside the app so it does not depend on loading it from outside.
+
+## 11. Moving to production on Google Play: the questionnaire, ready
+
+**What it says.** To move from closed testing to production, the Google Play console asks for a
+questionnaire: how testers were recruited and how hard it was, what they did with the app, what
+they suggested, who the app is for, what value it gives, how many installs are expected, what was
+changed during the test and why it is considered ready. Every app on Play keeps those answers
+written in its repository, in the console's language and with each text within the form's **300
+characters** (with its length next to it), ready to paste; for the multiple-choice questions, the
+proposed option. The changes come from the changelog since the app entered closed testing, and
+"ready" rests on the automated test suite, testing on a real phone, no crashes in the console and a
+complete store listing and data safety form. Two rules: what the testers did or said is **never
+made up**, and whatever can only be known by looking at the console (whether they really used it,
+their comments, recorded crashes) is flagged to be checked before sending. The file is written when
+an app is uploaded to closed testing and kept up to date with every version that changes what it
+says.
+
+**Why.** There are nine apps with the same questionnaire, and writing it at the last minute in the
+console, with the character limit on top, ends in vague answers or, worse, in claims nobody has
+checked. Prepared from the repository's data, each answer says what the app really does (its
+permissions, whether it has an account or a server) and anything doubtful is flagged: the day the
+fourteen days of testing are over, asking for production takes a few minutes.

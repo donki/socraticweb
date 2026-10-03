@@ -1,6 +1,5 @@
 # sOC AutoTask
 - slug: autotask
-- publicar: no (private repository until Josep considers it finished and tested, 2026-10-01)
 - plataformas: Windows 10 (version 2004) or later and Windows 11, 64-bit
 - lema: Record what you do with the mouse and keyboard and let it repeat by itself.
 - github: https://github.com/donki/AutoTask

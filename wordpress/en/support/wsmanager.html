@@ -1,0 +1,213 @@
+<!-- wp:group {"className":"soc-hero soc-sec","align":"full","style":{"color":{"gradient":"linear-gradient(135deg,#1e1b4b 0%,#312e81 55%,#4338ca 100%)","text":"#ffffff"},"elements":{"link":{"color":{"text":"#ffffff"}}},"spacing":{"padding":{"top":"var:preset|spacing|70","bottom":"var:preset|spacing|50"},"margin":{"top":"0","bottom":"0"}}},"layout":{"type":"constrained","contentSize":"1120px"}} -->
+<div class="wp-block-group alignfull soc-hero soc-sec has-text-color has-background has-link-color" style="color:#ffffff;background:linear-gradient(135deg,#1e1b4b 0%,#312e81 55%,#4338ca 100%);padding-top:var(--wp--preset--spacing--70);padding-bottom:var(--wp--preset--spacing--50);margin-top:0;margin-bottom:0">
+<!-- wp:paragraph {"style":{"color":{"text":"#c7d2fe"},"typography":{"fontSize":"0.8rem","fontWeight":"700","letterSpacing":"0.12em","textTransform":"uppercase"}}} -->
+<p class="has-text-color" style="color:#c7d2fe;font-size:0.8rem;font-weight:700;letter-spacing:0.12em;text-transform:uppercase">Support · sOC WSManager</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:heading {"level":1,"style":{"typography":{"lineHeight":"1.08","fontWeight":"700","letterSpacing":"-0.02em"},"color":{"text":"#ffffff"}},"fontSize":"large"} -->
+<h1 class="wp-block-heading has-large-font-size has-text-color" style="color:#ffffff;font-weight:700;line-height:1.08;letter-spacing:-0.02em">User guide</h1>
+<!-- /wp:heading -->
+
+<!-- wp:paragraph {"style":{"color":{"text":"#e0e7ff"},"typography":{"fontSize":"1.2rem","lineHeight":"1.6"}}} -->
+<p class="has-text-color" style="color:#e0e7ff;font-size:1.2rem;line-height:1.6">How sOC WSManager works, screen by screen, and what every option does.</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:buttons {"style":{"spacing":{"blockGap":{"left":"12px","top":"12px"}}}} -->
+<div class="wp-block-buttons"><!-- wp:button {"style":{"border":{"radius":"10px"},"spacing":{"padding":{"top":"12px","bottom":"12px","left":"22px","right":"22px"}},"color":{"text":"#4338ca","background":"#ffffff"}}} -->
+<div class="wp-block-button"><a class="wp-block-button__link has-text-color has-background wp-element-button" href="https://socraticweb0.wordpress.com/en/apps/wsmanager/" style="border-radius:10px;color:#4338ca;background-color:#ffffff;padding-top:12px;padding-bottom:12px;padding-left:22px;padding-right:22px">View the app</a></div>
+<!-- /wp:button -->
+<!-- wp:button {"className":"is-style-outline","style":{"border":{"radius":"10px","width":"1.5px","style":"solid"},"spacing":{"padding":{"top":"12px","bottom":"12px","left":"22px","right":"22px"}},"color":{"text":"#ffffff"}}} -->
+<div class="wp-block-button is-style-outline"><a class="wp-block-button__link has-text-color wp-element-button" href="https://socraticweb0.wordpress.com/en/support/" style="border-width:1.5px;border-style:solid;border-radius:10px;color:#ffffff;padding-top:12px;padding-bottom:12px;padding-left:22px;padding-right:22px">All guides</a></div>
+<!-- /wp:button --></div>
+<!-- /wp:buttons -->
+</div>
+<!-- /wp:group -->
+
+<!-- wp:group {"className":"soc-sec","align":"full","style":{"spacing":{"padding":{"top":"var:preset|spacing|40","bottom":"var:preset|spacing|70"},"margin":{"top":"0","bottom":"0"}}},"layout":{"type":"constrained","contentSize":"780px"}} -->
+<div class="wp-block-group alignfull soc-sec" style="padding-top:var(--wp--preset--spacing--40);padding-bottom:var(--wp--preset--spacing--70);margin-top:0;margin-bottom:0">
+<!-- wp:group {"className":"soc-card","style":{"border":{"color":"#e2e8f0","width":"1px","radius":"16px"},"color":{"background":"#f8fafc"},"spacing":{"padding":{"top":"28px","bottom":"28px","left":"28px","right":"28px"},"blockGap":"12px"}}} -->
+<div class="wp-block-group soc-card has-border-color has-background" style="border-color:#e2e8f0;border-width:1px;border-radius:16px;background-color:#f8fafc;padding-top:28px;padding-bottom:28px;padding-left:28px;padding-right:28px">
+<!-- wp:paragraph {"style":{"color":{"text":"#0f172a"}}} -->
+<p class="has-text-color" style="color:#0f172a"><strong>In this guide</strong></p>
+<!-- /wp:paragraph -->
+
+<!-- wp:list -->
+<ul class="wp-block-list"><li><a href="#installation">Installation</a></li><li><a href="#first-run">First run</a></li><li><a href="#main-window">Main window</a></li><li><a href="#notification-area-icon">Notification area icon</a></li><li><a href="#service-editor">Service editor</a></li><li><a href="#import-services">Import services</a></li><li><a href="#about">About</a></li><li><a href="#faq">FAQ</a></li></ul>
+<!-- /wp:list -->
+</div>
+<!-- /wp:group -->
+
+<!-- wp:heading {"level":3,"anchor":"installation","style":{"typography":{"fontWeight":"700","lineHeight":"1.25"},"color":{"text":"#0f172a"},"spacing":{"margin":{"top":"var:preset|spacing|40"}}},"fontSize":"medium"} -->
+<h3 id="installation" class="wp-block-heading has-medium-font-size has-text-color" style="color:#0f172a;margin-top:var(--wp--preset--spacing--40);font-weight:700;line-height:1.25">Installation</h3>
+<!-- /wp:heading -->
+
+<!-- wp:list {"ordered":true} -->
+<ol class="wp-block-list">
+<li>Download the latest version from the GitHub releases page (https://github.com/donki/WSManager/releases): <code>sOCWSManager.exe</code> (the app) and <code>sOCServiceHost.exe</code> (the service component). Put them in the same folder.</li>
+<li>Open <code>sOCWSManager.exe</code>. Nothing else to install. If Windows warns that the publisher is unknown, click "More info" and "Run anyway".</li>
+</ol>
+<!-- /wp:list -->
+
+<!-- wp:paragraph -->
+<p>Requirements: 64-bit Windows 10 (version 2004) or later, or Windows 11. Creating and changing services needs an administrator account (Windows asks for permission on each change).</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:heading {"level":3,"anchor":"first-run","style":{"typography":{"fontWeight":"700","lineHeight":"1.25"},"color":{"text":"#0f172a"},"spacing":{"margin":{"top":"var:preset|spacing|40"}}},"fontSize":"medium"} -->
+<h3 id="first-run" class="wp-block-heading has-medium-font-size has-text-color" style="color:#0f172a;margin-top:var(--wp--preset--spacing--40);font-weight:700;line-height:1.25">First run</h3>
+<!-- /wp:heading -->
+
+<!-- wp:paragraph -->
+<p>The first time the "Setup guide" opens, with four steps (Back / Next at the bottom):</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:list {"ordered":true} -->
+<ol class="wp-block-list">
+<li><strong>Install the service component</strong>: copies <code>sOCServiceHost.exe</code> to Program Files, where only administrators can change it and Windows can always read it. It is done by itself when you create the first service.</li>
+<li><strong>Start with Windows</strong> (optional): keeps WSManager next to the clock to see your services and get warnings.</li>
+<li><strong>Create your first service</strong>: "New service" button.</li>
+<li><strong>Bring your services from another service manager</strong> (optional): "Import" button.</li>
+</ol>
+<!-- /wp:list -->
+
+<!-- wp:paragraph -->
+<p>The guide opens again whenever you want with the help button (?).</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:heading {"level":3,"anchor":"main-window","style":{"typography":{"fontWeight":"700","lineHeight":"1.25"},"color":{"text":"#0f172a"},"spacing":{"margin":{"top":"var:preset|spacing|40"}}},"fontSize":"medium"} -->
+<h3 id="main-window" class="wp-block-heading has-medium-font-size has-text-color" style="color:#0f172a;margin-top:var(--wp--preset--spacing--40);font-weight:700;line-height:1.25">Main window</h3>
+<!-- /wp:heading -->
+
+<!-- wp:paragraph -->
+<p><strong>Left buttons</strong> (icons only; the name shows on hover): New service (+), Edit, Start or continue, Pause, Stop, Restart, Rotate the output files now, Open the output (stdout / stderr) and Remove the service (in red, with confirmation).</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph -->
+<p><strong>Right buttons</strong>: Import from another service manager, Run as administrator (shield: a separate window where changes do not ask for permission one by one), Start with Windows, Setup guide, What's new, Español / English and About.</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph -->
+<p><strong>List</strong>: State (with its dot: green running, grey stopped, amber paused or waiting to restart), Service (display name and name), Startup, Account, Service PID, App PID and Restarts. Double-click or Enter edit; Delete removes. At the bottom, the result of the last action.</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:heading {"level":3,"anchor":"notification-area-icon","style":{"typography":{"fontWeight":"700","lineHeight":"1.25"},"color":{"text":"#0f172a"},"spacing":{"margin":{"top":"var:preset|spacing|40"}}},"fontSize":"medium"} -->
+<h3 id="notification-area-icon" class="wp-block-heading has-medium-font-size has-text-color" style="color:#0f172a;margin-top:var(--wp--preset--spacing--40);font-weight:700;line-height:1.25">Notification area icon</h3>
+<!-- /wp:heading -->
+
+<!-- wp:paragraph -->
+<p>A click opens the window. Right-click shows one entry per service, with its state, and inside: Start, Stop, Pause or Continue, Restart, Edit, Open the output (stdout), Open the errors (stderr) and Remove the service. Below: New service, Import, Open the window and Exit. On hover it says how many services there are and how many are running. If a service stops without being asked to, an "A service stopped" notification shows.</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:heading {"level":3,"anchor":"service-editor","style":{"typography":{"fontWeight":"700","lineHeight":"1.25"},"color":{"text":"#0f172a"},"spacing":{"margin":{"top":"var:preset|spacing|40"}}},"fontSize":"medium"} -->
+<h3 id="service-editor" class="wp-block-heading has-medium-font-size has-text-color" style="color:#0f172a;margin-top:var(--wp--preset--spacing--40);font-weight:700;line-height:1.25">Service editor</h3>
+<!-- /wp:heading -->
+
+<!-- wp:paragraph -->
+<p>At the top, the <strong>Service name</strong> (only when creating it). At the bottom, Cancel and Save; anything that is not valid is shown in red and not saved. If the service is running, the changes apply when you restart it.</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:list -->
+<ul class="wp-block-list">
+<li><strong>Application</strong>: Path of the program, Startup directory (empty: the program's folder) and Arguments. Paths can use variables such as %ProgramFiles%.</li>
+<li><strong>Details</strong>: Display name, Description and Startup type (Automatic, Automatic (delayed), Manual, Disabled).</li>
+<li><strong>Log on</strong>: Local System (with "Allow the service to interact with the desktop"), Local Service, Network Service or This account (Account, Password and Confirm the password, with the eye to show it). Without the administrator window, the password is asked for in the permission window when saving. The account gets the right to log on as a service.</li>
+<li><strong>Dependencies</strong>: Services it depends on and Service groups it depends on, one per line.</li>
+<li><strong>Process</strong>: Priority (from Realtime to Idle), Processors (All processors, or a list like 0-1,3) and No console window for the application.</li>
+<li><strong>Shutdown</strong>: Send Ctrl+C, Close its windows (WM_CLOSE), Ask its threads to quit (WM_QUIT) and End the process, each with its wait in milliseconds (1500 by default); and Also stop the processes it started.</li>
+<li><strong>Exit actions</strong>: Minimum run time before a restart counts as normal (1500 ms), When the application exits (Restart the application, Do nothing, Stop the service, End without stopping), Wait before restarting, and a By exit code list (add and remove).</li>
+<li><strong>I/O</strong>: Input (stdin), Output (stdout) and Errors (stderr), with what to do if the file exists (Append to the end, Replace it…), and Put the date and time on each line.</li>
+<li><strong>File rotation</strong>: Rotate the files when the service starts; While it runs (Do not rotate, Rotate when they reach the limits, Rotate at the limits and on demand); Older than (seconds) and Bigger than (bytes).</li>
+<li><strong>Environment</strong>: Add or change variables, and Replace the whole environment (NAME=value, one per line; %VARIABLE% is expanded).</li>
+<li><strong>Hooks</strong>: a command for each moment (before starting the application —exit code 99 cancels the start—, after starting it, before stopping it, after it exits, before and after rotating, when the power status changes and when the PC resumes).</li>
+</ul>
+<!-- /wp:list -->
+
+<!-- wp:heading {"level":3,"anchor":"import-services","style":{"typography":{"fontWeight":"700","lineHeight":"1.25"},"color":{"text":"#0f172a"},"spacing":{"margin":{"top":"var:preset|spacing|40"}}},"fontSize":"medium"} -->
+<h3 id="import-services" class="wp-block-heading has-medium-font-size has-text-color" style="color:#0f172a;margin-top:var(--wp--preset--spacing--40);font-weight:700;line-height:1.25">Import services</h3>
+<!-- /wp:heading -->
+
+<!-- wp:paragraph -->
+<p>"Import from another service manager" button. The window has three parts:</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:list -->
+<ul class="wp-block-list">
+<li><strong>Services of another service manager</strong>: the ones found, ticked; "Import the selected ones" asks for confirmation and moves them to WSManager keeping all their settings. Running ones are stopped and started again.</li>
+<li><strong>Already imported</strong>: each with "Undo the import", while the other manager's program is still on the PC.</li>
+<li><strong>Automatic import</strong>: "Import services of another service manager automatically" (asks for administrator permission once) and "Restart right away the ones that are running" (if not, WSManager takes over at their next start). It creates a scheduled task that runs when the PC starts and every 15 minutes; each import shows a notification.</li>
+</ul>
+<!-- /wp:list -->
+
+<!-- wp:heading {"level":3,"anchor":"about","style":{"typography":{"fontWeight":"700","lineHeight":"1.25"},"color":{"text":"#0f172a"},"spacing":{"margin":{"top":"var:preset|spacing|40"}}},"fontSize":"medium"} -->
+<h3 id="about" class="wp-block-heading has-medium-font-size has-text-color" style="color:#0f172a;margin-top:var(--wp--preset--spacing--40);font-weight:700;line-height:1.25">About</h3>
+<!-- /wp:heading -->
+
+<!-- wp:paragraph -->
+<p>Version, What's new, Report an issue or an idea, Language (Español / English, with their flags), Privacy, License and Legal notice.</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:heading {"anchor":"faq","style":{"typography":{"fontWeight":"700"},"color":{"text":"#0f172a"},"spacing":{"margin":{"top":"var:preset|spacing|70"}}},"fontSize":"large"} -->
+<h2 id="faq" class="wp-block-heading has-large-font-size has-text-color" style="color:#0f172a;margin-top:var(--wp--preset--spacing--70);font-weight:700">FAQ</h2>
+<!-- /wp:heading -->
+
+<!-- wp:group {"style":{"spacing":{"blockGap":"0"}}} -->
+<div class="wp-block-group">
+<!-- wp:details {"style":{"border":{"bottom":{"color":"#e2e8f0","width":"1px"}},"spacing":{"padding":{"top":"18px","bottom":"18px"}}}} -->
+<details class="wp-block-details" style="border-bottom-color:#e2e8f0;border-bottom-width:1px;border-bottom-style:solid;padding-top:18px;padding-bottom:18px"><summary><strong>Why does it ask for administrator permission on each change?</strong></summary>
+<!-- wp:paragraph -->
+<p>Creating, changing, starting or stopping services is for administrators in Windows. The app runs without privileges and asks only for each operation, without leaving anything privileged running. If you are going to make many changes in a row, use the shield button ("Run as administrator").</p>
+<!-- /wp:paragraph --></details>
+<!-- /wp:details -->
+
+<!-- wp:details {"style":{"border":{"bottom":{"color":"#e2e8f0","width":"1px"}},"spacing":{"padding":{"top":"18px","bottom":"18px"}}}} -->
+<details class="wp-block-details" style="border-bottom-color:#e2e8f0;border-bottom-width:1px;border-bottom-style:solid;padding-top:18px;padding-bottom:18px"><summary><strong>My program crashes right after starting and the service says &quot;Waiting to restart&quot;.</strong></summary>
+<!-- wp:paragraph -->
+<p>That is the growing wait: each crash in a row doubles the wait, up to 256 seconds. Look at the output (output button) and at the Event Viewer (source sOCWSManager) to see why it exits. Pause the service to cancel the pending restart.</p>
+<!-- /wp:paragraph --></details>
+<!-- /wp:details -->
+
+<!-- wp:details {"style":{"border":{"bottom":{"color":"#e2e8f0","width":"1px"}},"spacing":{"padding":{"top":"18px","bottom":"18px"}}}} -->
+<details class="wp-block-details" style="border-bottom-color:#e2e8f0;border-bottom-width:1px;border-bottom-style:solid;padding-top:18px;padding-bottom:18px"><summary><strong>Where do I see what my program writes?</strong></summary>
+<!-- wp:paragraph -->
+<p>Set a file in the I/O tab (Output and Errors can be the same). Then "Open the output" opens it with the Windows program.</p>
+<!-- /wp:paragraph --></details>
+<!-- /wp:details -->
+
+<!-- wp:details {"style":{"border":{"bottom":{"color":"#e2e8f0","width":"1px"}},"spacing":{"padding":{"top":"18px","bottom":"18px"}}}} -->
+<details class="wp-block-details" style="border-bottom-color:#e2e8f0;border-bottom-width:1px;border-bottom-style:solid;padding-top:18px;padding-bottom:18px"><summary><strong>I imported a running service with automatic import and nothing changed.</strong></summary>
+<!-- wp:paragraph -->
+<p>By default, running ones move to WSManager at their next start (for example when the PC restarts), which is the lowest-risk moment. If you prefer them restarted right away, tick "Restart right away the ones that are running".</p>
+<!-- /wp:paragraph --></details>
+<!-- /wp:details -->
+
+<!-- wp:details {"style":{"border":{"bottom":{"color":"#e2e8f0","width":"1px"}},"spacing":{"padding":{"top":"18px","bottom":"18px"}}}} -->
+<details class="wp-block-details" style="border-bottom-color:#e2e8f0;border-bottom-width:1px;border-bottom-style:solid;padding-top:18px;padding-bottom:18px"><summary><strong>Does it store the account passwords?</strong></summary>
+<!-- wp:paragraph -->
+<p>No: they go straight to Windows, which keeps them for the service.</p>
+<!-- /wp:paragraph --></details>
+<!-- /wp:details -->
+</div>
+<!-- /wp:group -->
+</div>
+<!-- /wp:group -->
+
+<!-- wp:group {"className":"soc-sec","align":"full","style":{"spacing":{"padding":{"top":"0","bottom":"var:preset|spacing|70"},"margin":{"top":"0","bottom":"0"}}},"layout":{"type":"constrained","contentSize":"1120px"}} -->
+<div class="wp-block-group alignfull soc-sec" style="padding-top:0;padding-bottom:var(--wp--preset--spacing--70);margin-top:0;margin-bottom:0">
+<!-- wp:group {"className":"soc-card","style":{"color":{"background":"#eef2ff"},"border":{"radius":"20px"},"spacing":{"padding":{"top":"40px","bottom":"40px","left":"40px","right":"40px"}}}} -->
+<div class="wp-block-group soc-card has-background" style="border-radius:20px;background-color:#eef2ff;padding-top:40px;padding-bottom:40px;padding-left:40px;padding-right:40px">
+<!-- wp:heading {"style":{"typography":{"fontWeight":"700"},"color":{"text":"#0f172a"}},"fontSize":"medium"} -->
+<h2 class="wp-block-heading has-medium-font-size has-text-color" style="color:#0f172a;font-weight:700">Can't find what you need?</h2>
+<!-- /wp:heading -->
+
+<!-- wp:paragraph {"style":{"color":{"text":"#334155"}}} -->
+<p class="has-text-color" style="color:#334155">Open an issue on GitHub telling us what's happening, with which version and device.</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:buttons {"style":{"spacing":{"blockGap":{"left":"12px","top":"12px"}}}} -->
+<div class="wp-block-buttons"><!-- wp:button {"style":{"border":{"radius":"10px"},"spacing":{"padding":{"top":"12px","bottom":"12px","left":"22px","right":"22px"}},"color":{"text":"#ffffff","background":"#4338ca"}}} -->
+<div class="wp-block-button"><a class="wp-block-button__link has-text-color has-background wp-element-button" href="https://github.com/donki/WSManager/issues" style="border-radius:10px;color:#ffffff;background-color:#4338ca;padding-top:12px;padding-bottom:12px;padding-left:22px;padding-right:22px" target="_blank" rel="noreferrer noopener">Open an issue on GitHub</a></div>
+<!-- /wp:button --></div>
+<!-- /wp:buttons -->
+</div>
+<!-- /wp:group -->
+</div>
+<!-- /wp:group -->

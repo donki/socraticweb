@@ -1,6 +1,5 @@
 # sOC WSManager
 - slug: wsmanager
-- publicar: no (2026-10-01: repositorio privado hasta que Josep decida; la ficha queda preparada)
 - plataformas: Windows 10 (versión 2004) o posterior y Windows 11, 64 bits
 - lema: Cualquier programa, como servicio de Windows: lo arranca con el equipo, lo vigila y lo vuelve a levantar si se cae.
 - github: https://github.com/donki/WSManager

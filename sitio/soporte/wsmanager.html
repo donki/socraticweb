@@ -1,0 +1,184 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>sOC WSManager: guía de uso</title>
+<link rel="stylesheet" href="../estilo.css">
+</head>
+<body>
+<header class="wp-block-group alignfull has-background" style="border-bottom-color:#e2e8f0;border-bottom-width:1px;border-bottom-style:solid;background-color:#ffffff;margin-top:0;margin-bottom:0">
+<div class="wp-block-group alignwide" style="padding-top:18px;padding-bottom:18px">
+<div class="wp-block-group">
+<figure class="wp-block-image size-full has-custom-border is-resized"><a href="../index.html"><img src="../img/marca/logo.png" alt="sOCratic" class="" style="border-radius:9px;width:36px"/></a></figure>
+
+<p class="has-medium-font-size soc-marca has-link-color" style="font-weight:800;letter-spacing:-0.02em"><a href="../index.html"><strong>sOCratic</strong></a></p>
+</div>
+
+<div class="wp-block-group">
+<a href="../apps/index.html">Aplicaciones</a>
+<a href="../soporte/index.html">Soporte</a>
+<a href="../constitucion/index.html">Constitución</a>
+<a href="../privacidad.html">Privacidad</a>
+<a href="https://github.com/donki">GitHub</a>
+
+<div class="wp-block-group" style="line-height:0">
+<figure class="wp-block-image size-full has-custom-border is-resized"><a href="../index.html"><img src="../img/banderas/es.png" alt="Español" class="has-border-color" style="border-color:#e2e8f0;border-width:1px;border-radius:3px;width:24px"/></a></figure>
+
+<figure class="wp-block-image size-full has-custom-border is-resized"><a href="../en/index.html"><img src="../img/banderas/en.png" alt="English" class="has-border-color" style="border-color:#e2e8f0;border-width:1px;border-radius:3px;width:24px"/></a></figure>
+</div>
+</div>
+</div>
+</header>
+
+<div class="wp-block-group alignfull soc-hero soc-sec has-text-color has-background has-link-color" style="color:#ffffff;background:linear-gradient(135deg,#1e1b4b 0%,#312e81 55%,#4338ca 100%);padding-top:var(--wp--preset--spacing--70);padding-bottom:var(--wp--preset--spacing--50);margin-top:0;margin-bottom:0">
+<p class="has-text-color" style="color:#c7d2fe;font-size:0.8rem;font-weight:700;letter-spacing:0.12em;text-transform:uppercase">Soporte · sOC WSManager</p>
+
+<h1 class="wp-block-heading has-large-font-size has-text-color" style="color:#ffffff;font-weight:700;line-height:1.08;letter-spacing:-0.02em">Guía de uso</h1>
+
+<p class="has-text-color" style="color:#e0e7ff;font-size:1.2rem;line-height:1.6">Cómo funciona sOC WSManager, pantalla a pantalla, y qué hace cada opción.</p>
+
+<div class="wp-block-buttons"><div class="wp-block-button"><a class="wp-block-button__link has-text-color has-background wp-element-button" href="../apps/wsmanager.html" style="border-radius:10px;color:#4338ca;background-color:#ffffff;padding-top:12px;padding-bottom:12px;padding-left:22px;padding-right:22px">Ver la aplicación</a></div>
+<div class="wp-block-button is-style-outline"><a class="wp-block-button__link has-text-color wp-element-button" href="../soporte/index.html" style="border-width:1.5px;border-style:solid;border-radius:10px;color:#ffffff;padding-top:12px;padding-bottom:12px;padding-left:22px;padding-right:22px">Todas las guías</a></div>
+</div>
+</div>
+
+<div class="wp-block-group alignfull soc-sec" style="padding-top:var(--wp--preset--spacing--40);padding-bottom:var(--wp--preset--spacing--70);margin-top:0;margin-bottom:0">
+<div class="wp-block-group soc-card has-border-color has-background" style="border-color:#e2e8f0;border-width:1px;border-radius:16px;background-color:#f8fafc;padding-top:28px;padding-bottom:28px;padding-left:28px;padding-right:28px">
+<p class="has-text-color" style="color:#0f172a"><strong>En esta guía</strong></p>
+
+<ul class="wp-block-list"><li><a href="#instalacion">Instalación</a></li><li><a href="#primera-puesta-en-marcha">Primera puesta en marcha</a></li><li><a href="#ventana-principal">Ventana principal</a></li><li><a href="#icono-del-area-de-notificacion">Icono del área de notificación</a></li><li><a href="#editor-de-servicio">Editor de servicio</a></li><li><a href="#importar-servicios">Importar servicios</a></li><li><a href="#acerca-de">Acerca de</a></li><li><a href="#preguntas-frecuentes">Preguntas frecuentes</a></li></ul>
+</div>
+
+<h3 id="instalacion" class="wp-block-heading has-medium-font-size has-text-color" style="color:#0f172a;margin-top:var(--wp--preset--spacing--40);font-weight:700;line-height:1.25">Instalación</h3>
+
+<ol class="wp-block-list">
+<li>Descarga la última versión desde la página de versiones de GitHub (https://github.com/donki/WSManager/releases): <code>sOCWSManager.exe</code> (la aplicación) y <code>sOCServiceHost.exe</code> (el componente de servicio). Ponlos en la misma carpeta.</li>
+<li>Abre <code>sOCWSManager.exe</code>. No hay que instalar nada más. Si Windows avisa de que el editor es desconocido, pulsa «Más información» y «Ejecutar de todas formas».</li>
+</ol>
+
+<p>Requisitos: Windows 10 (versión 2004) o posterior, o Windows 11, de 64 bits. Para crear y cambiar servicios hace falta una cuenta de administrador (Windows pide permiso en cada cambio).</p>
+
+<h3 id="primera-puesta-en-marcha" class="wp-block-heading has-medium-font-size has-text-color" style="color:#0f172a;margin-top:var(--wp--preset--spacing--40);font-weight:700;line-height:1.25">Primera puesta en marcha</h3>
+
+<p>La primera vez se abre la «Guía de configuración», con cuatro pasos (Anterior / Siguiente abajo):</p>
+
+<ol class="wp-block-list">
+<li><strong>Instalar el componente de servicio</strong>: copia <code>sOCServiceHost.exe</code> a Archivos de programa, donde solo los administradores pueden cambiarlo y Windows siempre lo puede leer. Se hace solo al crear el primer servicio.</li>
+<li><strong>Arrancar con Windows</strong> (opcional): deja WSManager junto al reloj para ver tus servicios y recibir avisos.</li>
+<li><strong>Crear tu primer servicio</strong>: botón «Servicio nuevo».</li>
+<li><strong>Traer tus servicios de otro gestor de servicios</strong> (opcional): botón «Importar».</li>
+</ol>
+
+<p>La guía se vuelve a abrir cuando quieras con el botón de ayuda (?).</p>
+
+<h3 id="ventana-principal" class="wp-block-heading has-medium-font-size has-text-color" style="color:#0f172a;margin-top:var(--wp--preset--spacing--40);font-weight:700;line-height:1.25">Ventana principal</h3>
+
+<p><strong>Botones de la izquierda</strong> (solo iconos; el nombre sale al pasar el ratón): Servicio nuevo (+), Editar, Arrancar o continuar, Pausar, Parar, Reiniciar, Rotar ya los ficheros de salida, Abrir la salida (stdout / stderr) y Dar de baja el servicio (en rojo, con confirmación).</p>
+
+<p><strong>Botones de la derecha</strong>: Importar de otro gestor de servicios, Ejecutar como administrador (escudo: una ventana aparte en la que los cambios no piden permiso uno a uno), Arrancar con Windows, Guía de configuración, Novedades, Español / English y Acerca de.</p>
+
+<p><strong>Lista</strong>: Estado (con su punto: verde en marcha, gris parado, ámbar en pausa o esperando para reiniciar), Servicio (nombre visible y nombre), Inicio, Cuenta, PID servicio, PID aplicación y Reinicios. Doble clic o Intro editan; Supr da de baja. Abajo, el resultado de la última acción.</p>
+
+<h3 id="icono-del-area-de-notificacion" class="wp-block-heading has-medium-font-size has-text-color" style="color:#0f172a;margin-top:var(--wp--preset--spacing--40);font-weight:700;line-height:1.25">Icono del área de notificación</h3>
+
+<p>Un clic abre la ventana. Con el botón derecho sale un apartado por servicio, con su estado, y dentro: Arrancar, Parar, Pausar o Continuar, Reiniciar, Editar, Abrir la salida (stdout), Abrir los errores (stderr) y Dar de baja el servicio. Debajo: Servicio nuevo, Importar, Abrir la ventana y Salir. Al pasar el ratón dice cuántos servicios hay y cuántos están en marcha. Si un servicio se para sin que se haya pedido, sale un aviso «Un servicio se ha parado».</p>
+
+<h3 id="editor-de-servicio" class="wp-block-heading has-medium-font-size has-text-color" style="color:#0f172a;margin-top:var(--wp--preset--spacing--40);font-weight:700;line-height:1.25">Editor de servicio</h3>
+
+<p>Arriba, el <strong>Nombre del servicio</strong> (solo al crearlo). Abajo, Cancelar y Guardar; si algo no vale se dice en rojo y no se guarda. Si el servicio está en marcha, los cambios se aplican al reiniciarlo.</p>
+
+<ul class="wp-block-list">
+<li><strong>Aplicación</strong>: Ruta del programa, Directorio de inicio (vacío: la carpeta del programa) y Argumentos. Las rutas pueden llevar variables como %ProgramFiles%.</li>
+<li><strong>Detalles</strong>: Nombre visible, Descripción y Tipo de inicio (Automático, Automático (retrasado), Manual, Deshabilitado).</li>
+<li><strong>Inicio de sesión</strong>: Sistema local (con «Permitir que el servicio interactúe con el escritorio»), Servicio local, Servicio de red o Esta cuenta (Cuenta, Contraseña y Repite la contraseña, con el ojo para verla). Sin la ventana de administrador, la contraseña se pide en la ventana de permisos al guardar. La cuenta recibe el derecho de iniciar sesión como servicio.</li>
+<li><strong>Dependencias</strong>: Servicios de los que depende y Grupos de servicios de los que depende, uno por línea.</li>
+<li><strong>Proceso</strong>: Prioridad (de Tiempo real a Baja), Procesadores (Todos los procesadores, o una lista como 0-1,3) y Sin ventana de consola para la aplicación.</li>
+<li><strong>Parada</strong>: Mandar Ctrl+C, Cerrar sus ventanas (WM_CLOSE), Pedir a sus hilos que acaben (WM_QUIT) y Terminar el proceso, cada uno con su espera en milisegundos (1500 por defecto); y Parar también los procesos que haya lanzado.</li>
+<li><strong>Acciones de salida</strong>: Tiempo mínimo en marcha para que un reinicio cuente como normal (1500 ms), Cuando la aplicación sale (Volver a lanzar la aplicación, No hacer nada, Parar el servicio, Acabar sin parar), Espera antes de reiniciar, y una lista Por código de salida (añadir y quitar).</li>
+<li><strong>E/S</strong>: Entrada (stdin), Salida (stdout) y Errores (stderr), con qué hacer si el fichero ya existe (Añadir al final, Sustituirlo…), y Poner la fecha y la hora en cada línea.</li>
+<li><strong>Rotación</strong>: Rotar los ficheros al arrancar el servicio; Con el servicio en marcha (No rotar, Rotar al llegar a los límites, Rotar en los límites y bajo demanda); Más viejos que (segundos) y Más grandes que (bytes).</li>
+<li><strong>Entorno</strong>: Añadir o cambiar variables, y Sustituir todo el entorno (NOMBRE=valor, una por línea; %VARIABLE% se expande).</li>
+<li><strong>Ganchos</strong>: una orden para cada momento (antes de lanzar la aplicación —el código 99 cancela el arranque—, después de lanzarla, antes de pararla, cuando ha salido, antes y después de rotar, al cambiar la alimentación y al volver de la suspensión).</li>
+</ul>
+
+<h3 id="importar-servicios" class="wp-block-heading has-medium-font-size has-text-color" style="color:#0f172a;margin-top:var(--wp--preset--spacing--40);font-weight:700;line-height:1.25">Importar servicios</h3>
+
+<p>Botón «Importar de otro gestor de servicios». La ventana tiene tres partes:</p>
+
+<ul class="wp-block-list">
+<li><strong>Servicios de otro gestor de servicios</strong>: los que encuentra, marcados; «Importar los elegidos» pide confirmación y los pasa a WSManager conservando toda su configuración. Los que estén en marcha se paran y se vuelven a arrancar.</li>
+<li><strong>Ya importados</strong>: cada uno con «Deshacer la importación», mientras el programa del otro gestor siga en el PC.</li>
+<li><strong>Importación automática</strong>: «Importar automáticamente los servicios de otro gestor de servicios» (pide permiso de administrador una vez) y «Reiniciar en el acto los que estén en marcha» (si no, WSManager toma el relevo en su próximo arranque). Crea una tarea programada que se ejecuta al arrancar el PC y cada 15 minutos; cada importación sale en un aviso.</li>
+</ul>
+
+<h3 id="acerca-de" class="wp-block-heading has-medium-font-size has-text-color" style="color:#0f172a;margin-top:var(--wp--preset--spacing--40);font-weight:700;line-height:1.25">Acerca de</h3>
+
+<p>Versión, Novedades, Contar un fallo o una idea, Idioma (Español / English, con sus banderas), Privacidad, Licencia y Aviso legal.</p>
+
+<h2 id="preguntas-frecuentes" class="wp-block-heading has-large-font-size has-text-color" style="color:#0f172a;margin-top:var(--wp--preset--spacing--70);font-weight:700">Preguntas frecuentes</h2>
+
+<div class="wp-block-group">
+<details class="wp-block-details" style="border-bottom-color:#e2e8f0;border-bottom-width:1px;border-bottom-style:solid;padding-top:18px;padding-bottom:18px"><summary><strong>¿Por qué me pide permiso de administrador en cada cambio?</strong></summary>
+<p>Crear, cambiar, arrancar o parar servicios es cosa de administradores en Windows. La aplicación corre sin privilegios y pide permiso solo para cada operación, sin dejar nada con privilegios en marcha. Si vas a hacer muchos cambios seguidos, usa el botón del escudo («Ejecutar como administrador»).</p>
+</details>
+
+<details class="wp-block-details" style="border-bottom-color:#e2e8f0;border-bottom-width:1px;border-bottom-style:solid;padding-top:18px;padding-bottom:18px"><summary><strong>Mi programa se cae nada más arrancar y el servicio dice «Esperando para reiniciar».</strong></summary>
+<p>Es la espera creciente: cada caída seguida dobla la espera, hasta 256 segundos. Mira la salida (botón de la salida) y el Visor de eventos (origen sOCWSManager) para ver por qué sale. Pausa el servicio para cancelar el reinicio pendiente.</p>
+</details>
+
+<details class="wp-block-details" style="border-bottom-color:#e2e8f0;border-bottom-width:1px;border-bottom-style:solid;padding-top:18px;padding-bottom:18px"><summary><strong>¿Dónde veo lo que escribe mi programa?</strong></summary>
+<p>Pon un fichero en la pestaña E/S (Salida y Errores pueden ser el mismo). Después, «Abrir la salida» lo abre con el programa de Windows.</p>
+</details>
+
+<details class="wp-block-details" style="border-bottom-color:#e2e8f0;border-bottom-width:1px;border-bottom-style:solid;padding-top:18px;padding-bottom:18px"><summary><strong>Importé un servicio en marcha con la importación automática y sigue igual.</strong></summary>
+<p>Por defecto, los que están en marcha pasan a WSManager en su próximo arranque (por ejemplo al reiniciar el equipo), que es el momento de menos riesgo. Si prefieres que se reinicien en el acto, marca «Reiniciar en el acto los que estén en marcha».</p>
+</details>
+
+<details class="wp-block-details" style="border-bottom-color:#e2e8f0;border-bottom-width:1px;border-bottom-style:solid;padding-top:18px;padding-bottom:18px"><summary><strong>¿Guarda las contraseñas de las cuentas?</strong></summary>
+<p>No: van directas a Windows, que es quien las guarda para el servicio.</p>
+</details>
+</div>
+</div>
+
+<div class="wp-block-group alignfull soc-sec" style="padding-top:0;padding-bottom:var(--wp--preset--spacing--70);margin-top:0;margin-bottom:0">
+<div class="wp-block-group soc-card has-background" style="border-radius:20px;background-color:#eef2ff;padding-top:40px;padding-bottom:40px;padding-left:40px;padding-right:40px">
+<h2 class="wp-block-heading has-medium-font-size has-text-color" style="color:#0f172a;font-weight:700">¿No encuentras lo que buscas?</h2>
+
+<p class="has-text-color" style="color:#334155">Abre una incidencia en GitHub contando qué te pasa y con qué versión y dispositivo.</p>
+
+<div class="wp-block-buttons"><div class="wp-block-button"><a class="wp-block-button__link has-text-color has-background wp-element-button" href="https://github.com/donki/WSManager/issues" style="border-radius:10px;color:#ffffff;background-color:#4338ca;padding-top:12px;padding-bottom:12px;padding-left:22px;padding-right:22px" target="_blank" rel="noreferrer noopener">Abrir una incidencia en GitHub</a></div>
+</div>
+</div>
+</div>
+
+<footer class="wp-block-group alignfull soc-sec has-text-color has-background has-link-color" style="color:#cbd5e1;background-color:#0f172a;padding-top:var(--wp--preset--spacing--70);padding-bottom:var(--wp--preset--spacing--50);margin-top:0;margin-bottom:0">
+<div class="wp-block-columns"><div class="wp-block-column" style="flex-basis:40%"><p class="has-text-color" style="color:#ffffff;font-size:1.4rem"><strong>sOCratic</strong></p>
+<p>Aplicaciones de uso libre y sin anuncios para Android y Windows, hechas para aprender y con el código fuente abierto. Un experimento de programación con IA guiada por especificaciones.</p>
+</div>
+<div class="wp-block-column" style="flex-basis:20%"><p class="has-text-color" style="color:#94a3b8;font-size:0.8rem;font-weight:700;letter-spacing:0.1em;text-transform:uppercase">Sitio</p>
+<p style="margin-top:6px"><a href="../apps/index.html">Aplicaciones</a></p>
+<p style="margin-top:6px"><a href="../soporte/index.html">Soporte</a></p>
+<p style="margin-top:6px"><a href="../constitucion/index.html">Constitución</a></p>
+<p style="margin-top:6px"><a href="../en/index.html">English</a></p>
+</div>
+<div class="wp-block-column" style="flex-basis:20%"><p class="has-text-color" style="color:#94a3b8;font-size:0.8rem;font-weight:700;letter-spacing:0.1em;text-transform:uppercase">Legal</p>
+<p style="margin-top:6px"><a href="../aviso-legal.html">Aviso legal</a></p>
+<p style="margin-top:6px"><a href="../privacidad.html">Privacidad</a></p>
+<p style="margin-top:6px"><a href="../cookies.html">Cookies</a></p>
+</div>
+<div class="wp-block-column" style="flex-basis:20%"><p class="has-text-color" style="color:#94a3b8;font-size:0.8rem;font-weight:700;letter-spacing:0.1em;text-transform:uppercase">Contacto</p>
+<p style="margin-top:6px"><a href="https://github.com/donki">GitHub</a></p>
+</div>
+</div>
+
+<hr class="wp-block-separator has-text-color has-alpha-channel-opacity has-background" style="background-color:#1e293b;color:#1e293b"/>
+
+<p class="has-text-color" style="color:#94a3b8;font-size:0.875rem">© 2026 sOCratic · Código abierto con licencia MIT</p>
+
+<div class="wp-block-jetpack-cookie-consent alignwide has-text-color has-background has-link-color" style="border-radius:14px;color:#ffffff;background-color:#0f172a;padding-top:1.25em;padding-right:1.5em;padding-bottom:1.25em;padding-left:1.5em" role="dialog" aria-modal="true"><p>Esta web está alojada en WordPress.com, que usa cookies para sus estadísticas de visitas. Puedes aceptarlas o ver cómo rechazarlas en la <a href="../cookies.html">política de cookies</a>.</p><div class="wp-block-button"><a class="wp-block-button__link has-text-color has-background wp-element-button" href="#" style="border-radius:10px;color:#4338ca;background-color:#ffffff;padding-top:12px;padding-bottom:12px;padding-left:22px;padding-right:22px">Aceptar</a></div>
+<span>365</span></div>
+</footer>
+
+</body>
+</html>

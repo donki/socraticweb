@@ -1,130 +1,130 @@
 {
-  "_fecha": "2026-09-30",
+  "_fecha": "2026-10-03",
   "_nota": "Fuente de los índices de calidad que build.py pinta en la ficha y en la tarjeta de cada app. pruebas = nº de pruebas automatizadas (todas pasan); cobertura_codigo = % de líneas del código instrumentado; cobertura_app = % de líneas de toda la app (sin generados); tiempo_s = duración del banco (dotnet test, sin compilar); llm_h = horas aproximadas de trabajo del LLM; fecha = día de la medición. Opcionales, para las pruebas de interfaz: ui_pruebas y ui_tiempo_s. Un campo que falta no se pinta. Se actualiza en el mismo ciclo que el README (General §8.6).",
   "_metodo_llm": "Tiempo activo del LLM medido en las transcripciones de Claude Code (sesiones principales y subagentes, 2026-08-29 a 2026-09-30): suma de huecos < 5 min entre un mensaje y el siguiente cuando este es del asistente o un resultado de herramienta (los huecos que terminan en un mensaje de Josep, en una pregunta al usuario o en la espera de un subagente no cuentan). Cada hueco se atribuye a las apps cuyas rutas aparecen en ese mensaje o en la llamada a herramienta que produjo el resultado; si no nombra ninguna, se reparte en proporción a lo que sí se atribuyó en el mismo turno, o al cwd. El trabajo anterior al 2026-08-29 (transcripciones ya borradas) se estima con los días con commits en git: 1,5 h el día de creación, 0,41 h por día normal (media medida en el periodo cubierto) y 0,25 h en días de sincronización masiva.",
   "credentials": {
-    "pruebas": 151,
-    "cobertura_codigo": 99.4,
-    "cobertura_app": 36.0,
-    "tiempo_s": 8,
-    "llm_h": 9,
-    "fecha": "2026-09-30"
+    "pruebas": 401,
+    "cobertura_codigo": 92.1,
+    "cobertura_app": 82.5,
+    "tiempo_s": 37,
+    "llm_h": 13,
+    "fecha": "2026-10-03"
   },
   "familytogether": {
-    "pruebas": 265,
-    "cobertura_codigo": 99.0,
-    "cobertura_app": 33.0,
-    "tiempo_s": 6,
-    "llm_h": 7,
-    "fecha": "2026-10-01"
+    "pruebas": 498,
+    "cobertura_codigo": 98.0,
+    "cobertura_app": 90.1,
+    "tiempo_s": 22,
+    "llm_h": 9.5,
+    "fecha": "2026-10-03"
   },
   "filemanager": {
-    "pruebas": 142,
-    "cobertura_codigo": 98.9,
-    "cobertura_app": 36.2,
-    "tiempo_s": 1,
-    "llm_h": 4,
-    "fecha": "2026-09-30"
+    "pruebas": 260,
+    "cobertura_codigo": 99.4,
+    "cobertura_app": 65.6,
+    "tiempo_s": 0.9,
+    "llm_h": 5.5,
+    "fecha": "2026-10-01"
   },
   "hiker": {
-    "pruebas": 77,
-    "cobertura_codigo": 95.0,
-    "cobertura_app": 25.0,
+    "pruebas": 176,
+    "cobertura_codigo": 97.3,
+    "cobertura_app": 79.3,
     "tiempo_s": 1,
-    "llm_h": 10,
-    "fecha": "2026-09-30"
+    "llm_h": 13,
+    "fecha": "2026-10-01"
   },
   "lucia": {
-    "pruebas": 216,
-    "cobertura_codigo": 46.4,
-    "cobertura_app": 52.7,
-    "tiempo_s": 8,
-    "llm_h": 5,
-    "fecha": "2026-09-30"
+    "pruebas": 252,
+    "cobertura_codigo": 91.5,
+    "cobertura_app": 91.5,
+    "tiempo_s": 18,
+    "llm_h": 7,
+    "fecha": "2026-10-03"
   },
   "musicplayer": {
-    "pruebas": 181,
-    "cobertura_codigo": 99.5,
-    "cobertura_app": 25.2,
-    "tiempo_s": 7,
-    "llm_h": 5,
-    "fecha": "2026-09-30"
+    "pruebas": 218,
+    "cobertura_codigo": 99.6,
+    "cobertura_app": 37.0,
+    "tiempo_s": 8,
+    "llm_h": 6,
+    "fecha": "2026-10-02"
   },
   "pdfreader": {
-    "pruebas": 69,
-    "cobertura_codigo": 98.8,
-    "cobertura_app": 15.0,
-    "tiempo_s": 1,
-    "llm_h": 4,
-    "fecha": "2026-09-30"
+    "pruebas": 151,
+    "cobertura_codigo": 96.9,
+    "cobertura_app": 84.1,
+    "tiempo_s": 17,
+    "llm_h": 6,
+    "fecha": "2026-10-02"
   },
   "phonemirror": {
-    "pruebas": 178,
-    "cobertura_codigo": 92.9,
-    "cobertura_app": 32.8,
-    "tiempo_s": 3.3,
-    "llm_h": 3,
-    "fecha": "2026-09-30"
+    "pruebas": 223,
+    "cobertura_codigo": 93.3,
+    "cobertura_app": 93.3,
+    "tiempo_s": 48,
+    "llm_h": 5,
+    "fecha": "2026-10-03"
   },
   "quitsmoke": {
-    "pruebas": 36,
-    "cobertura_codigo": 99.0,
-    "cobertura_app": 46.0,
+    "pruebas": 73,
+    "cobertura_codigo": 98.6,
+    "cobertura_app": 79.0,
     "tiempo_s": 1,
-    "llm_h": 3,
-    "fecha": "2026-09-30"
+    "llm_h": 4.5,
+    "fecha": "2026-10-02"
   },
   "rcmanager": {
-    "pruebas": 399,
-    "cobertura_codigo": 94.0,
-    "cobertura_app": 43.5,
-    "tiempo_s": 11,
-    "llm_h": 7,
-    "fecha": "2026-10-01",
+    "pruebas": 961,
+    "cobertura_codigo": 99.3,
+    "cobertura_app": 99.4,
+    "tiempo_s": 67,
+    "llm_h": 11,
+    "fecha": "2026-10-03",
     "ui_pruebas": 10,
     "ui_tiempo_s": 17
   },
   "smsforwarder": {
-    "pruebas": 90,
-    "cobertura_codigo": 99.3,
-    "cobertura_app": 16.9,
-    "tiempo_s": 0.2,
-    "llm_h": 6,
-    "fecha": "2026-09-30"
+    "pruebas": 135,
+    "cobertura_codigo": 92.8,
+    "cobertura_app": 72.4,
+    "tiempo_s": 4,
+    "llm_h": 8,
+    "fecha": "2026-10-02"
   },
   "taskmanager": {
-    "pruebas": 254,
-    "cobertura_codigo": 97.3,
-    "cobertura_app": 39.0,
-    "tiempo_s": 10,
-    "llm_h": 22,
-    "fecha": "2026-09-30",
+    "pruebas": 427,
+    "cobertura_codigo": 97.5,
+    "cobertura_app": 96.1,
+    "tiempo_s": 141,
+    "llm_h": 27,
+    "fecha": "2026-10-03",
     "ui_pruebas": 6,
     "ui_tiempo_s": 114
   },
   "tdtonline": {
-    "pruebas": 108,
-    "cobertura_codigo": 90.9,
-    "cobertura_app": 46.0,
-    "tiempo_s": 3.3,
-    "llm_h": 3,
-    "fecha": "2026-09-30"
+    "pruebas": 144,
+    "cobertura_codigo": 92.4,
+    "cobertura_app": 53.0,
+    "tiempo_s": 0.5,
+    "llm_h": 4.5,
+    "fecha": "2026-10-02"
   },
   "txtreader": {
-    "pruebas": 68,
-    "cobertura_codigo": 90.4,
-    "cobertura_app": 10.1,
-    "tiempo_s": 0.3,
-    "llm_h": 3,
-    "fecha": "2026-09-30"
+    "pruebas": 166,
+    "cobertura_codigo": 97.9,
+    "cobertura_app": 92.6,
+    "tiempo_s": 1,
+    "llm_h": 4,
+    "fecha": "2026-10-02"
   },
   "uninstaller": {
-    "pruebas": 168,
-    "cobertura_codigo": 98.7,
-    "cobertura_app": 28.0,
-    "tiempo_s": 0.15,
-    "llm_h": 7,
-    "fecha": "2026-09-30"
+    "pruebas": 267,
+    "cobertura_codigo": 98.2,
+    "cobertura_app": 50.8,
+    "tiempo_s": 0.9,
+    "llm_h": 9.0,
+    "fecha": "2026-10-01"
   },
   "wsmanager": {
     "pruebas": 286,
@@ -135,5 +135,15 @@
     "fecha": "2026-10-01",
     "ui_pruebas": 8,
     "ui_tiempo_s": 48
+  },
+  "autotask": {
+    "pruebas": 301,
+    "cobertura_codigo": 94.9,
+    "cobertura_app": 94.9,
+    "tiempo_s": 19,
+    "llm_h": 5,
+    "fecha": "2026-10-03",
+    "ui_pruebas": 8,
+    "ui_tiempo_s": 19
   }
 }

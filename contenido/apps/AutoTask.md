@@ -1,6 +1,5 @@
 # sOC AutoTask
 - slug: autotask
-- publicar: no (repositorio privado hasta que Josep lo dé por terminado y probado, 2026-10-01)
 - plataformas: Windows 10 (versión 2004) o posterior y Windows 11, 64 bits
 - lema: Graba lo que haces con el ratón y el teclado y deja que se repita solo.
 - github: https://github.com/donki/AutoTask

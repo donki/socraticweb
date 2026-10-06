@@ -6,7 +6,7 @@
 - tiendas:
   - Google Play (prueba cerrada): https://play.google.com/store/apps/details?id=com.socratic.taskmanager — solo en la pista de prueba cerrada (alpha); la página pública da 404 hasta que pase a producción, lo que exige antes 12 probadores durante 14 días (fuentes: D:\sOCProjects\06-PENDIENTE-TaskManager.md, store/google-play/ficha.md, README.md; comprobado el 2026-09-25 que la URL pública devuelve 404).
   - Microsoft Store (publicada): https://apps.microsoft.com/detail/9PHJK2391727 (enlace de Josep, 2026-09-25; ficha pública comprobada)
-- descarga_alternativa: https://github.com/donki/TaskManager/releases (APK, EXE y MSIX de cada versión; última: v2026.09.23.00)
+- descarga_alternativa: https://github.com/donki/TaskManager/releases (APK, EXE y MSIX de cada versión; última: v2026.10.06.00)
 
 ## Descripción
 
@@ -22,7 +22,7 @@ Entras con una cuenta que ya tienes, de Google o de Microsoft, y lo que escribes
 - Listas propias y grupos compartidos con otras personas, con invitación por código QR.
 - Cada tarea con lista, notas, etiquetas, fecha de planificación, fecha de finalización, repetición, pasos, enlaces y ficheros adjuntos (también imágenes pegadas del portapapeles).
 - Vistas de «Mis tareas», «Mis listas», «Tablero» (pendientes, en curso y hechas) y «Calendario».
-- Filtros por estado y por fechas, fila de etiquetas y buscador que mira en título, notas, etiquetas, pasos y adjuntos.
+- Filtros por estado y por fechas, fila de etiquetas (con Ctrl+clic, varias a la vez) y buscador que mira en título, notas, etiquetas, pasos y adjuntos.
 - Selección múltiple para marcar hechas, anclar, etiquetar, mover o borrar varias tareas de golpe.
 - Repeticiones diarias, semanales en los días que elijas, mensuales o anuales.
 - Recordatorio diario de lo pendiente y aviso el día de vencimiento, con opción de repetir el aviso.
@@ -55,7 +55,7 @@ Entradas: **Mis tareas**, **Calendario**, **Mis listas**, **Tablero**, **Mis gru
 - **Añadir una tarea a hoy**: caja para escribir una tarea nueva y botón de añadir. La tarea entra en la primera lista y se abre para completarla.
 - **Buscar**: busca en título, notas, etiquetas, pasos y adjuntos. El aspa limpia la búsqueda.
 - **Filtros**: **Pendientes**, **Ancladas**, **Acabadas**, **Todas**, **Caducadas**, **Fecha de inicio anterior a hoy**, **Fecha de inicio hoy o posterior**, **Fecha de caducidad anterior a hoy**, **Fecha de caducidad hoy o posterior**.
-- **Fila de etiquetas**: **Todas las etiquetas**, **Sin etiqueta** y una por cada etiqueta con algo pendiente. A la izquierda, fijo, el botón que abre la pantalla **Etiquetas**. Pulsación larga sobre una etiqueta (botón derecho en Windows): **Borrar etiqueta**.
+- **Fila de etiquetas**: **Todas las etiquetas**, **Sin etiqueta** y una por cada etiqueta con algo pendiente. A la izquierda, fijo, el botón que abre la pantalla **Etiquetas**. Pulsación larga sobre una etiqueta (botón derecho en Windows): **Borrar etiqueta**. Con el teclado, **Ctrl+clic** marca o desmarca varias etiquetas a la vez y se ven las tareas que llevan cualquiera de ellas (en Android, con un teclado físico); un clic normal vuelve a dejar solo una.
 - En cada fila: casilla de hecha/pendiente; tocar la tarea abre su ficha. Mantén pulsada una tarea para arrastrarla y cambiarla de orden.
 - **Actualizar** (arriba): vuelve a sincronizar.
 - **Seleccionar varias**: activa casillas en cada fila y una barra con **Marcar hechas**, **Devolver a pendientes**, **Anclar arriba** / **Desanclar**, **Poner etiqueta** (elige una existente u «O escribe una nueva»), **Mover a una lista** y **Borrar** (pide confirmación; si alguna es repetitiva, pregunta **Solo las seleccionadas** o **Las series enteras**). El aspa o **Quitar la selección** sale del modo.
@@ -71,10 +71,10 @@ Todas las etiquetas en uso, también las que solo llevan tareas hechas, con «N 
 - **Qué hay que hacer** (título, obligatorio: si falta avisa «La tarea necesita un título»).
 - **Lista**: a qué lista pertenece.
 - **Notas**.
-- **Etiquetas**: separadas por comas (por ejemplo «casa, urgente, trabajo»). En Windows, botón **Añadir etiqueta**.
+- **Etiquetas**: separadas por comas (por ejemplo «casa, urgente, trabajo»). En Windows, botón **Añadir etiqueta**. Las etiquetas disponibles se ven todas, en varias filas y sin desplazar: tocar una se la pone o se la quita a la tarea.
 - **Fecha de finalización** y **Planificada para** (el día en que piensas hacerla, que no tiene por qué ser el del plazo).
 - **Repetición**: **No se repite**, **Cada día**, **Cada semana** (eligiendo días L M X J V S D), **Cada mes** (**Día del mes** o «El mismo día»), **Cada año** (**Mes** y día). Una tarea que se repite necesita fecha de planificación y de finalización: al guardar se crean todas las repeticiones de ese intervalo (hasta 500).
-- **Enlaces y ficheros**: **Añadir enlace** (pega la dirección), **Añadir fichero**, **Pegar del portapapeles** (imagen o ficheros copiados; en Windows también Ctrl+V). Tocar un adjunto lo abre (doble clic en Windows); **Quitar** lo elimina. Hay un tamaño máximo por fichero.
+- **Enlaces y ficheros**: **Añadir enlace** (pega la dirección), **Añadir fichero**, **Pegar del portapapeles** (imagen o ficheros copiados; en Windows también Ctrl+V). En Android, una imagen pegada en el título o en las notas (con **Pegar** o desde el teclado) se guarda también como adjunto. Tocar un adjunto lo abre (doble clic en Windows); **Quitar** lo elimina. Hay un tamaño máximo por fichero.
 - **Pasos**: escribe «Lo que dice el paso» y **Añadir paso**. Cada paso se marca, se edita (**Editar paso**), se borra (**Borrar paso**) y se arrastra para reordenar.
 - Arriba: **Guardar** (marca) y **Borrar tarea** (papelera). Si la tarea se repite, pregunta **Solo esta vuelta** o **Toda la serie**.
 

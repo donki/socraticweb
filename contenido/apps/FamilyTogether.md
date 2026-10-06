@@ -6,7 +6,7 @@
 - tiendas:
   - Google Play: no publicada (todavía no está en Play; el APK de cada versión va en las releases de GitHub, según el README del repositorio a 2026-09-29)
   - Microsoft Store: no publicada (solo Android)
-- descarga_alternativa: https://github.com/donki/FamilyTogether/releases (última: v2026.09.28.00, APK)
+- descarga_alternativa: https://github.com/donki/FamilyTogether/releases (última: v2026.10.06.00, APK)
 
 ## Descripción
 Family Together sirve para que las personas de un grupo cerrado —tu familia, tus amigos— vean dónde está cada una. En el mapa aparece la última posición de cada miembro con la hora y la batería de su móvil, y en el historial puedes ver por dónde ha ido cada uno en los últimos 30 días, con el recorrido ajustado a las calles y las paradas marcadas.
@@ -20,7 +20,9 @@ No hace falta cuenta ni contraseña: al abrirla por primera vez solo eliges el n
 - Ubicación en segundo plano cada vez que te mueves unos 25 metros, también con la aplicación cerrada; sin conexión, las posiciones se guardan y se envían después con su hora.
 - Historial de recorridos: las últimas 24 horas al abrir y cualquier día de los últimos 30, por persona, ajustado a calles y caminos en el propio móvil, con las paradas largas como un punto.
 - Zonas del grupo con avisos al entrar y al salir, solo de las personas y zonas que tú elijas.
-- SOS con cuenta atrás de 3 segundos para cancelarlo, a todos tus grupos o a los que marques, aunque estés en pausa.
+- SOS con cuenta atrás de 3 segundos para cancelarlo, a todos tus grupos o a los que marques, aunque estés en pausa, también desde un widget en la pantalla de inicio.
+- El SOS que te llega suena como una alarma aunque tengas el móvil en silencio (se puede apagar).
+- Pensada para gastar poca batería: con el móvil quieto el GPS se apaga y se vuelve a encender en cuanto te mueves.
 - Pausa por grupo: 1 hora, 8 horas, hasta mañana, hasta una hora concreta o hasta que la reanudes.
 - Grupos cerrados: invitación con código o QR que caduca a los 5 minutos y entrada aprobada por un administrador.
 - Sin cuenta: usuario anónimo, con vinculación opcional de Google o Microsoft para recuperarlo en otro móvil.
@@ -70,7 +72,8 @@ No hace falta cuenta ni contraseña: al abrirla por primera vez solo eliges el n
 2. **A estos grupos**: vienen todos marcados; desmarca los que no quieras avisar. Se envía con tu ubicación aunque estés en pausa.
 3. Al terminar, **SOS enviado** («Se ha avisado a los miembros de N grupo(s) con tu posición»). Sin conexión queda **Pendiente, reintentando** y se envía solo cuando vuelva, aunque cierres la aplicación. Sin GPS en ese momento, se envía tu última posición conocida con su hora.
 4. **Volver al mapa**.
-- Los demás reciben «SOS de <nombre>» y, al tocarlo, le ven en el mapa.
+- Los demás reciben «SOS de <nombre>» y, al tocarlo, le ven en el mapa. Con **Sonar aunque el móvil esté en silencio** (Ajustes › SOS, activado por defecto) suena la alarma a todo volumen durante un minuto aunque el móvil esté en silencio o en vibración; se para con **Silenciar** en el aviso, descartándolo o abriendo la aplicación, y el volumen vuelve a como estaba.
+- **Widget SOS**: mantén pulsado un hueco libre de la pantalla de inicio › **Widgets** › Family Together. Es un botón rojo que abre esta misma cuenta atrás, con **Cancelar**: un toque sin querer nunca envía nada.
 
 ### Pantalla Grupos
 - **Mis grupos**: cada grupo con tu papel (**Administrador** o **Miembro**); tócalo para abrirlo.
@@ -111,6 +114,7 @@ No hace falta cuenta ni contraseña: al abrirla por primera vez solo eliges el n
 - **Mi nombre y avatar**: cambia tu nombre visible y tu foto (**Elegir foto**, **Quitar foto**); se actualiza en todos tus grupos.
 - **Cuenta**: dice si está vinculada o no. **Vincular Google** o **Vincular Microsoft** para poder recuperarla. **Recuperar mi cuenta en este móvil**: en un móvil nuevo y sin grupos, trae tus grupos, zonas e historial; el móvil anterior deja de compartir tu ubicación.
 - **Permisos y batería**: el estado de la ubicación (siempre / solo con la app abierta / sin permiso, y si está compartiendo o parado), de las notificaciones y de la batería, con **Abrir la guía**.
+- **SOS**: **Sonar aunque el móvil esté en silencio** (activado por defecto) y cómo poner el widget del botón SOS.
 - **Historial**: **Ajustar recorridos a calles y caminos** (activado por defecto; apagado, no se consulta ningún mapa de calles) y **Borrar mi historial**.
 - Accesos a **Novedades** y **Acerca de**.
 

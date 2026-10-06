@@ -443,7 +443,9 @@ three dated figures: **how many tests there are** (and how many pass), **how muc
 cover** (also across the whole app, which is the honest figure), and **how long** the suite takes.
 Coverage of the whole app must reach **at least 90%** (the goal is 100%); until it does, every version
 **raises** it, there is a written plan to get there, and it **never drops** without an explanation; a new
-app starts at 90% already. A
+app starts at 90% already. **Every new feature comes with its tests**: logic tests in this suite and
+at least one **end-to-end** test that goes through it in the interface as a user would (8.7), in the
+same version. A
 green suite is a condition for accepting a version. Those figures, together with the **development
 time with LLM** (approximate hours), are also published on each app's page on this website and on its
 catalog card, and they are updated in the same cycle as the README.

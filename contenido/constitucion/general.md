@@ -439,7 +439,9 @@ README tres cifras con fecha: **cuántas pruebas hay** (y cuántas pasan), **qu�
 cubren** —también sobre toda la aplicación, que es la cifra honesta— y **cuánto tarda** el banco. La
 cobertura de toda la aplicación tiene que llegar al **90 % como mínimo** (la meta es el 100 %); mientras
 no llega, cada versión la **sube**, hay un plan escrito para alcanzarlo y **nunca baja** sin explicarlo; una
-aplicación nueva nace ya con el 90 %. El banco
+aplicación nueva nace ya con el 90 %. **Cada funcionalidad nueva entra con sus pruebas**: las de lógica
+en este banco y, además, al menos una prueba **de extremo a extremo** que la recorra por la interfaz
+como lo haría el usuario (8.7), en la misma versión. El banco
 en verde es condición para dar una versión por buena. Esas cifras, junto con el **tiempo de
 desarrollo con LLM** (horas aproximadas), se publican también en la ficha de cada aplicación en esta
 web y en su tarjeta del catálogo, y se actualizan en el mismo ciclo que el README.

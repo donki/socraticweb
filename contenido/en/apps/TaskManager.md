@@ -6,7 +6,7 @@
 - tiendas:
   - Google Play (prueba cerrada): https://play.google.com/store/apps/details?id=com.socratic.taskmanager — solo en la pista de prueba cerrada (alpha); la página pública da 404 hasta que pase a producción, lo que exige antes 12 probadores durante 14 días (fuentes: D:\sOCProjects\06-PENDIENTE-TaskManager.md, store/google-play/ficha.md, README.md; comprobado el 2026-09-25 que la URL pública devuelve 404).
   - Microsoft Store (publicada): https://apps.microsoft.com/detail/9PHJK2391727 (enlace de Josep, 2026-09-25; ficha pública comprobada)
-- descarga_alternativa: https://github.com/donki/TaskManager/releases (APK, EXE y MSIX de cada versión; última: v2026.09.23.00)
+- descarga_alternativa: https://github.com/donki/TaskManager/releases (APK, EXE y MSIX de cada versión; última: v2026.10.06.00)
 
 ## Description
 
@@ -22,7 +22,7 @@ You sign in with an account you already have, Google or Microsoft, and what you 
 - Your own lists and groups shared with other people, with QR code invitations.
 - Each task with a list, notes, tags, planned date, due date, repetition, steps, links and attached files (including images pasted from the clipboard).
 - "My tasks", "My lists", "Board" (to do, in progress and done) and "Calendar" views.
-- Filters by status and by date, a row of tags and a search box that looks in titles, notes, tags, steps and attachments.
+- Filters by status and by date, a row of tags (several at once with Ctrl+click) and a search box that looks in titles, notes, tags, steps and attachments.
 - Multi-select to mark as done, pin, tag, move or delete several tasks at once.
 - Daily repetition, weekly on the days you choose, monthly or yearly.
 - Daily reminder of what's left and a notice on the due date, with the option to repeat the reminder.
@@ -55,7 +55,7 @@ Items: **My tasks**, **Calendar**, **My lists**, **Board**, **My groups**, **Set
 - **Add a task for today**: box to type a new task and an add button. The task goes into the first list and opens so you can fill it in.
 - **Search**: searches in titles, notes, tags, steps and attachments. The X clears the search.
 - **Filters**: **Pending**, **Pinned**, **Done**, **All**, **Overdue**, **Start date before today**, **Start date today or later**, **Due date before today**, **Due date today or later**.
-- **Tag row**: **All tags**, **No tag** and one for each tag that has something pending. Fixed on the left is the button that opens the **Tags** screen. Long-press a tag (right-click on Windows): **Delete tag**.
+- **Tag row**: **All tags**, **No tag** and one for each tag that has something pending. Fixed on the left is the button that opens the **Tags** screen. Long-press a tag (right-click on Windows): **Delete tag**. With a keyboard, **Ctrl+click** selects or clears several tags at once and shows the tasks that have any of them (on Android, with a physical keyboard); a normal click goes back to just one.
 - On each row: done/pending checkbox; tapping the task opens its details. Press and hold a task to drag it and change its order.
 - **Refresh** (at the top): syncs again.
 - **Select several**: shows checkboxes on each row and a bar with **Mark done**, **Back to pending**, **Pin to the top** / **Unpin**, **Add tag** (pick an existing one or "Or write a new one"), **Move to list** and **Delete** (asks for confirmation; if any of them repeat, it asks **Only the selected** or **Whole series**). The X or **Clear selection** leaves the mode.
@@ -71,10 +71,10 @@ All the tags in use, including those only on finished tasks, with "N unfinished 
 - **What needs doing** (title, required: if it's missing you'll see "The task needs a title.").
 - **List**: which list it belongs to.
 - **Notes**.
-- **Tags**: separated by commas (for example "home, urgent, work"). On Windows, an **Add tag** button.
+- **Tags**: separated by commas (for example "home, urgent, work"). On Windows, an **Add tag** button. All the available tags are shown, in several rows with no scrolling: tap one to add it to the task or remove it.
 - **Due date** and **Planned for** (the day you mean to do it, which doesn't have to be the deadline).
 - **Repeat**: **Does not repeat**, **Every day**, **Every week** (choosing the days of the week), **Every month** (**Day of the month** or "Same day"), **Every year** (**Month** and day). A repeating task needs both a planned date and a due date: when you save, all the repetitions in that range are created (up to 500).
-- **Links and files**: **Add link** (paste the address), **Add file**, **Paste from the clipboard** (image or copied files; on Windows also Ctrl+V). Tapping an attachment opens it (double-click on Windows); **Remove** deletes it. There's a maximum size per file.
+- **Links and files**: **Add link** (paste the address), **Add file**, **Paste from the clipboard** (image or copied files; on Windows also Ctrl+V). On Android, an image pasted into the title or the notes (with **Paste** or from the keyboard) is also saved as an attachment. Tapping an attachment opens it (double-click on Windows); **Remove** deletes it. There's a maximum size per file.
 - **Steps**: type "What the step says" and **Add step**. Each step can be checked off, edited (**Edit step**), deleted (**Delete step**) and dragged to reorder.
 - At the top: **Save** (check mark) and **Delete task** (trash can). If the task repeats, it asks **Only this occurrence** or **The whole series**.
 

@@ -6,7 +6,7 @@
 - tiendas:
   - Google Play: no publicada (todavía no está en Play; el APK de cada versión va en las releases de GitHub, según el README del repositorio a 2026-09-29)
   - Microsoft Store: no publicada (solo Android)
-- descarga_alternativa: https://github.com/donki/FamilyTogether/releases (última: v2026.09.28.00, APK)
+- descarga_alternativa: https://github.com/donki/FamilyTogether/releases (última: v2026.10.06.00, APK)
 
 ## Description
 Family Together lets the people in a closed group (your family, your friends) see where each other is. The map shows each member's last position with the time and their phone's battery level, and in the history you can see where each person went over the last 30 days, with the route snapped to the streets and the stops marked.
@@ -20,7 +20,9 @@ No account or password is needed: the first time you open it you only choose the
 - Background location every time you move about 25 metres, even with the app closed; without a connection, positions are stored and sent later with their original time.
 - Route history: the last 24 hours when you open it and any day of the last 30, by person, snapped to streets and paths on the phone itself, with long stops shown as a single point.
 - Group zones with arrival and departure alerts, only for the people and zones you choose.
-- SOS with a 3-second countdown to cancel it, to all your groups or the ones you tick, even when paused.
+- SOS with a 3-second countdown to cancel it, to all your groups or the ones you tick, even when paused, also from a home screen widget.
+- An SOS you receive rings like an alarm even when your phone is on silent (it can be turned off).
+- Designed to use little battery: with the phone still, GPS turns off, and it turns back on as soon as you move.
 - Pause per group: 1 hour, 8 hours, until tomorrow, until a given time or until you resume it.
 - Closed groups: invitation by code or QR that expires after 5 minutes, and entry approved by an admin.
 - No account: anonymous user, with optional Google or Microsoft linking to recover it on another phone.
@@ -70,7 +72,8 @@ No account or password is needed: the first time you open it you only choose the
 2. **To these groups**: all are ticked; untick the ones you don't want to alert. It is sent with your location even if you are paused.
 3. When done, **SOS sent** ("The members of N group(s) have been alerted with your position"). Without a connection it stays **Pending, retrying** and is sent by itself when the connection returns, even if you close the app. With no GPS at that moment, your last known position is sent with its time.
 4. **Back to the map**.
-- The others get "SOS from <name>" and, when they tap it, see you on the map.
+- The others get "SOS from <name>" and, when they tap it, see you on the map. With **Ring even when the phone is on silent** (Settings › SOS, on by default) the alarm rings at full volume for one minute even if the phone is on silent or vibrate; it stops with **Silence** on the notification, by dismissing it or by opening the app, and the volume goes back to what it was.
+- **SOS widget**: touch and hold an empty spot on your home screen › **Widgets** › Family Together. It is a red button that opens this same countdown, with **Cancel**: an accidental tap never sends anything.
 
 ### Groups screen
 - **My groups**: each group with your role (**Admin** or **Member**); tap it to open it.
@@ -111,6 +114,7 @@ No account or password is needed: the first time you open it you only choose the
 - **My name and avatar**: change your display name and photo (**Choose photo**, **Remove photo**); it is updated in all your groups.
 - **Account**: shows whether it is linked. **Link Google** or **Link Microsoft** to be able to recover it. **Recover my account on this phone**: on a new phone with no groups, brings your groups, zones and history; the old phone stops sharing your location.
 - **Permissions and battery**: the status of location (all the time / only while the app is open / no permission, and whether it is sharing or stopped), notifications and battery, with **Open the guide**.
+- **SOS**: **Ring even when the phone is on silent** (on by default) and how to add the SOS button widget.
 - **History**: **Snap routes to streets and paths** (on by default; when off, no street map is looked up) and **Delete my history**.
 - Shortcuts to **What's new** and **About**.
 

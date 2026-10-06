@@ -6,7 +6,7 @@
 - tiendas:
   - Microsoft Store (publicada): https://apps.microsoft.com/detail/9MXKDZMLCS99 (enlace de Josep, 2026-09-25; ficha pública comprobada)
   - Google Play: no aplica (solo Windows).
-- descarga_alternativa: https://github.com/donki/RCManager/releases (última: v2026.10.1.0; ejecutable autocontenido y paquete MSIX)
+- descarga_alternativa: https://github.com/donki/RCManager/releases (última: v2026.10.6.0; ejecutable autocontenido y paquete MSIX)
 
 ## Description
 
@@ -30,6 +30,7 @@ Your connections are stored on your PC with the passwords encrypted for your Win
 - Single instance: opening it again brings the one already open to the front, even when it is next to the clock.
 - Connections on this PC or synced, encrypted, in Google Drive or OneDrive.
 - Import from another connection manager (.rdm files) and from .rdp files.
+- Copy one connection's settings to another from the editor (everything except the name, folder, host and notes).
 
 ## User guide (support)
 
@@ -119,6 +120,8 @@ You don't need to create any account. Only if you choose to store your connectio
 ### Connection editor
 
 It opens with "New connection" or "Edit". The tabs shown depend on the type: RDP shows General, Display, Local resources, Experience and Advanced; SFTP / SCP and FTP / FTPS show General and Transfers; SSH only General. At the bottom, Cancel and Save ("The name and the host are required.").
+
+At the bottom left, **Copy the settings of another connection** (copy icon): it opens the list of your connections with a search box; pick one (double-click or the Copy button) and the editor is filled with everything from it —type, port, user, domain, password, private key and every tab's options— except the name, folder, host and notes, which stay as they were. Nothing is saved until you press Save.
 
 #### General tab (all types)
 - Name: how it appears in the tree.

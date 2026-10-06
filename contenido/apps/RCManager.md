@@ -6,7 +6,7 @@
 - tiendas:
   - Microsoft Store (publicada): https://apps.microsoft.com/detail/9MXKDZMLCS99 (enlace de Josep, 2026-09-25; ficha pública comprobada)
   - Google Play: no aplica (solo Windows).
-- descarga_alternativa: https://github.com/donki/RCManager/releases (última: v2026.10.1.0; ejecutable autocontenido y paquete MSIX)
+- descarga_alternativa: https://github.com/donki/RCManager/releases (última: v2026.10.6.0; ejecutable autocontenido y paquete MSIX)
 
 ## Descripción
 
@@ -30,6 +30,7 @@ Tus conexiones se guardan en tu PC con las contraseñas cifradas para tu usuario
 - Una sola instancia: abrirla otra vez trae al frente la que ya estaba abierta, aunque esté junto al reloj.
 - Conexiones en este PC o sincronizadas cifradas en Google Drive u OneDrive.
 - Importación desde otro gestor de conexiones (ficheros .rdm) y desde ficheros .rdp.
+- Copiar la configuración de una conexión a otra desde el editor (todo menos el nombre, la carpeta, el servidor y las notas).
 
 ## Guía de uso (soporte)
 
@@ -119,6 +120,8 @@ No hace falta crear ninguna cuenta. Solo si eliges guardar en la nube entrarás 
 ### Editor de conexión
 
 Se abre con «Conexión nueva» o «Editar». Las pestañas que aparecen dependen del tipo: RDP muestra General, Pantalla, Recursos locales, Experiencia y Avanzado; SFTP / SCP y FTP / FTPS muestran General y Transferencias; SSH solo General. Abajo, Cancelar y Guardar («El nombre y el servidor son obligatorios.»).
+
+Abajo a la izquierda, **Copiar la configuración de otra conexión** (icono de copiar): abre la lista de tus conexiones con un buscador; elige una (doble clic o el botón Copiar) y el editor se rellena con todo lo suyo —tipo, puerto, usuario, dominio, contraseña, clave privada y las opciones de todas las pestañas— menos el nombre, la carpeta, el servidor y las notas, que se quedan como estaban. No se guarda nada hasta pulsar Guardar.
 
 #### Pestaña General (todos los tipos)
 - Nombre: cómo aparece en el árbol.

@@ -6,7 +6,7 @@
 - tiendas:
   - Microsoft Store (publicada): https://apps.microsoft.com/detail/9MXKDZMLCS99 (enlace de Josep, 2026-09-25; ficha pública comprobada)
   - Google Play: no aplica (solo Windows).
-- descarga_alternativa: https://github.com/donki/RCManager/releases (última: v2026.10.6.0; ejecutable autocontenido y paquete MSIX)
+- descarga_alternativa: https://github.com/donki/RCManager/releases (última: v2026.10.7.0; ejecutable autocontenido y paquete MSIX)
 
 ## Description
 
@@ -31,6 +31,7 @@ Your connections are stored on your PC with the passwords encrypted for your Win
 - Connections on this PC or synced, encrypted, in Google Drive or OneDrive.
 - Import from another connection manager (.rdm files) and from .rdp files.
 - Copy one connection's settings to another from the editor (everything except the name, folder, host and notes).
+- Export all your connections or one folder to a .rcm file, encrypted and with the passwords if you set a passphrase, to bring them into RC Manager on another computer.
 
 ## User guide (support)
 
@@ -73,6 +74,7 @@ You don't need to create any account. Only if you choose to store your connectio
 
 **Connection tree**
 - Double-click: connect. Ctrl + double-click: edit. Enter: connect. Del: delete.
+- Right-click a connection: **Copy** (creates a copy, like Duplicate) and **Edit**. On a folder: **Export this folder** (see "Export connections").
 - Dragging a connection or a folder onto another folder moves it there (onto a connection, into that connection's folder). The target folder is highlighted as you drag over it.
 - Dragging a connection to the tab area opens it.
 - When you close the app, it remembers the expanded folders, the selected connection and the width of the pane.
@@ -257,7 +259,13 @@ If a file already exists and the connection is set to "Ask before overwriting", 
 **Import connections**
 - Button to import from another connection manager (.rdm files) or from Remote Desktop files (.rdp).
 - From an .rdm file, RDP, SSH, FTP/FTPS and SFTP/SCP connections are imported with their folders. From .rdp files (you can select several at once) you get one connection per file, with its name and options.
-- Passwords are not imported: they are asked for when connecting. When it finishes, it tells you how many were imported, how many already existed and how many were skipped because they are of unsupported types.
+- It also imports **.rcm** files exported from another RC Manager (see below), with their folders; if they are encrypted it asks for the passphrase and brings the passwords.
+- Passwords from .rdm and .rdp files are not imported: they are asked for when connecting. When it finishes, it tells you how many were imported, how many already existed and how many were skipped because they are of unsupported types.
+
+**Export connections**
+- Button to export **all** your connections, with their folders, to a .rcm file. To export **just one folder** with its subfolders: right-click it in the tree › Export this folder (on the other computer it appears with its name at the root of the tree).
+- It asks for a **passphrase**: with one, the file is encrypted (AES-256-GCM) and includes the passwords, and the same passphrase is needed to import it. Left empty, it is exported **without passwords** and the rest stays readable.
+- On the other computer: Settings › Import connections and pick the .rcm file. Connections that are already there are not duplicated.
 
 **Window**
 - "Minimize to the notification area" (on by default). When off, the window minimizes to the taskbar like any other window.

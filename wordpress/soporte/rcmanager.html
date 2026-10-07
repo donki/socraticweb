@@ -134,6 +134,7 @@
 <!-- wp:list -->
 <ul class="wp-block-list">
 <li>Doble clic: conectar. Ctrl + doble clic: editar. Intro: conectar. Supr: borrar.</li>
+<li>Botón derecho sobre una conexión: <strong>Copiar</strong> (crea una copia, como Duplicar) y <strong>Editar</strong>. Sobre una carpeta: <strong>Exportar esta carpeta</strong> (ver «Exportar e importar conexiones»).</li>
 <li>Arrastrar una conexión o una carpeta sobre otra carpeta la mueve allí (sobre una conexión, a la carpeta de esa conexión). La carpeta de destino se resalta al pasar por encima.</li>
 <li>Arrastrar una conexión al área de pestañas la abre.</li>
 <li>Al cerrar, se recuerdan las carpetas abiertas, la conexión seleccionada y el ancho del panel.</li>
@@ -491,7 +492,20 @@
 <ul class="wp-block-list">
 <li>Botón para importar de otro gestor de conexiones (ficheros .rdm) o de ficheros de Escritorio remoto (.rdp).</li>
 <li>De un .rdm se importan las conexiones RDP, SSH, FTP/FTPS y SFTP/SCP con sus carpetas. De los .rdp (puedes elegir varios a la vez) sale una conexión por fichero, con su nombre y sus opciones.</li>
-<li>Las contraseñas no se importan: se piden al conectar. Al terminar se indica cuántas se han importado, cuántas ya existían y cuántas se han dejado fuera por ser de tipos no admitidos.</li>
+<li>También importa los ficheros <strong>.rcm</strong> exportados de otro RC Manager (ver abajo), con sus carpetas; si van cifrados pide la frase y trae las contraseñas.</li>
+<li>Las contraseñas de los .rdm y .rdp no se importan: se piden al conectar. Al terminar se indica cuántas se han importado, cuántas ya existían y cuántas se han dejado fuera por ser de tipos no admitidos.</li>
+</ul>
+<!-- /wp:list -->
+
+<!-- wp:paragraph -->
+<p><strong>Exportar conexiones</strong></p>
+<!-- /wp:paragraph -->
+
+<!-- wp:list -->
+<ul class="wp-block-list">
+<li>Botón para exportar <strong>todas</strong> las conexiones, con sus carpetas, a un fichero .rcm. Para exportar <strong>una sola carpeta</strong> con sus subcarpetas: botón derecho sobre ella en el árbol › Exportar esta carpeta (en el otro equipo aparece con su nombre en la raíz del árbol).</li>
+<li>Pide una <strong>frase</strong>: con ella, el fichero va cifrado (AES-256-GCM) y lleva las contraseñas, y hará falta la misma frase para importarlo. Vacía, se exporta <strong>sin contraseñas</strong> y el resto queda legible.</li>
+<li>En el otro equipo: Ajustes › Importar conexiones y elige el .rcm. Las que ya estén no se duplican.</li>
 </ul>
 <!-- /wp:list -->
 

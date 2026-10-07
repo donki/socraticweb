@@ -6,7 +6,7 @@
 - tiendas:
   - Google Play (prueba cerrada): https://play.google.com/store/apps/details?id=com.socratic.taskmanager — solo en la pista de prueba cerrada (alpha); la página pública da 404 hasta que pase a producción, lo que exige antes 12 probadores durante 14 días (fuentes: D:\sOCProjects\06-PENDIENTE-TaskManager.md, store/google-play/ficha.md, README.md; comprobado el 2026-09-25 que la URL pública devuelve 404).
   - Microsoft Store (publicada): https://apps.microsoft.com/detail/9PHJK2391727 (enlace de Josep, 2026-09-25; ficha pública comprobada)
-- descarga_alternativa: https://github.com/donki/TaskManager/releases (APK, EXE y MSIX de cada versión; última: v2026.10.06.00)
+- descarga_alternativa: https://github.com/donki/TaskManager/releases (APK, EXE y MSIX de cada versión; última: v2026.10.07.00)
 
 ## Descripción
 
@@ -74,7 +74,7 @@ Todas las etiquetas en uso, también las que solo llevan tareas hechas, con «N 
 - **Etiquetas**: separadas por comas (por ejemplo «casa, urgente, trabajo»). En Windows, botón **Añadir etiqueta**. Las etiquetas disponibles se ven todas, en varias filas y sin desplazar: tocar una se la pone o se la quita a la tarea.
 - **Fecha de finalización** y **Planificada para** (el día en que piensas hacerla, que no tiene por qué ser el del plazo).
 - **Repetición**: **No se repite**, **Cada día**, **Cada semana** (eligiendo días L M X J V S D), **Cada mes** (**Día del mes** o «El mismo día»), **Cada año** (**Mes** y día). Una tarea que se repite necesita fecha de planificación y de finalización: al guardar se crean todas las repeticiones de ese intervalo (hasta 500).
-- **Enlaces y ficheros**: **Añadir enlace** (pega la dirección), **Añadir fichero**, **Pegar del portapapeles** (imagen o ficheros copiados; en Windows también Ctrl+V). En Android, una imagen pegada en el título o en las notas (con **Pegar** o desde el teclado) se guarda también como adjunto. Tocar un adjunto lo abre (doble clic en Windows); **Quitar** lo elimina. Hay un tamaño máximo por fichero.
+- **Enlaces y ficheros**: **Añadir enlace** (pega la dirección), **Añadir fichero**, **Pegar del portapapeles** (imagen o ficheros copiados; en Windows también Ctrl+V). En Android, una imagen pegada en el título, las notas, las etiquetas o el paso nuevo (con **Pegar** o desde el teclado) se guarda también como adjunto, y arriba sale «Imagen añadida a Enlaces y ficheros». Tocar un adjunto lo abre (doble clic en Windows); **Quitar** lo elimina. Hay un tamaño máximo por fichero.
 - **Pasos**: escribe «Lo que dice el paso» y **Añadir paso**. Cada paso se marca, se edita (**Editar paso**), se borra (**Borrar paso**) y se arrastra para reordenar.
 - Arriba: **Guardar** (marca) y **Borrar tarea** (papelera). Si la tarea se repite, pregunta **Solo esta vuelta** o **Toda la serie**.
 

@@ -75,14 +75,14 @@
     "fecha": "2026-10-02"
   },
   "rcmanager": {
-    "pruebas": 966,
+    "pruebas": 979,
     "cobertura_codigo": 99.4,
     "cobertura_app": 99.4,
-    "tiempo_s": 69,
+    "tiempo_s": 74,
     "llm_h": 11,
-    "fecha": "2026-10-06",
-    "ui_pruebas": 11,
-    "ui_tiempo_s": 18
+    "fecha": "2026-10-07",
+    "ui_pruebas": 13,
+    "ui_tiempo_s": 30
   },
   "smsforwarder": {
     "pruebas": 135,
@@ -93,12 +93,12 @@
     "fecha": "2026-10-02"
   },
   "taskmanager": {
-    "pruebas": 452,
+    "pruebas": 454,
     "cobertura_codigo": 97.0,
     "cobertura_app": 95.5,
     "tiempo_s": 220,
     "llm_h": 27,
-    "fecha": "2026-10-06",
+    "fecha": "2026-10-07",
     "ui_pruebas": 6,
     "ui_tiempo_s": 114
   },

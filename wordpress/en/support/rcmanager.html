@@ -134,6 +134,7 @@
 <!-- wp:list -->
 <ul class="wp-block-list">
 <li>Double-click: connect. Ctrl + double-click: edit. Enter: connect. Del: delete.</li>
+<li>Right-click a connection: <strong>Copy</strong> (creates a copy, like Duplicate) and <strong>Edit</strong>. On a folder: <strong>Export this folder</strong> (see "Export connections").</li>
 <li>Dragging a connection or a folder onto another folder moves it there (onto a connection, into that connection's folder). The target folder is highlighted as you drag over it.</li>
 <li>Dragging a connection to the tab area opens it.</li>
 <li>When you close the app, it remembers the expanded folders, the selected connection and the width of the pane.</li>
@@ -491,7 +492,20 @@
 <ul class="wp-block-list">
 <li>Button to import from another connection manager (.rdm files) or from Remote Desktop files (.rdp).</li>
 <li>From an .rdm file, RDP, SSH, FTP/FTPS and SFTP/SCP connections are imported with their folders. From .rdp files (you can select several at once) you get one connection per file, with its name and options.</li>
-<li>Passwords are not imported: they are asked for when connecting. When it finishes, it tells you how many were imported, how many already existed and how many were skipped because they are of unsupported types.</li>
+<li>It also imports <strong>.rcm</strong> files exported from another RC Manager (see below), with their folders; if they are encrypted it asks for the passphrase and brings the passwords.</li>
+<li>Passwords from .rdm and .rdp files are not imported: they are asked for when connecting. When it finishes, it tells you how many were imported, how many already existed and how many were skipped because they are of unsupported types.</li>
+</ul>
+<!-- /wp:list -->
+
+<!-- wp:paragraph -->
+<p><strong>Export connections</strong></p>
+<!-- /wp:paragraph -->
+
+<!-- wp:list -->
+<ul class="wp-block-list">
+<li>Button to export <strong>all</strong> your connections, with their folders, to a .rcm file. To export <strong>just one folder</strong> with its subfolders: right-click it in the tree › Export this folder (on the other computer it appears with its name at the root of the tree).</li>
+<li>It asks for a <strong>passphrase</strong>: with one, the file is encrypted (AES-256-GCM) and includes the passwords, and the same passphrase is needed to import it. Left empty, it is exported <strong>without passwords</strong> and the rest stays readable.</li>
+<li>On the other computer: Settings › Import connections and pick the .rcm file. Connections that are already there are not duplicated.</li>
 </ul>
 <!-- /wp:list -->
 

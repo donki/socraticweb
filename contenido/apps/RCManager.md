@@ -6,7 +6,7 @@
 - tiendas:
   - Microsoft Store (publicada): https://apps.microsoft.com/detail/9MXKDZMLCS99 (enlace de Josep, 2026-09-25; ficha pública comprobada)
   - Google Play: no aplica (solo Windows).
-- descarga_alternativa: https://github.com/donki/RCManager/releases (última: v2026.10.6.0; ejecutable autocontenido y paquete MSIX)
+- descarga_alternativa: https://github.com/donki/RCManager/releases (última: v2026.10.7.0; ejecutable autocontenido y paquete MSIX)
 
 ## Descripción
 
@@ -31,6 +31,7 @@ Tus conexiones se guardan en tu PC con las contraseñas cifradas para tu usuario
 - Conexiones en este PC o sincronizadas cifradas en Google Drive u OneDrive.
 - Importación desde otro gestor de conexiones (ficheros .rdm) y desde ficheros .rdp.
 - Copiar la configuración de una conexión a otra desde el editor (todo menos el nombre, la carpeta, el servidor y las notas).
+- Exportar todas las conexiones o una carpeta a un fichero .rcm, cifrado y con las contraseñas si pones una frase, para pasarlas al RC Manager de otro equipo.
 
 ## Guía de uso (soporte)
 
@@ -73,6 +74,7 @@ No hace falta crear ninguna cuenta. Solo si eliges guardar en la nube entrarás 
 
 **Árbol de conexiones**
 - Doble clic: conectar. Ctrl + doble clic: editar. Intro: conectar. Supr: borrar.
+- Botón derecho sobre una conexión: **Copiar** (crea una copia, como Duplicar) y **Editar**. Sobre una carpeta: **Exportar esta carpeta** (ver «Exportar e importar conexiones»).
 - Arrastrar una conexión o una carpeta sobre otra carpeta la mueve allí (sobre una conexión, a la carpeta de esa conexión). La carpeta de destino se resalta al pasar por encima.
 - Arrastrar una conexión al área de pestañas la abre.
 - Al cerrar, se recuerdan las carpetas abiertas, la conexión seleccionada y el ancho del panel.
@@ -257,7 +259,13 @@ Si un fichero ya existe y la conexión está en «Avisar y confirmar», sale «E
 **Importar conexiones**
 - Botón para importar de otro gestor de conexiones (ficheros .rdm) o de ficheros de Escritorio remoto (.rdp).
 - De un .rdm se importan las conexiones RDP, SSH, FTP/FTPS y SFTP/SCP con sus carpetas. De los .rdp (puedes elegir varios a la vez) sale una conexión por fichero, con su nombre y sus opciones.
-- Las contraseñas no se importan: se piden al conectar. Al terminar se indica cuántas se han importado, cuántas ya existían y cuántas se han dejado fuera por ser de tipos no admitidos.
+- También importa los ficheros **.rcm** exportados de otro RC Manager (ver abajo), con sus carpetas; si van cifrados pide la frase y trae las contraseñas.
+- Las contraseñas de los .rdm y .rdp no se importan: se piden al conectar. Al terminar se indica cuántas se han importado, cuántas ya existían y cuántas se han dejado fuera por ser de tipos no admitidos.
+
+**Exportar conexiones**
+- Botón para exportar **todas** las conexiones, con sus carpetas, a un fichero .rcm. Para exportar **una sola carpeta** con sus subcarpetas: botón derecho sobre ella en el árbol › Exportar esta carpeta (en el otro equipo aparece con su nombre en la raíz del árbol).
+- Pide una **frase**: con ella, el fichero va cifrado (AES-256-GCM) y lleva las contraseñas, y hará falta la misma frase para importarlo. Vacía, se exporta **sin contraseñas** y el resto queda legible.
+- En el otro equipo: Ajustes › Importar conexiones y elige el .rcm. Las que ya estén no se duplican.
 
 **Ventana**
 - «Al minimizar, al área de notificación» (activada por defecto). Desactivada, se minimiza a la barra de tareas como cualquier ventana.

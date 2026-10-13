@@ -91,5 +91,12 @@
     "capturas_anchas": ["Tools/RCManager/store/microsoft/capturas/01-ficheros.png",
                         "Tools/RCManager/store/microsoft/capturas/02-opciones-rdp.png",
                         "Tools/RCManager/store/microsoft/capturas/03-recursos-locales.png"]
+  },
+  "screenshare": {
+    "icono": "Tools/ScreenShare/src/ScreenShare.App/Assets/logo.png",
+    "capturas": ["Tools/ScreenShare/store/capturas/01-principal.png",
+                 "Tools/ScreenShare/store/capturas/02-ultima-grabacion.png",
+                 "Tools/ScreenShare/store/capturas/03-calidad.png",
+                 "Tools/ScreenShare/store/capturas/04-grabacion-automatica.png"]
   }
 }

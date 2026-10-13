@@ -145,5 +145,15 @@
     "fecha": "2026-10-03",
     "ui_pruebas": 8,
     "ui_tiempo_s": 19
+  },
+  "screenshare": {
+    "pruebas": 153,
+    "cobertura_codigo": 92.5,
+    "cobertura_app": 52,
+    "tiempo_s": 16,
+    "llm_h": 1.5,
+    "fecha": "2026-10-13",
+    "ui_pruebas": 10,
+    "ui_tiempo_s": 35
   }
 }

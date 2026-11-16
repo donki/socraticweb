@@ -4,9 +4,9 @@
 - lema: Tu familia en el mapa, en un grupo cerrado y cifrado de extremo a extremo.
 - github: https://github.com/donki/FamilyTogether
 - tiendas:
-  - Google Play: no publicada (todavía no está en Play; el APK de cada versión va en las releases de GitHub, según el README del repositorio a 2026-09-29)
+  - Google Play (prueba cerrada): https://play.google.com/store/apps/details?id=com.socratic.familytogether — solo en la pista de prueba cerrada, para probadores; sin producción todavía (fuente: D:\sOCProjects\09-TAREAS-FamilyTogether.md, 2026-11-16)
   - Microsoft Store: no publicada (solo Android)
-- descarga_alternativa: https://github.com/donki/FamilyTogether/releases (última: v2026.10.06.00, APK)
+- descarga_alternativa: https://github.com/donki/FamilyTogether/releases (última: v2026.11.05.00, APK; Android 7.0 o posterior, también móviles de 32 bits)
 
 ## Descripción
 Family Together sirve para que las personas de un grupo cerrado —tu familia, tus amigos— vean dónde está cada una. En el mapa aparece la última posición de cada miembro con la hora y la batería de su móvil, y en el historial puedes ver por dónde ha ido cada uno en los últimos 30 días, con el recorrido ajustado a las calles y las paradas marcadas.
@@ -32,7 +32,7 @@ No hace falta cuenta ni contraseña: al abrirla por primera vez solo eliges el n
 ## Guía de uso (soporte)
 
 ### Primera puesta en marcha
-1. Descarga el APK de la última versión desde las releases de GitHub e instálalo (Android 8 o posterior). Android te pedirá permitir la instalación de aplicaciones de origen desconocido para el navegador o el gestor de archivos con que lo abras.
+1. Instala la aplicación (Android 7.0 o posterior; también funciona en móviles de 32 bits). Si estás entre los probadores de la prueba cerrada, instálala desde Google Play. Si no, descarga el APK de la última versión desde las releases de GitHub: Android te pedirá permitir la instalación de aplicaciones de origen desconocido para el navegador o el gestor de archivos con que lo abras.
 2. Abre Family Together. La pantalla **Bienvenida** explica **Qué hace Family Together** y **Qué sale de tu móvil**. En **Cómo te verán** escribe **Tu nombre visible (obligatorio)** —es lo que verán los demás en el mapa; puede ser un apodo— y, si quieres, elige **Tu foto o avatar (opcional)** con **Elegir foto**. Pulsa **Continuar**.
 3. Se abre la **Guía de configuración** («Prepara tu móvil»), paso a paso. Cada paso tiene un botón que lo hace o que abre la pantalla de Android donde se hace, y dice si está **Hecho** o **Pendiente**:
    - **Ubicación precisa** (**Permitir ubicación**): elige «Ubicación precisa»; con la aproximada no saldría ninguna posición.
@@ -127,8 +127,8 @@ No hace falta cuenta ni contraseña: al abrirla por primera vez solo eliges el n
 - **Idioma**, **Novedades** (**Ver las novedades**), **Privacidad** con **Política de privacidad**, **Licencia** (MIT) y las bibliotecas de terceros, y **Aviso legal**: «Family Together no sustituye a los servicios de emergencia. En una emergencia, llama al 112.»
 
 ## Preguntas frecuentes
-**¿Por qué no está en Google Play?**
-Todavía no se ha publicado allí. El APK de cada versión está en las releases de GitHub; se instala a mano permitiendo las aplicaciones de origen desconocido.
+**¿Por qué no la encuentro en Google Play?**
+Está en Google Play, pero de momento en prueba cerrada: solo la ven e instalan los probadores. Hasta que pase a producción, el APK de cada versión está en las releases de GitHub; se instala a mano permitiendo las aplicaciones de origen desconocido. Funciona desde Android 7.0, también en móviles de 32 bits.
 
 **Mi grupo no me ve con la aplicación cerrada.**
 Abre la **Guía de configuración** y completa los pasos pendientes: la ubicación tiene que estar en «Permitir todo el tiempo», las notificaciones activadas y la aplicación fuera del ahorro de batería. En algunas marcas también hace falta el **Inicio automático**. En **Ajustes › Permisos y batería** ves cómo está cada cosa.

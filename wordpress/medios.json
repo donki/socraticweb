@@ -75,24 +75,24 @@
   "sha": "49f96f3c5833815bb7bf7067187e7bb7dc972df786aeb4f3d4e0859daf084b7e"
  },
  "img/musicplayer/movil-1.webp": {
-  "id": 161,
-  "url": "https://socraticweb0.wordpress.com/wp-content/uploads/2026/09/musicplayer-movil-1.webp",
-  "sha": "383d5d5980b8a8224a800aeef4356d3c171d37a5bd8d876bd7eb82b09d530f93"
+  "id": 1109,
+  "url": "https://socraticweb0.wordpress.com/wp-content/uploads/2026/11/musicplayer-movil-1.webp",
+  "sha": "99d5a3dbead589122d56c6ecd5b8c83bf3c1febd69ef89fe828eafefb46d6393"
  },
  "img/musicplayer/movil-2.webp": {
-  "id": 162,
-  "url": "https://socraticweb0.wordpress.com/wp-content/uploads/2026/09/musicplayer-movil-2.webp",
-  "sha": "71c0f4997a64ee815b3ebbac54a073b0fb09977362344741ab8cd609001107ce"
+  "id": 1110,
+  "url": "https://socraticweb0.wordpress.com/wp-content/uploads/2026/11/musicplayer-movil-2.webp",
+  "sha": "8b7479d078ef920422b671fce43066c1e4fbaeae5be7baff5aacf2339174bb11"
  },
  "img/musicplayer/movil-3.webp": {
-  "id": 163,
-  "url": "https://socraticweb0.wordpress.com/wp-content/uploads/2026/09/musicplayer-movil-3.webp",
-  "sha": "27f6af4a9e77f7dcb5bf28a665b4e69963efd526ca06ea009ca78b6a3c7b917c"
+  "id": 1111,
+  "url": "https://socraticweb0.wordpress.com/wp-content/uploads/2026/11/musicplayer-movil-3.webp",
+  "sha": "216f0351def0c46105c956bd9dbae43c3e6de2294903cad232b1ec44f6db9371"
  },
  "img/musicplayer/movil-4.webp": {
-  "id": 164,
-  "url": "https://socraticweb0.wordpress.com/wp-content/uploads/2026/09/musicplayer-movil-4.webp",
-  "sha": "55897259e739480ae8c0372cdc29f829444cbafe8f48c762eaf09b4bd42dce5c"
+  "id": 1112,
+  "url": "https://socraticweb0.wordpress.com/wp-content/uploads/2026/11/musicplayer-movil-4.webp",
+  "sha": "d989d23be19b80f0e00bcdccfc4c407563cd1d52b8588b9e2644499300ba7740"
  },
  "img/pdfreader/icono.png": {
   "id": 165,
@@ -340,8 +340,28 @@
   "sha": "4ebe72107bcaff964bbb8ce1cd070b6e6bb44ed930238a516f5d1aeecc998642"
  },
  "img/screenshare/movil-4.webp": {
-  "id": 915,
-  "url": "https://socraticweb0.wordpress.com/wp-content/uploads/2026/10/screenshare-movil-4.webp",
-  "sha": "4771418cce87e9b5c878320aed8d017f8e5d06d7138bed016086d68b5a4ac0f2"
+  "id": 1117,
+  "url": "https://socraticweb0.wordpress.com/wp-content/uploads/2026/11/screenshare-movil-4.webp",
+  "sha": "f465f0fa7b1d17d8874b4a39efb16ae24846fc9a001ce9b137dc187eeb9b0361"
+ },
+ "img/scanner/escritorio-1.webp": {
+  "id": 1113,
+  "url": "https://socraticweb0.wordpress.com/wp-content/uploads/2026/11/scanner-escritorio-1.webp",
+  "sha": "d4981533ae438bf0d551f9b4ceb7087becbd459c26d6f255c50b69ddc50d4f39"
+ },
+ "img/scanner/escritorio-2.webp": {
+  "id": 1114,
+  "url": "https://socraticweb0.wordpress.com/wp-content/uploads/2026/11/scanner-escritorio-2.webp",
+  "sha": "241ef509f23b44d1249a0323bad8086b814ec7f13fe2fb321f2ea7256abf8fc9"
+ },
+ "img/scanner/escritorio-3.webp": {
+  "id": 1115,
+  "url": "https://socraticweb0.wordpress.com/wp-content/uploads/2026/11/scanner-escritorio-3.webp",
+  "sha": "5c20d00ef62d2741f18d760b6d6256e233d2f37ed0dfd23fea0da87004fffdda"
+ },
+ "img/scanner/icono.png": {
+  "id": 1116,
+  "url": "https://socraticweb0.wordpress.com/wp-content/uploads/2026/11/scanner-icono.png",
+  "sha": "96803bc0c4a5c90944e0ad10ef54c92a100f7bd82e4b0cf9c72cc4bfe1c39c1d"
  }
 }

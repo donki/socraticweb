@@ -155,5 +155,14 @@
     "fecha": "2026-10-13",
     "ui_pruebas": 10,
     "ui_tiempo_s": 35
+  },
+  "scanner": {
+    "pruebas": 113,
+    "cobertura_codigo": 98.7,
+    "cobertura_app": 90.5,
+    "tiempo_s": 6,
+    "fecha": "2026-10-21",
+    "ui_pruebas": 9,
+    "ui_tiempo_s": 55
   }
 }

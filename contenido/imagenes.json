@@ -9,7 +9,7 @@
   },
   "familytogether": {
     "icono": "Mobile/GooglePlayConsole/FamilyTogether/icon_512.png",
-    "capturas": ["Mobile/GooglePlayConsole/FamilyTogether/capturas/es-ES/01-mapa.png"]
+    "capturas": ["Mobile/GooglePlayConsole/FamilyTogether/capturas/es-ES/phone/01-mapa.png"]
   },
   "filemanager": {
     "icono": "Mobile/GooglePlayConsole/FileManager/icon_512.png",
@@ -28,8 +28,8 @@
     "icono": "Mobile/GooglePlayConsole/MusicPlayer/play_store_icon.png",
     "capturas": ["Mobile/GooglePlayConsole/MusicPlayer/phone/01-biblioteca-grupos.png",
                  "Mobile/GooglePlayConsole/MusicPlayer/phone/02-ficha-del-grupo.png",
-                 "Mobile/GooglePlayConsole/MusicPlayer/phone/04-reproduciendo-favorita.png",
-                 "Mobile/GooglePlayConsole/MusicPlayer/phone/06-listas-favoritas.png"]
+                 "Mobile/GooglePlayConsole/MusicPlayer/phone/03-canciones.png",
+                 "Mobile/GooglePlayConsole/MusicPlayer/phone/04-reproduciendo.png"]
   },
   "pdfreader": {
     "icono": "Mobile/GooglePlayConsole/PDFReader/icon_512.png",
@@ -98,5 +98,11 @@
                  "Tools/ScreenShare/store/capturas/02-ultima-grabacion.png",
                  "Tools/ScreenShare/store/capturas/03-calidad.png",
                  "Tools/ScreenShare/store/capturas/04-grabacion-automatica.png"]
+  },
+  "scanner": {
+    "icono": "Tools/Scanner/Package/Images/StoreDisplay300.png",
+    "capturas_anchas": ["Tools/Scanner/store/microsoft/capturas/01.png",
+                        "Tools/Scanner/store/microsoft/capturas/02.png",
+                        "Tools/Scanner/store/microsoft/capturas/03.png"]
   }
 }

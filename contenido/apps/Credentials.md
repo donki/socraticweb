@@ -1,13 +1,13 @@
 # sOC Credentials
 - slug: credentials
-- plataformas: Android, Windows, extensión de navegador para Edge, Chrome y otros navegadores (en Windows)
+- plataformas: Android, Windows, extensión de navegador para Edge y Firefox (en Windows)
 - lema: Tus contraseñas y códigos de verificación, cifrados y solo tuyos, en móvil y PC.
 - github: https://github.com/donki/Credentials
 - tiendas:
   - Google Play (no publicada): la app todavía no está creada en Play Console; la URL prevista sería https://play.google.com/store/apps/details?id=com.socratic.credentials, que hoy da 404 (fuentes: D:\sOCProjects\09-PENDIENTE-Credentials.md punto 8, D:\sOCProjects\03-TAREAS-Credentials.md punto 1, README.md; comprobado el 2026-09-25).
   - Microsoft Store (publicada): https://apps.microsoft.com/detail/9NDVHX1H2739 (Josep, 2026-09-29: «En Microsoft Store», 240 mercados, gratis; ficha pública comprobada). Ojo: la versión de la Store no puede usar las extensiones de navegador; para eso hace falta la versión EXE de GitHub (README.md).
   - Edge Add-ons (publicada el 2026-09-24): https://microsoftedge.microsoft.com/addons/detail/soc-credentials/pcilggpjodagihemfbimfbnnmlbfhfbk (fuentes: 09-PENDIENTE-Credentials.md punto 7, CHANGELOG.md 2026.09.24.04, README.md; la URL responde 200 el 2026-09-25).
-  - Chrome Web Store: no se publica (decisión de Josep del 2026-09-29, cuesta 5 $); en Chrome la extensión se carga desempaquetada con la guía de la app.
+  - Chrome Web Store: no aplica; Chrome no se admite (decisión de Josep del 2026-11-25: su tienda cobra por publicar).
   - Otros navegadores (publicada el 2026-09-27): https://addons.mozilla.org/firefox/addon/soc-credentials/
 - descarga_alternativa: https://github.com/donki/Credentials/releases (APK, EXE/ZIP y MSIX de cada versión; última: v2026.09.25.03)
 
@@ -15,7 +15,7 @@
 
 sOC Credentials guarda tus contraseñas y tus códigos de verificación en dos pasos en una bóveda cifrada con una única contraseña maestra, que solo conoces tú. No hay servidor nuestro ni cuenta nuestra: la bóveda vive en tu dispositivo o, si lo prefieres, en la carpeta privada de la aplicación dentro de tu propio Google Drive u OneDrive, siempre cifrada. Así tienes las mismas contraseñas en el móvil y en el PC.
 
-Además de guardar, rellena. En Android se convierte en el servicio de autocompletar del sistema y te ofrece la cuenta adecuada en cada aplicación y en el navegador, y te propone guardar las nuevas. En Windows rellena las contraseñas de los programas de escritorio y, con su extensión para Edge, Chrome y otros navegadores, las de las webs, incluido el código de verificación de cada sitio.
+Además de guardar, rellena. En Android se convierte en el servicio de autocompletar del sistema y te ofrece la cuenta adecuada en cada aplicación y en el navegador, y te propone guardar las nuevas. En Windows rellena las contraseñas de los programas de escritorio y, con su extensión para Edge y Firefox, las de las webs, incluido el código de verificación de cada sitio.
 
 Puedes traer todo lo que ya tenías: importa desde los navegadores, desde otros gestores de contraseñas y desde aplicaciones de códigos de verificación. Y sin anuncios, sin analítica y con licencia libre.
 
@@ -26,7 +26,7 @@ Puedes traer todo lo que ya tenías: importa desde los navegadores, desde otros 
 - Códigos de verificación en dos pasos (TOTP) en vivo, añadidos pegando el enlace, la clave o escaneando el QR; con semilla, QR para pasarlos a otra app y códigos de respaldo.
 - Generador de contraseñas y medidor de fortaleza; historial de contraseñas anteriores.
 - Autocompletar de Android en aplicaciones y navegadores, con oferta de guardar lo nuevo.
-- En Windows: relleno en las aplicaciones de escritorio y extensión para Edge, Chrome y otros navegadores.
+- En Windows: relleno en las aplicaciones de escritorio y extensión para Edge y Firefox.
 - Importación desde otros programas (navegadores, gestores de contraseñas y aplicaciones de códigos de verificación); exportación cifrada o en claro.
 - Desbloqueo con huella o cara en Android y opción de confiar en el dispositivo.
 - Bloqueo por inactividad y vaciado automático del portapapeles.
@@ -104,10 +104,10 @@ Campo **Contraseña maestra** con botón para verla, **Desbloquear** y, en Andro
 - **Windows**:
   - **Quedarse en el área de notificación al minimizar** (clic en el icono para volver; botón derecho para **Abrir** o **Salir**).
   - **Arrancar con Windows**: pide la contraseña maestra una vez al iniciar sesión y vuelve a pedirla tras bloquear Windows (Win+L).
-- **Extensiones del navegador** (Windows): estado por navegador (**Instalada** / **No instalada**) con **Instalar…**, y **Ofrecer instalarla al desbloquear**. En Edge y en los navegadores con tienda de complementos se abre su tienda (en Edge, «Obtener» y «Agregar extensión»; en los demás, el botón de añadirla); en Chrome, «Modo de desarrollador» y «Cargar descomprimida» con la ruta ya copiada.
+- **Extensiones del navegador** (Windows): estado por navegador (**Instalada** / **No instalada**) con **Instalar…**, y **Ofrecer instalarla al desbloquear**. Se abre la tienda del navegador (en Edge, «Obtener» y «Agregar extensión»; en Firefox, el botón de añadirla).
 - **Zona peligrosa**: **Borrar esta bóveda del dispositivo** (hay que escribir BORRAR; si no está en la nube, se pierde todo).
 
-### Extensión del navegador (Edge, Chrome y otros navegadores)
+### Extensión del navegador (Edge y Firefox)
 
 - Icono en la barra: enseña las entradas del sitio con **Rellenar**, **Copiar usuario**, **Copiar contraseña** y **Copiar código**, y **Buscar en la bóveda…**.
 - **Generar contraseña**: **Longitud**, **Mayúsculas**, **Números**, **Símbolos**, **Generar** y **Usar en la página**.

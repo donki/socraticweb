@@ -1,13 +1,13 @@
 # sOC Credentials
 - slug: credentials
-- plataformas: Android, Windows, browser extension for Edge, Chrome and other browsers (on Windows)
+- plataformas: Android, Windows, browser extension for Edge and Firefox (on Windows)
 - lema: Your passwords and verification codes, encrypted and yours alone, on your phone and PC.
 - github: https://github.com/donki/Credentials
 - tiendas:
   - Google Play (no publicada): la app todavía no está creada en Play Console; la URL prevista sería https://play.google.com/store/apps/details?id=com.socratic.credentials, que hoy da 404 (fuentes: D:\sOCProjects\09-PENDIENTE-Credentials.md punto 8, D:\sOCProjects\03-TAREAS-Credentials.md punto 1, README.md; comprobado el 2026-09-25).
   - Microsoft Store (publicada): https://apps.microsoft.com/detail/9NDVHX1H2739 (Josep, 2026-09-29: «En Microsoft Store», 240 mercados, gratis; ficha pública comprobada). Ojo: la versión de la Store no puede usar las extensiones de navegador; para eso hace falta la versión EXE de GitHub (README.md).
   - Edge Add-ons (publicada el 2026-09-24): https://microsoftedge.microsoft.com/addons/detail/soc-credentials/pcilggpjodagihemfbimfbnnmlbfhfbk (fuentes: 09-PENDIENTE-Credentials.md punto 7, CHANGELOG.md 2026.09.24.04, README.md; la URL responde 200 el 2026-09-25).
-  - Chrome Web Store: no se publica (decisión de Josep del 2026-09-29, cuesta 5 $); en Chrome la extensión se carga desempaquetada con la guía de la app.
+  - Chrome Web Store: no aplica; Chrome no se admite (decisión de Josep del 2026-11-25: su tienda cobra por publicar).
   - Otros navegadores (publicada el 2026-09-27): https://addons.mozilla.org/firefox/addon/soc-credentials/
 - descarga_alternativa: https://github.com/donki/Credentials/releases (APK, EXE/ZIP y MSIX de cada versión; última: v2026.09.25.03)
 
@@ -15,7 +15,7 @@
 
 sOC Credentials keeps your passwords and your two-step verification codes in a vault encrypted with a single master password that only you know. There is no server of ours and no account with us: the vault lives on your device or, if you prefer, in the app's private folder inside your own Google Drive or OneDrive, always encrypted. That way you have the same passwords on your phone and your PC.
 
-Besides storing them, it fills them in. On Android it becomes the system autofill service, offers you the right account in each app and in the browser, and suggests saving new ones. On Windows it fills in passwords in desktop programs and, with its extension for Edge, Chrome and other browsers, on websites too, including each site's verification code.
+Besides storing them, it fills them in. On Android it becomes the system autofill service, offers you the right account in each app and in the browser, and suggests saving new ones. On Windows it fills in passwords in desktop programs and, with its extension for Edge and Firefox, on websites too, including each site's verification code.
 
 You can bring everything you already had: import from browsers, from other password managers and from verification code apps. And no ads, no analytics, and an open-source license.
 
@@ -26,7 +26,7 @@ You can bring everything you already had: import from browsers, from other passw
 - Live two-step verification codes (TOTP), added by pasting the link or the key, or by scanning the QR code; with the secret key, a QR code to move them to another app, and backup codes.
 - Password generator and strength meter; history of previous passwords.
 - Android autofill in apps and browsers, with an offer to save new ones.
-- On Windows: filling in desktop apps and an extension for Edge, Chrome and other browsers.
+- On Windows: filling in desktop apps and an extension for Edge and Firefox.
 - Import from other software (browsers, password managers and verification code apps); encrypted or plain-text export.
 - Unlock with fingerprint or face on Android, and an option to trust the device.
 - Lock after inactivity and automatic clipboard clearing.
@@ -104,10 +104,10 @@ Open the app and unlock it with the master password (or your fingerprint). Find 
 - **Windows**:
   - **Keep in the notification area when minimised** (click the icon to bring it back; right-click for **Open** or **Exit**).
   - **Start with Windows**: asks for the master password once when you sign in, and asks again after you lock Windows (Win+L).
-- **Browser extensions** (Windows): status per browser (**Installed** / **Not installed**) with **Install…**, and **Offer to install it when unlocking**. In Edge and in browsers with an add-on store, their store opens (in Edge, "Get" and "Add extension"; in the others, the button to add it); in Chrome, "Developer mode" and "Load unpacked" with the path already copied.
+- **Browser extensions** (Windows): status per browser (**Installed** / **Not installed**) with **Install…**, and **Offer to install it when unlocking**. The browser's store opens (in Edge, "Get" and "Add extension"; in Firefox, the button to add it).
 - **Danger zone**: **Delete this vault from the device** (you have to type DELETE; if it is not in the cloud, everything is lost).
 
-### Browser extension (Edge, Chrome and other browsers)
+### Browser extension (Edge and Firefox)
 
 - Icon in the toolbar: shows the entries for the site with **Fill**, **Copy username**, **Copy password** and **Copy code**, and **Search the vault…**.
 - **Generate password**: **Length**, **Uppercase**, **Digits**, **Symbols**, **Generate** and **Use in page**.

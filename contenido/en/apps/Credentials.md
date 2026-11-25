@@ -97,7 +97,7 @@ Open the app and unlock it with the master password (or your fingerprint). Find 
   - **Export as plain JSON (unencrypted!)**: asks for confirmation; keep the file safe and delete it when you are done.
 - **Autofill** (Android):
   - Current status and **Use sOC Credentials to autofill** / **Change autofill service** (in charge in apps).
-  - **Preferred password service** (Android 14+; it is the one Edge and Chrome follow).
+  - **Preferred password service** (Android 14+; it is the one Edge and other browsers follow).
   - **Open the browser settings**, with the steps to turn off the browser's own password manager.
   - **Offer it when unlocking**: while another manager is the autofill service.
 - **Fill in Windows apps** (Windows): when you enter a password field in a program, the list of matching entries appears next to it; click one to type the user name and password.
@@ -125,7 +125,7 @@ Version, description, **Contact**, **Privacy**, **License**, **Legal Notice** an
 
 **What I save on my PC doesn't show up on my phone.** Both have to use the same Google Drive or OneDrive account (Settings › Where the vault lives) and the same master password. Tap **Sync now**. Since version 2026.09.25.03 syncing is automatic and the "OneDrive: 400 Invalid request" error is fixed.
 
-**Edge or Chrome on my phone still offers Google instead of sOC Credentials.** On Android 14 and later, browsers follow the **Preferred password service**, not the autofill one. In Settings › Autofill, check all three places: the autofill service, the preferred service and the browser's own settings.
+**The browser on my phone still offers Google instead of sOC Credentials.** On Android 14 and later, browsers follow the **Preferred password service**, not the autofill one. In Settings › Autofill, check all three places: the autofill service, the preferred service and the browser's own settings.
 
 **The extension says it can't talk to sOC Credentials.** Open the app once: it registers the bridge with the browser by itself. If you have just updated, opening it is enough. Remember that the Microsoft Store version doesn't support the extensions: to use them, uninstall the Store version and install the EXE from https://github.com/donki/Credentials/releases (if your vault is in the cloud you lose nothing; if not, export it first).
 

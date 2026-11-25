@@ -97,7 +97,7 @@ Campo **Contraseña maestra** con botón para verla, **Desbloquear** y, en Andro
   - **Exportar a JSON en claro (¡sin cifrar!)**: pide confirmación; guárdalo a buen recaudo y bórralo al acabar.
 - **Autocompletar** (Android):
   - Estado actual y **Usar sOC Credentials para autocompletar** / **Cambiar el servicio de autocompletar** (manda en las aplicaciones).
-  - **Servicio preferido de contraseñas** (Android 14+; es el que obedecen Edge y Chrome).
+  - **Servicio preferido de contraseñas** (Android 14+; es el que obedecen Edge y los demás navegadores).
   - **Abrir los ajustes del navegador**, con los pasos para apagar el gestor propio del navegador.
   - **Proponerlo al desbloquear**: mientras otro gestor sea el servicio de autocompletar.
 - **Rellenar en las aplicaciones de Windows** (Windows): al entrar en un campo de contraseña de un programa, aparece a su lado la lista de entradas que encajan; pulsa una para teclear usuario y contraseña.
@@ -125,7 +125,7 @@ Versión, descripción, **Contacto**, **Privacidad**, **Licencia**, **Aviso lega
 
 **Lo que guardo en el PC no aparece en el móvil.** Los dos tienen que usar la misma cuenta de Google Drive u OneDrive (Ajustes › Dónde vive la bóveda) y la misma contraseña maestra. Pulsa **Sincronizar ahora**. Desde la versión 2026.09.25.03 la sincronización es automática y está arreglado el error «OneDrive: 400 Invalid request».
 
-**En Edge o Chrome del móvil me sigue ofreciendo Google en vez de sOC Credentials.** En Android 14 y posteriores los navegadores obedecen al **Servicio preferido de contraseñas**, no al de autocompletar. En Ajustes › Autocompletar revisa los tres sitios: el servicio de autocompletar, el servicio preferido y los ajustes del propio navegador.
+**En el navegador del móvil me sigue ofreciendo Google en vez de sOC Credentials.** En Android 14 y posteriores los navegadores obedecen al **Servicio preferido de contraseñas**, no al de autocompletar. En Ajustes › Autocompletar revisa los tres sitios: el servicio de autocompletar, el servicio preferido y los ajustes del propio navegador.
 
 **La extensión dice que no puede hablar con sOC Credentials.** Abre la aplicación una vez: ella sola registra el puente con el navegador. Si acabas de actualizar, con abrirla basta. Recuerda que la versión de la Microsoft Store no admite las extensiones: para usarlas, desinstala la de la Store e instala el EXE de https://github.com/donki/Credentials/releases (si tu bóveda está en la nube, no pierdes nada; si no, expórtala antes).
 

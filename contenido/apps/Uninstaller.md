@@ -4,10 +4,10 @@
 - lema: Marca varias aplicaciones y desinstálalas de una vez, en el móvil y en el PC.
 - github: https://github.com/donki/Uninstaller
 - tiendas:
-  - Google Play (producción, con la versión 2026.08.01 y el nombre «Uninstaller»; la 2026.09.19.07 está en prueba cerrada): https://play.google.com/store/apps/details?id=com.socratic.uninstaller (ficha pública accesible el 2026-09-25; D:\sOCProjects\08-PENDIENTE-Uninstaller.md y D:\sOCProjects\01-TAREAS-Uninstaller.md: la alpha 2026091907 se publicó el 2026-09-24 y espera la revisión de Google antes de pasar a producción)
-  - Microsoft Store (no publicada): sin ID todavía. El nombre «sOC Uninstaller» está por reservar en Partner Center y la ficha está preparada pero sin enviar (D:\sOCProjects\08-PENDIENTE-Uninstaller.md, puntos 6 y 7; Mobile/MicrosoftStore/Uninstaller/ficha-es-ES.md)
+  - Google Play (producción, versión 2026.11.25.00 enviada a revisión el 2026-11-25): https://play.google.com/store/apps/details?id=com.socratic.uninstaller
+  - Microsoft Store (publicada): https://apps.microsoft.com/detail/9PL3VQZDHBFH
   - Tiendas de extensiones de navegador: no aplica
-- descarga_alternativa: https://github.com/donki/Uninstaller/releases (última: v2026.09.22.02, con sOCUninstaller.exe, el zip y el MSIX de Windows; el último APK publicado ahí es el de v2026.09.19.07)
+- descarga_alternativa: https://github.com/donki/Uninstaller/releases (última: v2026.11.25.0, con el APK de Android, sOCUninstaller.exe, el zip y el MSIX de Windows)
 
 ## Descripción
 
@@ -39,7 +39,7 @@ En Windows junta en una sola lista los programas clásicos y las aplicaciones de
 
 ### Primera puesta en marcha en Windows
 
-1. Descarga sOCUninstaller.exe (o el zip) desde las releases de GitHub. Es un único archivo: ábrelo y listo. La primera vez tarda un poco más porque se prepara en tu carpeta de usuario.
+1. Instálala desde la [Microsoft Store](https://apps.microsoft.com/detail/9PL3VQZDHBFH), o descarga sOCUninstaller.exe (o el zip) desde las releases de GitHub. El exe es un único archivo: ábrelo y listo. La primera vez tarda un poco más porque se prepara en tu carpeta de usuario.
 2. Si quieres tenerla a mano, ancla la ventana a la barra de tareas: el anclaje sigue valiendo tras actualizar.
 3. Algunos desinstaladores pedirán permiso de administrador, como siempre en Windows.
 
@@ -135,9 +135,6 @@ No. Android no permite a ninguna aplicación desinstalar otras en silencio: por 
 **No me sale la aplicación que busco.**
 Puede ser una aplicación del sistema. Pulsa «Mostrar apps del sistema» o usa el buscador.
 
-**En Google Play no veo el buscador, los ajustes ni el progreso.**
-La versión de producción de Google Play es la de agosto de 2026. La nueva está en prueba cerrada y pasará a producción cuando Google la apruebe. Mientras tanto, el APK nuevo está en las releases de GitHub.
-
 **En Windows, un programa me sigue haciendo preguntas aunque elegí «Desatendido».**
 Solo los instaladores que lo admiten (Windows Installer, otros instaladores habituales y apps de la Store) se quitan en silencio; el resto abre su asistente. Windows puede pedir permiso de administrador igualmente.
 
@@ -151,7 +148,7 @@ Recupéralo desde la Papelera de reciclaje de Windows o con Ctrl+Z en el Explora
 Solo existe en Windows. En Android haría falta el permiso de acceso a todo el almacenamiento, que la aplicación no pide.
 
 **¿Está en la Microsoft Store?**
-Todavía no. Descarga la versión de Windows desde las releases de GitHub.
+Sí: [sOC Uninstaller en la Microsoft Store](https://apps.microsoft.com/detail/9PL3VQZDHBFH), que la mantiene al día sola. También puedes bajar el exe desde las releases de GitHub.
 
 ## Privacidad
 

@@ -119,12 +119,12 @@
     "fecha": "2026-10-02"
   },
   "uninstaller": {
-    "pruebas": 267,
-    "cobertura_codigo": 98.2,
-    "cobertura_app": 50.8,
-    "tiempo_s": 0.9,
-    "llm_h": 9.0,
-    "fecha": "2026-10-01"
+    "pruebas": 390,
+    "cobertura_codigo": 85.7,
+    "cobertura_app": 90.3,
+    "tiempo_s": 9,
+    "llm_h": 15.0,
+    "fecha": "2026-11-25"
   },
   "wsmanager": {
     "pruebas": 286,
